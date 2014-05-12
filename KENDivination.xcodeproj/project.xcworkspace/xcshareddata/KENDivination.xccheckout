@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CD4478E0-C1BC-4CE0-81D5-A3457A43ABBE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KENDivination</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BCC5F701-7BBD-44DC-A468-7C25E4243FA7</key>
+		<string>https://github.com/lkeplei/KENDivination.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>KENDivination/KENDivination.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BCC5F701-7BBD-44DC-A468-7C25E4243FA7</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lkeplei/KENDivination.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BCC5F701-7BBD-44DC-A468-7C25E4243FA7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BCC5F701-7BBD-44DC-A468-7C25E4243FA7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>KENDivination</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04B323151920ED1400C055FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B323141920ED1400C055FF /* Foundation.framework */; };
+		04B323171920ED1400C055FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B323161920ED1400C055FF /* CoreGraphics.framework */; };
+		04B323191920ED1400C055FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B323181920ED1400C055FF /* UIKit.framework */; };
+		04B3231B1920ED1400C055FF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B3231A1920ED1400C055FF /* CoreData.framework */; };
+		04B323211920ED1400C055FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B3231F1920ED1400C055FF /* InfoPlist.strings */; };
+		04B323231920ED1400C055FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B323221920ED1400C055FF /* main.m */; };
+		04B3232C1920ED1400C055FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B3232B1920ED1400C055FF /* Images.xcassets */; };
+		04B323331920ED1400C055FF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B323321920ED1400C055FF /* XCTest.framework */; };
+		04B323341920ED1400C055FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B323141920ED1400C055FF /* Foundation.framework */; };
+		04B323351920ED1400C055FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B323181920ED1400C055FF /* UIKit.framework */; };
+		04B323361920ED1400C055FF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B3231A1920ED1400C055FF /* CoreData.framework */; };
+		04B3233E1920ED1400C055FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B3233C1920ED1400C055FF /* InfoPlist.strings */; };
+		04B323401920ED1400C055FF /* KENDivinationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3233F1920ED1400C055FF /* KENDivinationTests.m */; };
+		04B323541920EE0700C055FF /* KENAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3234C1920EE0700C055FF /* KENAppDelegate.m */; };
+		04B323551920EE0700C055FF /* KENDivination.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04B323521920EE0700C055FF /* KENDivination.xcdatamodeld */; };
+		04B323581920EE6B00C055FF /* KENModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B323571920EE6B00C055FF /* KENModel.m */; };
+		04B3235D1920EFD200C055FF /* KENViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3235C1920EFD200C055FF /* KENViewController.m */; };
+		04B323621920F51E00C055FF /* icon-120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B3235E1920F51E00C055FF /* icon-120@2x.png */; };
+		04B323631920F51E00C055FF /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B3235F1920F51E00C055FF /* icon-ipad.png */; };
+		04B323641920F51E00C055FF /* icon-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B323601920F51E00C055FF /* icon-iphone.png */; };
+		04B323651920F51E00C055FF /* icon-iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B323611920F51E00C055FF /* icon-iphone@2x.png */; };
+		04B323671920F5EB00C055FF /* icon-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B323661920F5EB00C055FF /* icon-ipad@2x.png */; };
+		04B3236A1920F67400C055FF /* 76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B323681920F67400C055FF /* 76x76.png */; };
+		04B3236B1920F67400C055FF /* 152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B323691920F67400C055FF /* 152x152.png */; };
+		04B3236E1920FA7E00C055FF /* KENViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3236D1920FA7E00C055FF /* KENViewBase.m */; };
+		04B323711920FA8700C055FF /* KENUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B323701920FA8700C055FF /* KENUtils.m */; };
+		04B323741920FB0500C055FF /* KENViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B323731920FB0500C055FF /* KENViewFactory.m */; };
+		04B3237719210FEB00C055FF /* KENViewHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3237619210FEB00C055FF /* KENViewHome.m */; };
+		04E577F3192112F200688137 /* app_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E577F2192112F200688137 /* app_background_image@2x.png */; };
+		04E577F5192115BE00688137 /* home_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E577F4192115BE00688137 /* home_background_image@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04B323371920ED1400C055FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04B323091920ED1400C055FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04B323101920ED1400C055FF;
+			remoteInfo = KENDivination;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04B323111920ED1400C055FF /* KENDivination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KENDivination.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B323141920ED1400C055FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04B323161920ED1400C055FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		04B323181920ED1400C055FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		04B3231A1920ED1400C055FF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04B3231E1920ED1400C055FF /* KENDivination-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KENDivination-Info.plist"; sourceTree = "<group>"; };
+		04B323201920ED1400C055FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04B323221920ED1400C055FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04B323241920ED1400C055FF /* KENDivination-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KENDivination-Prefix.pch"; sourceTree = "<group>"; };
+		04B3232B1920ED1400C055FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		04B323311920ED1400C055FF /* KENDivinationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KENDivinationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B323321920ED1400C055FF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		04B3233B1920ED1400C055FF /* KENDivinationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KENDivinationTests-Info.plist"; sourceTree = "<group>"; };
+		04B3233D1920ED1400C055FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04B3233F1920ED1400C055FF /* KENDivinationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KENDivinationTests.m; sourceTree = "<group>"; };
+		04B3234B1920EE0700C055FF /* KENAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENAppDelegate.h; sourceTree = "<group>"; };
+		04B3234C1920EE0700C055FF /* KENAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENAppDelegate.m; sourceTree = "<group>"; };
+		04B323531920EE0700C055FF /* KENDivination.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KENDivination.xcdatamodel; sourceTree = "<group>"; };
+		04B323561920EE6B00C055FF /* KENModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENModel.h; sourceTree = "<group>"; };
+		04B323571920EE6B00C055FF /* KENModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENModel.m; sourceTree = "<group>"; };
+		04B323591920EF1400C055FF /* KNEConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNEConfig.h; sourceTree = "<group>"; };
+		04B3235A1920EF3D00C055FF /* KENModelDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KENModelDef.h; sourceTree = "<group>"; };
+		04B3235B1920EFD200C055FF /* KENViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewController.h; sourceTree = "<group>"; };
+		04B3235C1920EFD200C055FF /* KENViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewController.m; sourceTree = "<group>"; };
+		04B3235E1920F51E00C055FF /* icon-120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120@2x.png"; path = "KENDivination/icon-120@2x.png"; sourceTree = SOURCE_ROOT; };
+		04B3235F1920F51E00C055FF /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad.png"; path = "KENDivination/icon-ipad.png"; sourceTree = SOURCE_ROOT; };
+		04B323601920F51E00C055FF /* icon-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-iphone.png"; path = "KENDivination/icon-iphone.png"; sourceTree = SOURCE_ROOT; };
+		04B323611920F51E00C055FF /* icon-iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-iphone@2x.png"; path = "KENDivination/icon-iphone@2x.png"; sourceTree = SOURCE_ROOT; };
+		04B323661920F5EB00C055FF /* icon-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad@2x.png"; path = "KENDivination/icon-ipad@2x.png"; sourceTree = SOURCE_ROOT; };
+		04B323681920F67400C055FF /* 76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 76x76.png; path = KENDivination/76x76.png; sourceTree = SOURCE_ROOT; };
+		04B323691920F67400C055FF /* 152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 152x152.png; path = KENDivination/152x152.png; sourceTree = SOURCE_ROOT; };
+		04B3236C1920FA7E00C055FF /* KENViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewBase.h; sourceTree = "<group>"; };
+		04B3236D1920FA7E00C055FF /* KENViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewBase.m; sourceTree = "<group>"; };
+		04B3236F1920FA8700C055FF /* KENUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUtils.h; sourceTree = "<group>"; };
+		04B323701920FA8700C055FF /* KENUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUtils.m; sourceTree = "<group>"; };
+		04B323721920FB0500C055FF /* KENViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewFactory.h; sourceTree = "<group>"; };
+		04B323731920FB0500C055FF /* KENViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewFactory.m; sourceTree = "<group>"; };
+		04B3237519210FEB00C055FF /* KENViewHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewHome.h; sourceTree = "<group>"; };
+		04B3237619210FEB00C055FF /* KENViewHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewHome.m; sourceTree = "<group>"; };
+		04E577F2192112F200688137 /* app_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_background_image@2x.png"; sourceTree = "<group>"; };
+		04E577F4192115BE00688137 /* home_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_background_image@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04B3230E1920ED1400C055FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B323171920ED1400C055FF /* CoreGraphics.framework in Frameworks */,
+				04B3231B1920ED1400C055FF /* CoreData.framework in Frameworks */,
+				04B323191920ED1400C055FF /* UIKit.framework in Frameworks */,
+				04B323151920ED1400C055FF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04B3232E1920ED1400C055FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B323331920ED1400C055FF /* XCTest.framework in Frameworks */,
+				04B323361920ED1400C055FF /* CoreData.framework in Frameworks */,
+				04B323351920ED1400C055FF /* UIKit.framework in Frameworks */,
+				04B323341920ED1400C055FF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04B323081920ED1400C055FF = {
+			isa = PBXGroup;
+			children = (
+				04B3231C1920ED1400C055FF /* KENDivination */,
+				04B323391920ED1400C055FF /* KENDivinationTests */,
+				04B323131920ED1400C055FF /* Frameworks */,
+				04B323121920ED1400C055FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04B323121920ED1400C055FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04B323111920ED1400C055FF /* KENDivination.app */,
+				04B323311920ED1400C055FF /* KENDivinationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04B323131920ED1400C055FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04B323141920ED1400C055FF /* Foundation.framework */,
+				04B323161920ED1400C055FF /* CoreGraphics.framework */,
+				04B323181920ED1400C055FF /* UIKit.framework */,
+				04B3231A1920ED1400C055FF /* CoreData.framework */,
+				04B323321920ED1400C055FF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04B3231C1920ED1400C055FF /* KENDivination */ = {
+			isa = PBXGroup;
+			children = (
+				04B323491920EE0700C055FF /* Class */,
+				04B323501920EE0700C055FF /* Resources */,
+				04B3232B1920ED1400C055FF /* Images.xcassets */,
+				04B3231D1920ED1400C055FF /* Supporting Files */,
+			);
+			path = KENDivination;
+			sourceTree = "<group>";
+		};
+		04B3231D1920ED1400C055FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04B3231E1920ED1400C055FF /* KENDivination-Info.plist */,
+				04B3231F1920ED1400C055FF /* InfoPlist.strings */,
+				04B323221920ED1400C055FF /* main.m */,
+				04B323241920ED1400C055FF /* KENDivination-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04B323391920ED1400C055FF /* KENDivinationTests */ = {
+			isa = PBXGroup;
+			children = (
+				04B3233F1920ED1400C055FF /* KENDivinationTests.m */,
+				04B3233A1920ED1400C055FF /* Supporting Files */,
+			);
+			path = KENDivinationTests;
+			sourceTree = "<group>";
+		};
+		04B3233A1920ED1400C055FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04B3233B1920ED1400C055FF /* KENDivinationTests-Info.plist */,
+				04B3233C1920ED1400C055FF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04B323491920EE0700C055FF /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				04B3234A1920EE0700C055FF /* Control */,
+				04B3234B1920EE0700C055FF /* KENAppDelegate.h */,
+				04B3234C1920EE0700C055FF /* KENAppDelegate.m */,
+				04B3234D1920EE0700C055FF /* Model */,
+				04B3234E1920EE0700C055FF /* Tools */,
+				04B3234F1920EE0700C055FF /* View */,
+				04B323591920EF1400C055FF /* KNEConfig.h */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		04B3234A1920EE0700C055FF /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				04B3235B1920EFD200C055FF /* KENViewController.h */,
+				04B3235C1920EFD200C055FF /* KENViewController.m */,
+				04B323721920FB0500C055FF /* KENViewFactory.h */,
+				04B323731920FB0500C055FF /* KENViewFactory.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		04B3234D1920EE0700C055FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04B323561920EE6B00C055FF /* KENModel.h */,
+				04B323571920EE6B00C055FF /* KENModel.m */,
+				04B3235A1920EF3D00C055FF /* KENModelDef.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B3234E1920EE0700C055FF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				04B3236F1920FA8700C055FF /* KENUtils.h */,
+				04B323701920FA8700C055FF /* KENUtils.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		04B3234F1920EE0700C055FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04B3236C1920FA7E00C055FF /* KENViewBase.h */,
+				04B3236D1920FA7E00C055FF /* KENViewBase.m */,
+				04B3237519210FEB00C055FF /* KENViewHome.h */,
+				04B3237619210FEB00C055FF /* KENViewHome.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B323501920EE0700C055FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04B323681920F67400C055FF /* 76x76.png */,
+				04B323691920F67400C055FF /* 152x152.png */,
+				04B323661920F5EB00C055FF /* icon-ipad@2x.png */,
+				04B3235E1920F51E00C055FF /* icon-120@2x.png */,
+				04B3235F1920F51E00C055FF /* icon-ipad.png */,
+				04B323601920F51E00C055FF /* icon-iphone.png */,
+				04B323611920F51E00C055FF /* icon-iphone@2x.png */,
+				04B323511920EE0700C055FF /* Images */,
+				04B323521920EE0700C055FF /* KENDivination.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04B323511920EE0700C055FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				04E577F4192115BE00688137 /* home_background_image@2x.png */,
+				04E577F2192112F200688137 /* app_background_image@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04B323101920ED1400C055FF /* KENDivination */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B323431920ED1400C055FF /* Build configuration list for PBXNativeTarget "KENDivination" */;
+			buildPhases = (
+				04B3230D1920ED1400C055FF /* Sources */,
+				04B3230E1920ED1400C055FF /* Frameworks */,
+				04B3230F1920ED1400C055FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KENDivination;
+			productName = KENDivination;
+			productReference = 04B323111920ED1400C055FF /* KENDivination.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04B323301920ED1400C055FF /* KENDivinationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B323461920ED1400C055FF /* Build configuration list for PBXNativeTarget "KENDivinationTests" */;
+			buildPhases = (
+				04B3232D1920ED1400C055FF /* Sources */,
+				04B3232E1920ED1400C055FF /* Frameworks */,
+				04B3232F1920ED1400C055FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04B323381920ED1400C055FF /* PBXTargetDependency */,
+			);
+			name = KENDivinationTests;
+			productName = KENDivinationTests;
+			productReference = 04B323311920ED1400C055FF /* KENDivinationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04B323091920ED1400C055FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KEN;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = ken;
+				TargetAttributes = {
+					04B323301920ED1400C055FF = {
+						TestTargetID = 04B323101920ED1400C055FF;
+					};
+				};
+			};
+			buildConfigurationList = 04B3230C1920ED1400C055FF /* Build configuration list for PBXProject "KENDivination" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04B323081920ED1400C055FF;
+			productRefGroup = 04B323121920ED1400C055FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04B323101920ED1400C055FF /* KENDivination */,
+				04B323301920ED1400C055FF /* KENDivinationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04B3230F1920ED1400C055FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B323651920F51E00C055FF /* icon-iphone@2x.png in Resources */,
+				04E577F5192115BE00688137 /* home_background_image@2x.png in Resources */,
+				04B323631920F51E00C055FF /* icon-ipad.png in Resources */,
+				04E577F3192112F200688137 /* app_background_image@2x.png in Resources */,
+				04B323621920F51E00C055FF /* icon-120@2x.png in Resources */,
+				04B3236B1920F67400C055FF /* 152x152.png in Resources */,
+				04B323211920ED1400C055FF /* InfoPlist.strings in Resources */,
+				04B323641920F51E00C055FF /* icon-iphone.png in Resources */,
+				04B3232C1920ED1400C055FF /* Images.xcassets in Resources */,
+				04B3236A1920F67400C055FF /* 76x76.png in Resources */,
+				04B323671920F5EB00C055FF /* icon-ipad@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04B3232F1920ED1400C055FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B3233E1920ED1400C055FF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04B3230D1920ED1400C055FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B323711920FA8700C055FF /* KENUtils.m in Sources */,
+				04B323581920EE6B00C055FF /* KENModel.m in Sources */,
+				04B323551920EE0700C055FF /* KENDivination.xcdatamodeld in Sources */,
+				04B3236E1920FA7E00C055FF /* KENViewBase.m in Sources */,
+				04B323741920FB0500C055FF /* KENViewFactory.m in Sources */,
+				04B3237719210FEB00C055FF /* KENViewHome.m in Sources */,
+				04B323541920EE0700C055FF /* KENAppDelegate.m in Sources */,
+				04B3235D1920EFD200C055FF /* KENViewController.m in Sources */,
+				04B323231920ED1400C055FF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04B3232D1920ED1400C055FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B323401920ED1400C055FF /* KENDivinationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04B323381920ED1400C055FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04B323101920ED1400C055FF /* KENDivination */;
+			targetProxy = 04B323371920ED1400C055FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04B3231F1920ED1400C055FF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B323201920ED1400C055FF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04B3233C1920ED1400C055FF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B3233D1920ED1400C055FF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04B323411920ED1400C055FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04B323421920ED1400C055FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04B323441920ED1400C055FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
+				INFOPLIST_FILE = "KENDivination/KENDivination-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04B323451920ED1400C055FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
+				INFOPLIST_FILE = "KENDivination/KENDivination-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		04B323471920ED1400C055FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KENDivination.app/KENDivination";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KENDivinationTests/KENDivinationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		04B323481920ED1400C055FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KENDivination.app/KENDivination";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
+				INFOPLIST_FILE = "KENDivinationTests/KENDivinationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04B3230C1920ED1400C055FF /* Build configuration list for PBXProject "KENDivination" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B323411920ED1400C055FF /* Debug */,
+				04B323421920ED1400C055FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04B323431920ED1400C055FF /* Build configuration list for PBXNativeTarget "KENDivination" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B323441920ED1400C055FF /* Debug */,
+				04B323451920ED1400C055FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04B323461920ED1400C055FF /* Build configuration list for PBXNativeTarget "KENDivinationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B323471920ED1400C055FF /* Debug */,
+				04B323481920ED1400C055FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04B323521920EE0700C055FF /* KENDivination.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04B323531920EE0700C055FF /* KENDivination.xcdatamodel */,
+			);
+			currentVersion = 04B323531920EE0700C055FF /* KENDivination.xcdatamodel */;
+			path = KENDivination.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 04B323091920ED1400C055FF /* Project object */;
+}
