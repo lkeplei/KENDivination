@@ -53,5 +53,10 @@
 #define KLabelFontSize22        (22)
 #define KLabelFontSize36        (36)
 
+#define KNotificationHeight     (54)
+
+
+#define KUserDefaultSetOpenVoice             @"default_open_voice"
+
 
 #endif

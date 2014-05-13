@@ -8,10 +8,12 @@
 
 #import "KENViewFactory.h"
 #import "KENViewHome.h"
+#import "KENViewSetting.h"
 
 @interface KENViewFactory ()
 
 @property (nonatomic, strong) KENViewHome* homeView;
+@property (nonatomic, strong) KENViewSetting* settingView;
 
 @end
 
@@ -28,6 +30,14 @@
             view = _homeView;
         }
             break;
+        case KENViewTypeSetting:{
+            if (_settingView == nil) {
+                _settingView = [[KENViewSetting alloc] initWithFrame:frame];
+            }
+            view = _settingView;
+        }
+            break;
+
         default:
             break;
     }
@@ -41,6 +51,13 @@
             if (_homeView) {
                 [_homeView removeFromSuperview];
                 _homeView = nil;
+            }
+        }
+            break;
+        case KENViewTypeSetting:{
+            if (_settingView) {
+                [_settingView removeFromSuperview];
+                _settingView = nil;
             }
         }
             break;

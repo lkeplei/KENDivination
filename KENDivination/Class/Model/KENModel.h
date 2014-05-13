@@ -13,6 +13,10 @@
 
 +(KENModel*)shareModel;
 
+//初始数据
+-(void)initData;
+//播放声音
+-(void)playVoiceByType:(KENType)type;
 //视图切换
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate;
 

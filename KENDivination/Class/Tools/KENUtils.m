@@ -7,7 +7,7 @@
 //
 
 #import "KENUtils.h"
-#import "KNEConfig.h"
+#import "KENConfig.h"
 
 #include <sys/socket.h> // Per msqr
 #include <sys/sysctl.h>

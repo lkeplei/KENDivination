@@ -8,6 +8,8 @@
 
 #import "KENViewBase.h"
 #import "KENViewController.h"
+#import "KENConfig.h"
+#import "KENUtils.h"
 
 @interface KENViewBase ()
 
@@ -18,27 +20,50 @@
 
 @implementation KENViewBase
 
-@synthesize subEventLeft = _subEventLeft;
-@synthesize subEventRight = _subEventRight;
-
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         _viewType = KENViewTypeBase;
-        _subEventLeft = NO;
-        _subEventRight = NO;
         
-        UIImageView* imgView = [[UIImageView alloc] initWithImage:[self setBackGroundImage]];
-        imgView.center = self.center;
-        [self addSubview:imgView];
+        [self initView];
     }
     return self;
 }
 
+-(void)initView{
+    UIImageView* imgView = [[UIImageView alloc] initWithImage:[self setBackGroundImage]];
+    imgView.center = self.center;
+//    if (IsPad) {
+//        float width = self.frame.size.height / imgView.frame.size.height * imgView.frame.size.width;
+//        imgView.frame = CGRectMake((self.frame.size.width - width) / 2, 0, width, self.frame.size.height);
+//    }
+    
+    _contentView = [[UIView alloc] initWithFrame:imgView.frame];
+    imgView.frame = (CGRect){CGPointZero, imgView.frame.size};
+    [_contentView addSubview:imgView];
+    
+    [self addSubview:_contentView];
+    
+    //add title
+    UIImageView* titleView = [[UIImageView alloc] initWithImage:[self setViewTitleImage]];
+    titleView.center = CGPointMake(_contentView.frame.size.width / 2, KNotificationHeight / 2);
+    [_contentView addSubview:titleView];
+    
+    //top back
+    [self setTopLeftBtn];
+    
+    if (IsPad) {
+        CATransform3D currentTransform = _contentView.layer.transform;
+        float rate = self.frame.size.height / imgView.frame.size.height;
+        CATransform3D scaled = CATransform3DScale(currentTransform, rate, rate, rate);
+        _contentView.layer.transform = scaled;
+    }
+}
+
 #pragma mark - view appear methods
 -(void)viewDidAppear:(BOOL)animated{
-    [self setTopBtn:nil rightBtn:nil enabled:NO];
+    
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -104,33 +129,29 @@
 }
 
 #pragma mark - other
--(void)setTopBtn:(NSString*)leftBtn rightBtn:(NSString*)rightBtn enabled:(BOOL)enabled{
-    if (enabled) {
-        [self setSubEventLeft:YES];
-        [self setSubEventRight:YES];
-    } else {
-        if (leftBtn) {
-            [self setSubEventLeft:YES];
-        } else {
-            [self setSubEventLeft:NO];
-        }
-        
-        if (rightBtn) {
-            [self setSubEventRight:YES];
-        } else {
-            [self setSubEventRight:NO];
-        }
-    }
-}
-
 -(UIImage*)setBackGroundImage{
     return [UIImage imageNamed:@"app_background_image.png"];
+}
+
+-(UIImage*)setViewTitleImage{
+    return nil;
+}
+
+-(void)setTopLeftBtn{
+    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+                                         image:[UIImage imageNamed:@"app_btn_back.png"]
+                                      imagesec:[UIImage imageNamed:@"app_btn_back_sec.png"]
+                                        target:self
+                                        action:@selector(backBtnClicked:)];
+    setBtn.center = CGPointMake(setBtn.center.x + 20, KNotificationHeight / 2);
+    [self.contentView addSubview:setBtn];
 }
 
 -(void)showView{
 }
 
--(void)eventTopBtnClicked:(BOOL)left{
-    
+#pragma mark - btn clicked
+-(void)backBtnClicked:(UIButton*)button{
+    [self popView:KENTypeNull];
 }
 @end

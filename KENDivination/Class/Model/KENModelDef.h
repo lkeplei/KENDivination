@@ -11,11 +11,21 @@
 
 typedef enum {
     KENTypeNull = 0,
+    
+    KENVoiceNull = 100,
+    KENVoiceAnJian,
+    KENVoiceChouPai,
+    KENVoiceFanPai,
+    KENVoiceFanPaiHou,
+    KENVoiceXiPai,
+    KENVoiceZhuanPanTing,
+    KENVoiceZhuanPanZhuanDong,
 } KENType;
 
 typedef enum {
     KENViewTypeBase = 0,
     KENViewTypeHome,
+    KENViewTypeSetting,
 } KENViewType;
 
 #endif

@@ -16,9 +16,8 @@
 
 -(void)showView;
 -(UIImage*)setBackGroundImage;
-//enabled：yes不管有没有文字都有效、no只有有文字显示才有效
--(void)setTopBtn:(NSString*)leftBtn rightBtn:(NSString*)rightBtn enabled:(BOOL)enabled;
--(void)eventTopBtnClicked:(BOOL)left;
+-(UIImage*)setViewTitleImage;
+-(void)setTopLeftBtn;
 
 -(void)viewDidAppear:(BOOL)animated;
 -(void)viewDidDisappear:(BOOL)animated;
@@ -28,9 +27,8 @@
 -(void)pushView:(KENViewBase*)view animatedType:(KENType)type;
 -(void)popView:(KENType)type;
 
-@property (assign)KENViewType viewType;
-@property (assign)BOOL subEventLeft;
-@property (assign)BOOL subEventRight;
+@property (assign) KENViewType viewType;
+@property (nonatomic, strong) UIView* contentView;
 
 @property (nonatomic, assign) id<KENViewBaseDelegate> viewBaseDelegate;
 

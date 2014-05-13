@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     //init
-    [KENModel shareModel];
+    [[KENModel shareModel] initData];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _viewController = [[KENViewController alloc] initWithNibName:nil bundle:nil];
