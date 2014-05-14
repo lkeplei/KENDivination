@@ -25,6 +25,7 @@
     _viewFactory = [[KENViewFactory alloc] init];
 
     _currentShowView = [self addView:KENViewTypeHome];
+    [_currentShowView viewDidAppear:NO];
     [_currentShowView showView];
 }
 

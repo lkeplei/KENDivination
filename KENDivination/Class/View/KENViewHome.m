@@ -11,8 +11,12 @@
 #import "KENConfig.h"
 #import "KENModel.h"
 #import "KENViewController.h"
+#import "KENViewDirection.h"
 
-@interface KENViewHome ()
+@interface KENViewHome (){
+    int rotateView;
+    CGPoint prePoint;
+}
 @property (nonatomic, strong) UIImageView* zhuanPanView;
 @end
 
@@ -37,18 +41,65 @@
 }
 
 -(void)movePanel:(id)sender {
-//	CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self];
+    CGPoint locationInView = [(UIPanGestureRecognizer*)sender locationInView:self.contentView];
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
         [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanZhuanDong];
+        prePoint = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
+        rotateView = 0;
 	}
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
         [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanTing];
+        int rotate = rotateView % 60;
+        if (rotate > 30) {
+            rotateView += 60 - rotate;
+        } else {
+            rotateView -= rotate;
+        }
+        
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            _zhuanPanView.transform = CGAffineTransformMakeRotation(rotateView / 180.0 * M_PI);
+        }
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 rotateView = rotateView >= 0 ? rotateView : 360 - abs(rotateView);
+                                 int index = rotateView / 60;
+                                 if (index == 1) {
+                                     [self pushView:[SysDelegate.viewController getView:KENViewTypeMemory] animatedType:KENTypeNull];
+                                 } else {
+                                     KENViewDirection* direction = (KENViewDirection*)[SysDelegate.viewController getView:KENViewTypeDirection];
+                                     [direction setViewDirection:KENTypeDirectionLove + index];
+                                     [self pushView:direction animatedType:KENTypeNull];
+                                 }
+                                 _zhuanPanView.transform = CGAffineTransformMakeRotation(0 / 180.0 * M_PI);
+                             }
+                         }];
+
 	}
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
-        
+        CGPoint point = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
+        int offx = abs(point.x - prePoint.x);
+        if (offx > 1) {
+            if (point.y > 0) {
+                if (prePoint.x < point.x) {
+                    rotateView += offx;
+                } else {
+                    rotateView -= offx;
+                }
+            } else {
+                if (prePoint.x < point.x) {
+                    rotateView -= offx;
+                } else {
+                    rotateView += offx;
+                }
+            }
+            
+            prePoint = point;
+            _zhuanPanView.transform = CGAffineTransformMakeRotation(rotateView / 180.0 * M_PI);
+            rotateView = rotateView > 360 ? rotateView - 360 : rotateView;
+        }
 	}
 }
 

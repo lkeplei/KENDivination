@@ -12,6 +12,13 @@
 typedef enum {
     KENTypeNull = 0,
     
+    KENTypeDirectionLove = 10,
+    KENTypeDirectionMemory,
+    KENTypeDirectionHealth,
+    KENTypeDirectionRelation,
+    KENTypeDirectionMoney,
+    KENTypeDirectionWork,
+    
     KENVoiceNull = 100,
     KENVoiceAnJian,
     KENVoiceChouPai,
@@ -26,6 +33,8 @@ typedef enum {
     KENViewTypeBase = 0,
     KENViewTypeHome,
     KENViewTypeSetting,
+    KENViewTypeMemory,
+    KENViewTypeDirection,
 } KENViewType;
 
 #endif

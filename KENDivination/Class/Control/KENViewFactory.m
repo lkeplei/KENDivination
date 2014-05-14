@@ -9,11 +9,15 @@
 #import "KENViewFactory.h"
 #import "KENViewHome.h"
 #import "KENViewSetting.h"
+#import "KENViewMemory.h"
+#import "KENViewDirection.h"
 
 @interface KENViewFactory ()
 
 @property (nonatomic, strong) KENViewHome* homeView;
 @property (nonatomic, strong) KENViewSetting* settingView;
+@property (nonatomic, strong) KENViewMemory* memoryView;
+@property (nonatomic, strong) KENViewDirection* directionView;
 
 @end
 
@@ -37,7 +41,20 @@
             view = _settingView;
         }
             break;
-
+        case KENViewTypeMemory:{
+            if (_memoryView == nil) {
+                _memoryView = [[KENViewMemory alloc] initWithFrame:frame];
+            }
+            view = _memoryView;
+        }
+            break;
+        case KENViewTypeDirection:{
+            if (_directionView == nil) {
+                _directionView = [[KENViewDirection alloc] initWithFrame:frame];
+            }
+            view = _directionView;
+        }
+            break;
         default:
             break;
     }
@@ -58,6 +75,20 @@
             if (_settingView) {
                 [_settingView removeFromSuperview];
                 _settingView = nil;
+            }
+        }
+            break;
+        case KENViewTypeMemory:{
+            if (_memoryView) {
+                [_memoryView removeFromSuperview];
+                _memoryView = nil;
+            }
+        }
+            break;
+        case KENViewTypeDirection:{
+            if (_directionView) {
+                [_directionView removeFromSuperview];
+                _directionView = nil;
             }
         }
             break;

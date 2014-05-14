@@ -34,21 +34,12 @@
 -(void)initView{
     UIImageView* imgView = [[UIImageView alloc] initWithImage:[self setBackGroundImage]];
     imgView.center = self.center;
-//    if (IsPad) {
-//        float width = self.frame.size.height / imgView.frame.size.height * imgView.frame.size.width;
-//        imgView.frame = CGRectMake((self.frame.size.width - width) / 2, 0, width, self.frame.size.height);
-//    }
-    
+
     _contentView = [[UIView alloc] initWithFrame:imgView.frame];
     imgView.frame = (CGRect){CGPointZero, imgView.frame.size};
     [_contentView addSubview:imgView];
     
     [self addSubview:_contentView];
-    
-    //add title
-    UIImageView* titleView = [[UIImageView alloc] initWithImage:[self setViewTitleImage]];
-    titleView.center = CGPointMake(_contentView.frame.size.width / 2, KNotificationHeight / 2);
-    [_contentView addSubview:titleView];
     
     //top back
     [self setTopLeftBtn];
@@ -63,7 +54,10 @@
 
 #pragma mark - view appear methods
 -(void)viewDidAppear:(BOOL)animated{
-    
+    //add title
+    UIImageView* titleView = [[UIImageView alloc] initWithImage:[self setViewTitleImage]];
+    titleView.center = CGPointMake(_contentView.frame.size.width / 2, KNotificationHeight / 2);
+    [_contentView addSubview:titleView];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
