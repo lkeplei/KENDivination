@@ -44,4 +44,6 @@
 +(NSDateComponents*)getSubFromTwoDate:(NSDate*)from to:(NSDate*)to;
 
 +(NSString*)getFilePathInDocument:(NSString*)fileName;
+
++(void)openUrl:(NSString*)url;
 @end

@@ -11,6 +11,7 @@
 #import "KENViewSetting.h"
 #import "KENViewMemory.h"
 #import "KENViewDirection.h"
+#import "KENViewAboutUs.h"
 
 @interface KENViewFactory ()
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) KENViewSetting* settingView;
 @property (nonatomic, strong) KENViewMemory* memoryView;
 @property (nonatomic, strong) KENViewDirection* directionView;
+@property (nonatomic, strong) KENViewAboutUs* aboutUsView;
 
 @end
 
@@ -55,6 +57,13 @@
             view = _directionView;
         }
             break;
+        case KENViewTypeAboutUs:{
+            if (_aboutUsView == nil) {
+                _aboutUsView = [[KENViewAboutUs alloc] initWithFrame:frame];
+            }
+            view = _aboutUsView;
+        }
+            break;
         default:
             break;
     }
@@ -89,6 +98,13 @@
             if (_directionView) {
                 [_directionView removeFromSuperview];
                 _directionView = nil;
+            }
+        }
+            break;
+        case KENViewTypeAboutUs:{
+            if (_aboutUsView) {
+                [_aboutUsView removeFromSuperview];
+                _aboutUsView = nil;
             }
         }
             break;

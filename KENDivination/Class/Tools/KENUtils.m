@@ -214,4 +214,7 @@ static KENUtils* _shareUtils = nil;
     return [strResource componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:character]];
 }
 
++(void)openUrl:(NSString*)url{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
 @end

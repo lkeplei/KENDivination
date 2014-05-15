@@ -59,4 +59,12 @@
 #define KUserDefaultSetOpenVoice             @"default_open_voice"
 
 
+//key
+#define KDicKeyImg              @"key_img"
+#define KDicKeyImgSec           @"key_img_sec"
+
+//define for server
+#define KIosItunesIP        @"https://itunes.apple.com/cn/app"
+
+
 #endif

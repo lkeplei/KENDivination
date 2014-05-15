@@ -35,6 +35,7 @@ typedef enum {
     KENViewTypeSetting,
     KENViewTypeMemory,
     KENViewTypeDirection,
+    KENViewTypeAboutUs,
 } KENViewType;
 
 #endif

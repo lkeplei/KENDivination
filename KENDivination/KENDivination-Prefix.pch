@@ -47,7 +47,7 @@
 
     #define KMainScreenFrame [[UIScreen mainScreen] bounds]
     #define KMainScreenWidth kMainScreenFrame.size.width
-    #define KMainScreenHeight kMainScreenFrame.size.height-20
+    #define KMainScreenHeight kMainScreenFrame.size.height
     #define KApplicationFrame [[UIScreen mainScreen] applicationFrame]
 
 #endif

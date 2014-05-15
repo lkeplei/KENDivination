@@ -40,7 +40,10 @@
         case KENTypeDirectionHealth:
             return [UIImage imageNamed:@"direction_health_title.png"];
             break;
-        default:
+        default:{
+            _viewDirection = KENTypeDirectionLove;
+            return [UIImage imageNamed:@"direction_love_title.png"];
+        }
             break;
     }
     return nil;
