@@ -46,12 +46,6 @@
 #define KLabelFontArial         @"Arial"
 #define KLabelFontStd           @"Std"
 #define KLabelFontHelvetica     @"Helvetica"
-#define KLabelFontSize12        (12)
-#define KLabelFontSize14        (14)
-#define KLabelFontSize16        (16)
-#define KLabelFontSize18        (18)
-#define KLabelFontSize22        (22)
-#define KLabelFontSize36        (36)
 
 #define KNotificationHeight     (54)
 

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "KENModelDef.h"
 
+@class KENMemory;
+
 @interface KENModel : NSObject
 
 +(KENModel*)shareModel;
@@ -19,5 +21,18 @@
 -(void)playVoiceByType:(KENType)type;
 //视图切换
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate;
+
+
+@property (nonatomic, strong) KENMemory* memoryData;
+
+@end
+
+
+
+
+@interface KENMemory : NSObject
+
+@property (assign) KENType memroyDirection;
+@property (nonatomic, strong) NSString* memoryQuestion;
 
 @end

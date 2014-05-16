@@ -24,7 +24,7 @@
 
 #pragma mark - others
 -(UIImage*)setViewTitleImage{
-    switch (_viewDirection) {
+    switch ([[KENModel shareModel].memoryData memroyDirection]) {
         case KENTypeDirectionLove:
             return [UIImage imageNamed:@"direction_love_title.png"];
             break;
@@ -41,7 +41,7 @@
             return [UIImage imageNamed:@"direction_health_title.png"];
             break;
         default:{
-            _viewDirection = KENTypeDirectionLove;
+            [KENModel shareModel].memoryData.memroyDirection = KENTypeDirectionLove;
             return [UIImage imageNamed:@"direction_love_title.png"];
         }
             break;

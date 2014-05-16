@@ -68,9 +68,8 @@
                                  if (index == 1) {
                                      [self pushView:[SysDelegate.viewController getView:KENViewTypeMemory] animatedType:KENTypeNull];
                                  } else {
-                                     KENViewDirection* direction = (KENViewDirection*)[SysDelegate.viewController getView:KENViewTypeDirection];
-                                     [direction setViewDirection:KENTypeDirectionLove + index];
-                                     [self pushView:direction animatedType:KENTypeNull];
+                                     [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionLove + index];
+                                     [self pushView:[SysDelegate.viewController getView:KENViewTypeQuestion] animatedType:KENTypeNull];
                                  }
                                  _zhuanPanView.transform = CGAffineTransformMakeRotation(0 / 180.0 * M_PI);
                              }

@@ -12,6 +12,7 @@
 #import "KENViewMemory.h"
 #import "KENViewDirection.h"
 #import "KENViewAboutUs.h"
+#import "KENViewQuestion.h"
 
 @interface KENViewFactory ()
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) KENViewMemory* memoryView;
 @property (nonatomic, strong) KENViewDirection* directionView;
 @property (nonatomic, strong) KENViewAboutUs* aboutUsView;
+@property (nonatomic, strong) KENViewQuestion* questionView;
 
 @end
 
@@ -48,6 +50,13 @@
                 _memoryView = [[KENViewMemory alloc] initWithFrame:frame];
             }
             view = _memoryView;
+        }
+            break;
+        case KENViewTypeQuestion:{
+            if (_questionView == nil) {
+                _questionView = [[KENViewQuestion alloc] initWithFrame:frame];
+            }
+            view = _questionView;
         }
             break;
         case KENViewTypeDirection:{
@@ -91,6 +100,13 @@
             if (_memoryView) {
                 [_memoryView removeFromSuperview];
                 _memoryView = nil;
+            }
+        }
+            break;
+        case KENViewTypeQuestion:{
+            if (_questionView) {
+                [_questionView removeFromSuperview];
+                _questionView = nil;
             }
         }
             break;
