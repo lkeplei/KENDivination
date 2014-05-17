@@ -51,11 +51,14 @@
 
 
 #define KUserDefaultSetOpenVoice             @"default_open_voice"
+#define KUserDefaultJieMi                    @"default_jie_mi"
 
 
 //key
 #define KDicKeyImg              @"key_img"
 #define KDicKeyImgSec           @"key_img_sec"
+#define KDicKeyJiaMi            @"key_jia_mi"
+#define KDicKeyPaiZhen          @"key_pai_zhen"
 
 //define for server
 #define KIosItunesIP        @"https://itunes.apple.com/cn/app"

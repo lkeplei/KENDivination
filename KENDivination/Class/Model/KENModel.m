@@ -24,8 +24,14 @@
 };
 
 -(void)initData{
+    _memoryData = [[KENMemory alloc] init];
+    
     if ([KENDataManager getDataByKey:KUserDefaultSetOpenVoice] == nil) {
         [KENDataManager setDataByKey:[NSNumber numberWithBool:YES] forkey:KUserDefaultSetOpenVoice];
+    }
+    
+    if ([KENDataManager getDataByKey:KUserDefaultJieMi] == nil) {
+        [KENDataManager setDataByKey:[NSNumber numberWithBool:NO] forkey:KUserDefaultJieMi];
     }
 }
 
@@ -77,7 +83,76 @@
     //    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);   //让手机震动
 }
 
+-(NSArray*)getDirectionPaiZhen{
+    NSMutableDictionary* resdic = LOADDIC(@"direction", @"plist");
+    switch (_memoryData.memroyDirection) {
+        case KENTypeDirectionLove:
+            return [resdic objectForKey:@"direction_love"];
+            break;
+        case KENTypeDirectionWork:
+            return [resdic objectForKey:@"direction_work"];
+            break;
+        case KENTypeDirectionMoney:
+            return [resdic objectForKey:@"direction_money"];
+            break;
+        case KENTypeDirectionRelation:
+            return [resdic objectForKey:@"direction_relation"];
+            break;
+        case KENTypeDirectionHealth:
+            return [resdic objectForKey:@"direction_health"];
+            break;
+        default:{
+            _memoryData.memroyDirection = KENTypeDirectionLove;
+            return [resdic objectForKey:@"direction_love"];
+        }
+            break;
+    }
+    return nil;
+}
+
+-(UIImage*)getDirectionTitle{
+    switch ([_memoryData memroyDirection]) {
+        case KENTypeDirectionLove:
+            return [UIImage imageNamed:@"direction_love_title.png"];
+            break;
+        case KENTypeDirectionWork:
+            return [UIImage imageNamed:@"direction_work_title.png"];
+            break;
+        case KENTypeDirectionMoney:
+            return [UIImage imageNamed:@"direction_money_title.png"];
+            break;
+        case KENTypeDirectionRelation:
+            return [UIImage imageNamed:@"direction_relation_title.png"];
+            break;
+        case KENTypeDirectionHealth:
+            return [UIImage imageNamed:@"direction_health_title.png"];
+            break;
+        default:{
+            _memoryData.memroyDirection = KENTypeDirectionLove;
+            return [UIImage imageNamed:@"direction_love_title.png"];
+        }
+            break;
+    }
+    return nil;
+}
+
+-(UIImage*)getPaiZhenTitle{
+    return nil;
+}
+
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{
     
 }
+@end
+
+
+
+
+
+
+
+
+
+@implementation KENMemory
+
 @end

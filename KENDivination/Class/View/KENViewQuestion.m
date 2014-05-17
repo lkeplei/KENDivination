@@ -30,29 +30,7 @@
 
 #pragma mark - others
 -(UIImage*)setViewTitleImage{
-    switch ([[KENModel shareModel].memoryData memroyDirection]) {
-        case KENTypeDirectionLove:
-            return [UIImage imageNamed:@"direction_love_title.png"];
-            break;
-        case KENTypeDirectionWork:
-            return [UIImage imageNamed:@"direction_work_title.png"];
-            break;
-        case KENTypeDirectionMoney:
-            return [UIImage imageNamed:@"direction_money_title.png"];
-            break;
-        case KENTypeDirectionRelation:
-            return [UIImage imageNamed:@"direction_relation_title.png"];
-            break;
-        case KENTypeDirectionHealth:
-            return [UIImage imageNamed:@"direction_health_title.png"];
-            break;
-        default:{
-            [KENModel shareModel].memoryData.memroyDirection = KENTypeDirectionLove;
-            return [UIImage imageNamed:@"direction_love_title.png"];
-        }
-            break;
-    }
-    return nil;
+    return [[KENModel shareModel] getDirectionTitle];
 }
 
 -(void)showView{

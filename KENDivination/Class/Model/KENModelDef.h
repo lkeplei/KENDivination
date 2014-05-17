@@ -37,6 +37,7 @@ typedef enum {
     KENViewTypeQuestion,
     KENViewTypeDirection,
     KENViewTypeAboutUs,
+    KENViewTypePaiZhen,
 } KENViewType;
 
 #endif

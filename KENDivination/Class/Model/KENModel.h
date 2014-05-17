@@ -21,6 +21,12 @@
 -(void)playVoiceByType:(KENType)type;
 //视图切换
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate;
+//获取方向牌阵配置
+-(NSArray*)getDirectionPaiZhen;
+//获取方向抬头图像
+-(UIImage*)getDirectionTitle;
+//获取牌阵抬头图像
+-(UIImage*)getPaiZhenTitle;
 
 
 @property (nonatomic, strong) KENMemory* memoryData;
@@ -33,6 +39,7 @@
 @interface KENMemory : NSObject
 
 @property (assign) KENType memroyDirection;
+@property (assign) NSInteger memoryPaiZhen;
 @property (nonatomic, strong) NSString* memoryQuestion;
 
 @end
