@@ -8,7 +8,7 @@
 
 #import "KENViewAboutUs.h"
 #import "KENUtils.h"
-#import "KENViewAlert.h"
+#import "KENUiViewAlert.h"
 #import "KENConfig.h"
 
 @interface KENViewAboutUs ()
@@ -61,7 +61,7 @@
     [dic setObject:[UIImage imageNamed:@"button_close.png"] forKey:KDicKeyImg];
     [dic setObject:[UIImage imageNamed:@"button_close_sec.png"] forKey:KDicKeyImgSec];
     
-    KENViewAlert* alert = [[KENViewAlert alloc] initWithMessage:[UIImage imageNamed:@"about_us_alert.png"]
+    KENUiViewAlert* alert = [[KENUiViewAlert alloc] initWithMessage:[UIImage imageNamed:@"about_us_alert.png"]
                                                        btnArray:[[NSArray alloc] initWithObjects:dic, nil]];
     [alert show];
     

@@ -1,19 +1,19 @@
 //
-//  KENViewAlert.m
+//  KENUiViewAlert.m
 //  KENDivination
 //
 //  Created by 刘坤 on 14-5-15.
 //  Copyright (c) 2014年 ken. All rights reserved.
 //
 
-#import "KENViewAlert.h"
+#import "KENUiViewAlert.h"
 #import "KENUtils.h"
 #import "KENConfig.h"
 #import "KENViewController.h"
 
 #define KButtonsBaseTag         (500)
 
-@implementation KENViewAlert
+@implementation KENUiViewAlert
 
 -(id)initWithMessage:(UIImage*)img btnArray:(NSArray*)array{
     self = [super initWithFrame:KMainScreenFrame];

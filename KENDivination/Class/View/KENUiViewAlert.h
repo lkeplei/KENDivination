@@ -1,5 +1,5 @@
 //
-//  KENViewAlert.h
+//  KENUiViewAlert.h
 //  KENDivination
 //
 //  Created by 刘坤 on 14-5-15.
@@ -10,7 +10,7 @@
 
 typedef void (^AlertViewBlock)(int);
 
-@interface KENViewAlert : UIView
+@interface KENUiViewAlert : UIView
 
 -(void)show;
 -(id)initWithMessage:(UIImage*)img btnArray:(NSArray*)array;

@@ -137,7 +137,7 @@
 }
 
 -(UIImage*)getPaiZhenTitle{
-    return nil;
+    return [UIImage imageNamed:[NSString stringWithFormat:@"pai_zhen_title_%02d.png", _memoryData.memoryPaiZhen]];;
 }
 
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{

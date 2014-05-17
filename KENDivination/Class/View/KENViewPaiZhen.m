@@ -18,4 +18,9 @@
     }
     return self;
 }
+
+#pragma mark - others
+-(UIImage*)setViewTitleImage{
+    return [[KENModel shareModel] getPaiZhenTitle];
+}
 @end
