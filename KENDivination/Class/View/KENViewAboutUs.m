@@ -68,23 +68,5 @@
     alert.alertBlock = ^(int index){
         [_qiqiView setHidden:YES];
     };
-    
-    
-    
-//    NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-//    [dic setObject:[UIImage imageNamed:@"button_cancel.png"] forKey:KDicKeyImg];
-//    [dic setObject:[UIImage imageNamed:@"button_cancel_sec.png"] forKey:KDicKeyImgSec];
-//    
-//    NSMutableDictionary* dic1 = [[NSMutableDictionary alloc] init];
-//    [dic1 setObject:[UIImage imageNamed:@"button_confirm.png"] forKey:KDicKeyImg];
-//    [dic1 setObject:[UIImage imageNamed:@"button_confirm_sec.png"] forKey:KDicKeyImgSec];
-//    
-//    KENViewAlert* alert = [[KENViewAlert alloc] initWithMessage:[UIImage imageNamed:@"about_us_alert.png"]
-//                                                       btnArray:[[NSArray alloc] initWithObjects:dic, dic1, nil]];
-//    [alert show];
-//    
-//    alert.alertBlock = ^(int index){
-//        DebugLog(@"index = %d", index);
-//    };
 }
 @end

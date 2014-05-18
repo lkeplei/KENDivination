@@ -7,6 +7,18 @@
 //
 
 #import "KENViewPaiZhen.h"
+#import "KENUtils.h"
+#import "KENModel.h"
+#import "KENConfig.h"
+#import "KENUiViewAlert.h"
+#import "KENUiViewStartXiPai.h"
+#import "KENUiViewEndXiPai.h"
+
+@interface KENViewPaiZhen ()
+
+@property (nonatomic, strong) KENUiViewBase* currentUiView;
+
+@end
 
 @implementation KENViewPaiZhen
 
@@ -19,8 +31,72 @@
     return self;
 }
 
+-(void)showVIewWithType:(KENViewType)type{
+    if (_currentUiView == nil || _currentUiView.viewType != type) {
+        if (_currentUiView) {
+            [_currentUiView removeFromSuperview];
+            _currentUiView = nil;
+        }
+        
+        CGRect frame = CGRectMake(0, KNotificationHeight, self.contentView.frame.size.width,
+                                  self.contentView.frame.size.height - KNotificationHeight);
+        switch (type) {
+            case KENUiViewTypeStartXiPai:{
+                _currentUiView = [[KENUiViewStartXiPai alloc] initWithFrame:frame];
+                [(KENUiViewStartXiPai*)_currentUiView setDelegate:self];
+                [(KENUiViewStartXiPai*)_currentUiView initViewWithType:KENUiViewTypeStartXiPai];
+            }
+                break;
+            case KENUiViewTypeEndXiPai:{
+                _currentUiView = [[KENUiViewEndXiPai alloc] initWithFrame:frame];
+                [(KENUiViewStartXiPai*)_currentUiView setDelegate:self];
+            }
+                break;
+            default:
+                break;
+        }
+        
+        [self.contentView addSubview:_currentUiView];
+    }
+}
+
 #pragma mark - others
 -(UIImage*)setViewTitleImage{
     return [[KENModel shareModel] getPaiZhenTitle];
+}
+
+-(void)showView{
+    [self showVIewWithType:KENUiViewTypeStartXiPai];
+}
+
+-(void)setTopLeftBtn{
+    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+                                         image:[UIImage imageNamed:@"app_btn_back.png"]
+                                      imagesec:[UIImage imageNamed:@"app_btn_back_sec.png"]
+                                        target:self
+                                        action:@selector(backBtnClicked:)];
+    setBtn.center = CGPointMake(setBtn.center.x + 20, KNotificationHeight / 2);
+    [self.contentView addSubview:setBtn];
+}
+
+#pragma mark - btn clicked
+-(void)backBtnClicked:(UIButton*)button{
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
+    [dic setObject:[UIImage imageNamed:@"button_cancel.png"] forKey:KDicKeyImg];
+    [dic setObject:[UIImage imageNamed:@"button_cancel_sec.png"] forKey:KDicKeyImgSec];
+
+    NSMutableDictionary* dic1 = [[NSMutableDictionary alloc] init];
+    [dic1 setObject:[UIImage imageNamed:@"button_confirm.png"] forKey:KDicKeyImg];
+    [dic1 setObject:[UIImage imageNamed:@"button_confirm_sec.png"] forKey:KDicKeyImgSec];
+
+    KENUiViewAlert* alert = [[KENUiViewAlert alloc] initWithMessage:[UIImage imageNamed:@"exit_whether_alert.png"]
+                                                       btnArray:[[NSArray alloc] initWithObjects:dic, dic1, nil]];
+    [alert show];
+
+    alert.alertBlock = ^(int index){
+        if (index == 1) {
+            [self popToRootView:KENTypeNull];
+        }
+    };
 }
 @end

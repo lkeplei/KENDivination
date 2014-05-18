@@ -10,4 +10,6 @@
 
 @interface KENViewPaiZhen : KENViewBase
 
+-(void)showVIewWithType:(KENViewType)type;
+
 @end

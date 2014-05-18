@@ -26,6 +26,7 @@
 
 -(void)pushView:(KENViewBase*)view animatedType:(KENType)type;
 -(void)popView:(KENType)type;
+-(void)popToRootView:(KENType)type;
 
 @property (assign) KENViewType viewType;
 @property (nonatomic, strong) UIView* contentView;

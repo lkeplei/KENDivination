@@ -38,6 +38,12 @@ typedef enum {
     KENViewTypeDirection,
     KENViewTypeAboutUs,
     KENViewTypePaiZhen,
+    
+    KENUiViewTypeStartXiPai = 100,
+    KENUiViewTypeEndXiPai,
+    KENUiViewTypeStartQiePai,
+    KENUiViewTypeEndQiePai,
+    KENUiViewTypeStartChouPai,
 } KENViewType;
 
 #endif

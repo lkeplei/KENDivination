@@ -77,6 +77,22 @@
     [_viewFactory removeView:lastView.viewType];
 }
 
+-(void)popToRootView:(KENViewBase*)subView firstView:(KENViewBase*)view animatedType:(KENType)type array:(NSArray*)array{
+    _currentShowView = view;
+    
+    [[KENModel shareModel] changeView:subView
+                                   to:view
+                                 type:KENTypeNull
+                             delegate:self];
+    
+    //页面已切换
+    [view viewDidAppear:YES];
+    [subView viewDidDisappear:YES];
+    
+    for (int i = 0; i < [array count]; i++) {
+        [_viewFactory removeView:((KENViewBase*)[array objectAtIndex:i]).viewType];
+    }
+}
 @end
 
 

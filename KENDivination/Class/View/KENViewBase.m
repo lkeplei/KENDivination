@@ -110,15 +110,29 @@
                 view = [_viewArray objectAtIndex:[_viewArray count] - 2];
             }
             
-            [view viewWillAppear:NO];
-            [subView viewWillDisappear:NO];
-
-            //切换视图
-            [SysDelegate.viewController popView:subView preView:view animatedType:type];
-            
-            [_viewArray removeLastObject];
-            view = nil;
+            if (view != subView) {
+                [view viewWillAppear:NO];
+                [subView viewWillDisappear:NO];
+                
+                //切换视图
+                [SysDelegate.viewController popView:subView preView:view animatedType:type];
+                
+                [_viewArray removeLastObject];
+                view = nil;
+            }
         }
+    }
+}
+
+-(void)popToRootView:(KENType)type{
+    if (_parentView) {
+        [_parentView viewWillAppear:NO];
+        [self viewWillDisappear:NO];
+        
+        //切换视图
+        [SysDelegate.viewController popToRootView:self firstView:_parentView animatedType:type array:_parentView.viewArray];
+        
+        [_parentView.viewArray removeAllObjects];
     }
 }
 

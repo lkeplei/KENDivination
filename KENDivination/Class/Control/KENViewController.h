@@ -30,6 +30,16 @@
  */
 -(void)popView:(KENViewBase*)lastView preView:(KENViewBase*)preView animatedType:(KENType)type;
 
+/**
+ *  视图全出栈
+ *
+ *  @param subView 要出的视图
+ *  @param view  最底层视图
+ *  @param type 出栈动画
+ *  @param array 视图数组
+ */
+-(void)popToRootView:(KENViewBase*)subView firstView:(KENViewBase*)view animatedType:(KENType)type array:(NSArray*)array;
+
 @property (nonatomic, strong) KENViewFactory* viewFactory;
 
 @end
