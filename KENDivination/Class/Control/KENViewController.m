@@ -10,7 +10,6 @@
 
 @interface KENViewController ()
 
-@property (nonatomic, strong) KENViewBase* currentShowView;
 @property (nonatomic, strong) KENViewBase* preShowView;
 
 @end

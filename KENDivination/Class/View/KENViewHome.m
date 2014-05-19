@@ -78,26 +78,28 @@
 	}
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
-        CGPoint point = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
-        int offx = abs(point.x - prePoint.x);
-        if (offx > 1) {
-            if (point.y > 0) {
-                if (prePoint.x < point.x) {
-                    rotateView += offx;
+        if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
+            CGPoint point = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
+            int offx = abs(point.x - prePoint.x);
+            if (offx > 1) {
+                if (point.y > 0) {
+                    if (prePoint.x < point.x) {
+                        rotateView += offx;
+                    } else {
+                        rotateView -= offx;
+                    }
                 } else {
-                    rotateView -= offx;
+                    if (prePoint.x < point.x) {
+                        rotateView -= offx;
+                    } else {
+                        rotateView += offx;
+                    }
                 }
-            } else {
-                if (prePoint.x < point.x) {
-                    rotateView -= offx;
-                } else {
-                    rotateView += offx;
-                }
+                
+                prePoint = point;
+                _zhuanPanView.transform = CGAffineTransformMakeRotation(rotateView / 180.0 * M_PI);
+                rotateView = rotateView > 360 ? rotateView - 360 : rotateView;
             }
-            
-            prePoint = point;
-            _zhuanPanView.transform = CGAffineTransformMakeRotation(rotateView / 180.0 * M_PI);
-            rotateView = rotateView > 360 ? rotateView - 360 : rotateView;
         }
 	}
 }

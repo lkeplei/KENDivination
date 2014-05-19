@@ -41,6 +41,7 @@
 -(void)popToRootView:(KENViewBase*)subView firstView:(KENViewBase*)view animatedType:(KENType)type array:(NSArray*)array;
 
 @property (nonatomic, strong) KENViewFactory* viewFactory;
+@property (nonatomic, strong) KENViewBase* currentShowView;
 
 @end
 

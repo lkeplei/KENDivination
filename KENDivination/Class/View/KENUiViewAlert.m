@@ -16,12 +16,13 @@
 @implementation KENUiViewAlert
 
 -(id)initWithMessage:(UIImage*)img btnArray:(NSArray*)array{
-    self = [super initWithFrame:KMainScreenFrame];
+    self = [super initWithFrame:CGRectMake(0, 0, 320, 480)];
     if (self) {
         [self setBackgroundColor:[UIColor clearColor]];
         
         UIImageView* bgView = [[UIImageView alloc] initWithImage:img];
-        bgView.center = CGPointMake(160, 280);
+        bgView.center = CGPointMake(160, 240);
+        
         [self addSubview:bgView];
         
         [self setButtons:array];
@@ -31,10 +32,10 @@
 
 -(void)setButtons:(NSArray*)array{
     if ([array count] == 1) {
-        [self addButton:CGPointMake(160, 315) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
+        [self addButton:CGPointMake(160, 275) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
     } else if ([array count] == 2) {
-        [self addButton:CGPointMake(90, 315) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
-        [self addButton:CGPointMake(234, 315) res:[array objectAtIndex:1] tag:KButtonsBaseTag + 1];
+        [self addButton:CGPointMake(90, 275) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
+        [self addButton:CGPointMake(234, 275) res:[array objectAtIndex:1] tag:KButtonsBaseTag + 1];
     } else {
         
     }
@@ -52,7 +53,7 @@
 }
 
 -(void)show{
-    [SysDelegate.viewController.view addSubview:self];
+    [SysDelegate.viewController.currentShowView.contentView addSubview:self];
 }
 
 #pragma mark - setting btn

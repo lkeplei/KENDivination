@@ -31,7 +31,7 @@
     return self;
 }
 
--(void)showVIewWithType:(KENViewType)type{
+-(void)showViewWithType:(KENViewType)type{
     if (_currentUiView == nil || _currentUiView.viewType != type) {
         if (_currentUiView) {
             [_currentUiView removeFromSuperview];
@@ -42,9 +42,8 @@
                                   self.contentView.frame.size.height - KNotificationHeight);
         switch (type) {
             case KENUiViewTypeStartXiPai:{
-                _currentUiView = [[KENUiViewStartXiPai alloc] initWithFrame:frame];
+                _currentUiView = [[KENUiViewStartXiPai alloc] initWithFrame:frame type:KENUiViewTypeStartXiPai];
                 [(KENUiViewStartXiPai*)_currentUiView setDelegate:self];
-                [(KENUiViewStartXiPai*)_currentUiView initViewWithType:KENUiViewTypeStartXiPai];
             }
                 break;
             case KENUiViewTypeEndXiPai:{
@@ -66,7 +65,7 @@
 }
 
 -(void)showView{
-    [self showVIewWithType:KENUiViewTypeStartXiPai];
+    [self showViewWithType:KENUiViewTypeStartXiPai];
 }
 
 -(void)setTopLeftBtn{

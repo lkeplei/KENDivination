@@ -12,19 +12,19 @@
 
 @implementation KENUiViewStartXiPai
 
-- (id)initWithFrame:(CGRect)frame{
+- (id)initWithFrame:(CGRect)frame type:(KENViewType)type{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         self.viewType = KENUiViewTypeStartXiPai;
+        [self initViewWithType:type];
     }
     return self;
 }
 
-
 -(void)initViewWithType:(KENViewType)type{
     UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    imgView.center = CGPointMake(160, 132);
+    imgView.center = CGPointMake(160, 80);
     if (type == KENUiViewTypeStartXiPai || type == KENUiViewTypeStartQiePai) {
         imgView.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
     }
@@ -56,7 +56,7 @@
             break;
     }
     UILabel* label = [KENUtils labelWithTxt:content
-                                      frame:CGRectMake(60, 165, 210, 150)
+                                      frame:CGRectMake(60, 165, 210, 100)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
     label.textAlignment = KTextAlignmentLeft;
@@ -68,14 +68,14 @@
                                       imagesec:imgSec
                                         target:self
                                         action:@selector(btnClicked:)];
-    button.center = CGPointMake(160, 390);
+    button.center = CGPointMake(160, 340);
     [self addSubview:button];
 }
 
 #pragma mark - button
 -(void)btnClicked:(UIButton*)button{
     if (self.delegate) {
-        [self.delegate showVIewWithType:KENUiViewTypeEndXiPai];
+        [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
     }
 }
 @end

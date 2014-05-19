@@ -11,6 +11,8 @@
 #import "KENConfig.h"
 #import "KENUtils.h"
 
+#define KImgTitleViewTag            (1000)
+
 @interface KENViewBase ()
 
 @property (nonatomic, strong) NSMutableArray* viewArray;
@@ -43,21 +45,25 @@
     
     //top back
     [self setTopLeftBtn];
-    
-    if (IsPad) {
-        CATransform3D currentTransform = _contentView.layer.transform;
-        float rate = self.frame.size.height / imgView.frame.size.height;
-        CATransform3D scaled = CATransform3DScale(currentTransform, rate, rate, rate);
-        _contentView.layer.transform = scaled;
-    }
 }
 
 #pragma mark - view appear methods
 -(void)viewDidAppear:(BOOL)animated{
     //add title
-    UIImageView* titleView = [[UIImageView alloc] initWithImage:[self setViewTitleImage]];
-    titleView.center = CGPointMake(_contentView.frame.size.width / 2, KNotificationHeight / 2);
-    [_contentView addSubview:titleView];
+    UIView* titleView = [_contentView viewWithTag:KImgTitleViewTag];
+    if (titleView == nil) {
+        titleView = [[UIImageView alloc] initWithImage:[self setViewTitleImage]];
+        titleView.tag = KImgTitleViewTag;
+        titleView.center = CGPointMake(_contentView.frame.size.width / 2, KNotificationHeight / 2);
+        [_contentView addSubview:titleView];
+    }
+    
+    if (IsPad) {
+        CATransform3D currentTransform = _contentView.layer.transform;
+        float rate = self.frame.size.height / _contentView.frame.size.height;
+        CATransform3D scaled = CATransform3DScale(currentTransform, rate, rate, rate);
+        _contentView.layer.transform = scaled;
+    }
 }
 
 -(void)viewDidDisappear:(BOOL)animated{

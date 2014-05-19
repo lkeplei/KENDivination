@@ -11,6 +11,6 @@
 
 @interface KENUiViewStartXiPai : KENUiViewBase
 
--(void)initViewWithType:(KENViewType)type;
+-(id)initWithFrame:(CGRect)frame type:(KENViewType)type;
 
 @end
