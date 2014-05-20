@@ -46,4 +46,6 @@
 +(NSString*)getFilePathInDocument:(NSString*)fileName;
 
 +(void)openUrl:(NSString*)url;
+
++(int)getRandomNumber:(int)from to:(int)to;
 @end
