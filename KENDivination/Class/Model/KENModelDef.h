@@ -44,6 +44,7 @@ typedef enum {
     KENUiViewTypeStartQiePai,
     KENUiViewTypeEndQiePai,
     KENUiViewTypeStartChouPai,
+    KENUiViewTypeQiePai,
 } KENViewType;
 
 #endif

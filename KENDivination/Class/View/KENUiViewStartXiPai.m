@@ -10,6 +10,13 @@
 #import "KENUtils.h"
 #import "KENConfig.h"
 
+
+@interface KENUiViewStartXiPai ()
+
+@property (assign) KENViewType currentViewType;
+
+@end
+
 @implementation KENUiViewStartXiPai
 
 - (id)initWithFrame:(CGRect)frame type:(KENViewType)type{
@@ -23,9 +30,11 @@
 }
 
 -(void)initViewWithType:(KENViewType)type{
+    _currentViewType = type;
+    
     UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
     imgView.center = CGPointMake(160, 80);
-    if (type == KENUiViewTypeStartXiPai || type == KENUiViewTypeStartQiePai) {
+    if (_currentViewType == KENUiViewTypeStartXiPai || _currentViewType == KENUiViewTypeStartQiePai) {
         imgView.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
     }
     [self addSubview:imgView];
@@ -33,7 +42,7 @@
     NSString* content = nil;
     UIImage* img = nil;
     UIImage* imgSec = nil;
-    switch (type) {
+    switch (_currentViewType) {
         case KENUiViewTypeStartXiPai:{
             content = MyLocal(@"xipai_content");
             img = [UIImage imageNamed:@"button_start_xipai.png"];
@@ -56,9 +65,12 @@
             break;
     }
     UILabel* label = [KENUtils labelWithTxt:content
-                                      frame:CGRectMake(60, 165, 210, 100)
+                                      frame:CGRectMake(60, 145, 210, 150)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
+//    if (type == KENUiViewTypeStartChouPai) {
+//        label.frame = CGRectOffset(label.frame, 0, -30);
+//    }
     label.textAlignment = KTextAlignmentLeft;
     label.numberOfLines = 0;
     [self addSubview:label];
@@ -75,7 +87,21 @@
 #pragma mark - button
 -(void)btnClicked:(UIButton*)button{
     if (self.delegate) {
-        [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
+        switch (_currentViewType) {
+            case KENUiViewTypeStartXiPai:{
+                [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
+            }
+                break;
+            case KENUiViewTypeStartQiePai:{
+                [self.delegate showViewWithType:KENUiViewTypeQiePai];
+            }
+                break;
+            case KENUiViewTypeStartChouPai:{
+            }
+                break;
+            default:
+                break;
+        }
     }
 }
 @end

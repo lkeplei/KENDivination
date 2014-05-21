@@ -168,6 +168,7 @@
 		042514B4192CEFC500A670CF /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 042514AD192CEFC500A670CF /* Default-Landscape~ipad.png */; };
 		042514B5192CEFC500A670CF /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 042514AE192CEFC500A670CF /* Default-Portrait@2x~ipad.png */; };
 		042514B6192CEFC500A670CF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 042514AF192CEFC500A670CF /* Default-Landscape@2x~ipad.png */; };
+		042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */ = {isa = PBXBuildFile; fileRef = 042514B8192CF27700A670CF /* KENUiViewQiePai.m */; };
 		042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 042635AA192718DC0057B4EF /* KENViewPaiZhen.m */; };
 		04A07BA41922478C00F33A1D /* an_jian.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04A07B9D1922478C00F33A1D /* an_jian.mp3 */; };
 		04A07BA51922478C00F33A1D /* chou_pai.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04A07B9E1922478C00F33A1D /* chou_pai.mp3 */; };
@@ -390,6 +391,8 @@
 		042514AD192CEFC500A670CF /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		042514AE192CEFC500A670CF /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		042514AF192CEFC500A670CF /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		042514B7192CF27700A670CF /* KENUiViewQiePai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewQiePai.h; sourceTree = "<group>"; };
+		042514B8192CF27700A670CF /* KENUiViewQiePai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewQiePai.m; sourceTree = "<group>"; };
 		042635A9192718DC0057B4EF /* KENViewPaiZhen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewPaiZhen.h; sourceTree = "<group>"; };
 		042635AA192718DC0057B4EF /* KENViewPaiZhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhen.m; sourceTree = "<group>"; };
 		04A07B9D1922478C00F33A1D /* an_jian.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = an_jian.mp3; sourceTree = "<group>"; };
@@ -790,6 +793,8 @@
 				0400E13B1928DCA0004D3B30 /* KENUiViewBase.m */,
 				0400E1371928C8B2004D3B30 /* KENUiViewEndXiPai.h */,
 				0400E1381928C8B2004D3B30 /* KENUiViewEndXiPai.m */,
+				042514B7192CF27700A670CF /* KENUiViewQiePai.h */,
+				042514B8192CF27700A670CF /* KENUiViewQiePai.m */,
 				0400E0061928A7B5004D3B30 /* KENUiViewStartXiPai.h */,
 				0400E0071928A7B5004D3B30 /* KENUiViewStartXiPai.m */,
 				040AF73D1924E77A00F5FDCB /* KENViewAboutUs.h */,
@@ -1126,6 +1131,7 @@
 				042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */,
 				04B323711920FA8700C055FF /* KENUtils.m in Sources */,
 				0400E0081928A7B5004D3B30 /* KENUiViewStartXiPai.m in Sources */,
+				042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */,
 				04B323581920EE6B00C055FF /* KENModel.m in Sources */,
 				04B323551920EE0700C055FF /* KENDivination.xcdatamodeld in Sources */,
 				04A07BC0192261C300F33A1D /* KENDataManager.m in Sources */,

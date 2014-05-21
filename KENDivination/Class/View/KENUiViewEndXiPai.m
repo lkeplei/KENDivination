@@ -72,7 +72,6 @@
                              times++;
                          }
                      }];
-
 }
 
 -(void)startAnimation{

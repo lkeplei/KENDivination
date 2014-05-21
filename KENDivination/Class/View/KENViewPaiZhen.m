@@ -13,6 +13,7 @@
 #import "KENUiViewAlert.h"
 #import "KENUiViewStartXiPai.h"
 #import "KENUiViewEndXiPai.h"
+#import "KENUiViewQiePai.h"
 
 @interface KENViewPaiZhen ()
 
@@ -41,14 +42,20 @@
         CGRect frame = CGRectMake(0, KNotificationHeight, self.contentView.frame.size.width,
                                   self.contentView.frame.size.height - KNotificationHeight);
         switch (type) {
+            case KENUiViewTypeStartQiePai:
             case KENUiViewTypeStartXiPai:{
-                _currentUiView = [[KENUiViewStartXiPai alloc] initWithFrame:frame type:KENUiViewTypeStartXiPai];
-                [(KENUiViewStartXiPai*)_currentUiView setDelegate:self];
+                _currentUiView = [[KENUiViewStartXiPai alloc] initWithFrame:frame type:type];
+                [_currentUiView setDelegate:self];
             }
                 break;
             case KENUiViewTypeEndXiPai:{
                 _currentUiView = [[KENUiViewEndXiPai alloc] initWithFrame:frame];
-                [(KENUiViewStartXiPai*)_currentUiView setDelegate:self];
+                [_currentUiView setDelegate:self];
+            }
+                break;
+            case KENUiViewTypeQiePai:{
+                _currentUiView = [[KENUiViewQiePai alloc] initWithFrame:frame];
+                [_currentUiView setDelegate:self];
             }
                 break;
             default:
