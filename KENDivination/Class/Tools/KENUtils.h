@@ -48,4 +48,5 @@
 +(void)openUrl:(NSString*)url;
 
 +(int)getRandomNumber:(int)from to:(int)to;
++(NSString*)getPreferredLanguage;
 @end

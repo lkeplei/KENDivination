@@ -61,7 +61,7 @@
 #define KDicKeyPaiZhen          @"key_pai_zhen"
 
 //define for server
-#define KIosItunesIP        @"https://itunes.apple.com/cn/app"
-
+#define KIosZhHansItunesIP      @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文
+#define KIosENItunesIP          @"https://itunes.apple.com/cn/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //英文、其他
 
 #endif

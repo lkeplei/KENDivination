@@ -222,4 +222,16 @@ static KENUtils* _shareUtils = nil;
 +(int)getRandomNumber:(int)from to:(int)to{
     return (int)(from + (arc4random() % (to - from + 1)));
 }
+
+/**
+ *得到本机现在用的语言
+ * en:英文  zh-Hans:简体中文   zh-Hant:繁体中文    ja:日本  ......
+ */
++(NSString*)getPreferredLanguage{
+    NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
+    NSArray* languages = [defs objectForKey:@"AppleLanguages"];
+    NSString* preferredLang = [languages objectAtIndex:0];
+    NSLog(@"Preferred Language:%@", preferredLang);
+    return preferredLang;
+}
 @end

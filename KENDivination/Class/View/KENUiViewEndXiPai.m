@@ -11,7 +11,10 @@
 #import "KENConfig.h"
 #import "KENViewPaiZhen.h"
 
-@interface KENUiViewEndXiPai ()
+@interface KENUiViewEndXiPai (){
+    BOOL willJump;
+    BOOL animating;
+}
 
 @property (nonatomic, strong) UIImageView* paiTop;
 @property (nonatomic, strong) UIImageView* paiBottom;
@@ -25,7 +28,8 @@
     if (self) {
         // Initialization code
         self.viewType = KENUiViewTypeEndXiPai;
-        
+        willJump = NO;
+        animating = NO;
         [self initView];
     }
     return self;
@@ -53,37 +57,105 @@
     [self startAnimation];
 }
 
--(void)startAnimation{
-    static int step = 1;
-    static int times = 0;
-    static BOOL canTrans = YES;
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        int trans = [KENUtils getRandomNumber:0 to:1];
-        if (trans == 1 && step % 2 == 0 && canTrans) {
-            _paiTop.transform = CGAffineTransformMakeRotation(M_PI_2 + M_PI * times);
-            times++;
-            canTrans = NO;
-        } else {
-            if (step % 2 == 1) {
-                _paiTop.center = CGPointMake(160, 160);
-            } else {
-                _paiTop.center = CGPointMake(160, 70);
-            }
-            step++;
-            canTrans = YES;
-        }
+-(void)startTransAnimation:(NSTimeInterval)duration{
+    static int times = 1;
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        _paiBottom.transform = CGAffineTransformRotate(_paiBottom.transform, M_PI_2);
     }
                      completion:^(BOOL finished) {
                          if (finished) {
-                             [self startAnimation];
+                             if (times % 2 == 0) {
+                                 [self startAnimation];
+                             } else {
+                                 [self startTransAnimation:0.5];
+                             }
+                             times++;
                          }
                      }];
+
 }
+
+-(void)startAnimation{
+    static int step = 1;
+    static BOOL canTrans = YES;
+    int trans = [KENUtils getRandomNumber:0 to:1];
+    if (trans == 1 && step % 2 == 0 && canTrans) {
+        [self startTransAnimation:0.75];
+        canTrans = NO;
+    } else {
+        [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            if (step % 2 == 1) {
+                animating = YES;
+                _paiBottom.center = CGPointMake(160, 160);
+            } else {
+                _paiBottom.center = CGPointMake(160, 70);
+            }
+            canTrans = YES;
+            step++;
+        }
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 if (step % 2 == 1) {
+                                     animating = NO;
+                                 }
+                                 
+                                 if (willJump && !animating) {
+                                     [self btnClicked:nil];
+                                 } else {
+                                     [self startAnimation];
+                                 }
+                             }
+                         }];
+    }
+}
+
+//-(void)startAnimation{
+//    static int step = 1;
+//    static int times = 1;
+//    static BOOL canTrans = YES;
+//    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+//        animating = YES;
+//        
+//        int trans = [KENUtils getRandomNumber:0 to:1];
+//        if (trans == 1 && step % 2 == 0 && canTrans) {
+////            _paiBottom.transform = CGAffineTransformMakeRotation(M_PI_2 + M_PI * times);
+//            DebugLog(@"times = %d", times);
+////            _paiBottom.transform = CGAffineTransformMakeRotation(times * M_PI);
+//            int angle = times * 180 + 90;
+////            angle = (angle - 90) / 360 == 0 ? angle - 1 : angle;
+//            _paiBottom.transform = CGAffineTransformMakeRotation(angle / 180.0 * M_PI);
+//            times++;
+//            canTrans = NO;
+//        } else {
+//            if (step % 2 == 1) {
+//                _paiBottom.center = CGPointMake(160, 160);
+//            } else {
+//                _paiBottom.center = CGPointMake(160, 70);
+//            }
+//            step++;
+//            canTrans = YES;
+//        }
+//    }
+//                     completion:^(BOOL finished) {
+//                         if (finished) {
+//                             animating = NO;
+//                             if (willJump) {
+//                                 [self btnClicked:nil];
+//                             } else {
+//                                [self startAnimation];
+//                             }
+//                         }
+//                     }];
+//}
 
 #pragma mark - button
 -(void)btnClicked:(UIButton*)button{
-    if (self.delegate) {
-        [self.delegate showViewWithType:KENUiViewTypeStartQiePai];
+    if (willJump && !animating) {
+        if (self.delegate) {
+            [self.delegate showViewWithType:KENUiViewTypeStartQiePai];
+        }
+    } else {
+        willJump = YES;
     }
 }
 

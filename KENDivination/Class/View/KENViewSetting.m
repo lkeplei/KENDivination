@@ -71,7 +71,12 @@
 
 #pragma mark - setting btn
 -(void)pingBtnClicked:(UIButton*)button{
-    [KENUtils openUrl:KIosItunesIP];
+    NSString* res = [KENUtils getPreferredLanguage];
+    if ([res compare:@"zh-Hans"] == NSOrderedSame) {
+        [KENUtils openUrl:KIosZhHansItunesIP];
+    } else {
+        [KENUtils openUrl:KIosENItunesIP];   
+    }
 }
 
 -(void)aboutBtnClicked:(UIButton*)button{
