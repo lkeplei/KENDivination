@@ -27,6 +27,7 @@
 -(UIImage*)getDirectionTitle;
 //获取牌阵抬头图像
 -(UIImage*)getPaiZhenTitle;
+-(NSInteger)getPaiZhenNumber;
 
 
 @property (nonatomic, strong) KENMemory* memoryData;

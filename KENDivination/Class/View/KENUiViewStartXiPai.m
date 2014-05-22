@@ -32,12 +32,33 @@
 -(void)initViewWithType:(KENViewType)type{
     _currentViewType = type;
     
-    UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    imgView.center = CGPointMake(160, 80);
-    if (_currentViewType == KENUiViewTypeStartXiPai || _currentViewType == KENUiViewTypeStartQiePai) {
-        imgView.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+    if (type == KENUiViewTypeStartFanPai) {
+        UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
+        imgView.center = CGPointMake(160, 80);
+        [self addSubview:imgView];
+        
+        UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
+        int count = [[KENModel shareModel] getPaiZhenNumber];
+        float width = 240 / count;
+        float space = width;
+        if (width < image.size.width) {
+            width = (240 - image.size.width) / (count - 1);
+            space = image.size.width;
+        }
+        float offset = (imgView.frame.size.width - 240) / 2;
+        for (int i = 0; i < count; i++) {
+            UIImageView* pai = [[UIImageView alloc] initWithImage:image];
+            pai.center = CGPointMake(offset + space / 2 + width * i, imgView.frame.size.height / 2);
+            [imgView addSubview:pai];
+        }
+    } else {
+        UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+        imgView.center = CGPointMake(160, 80);
+        if (_currentViewType == KENUiViewTypeStartXiPai || _currentViewType == KENUiViewTypeStartQiePai) {
+            imgView.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+        }
+        [self addSubview:imgView];
     }
-    [self addSubview:imgView];
     
     NSString* content = nil;
     UIImage* img = nil;
@@ -61,11 +82,17 @@
             imgSec = [UIImage imageNamed:@"button_start_choupai_sec.png"];
         }
             break;
+        case KENUiViewTypeStartFanPai:{
+            content = MyLocal(@"fanpai_content");
+            img = [UIImage imageNamed:@"button_start_fanpai.png"];
+            imgSec = [UIImage imageNamed:@"button_start_fanpai_sec.png"];
+        }
+            break;
         default:
             break;
     }
     UILabel* label = [KENUtils labelWithTxt:content
-                                      frame:CGRectMake(60, 145, 210, 150)
+                                      frame:CGRectMake(60, 140, 210, 170)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
 //    if (type == KENUiViewTypeStartChouPai) {
@@ -97,6 +124,11 @@
             }
                 break;
             case KENUiViewTypeStartChouPai:{
+//                [self.delegate showViewWithType:KENUiViewTypeChouPai];
+                [self.delegate showViewWithType:KENUiViewTypeStartFanPai];
+            }
+                break;
+            case KENUiViewTypeStartFanPai:{
             }
                 break;
             default:

@@ -153,6 +153,9 @@
 		041A0AF9192634E4007618C6 /* direction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041A0AF8192634E4007618C6 /* direction.plist */; };
 		041A0AFC1926531C007618C6 /* KENViewQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A0AFB1926531C007618C6 /* KENViewQuestion.m */; };
 		041A0B4D19265897007618C6 /* question_write_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041A0B4C19265897007618C6 /* question_write_down@2x.png */; };
+		04246475192E280A001A18D7 /* KENUiViewChouPai.m in Sources */ = {isa = PBXBuildFile; fileRef = 04246474192E280A001A18D7 /* KENUiViewChouPai.m */; };
+		04246477192E29CA001A18D7 /* chou_pai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04246476192E29CA001A18D7 /* chou_pai_bg@2x.png */; };
+		04246479192E2C94001A18D7 /* paizhen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04246478192E2C94001A18D7 /* paizhen.plist */; };
 		042514A1192CEF8D00A670CF /* 1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 04251499192CEF8D00A670CF /* 1024x1024.png */; };
 		042514A2192CEF8D00A670CF /* 152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 0425149A192CEF8D00A670CF /* 152x152.png */; };
 		042514A3192CEF8D00A670CF /* 76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 0425149B192CEF8D00A670CF /* 76x76.png */; };
@@ -376,6 +379,10 @@
 		041A0AFA1926531C007618C6 /* KENViewQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewQuestion.h; sourceTree = "<group>"; };
 		041A0AFB1926531C007618C6 /* KENViewQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewQuestion.m; sourceTree = "<group>"; };
 		041A0B4C19265897007618C6 /* question_write_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question_write_down@2x.png"; sourceTree = "<group>"; };
+		04246473192E280A001A18D7 /* KENUiViewChouPai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewChouPai.h; sourceTree = "<group>"; };
+		04246474192E280A001A18D7 /* KENUiViewChouPai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewChouPai.m; sourceTree = "<group>"; };
+		04246476192E29CA001A18D7 /* chou_pai_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chou_pai_bg@2x.png"; sourceTree = "<group>"; };
+		04246478192E2C94001A18D7 /* paizhen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = paizhen.plist; sourceTree = "<group>"; };
 		04251499192CEF8D00A670CF /* 1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024x1024.png; sourceTree = "<group>"; };
 		0425149A192CEF8D00A670CF /* 152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152x152.png; sourceTree = "<group>"; };
 		0425149B192CEF8D00A670CF /* 76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 76x76.png; sourceTree = "<group>"; };
@@ -791,6 +798,8 @@
 				040AF7411924F3C200F5FDCB /* KENUiViewAlert.m */,
 				0400E13A1928DCA0004D3B30 /* KENUiViewBase.h */,
 				0400E13B1928DCA0004D3B30 /* KENUiViewBase.m */,
+				04246473192E280A001A18D7 /* KENUiViewChouPai.h */,
+				04246474192E280A001A18D7 /* KENUiViewChouPai.m */,
 				0400E1371928C8B2004D3B30 /* KENUiViewEndXiPai.h */,
 				0400E1381928C8B2004D3B30 /* KENUiViewEndXiPai.m */,
 				042514B7192CF27700A670CF /* KENUiViewQiePai.h */,
@@ -826,6 +835,7 @@
 				04B323521920EE0700C055FF /* KENDivination.xcdatamodeld */,
 				04A07B9C1922478C00F33A1D /* videos */,
 				0400E0851928AFBE004D3B30 /* Localizable.strings */,
+				04246478192E2C94001A18D7 /* paizhen.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -833,6 +843,7 @@
 		04B323511920EE0700C055FF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04246476192E29CA001A18D7 /* chou_pai_bg@2x.png */,
 				040AF72D1924E58900F5FDCB /* about_us_alert@2x.png */,
 				040AF72E1924E58900F5FDCB /* about_us_bg@2x.png */,
 				040AF72F1924E58900F5FDCB /* about_us_qiqi@2x.png */,
@@ -1023,6 +1034,7 @@
 				0400E0511928AC36004D3B30 /* direction_paizhen_05@2x.png in Resources */,
 				0400E10B1928B888004D3B30 /* direction_paizhen_11@2x.png in Resources */,
 				0400E1171928B888004D3B30 /* direction_paizhen_18@2x.png in Resources */,
+				04246479192E2C94001A18D7 /* paizhen.plist in Resources */,
 				0400E0621928AC36004D3B30 /* direction_paizhen_14_sec@2x.png in Resources */,
 				0400E0F21928B888004D3B30 /* button_start_qiepai@2x.png in Resources */,
 				0400E1111928B888004D3B30 /* direction_paizhen_15@2x.png in Resources */,
@@ -1052,6 +1064,7 @@
 				042514A8192CEF8D00A670CF /* icon-iphone@2x.png in Resources */,
 				0400E11F1928B888004D3B30 /* direction_relation_title@2x.png in Resources */,
 				0400E0501928AC36004D3B30 /* direction_paizhen_04_sec@2x.png in Resources */,
+				04246477192E29CA001A18D7 /* chou_pai_bg@2x.png in Resources */,
 				042514B1192CEFC500A670CF /* Default~iphone.png in Resources */,
 				04A07BA91922478C00F33A1D /* zhuan_pan_ting.mp3 in Resources */,
 				0400E0E81928B888004D3B30 /* button_close@2x.png in Resources */,
@@ -1135,6 +1148,7 @@
 				04B323581920EE6B00C055FF /* KENModel.m in Sources */,
 				04B323551920EE0700C055FF /* KENDivination.xcdatamodeld in Sources */,
 				04A07BC0192261C300F33A1D /* KENDataManager.m in Sources */,
+				04246475192E280A001A18D7 /* KENUiViewChouPai.m in Sources */,
 				0400E13C1928DCA0004D3B30 /* KENUiViewBase.m in Sources */,
 				04B3236E1920FA7E00C055FF /* KENViewBase.m in Sources */,
 				04B323741920FB0500C055FF /* KENViewFactory.m in Sources */,

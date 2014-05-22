@@ -59,6 +59,10 @@
 #define KDicKeyImgSec           @"key_img_sec"
 #define KDicKeyJiaMi            @"key_jia_mi"
 #define KDicKeyPaiZhen          @"key_pai_zhen"
+#define KDicKeyZhenName         @"key_zhen_name"
+#define KDicKeyZhenQuestion     @"key_question"
+#define KDicKeyZhenNumber       @"key_zhen_number"
+#define KDicKeyZhenPosSense     @"key_zhen_positon_sense"
 
 //define for server
 #define KIosZhHansItunesIP      @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文

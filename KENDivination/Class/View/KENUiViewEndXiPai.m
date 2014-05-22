@@ -37,12 +37,12 @@
 
 -(void)initView{
     _paiTop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiTop.center = CGPointMake(160, 70);
+    _paiTop.center = CGPointMake(160, 80);
     _paiTop.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
     [self addSubview:_paiTop];
     
     _paiBottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiBottom.center = CGPointMake(160, 70);
+    _paiBottom.center = CGPointMake(160, 80);
     _paiBottom.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
     [self addSubview:_paiBottom];
     
@@ -87,7 +87,7 @@
                 animating = YES;
                 _paiBottom.center = CGPointMake(160, 160);
             } else {
-                _paiBottom.center = CGPointMake(160, 70);
+                _paiBottom.center = CGPointMake(160, 80);
             }
             canTrans = YES;
             step++;

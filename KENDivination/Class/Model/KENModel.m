@@ -9,6 +9,7 @@
 #import "KENModel.h"
 #import "KENConfig.h"
 #import "KENDataManager.h"
+#import "KENUtils.h"
 
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -138,6 +139,11 @@
 
 -(UIImage*)getPaiZhenTitle{
     return [UIImage imageNamed:[NSString stringWithFormat:@"pai_zhen_title_%02d.png", _memoryData.memoryPaiZhen]];;
+}
+
+-(NSInteger)getPaiZhenNumber{
+    NSMutableDictionary* resdic = [LOADDIC(@"paizhen", @"plist") objectForKey:[KENUtils getStringByInt:_memoryData.memoryPaiZhen]];
+    return [[resdic objectForKey:KDicKeyZhenNumber] intValue];
 }
 
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{

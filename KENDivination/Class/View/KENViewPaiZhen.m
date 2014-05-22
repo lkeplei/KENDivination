@@ -18,6 +18,7 @@
 @interface KENViewPaiZhen ()
 
 @property (nonatomic, strong) KENUiViewBase* currentUiView;
+@property (nonatomic, strong) KENUiViewAlert* alertView;
 
 @end
 
@@ -42,6 +43,8 @@
         CGRect frame = CGRectMake(0, KNotificationHeight, self.contentView.frame.size.width,
                                   self.contentView.frame.size.height - KNotificationHeight);
         switch (type) {
+            case KENUiViewTypeStartFanPai:
+            case KENUiViewTypeStartChouPai:
             case KENUiViewTypeStartQiePai:
             case KENUiViewTypeStartXiPai:{
                 _currentUiView = [[KENUiViewStartXiPai alloc] initWithFrame:frame type:type];
@@ -63,6 +66,9 @@
         }
         
         [self.contentView addSubview:_currentUiView];
+        if (_alertView) {
+            [self.contentView bringSubviewToFront:_alertView];
+        }
     }
 }
 
@@ -95,11 +101,11 @@
     [dic1 setObject:[UIImage imageNamed:@"button_confirm.png"] forKey:KDicKeyImg];
     [dic1 setObject:[UIImage imageNamed:@"button_confirm_sec.png"] forKey:KDicKeyImgSec];
 
-    KENUiViewAlert* alert = [[KENUiViewAlert alloc] initWithMessage:[UIImage imageNamed:@"exit_whether_alert.png"]
+    _alertView = [[KENUiViewAlert alloc] initWithMessage:[UIImage imageNamed:@"exit_whether_alert.png"]
                                                        btnArray:[[NSArray alloc] initWithObjects:dic, dic1, nil]];
-    [alert show];
+    [_alertView show];
 
-    alert.alertBlock = ^(int index){
+    _alertView.alertBlock = ^(int index){
         if (index == 1) {
             [self popToRootView:KENTypeNull];
         }
