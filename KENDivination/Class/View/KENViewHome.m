@@ -68,7 +68,25 @@
                                  if (index == 1) {
                                      [self pushView:[SysDelegate.viewController getView:KENViewTypeMemory] animatedType:KENTypeNull];
                                  } else {
-                                     [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionLove + index];
+                                     switch (index) {
+                                         case 0:
+                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionLove];
+                                             break;
+                                         case 2:
+                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionHealth];
+                                             break;
+                                         case 3:
+                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionRelation];
+                                             break;
+                                         case 4:
+                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionMoney];
+                                             break;
+                                         case 5:
+                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionWork];
+                                             break;
+                                         default:
+                                             break;
+                                     }
                                      [self pushView:[SysDelegate.viewController getView:KENViewTypeQuestion] animatedType:KENTypeNull];
                                  }
                                  _zhuanPanView.transform = CGAffineTransformMakeRotation(0 / 180.0 * M_PI);

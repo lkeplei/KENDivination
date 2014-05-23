@@ -13,11 +13,11 @@ typedef enum {
     KENTypeNull = 0,
     
     KENTypeDirectionLove = 10,
-    KENTypeDirectionMemory,
-    KENTypeDirectionHealth,
-    KENTypeDirectionRelation,
-    KENTypeDirectionMoney,
     KENTypeDirectionWork,
+    KENTypeDirectionMoney,
+    KENTypeDirectionRelation,
+    KENTypeDirectionHealth,
+    KENTypeDirectionMemory,
     
     KENVoiceNull = 100,
     KENVoiceAnJian,

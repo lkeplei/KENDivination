@@ -33,8 +33,6 @@
 		</array>
 		<key>key_position</key>
 		<dict>
-			<key>key_bg_path</key>
-			<string></string>
 			<key>key_pai_path</key>
 			<array>
 				<dict>
@@ -112,6 +110,50 @@
 			<string>你的地位/成就</string>
 			<string>最后的结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_bg_path</key>
+			<string>paizhen_bg_path_4.png</string>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>75</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>365</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>5</key>
 	<dict>
