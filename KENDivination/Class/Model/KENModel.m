@@ -146,6 +146,11 @@
     return [[resdic objectForKey:KDicKeyZhenNumber] intValue];
 }
 
+-(NSDictionary*)getPaiZhenPostions{
+    NSMutableDictionary* resdic = [LOADDIC(@"paizhen", @"plist") objectForKey:[KENUtils getStringByInt:_memoryData.memoryPaiZhen]];
+    return [resdic objectForKey:KDicKeyZhenPosition];
+}
+
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{
     
 }
@@ -160,5 +165,13 @@
 
 
 @implementation KENMemory
-
+-(NSArray*)getPaiMessage{
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [[KENModel shareModel] getPaiZhenNumber]; i++) {
+        
+    }
+    
+    return array;
+}
 @end

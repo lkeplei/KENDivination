@@ -173,6 +173,8 @@
 		042514B6192CEFC500A670CF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 042514AF192CEFC500A670CF /* Default-Landscape@2x~ipad.png */; };
 		042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */ = {isa = PBXBuildFile; fileRef = 042514B8192CF27700A670CF /* KENUiViewQiePai.m */; };
 		042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 042635AA192718DC0057B4EF /* KENViewPaiZhen.m */; };
+		048EBA50192EB164002D9441 /* KENUiViewFanPai.m in Sources */ = {isa = PBXBuildFile; fileRef = 048EBA4F192EB164002D9441 /* KENUiViewFanPai.m */; };
+		048EBA52192EB9D7002D9441 /* paiMessage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048EBA51192EB9D7002D9441 /* paiMessage.plist */; };
 		04A07BA41922478C00F33A1D /* an_jian.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04A07B9D1922478C00F33A1D /* an_jian.mp3 */; };
 		04A07BA51922478C00F33A1D /* chou_pai.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04A07B9E1922478C00F33A1D /* chou_pai.mp3 */; };
 		04A07BA61922478C00F33A1D /* fan_pai.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04A07B9F1922478C00F33A1D /* fan_pai.mp3 */; };
@@ -402,6 +404,9 @@
 		042514B8192CF27700A670CF /* KENUiViewQiePai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewQiePai.m; sourceTree = "<group>"; };
 		042635A9192718DC0057B4EF /* KENViewPaiZhen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewPaiZhen.h; sourceTree = "<group>"; };
 		042635AA192718DC0057B4EF /* KENViewPaiZhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhen.m; sourceTree = "<group>"; };
+		048EBA4E192EB164002D9441 /* KENUiViewFanPai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewFanPai.h; sourceTree = "<group>"; };
+		048EBA4F192EB164002D9441 /* KENUiViewFanPai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewFanPai.m; sourceTree = "<group>"; };
+		048EBA51192EB9D7002D9441 /* paiMessage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = paiMessage.plist; sourceTree = "<group>"; };
 		04A07B9D1922478C00F33A1D /* an_jian.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = an_jian.mp3; sourceTree = "<group>"; };
 		04A07B9E1922478C00F33A1D /* chou_pai.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chou_pai.mp3; sourceTree = "<group>"; };
 		04A07B9F1922478C00F33A1D /* fan_pai.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fan_pai.mp3; sourceTree = "<group>"; };
@@ -802,6 +807,8 @@
 				04246474192E280A001A18D7 /* KENUiViewChouPai.m */,
 				0400E1371928C8B2004D3B30 /* KENUiViewEndXiPai.h */,
 				0400E1381928C8B2004D3B30 /* KENUiViewEndXiPai.m */,
+				048EBA4E192EB164002D9441 /* KENUiViewFanPai.h */,
+				048EBA4F192EB164002D9441 /* KENUiViewFanPai.m */,
 				042514B7192CF27700A670CF /* KENUiViewQiePai.h */,
 				042514B8192CF27700A670CF /* KENUiViewQiePai.m */,
 				0400E0061928A7B5004D3B30 /* KENUiViewStartXiPai.h */,
@@ -836,6 +843,7 @@
 				04A07B9C1922478C00F33A1D /* videos */,
 				0400E0851928AFBE004D3B30 /* Localizable.strings */,
 				04246478192E2C94001A18D7 /* paizhen.plist */,
+				048EBA51192EB9D7002D9441 /* paiMessage.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1049,6 +1057,7 @@
 				0400E1211928B888004D3B30 /* home_title@2x.png in Resources */,
 				042514A1192CEF8D00A670CF /* 1024x1024.png in Resources */,
 				0400E0531928AC36004D3B30 /* direction_paizhen_06@2x.png in Resources */,
+				048EBA52192EB9D7002D9441 /* paiMessage.plist in Resources */,
 				0400E12F1928B888004D3B30 /* pai_zhen_title_13@2x.png in Resources */,
 				0400E1141928B888004D3B30 /* direction_paizhen_16_sec@2x.png in Resources */,
 				0400E0FC1928B888004D3B30 /* direction_paizhen_03_sec@2x.png in Resources */,
@@ -1160,6 +1169,7 @@
 				041A0AFC1926531C007618C6 /* KENViewQuestion.m in Sources */,
 				0400E1391928C8B2004D3B30 /* KENUiViewEndXiPai.m in Sources */,
 				040C21141923B2C800B2E38E /* KENViewDirection.m in Sources */,
+				048EBA50192EB164002D9441 /* KENUiViewFanPai.m in Sources */,
 				04B323231920ED1400C055FF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

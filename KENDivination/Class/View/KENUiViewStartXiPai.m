@@ -95,9 +95,6 @@
                                       frame:CGRectMake(60, 140, 210, 170)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
-//    if (type == KENUiViewTypeStartChouPai) {
-//        label.frame = CGRectOffset(label.frame, 0, -30);
-//    }
     label.textAlignment = KTextAlignmentLeft;
     label.numberOfLines = 0;
     [self addSubview:label];
@@ -129,6 +126,7 @@
             }
                 break;
             case KENUiViewTypeStartFanPai:{
+                [self.delegate showViewWithType:KENUiViewTypeFanPai];
             }
                 break;
             default:

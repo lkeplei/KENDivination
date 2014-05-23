@@ -63,6 +63,12 @@
 #define KDicKeyZhenQuestion     @"key_question"
 #define KDicKeyZhenNumber       @"key_zhen_number"
 #define KDicKeyZhenPosSense     @"key_zhen_positon_sense"
+#define KDicKeyZhenPosition     @"key_position"
+#define KDicKeyZhenBgPath       @"key_bg_path"
+#define KDicKeyZhenPaiPath      @"key_pai_path"
+#define KDicKeyZhenAngle        @"key_angle"
+#define KDicKeyZhenX            @"key_x"
+#define KDicKeyZhenY            @"key_y"
 
 //define for server
 #define KIosZhHansItunesIP      @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文

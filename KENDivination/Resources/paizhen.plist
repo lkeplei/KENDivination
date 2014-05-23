@@ -31,6 +31,54 @@
 			<string>做出第二种选择后会出现的情况</string>
 			<string>做出第二种选择后造成的影响</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_bg_path</key>
+			<string></string>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>0</integer>
+					<key>key_y</key>
+					<integer>0</integer>
+					<key>key_angle</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>0</integer>
+					<key>key_y</key>
+					<integer>0</integer>
+					<key>key_angle</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>0</integer>
+					<key>key_y</key>
+					<integer>0</integer>
+					<key>key_angle</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>0</integer>
+					<key>key_y</key>
+					<integer>0</integer>
+					<key>key_angle</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>0</integer>
+					<key>key_y</key>
+					<integer>0</integer>
+					<key>key_angle</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>3</key>
 	<dict>

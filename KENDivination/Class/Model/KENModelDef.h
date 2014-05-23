@@ -47,6 +47,7 @@ typedef enum {
     KENUiViewTypeQiePai,
     KENUiViewTypeChouPai,
     KENUiViewTypeStartFanPai,
+    KENUiViewTypeFanPai,
 } KENViewType;
 
 #endif

@@ -28,6 +28,7 @@
 //获取牌阵抬头图像
 -(UIImage*)getPaiZhenTitle;
 -(NSInteger)getPaiZhenNumber;
+-(NSDictionary*)getPaiZhenPostions;
 
 
 @property (nonatomic, strong) KENMemory* memoryData;
@@ -42,5 +43,6 @@
 @property (assign) KENType memroyDirection;
 @property (assign) NSInteger memoryPaiZhen;
 @property (nonatomic, strong) NSString* memoryQuestion;
+@property (nonatomic, strong, getter=getPaiMessage) NSArray* memoryPaiMessage;
 
 @end

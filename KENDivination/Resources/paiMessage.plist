@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string></string>
+		<key>key_pai_keyword</key>
+		<string></string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>你是爱情的狩猎者，即使是在一厢情愿的单恋，你也义无反顾。恋爱中的你将会有一段天真浪漫的爱情，你们不拘形式，充分恋爱着。你在婚姻中会过于一意孤行，对另一半要求过高，导致自己压力过大。</string>
+				<key>12</key>
+				<string>过大的压力导致你神经衰弱。</string>
+				<key>13</key>
+				<string>你在人际交往中，会过于特立独行，有时候也要多争取他人的意见。</string>
+				<key>14</key>
+				<string>你会做出错误的选择，导致失败的结果。</string>
+				<key>15</key>
+				<string>你喜欢追求新奇的梦想，喜爱冒险，工作中将突显你的这一品质。切忌一意孤行，过于盲目追求梦想而忽略现实。</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string></string>
+				<key>12</key>
+				<string></string>
+				<key>13</key>
+				<string></string>
+				<key>14</key>
+				<string></string>
+				<key>15</key>
+				<string></string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
