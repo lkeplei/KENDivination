@@ -61,12 +61,14 @@
     //animate
     [UIView animateWithDuration:1.5 animations:^{
         NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
-        for (int i = 0; i < [pathArray count]; i++) {
-            NSDictionary* dic = [pathArray objectAtIndex:i];
-            UIImageView* view = [_imgViewArray objectAtIndex:i];
-            view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
-            if ([dic objectForKey:KDicKeyZhenAngle]) {
-                view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180 * M_PI);
+        if (pathArray) {
+            for (int i = 0; i < [pathArray count]; i++) {
+                NSDictionary* dic = [pathArray objectAtIndex:i];
+                UIImageView* view = [_imgViewArray objectAtIndex:i];
+                view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
+                if ([dic objectForKey:KDicKeyZhenAngle]) {
+                    view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180 * M_PI);
+                }
             }
         }
     }];

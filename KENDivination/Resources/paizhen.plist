@@ -37,43 +37,33 @@
 			<array>
 				<dict>
 					<key>key_x</key>
-					<integer>0</integer>
+					<integer>160</integer>
 					<key>key_y</key>
-					<integer>0</integer>
-					<key>key_angle</key>
-					<integer>0</integer>
+					<integer>353</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>0</integer>
+					<integer>105</integer>
 					<key>key_y</key>
-					<integer>0</integer>
-					<key>key_angle</key>
-					<integer>0</integer>
+					<integer>233</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>0</integer>
+					<integer>83</integer>
 					<key>key_y</key>
-					<integer>0</integer>
-					<key>key_angle</key>
-					<integer>0</integer>
+					<integer>113</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>0</integer>
+					<integer>216</integer>
 					<key>key_y</key>
-					<integer>0</integer>
-					<key>key_angle</key>
-					<integer>0</integer>
+					<integer>233</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>0</integer>
+					<integer>238</integer>
 					<key>key_y</key>
-					<integer>0</integer>
-					<key>key_angle</key>
-					<integer>0</integer>
+					<integer>113</integer>
 				</dict>
 			</array>
 		</dict>
@@ -92,6 +82,30 @@
 			<string>现在</string>
 			<string>未来</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>78</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>242</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>4</key>
 	<dict>
@@ -173,6 +187,56 @@
 			<string>本人的态度——希望或恐惧</string>
 			<string>最终的结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_bg_path</key>
+			<string>paizhen_bg_path_5.png</string>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>75</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>365</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>218</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>6</key>
 	<dict>
@@ -195,6 +259,74 @@
 			<string>你对问题的期望</string>
 			<string>问题的最终结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>245</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>245</integer>
+					<key>key_angle</key>
+					<integer>90</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>132</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>37</integer>
+					<key>key_y</key>
+					<integer>246</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>360</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>208</integer>
+					<key>key_y</key>
+					<integer>245</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>379</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>277</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>176</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>74</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>7</key>
 	<dict>
@@ -211,6 +343,36 @@
 			<string>双方之间的关系</string>
 			<string>双方未来的发展</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>271</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>271</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>230</integer>
+					<key>key_y</key>
+					<integer>271</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>158</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>8</key>
 	<dict>
@@ -230,6 +392,54 @@
 			<string>对婚姻的恐惧</string>
 			<string>最后的结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>214</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>85</integer>
+					<key>key_y</key>
+					<integer>289</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>235</integer>
+					<key>key_y</key>
+					<integer>289</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>344</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>85</integer>
+					<key>key_y</key>
+					<integer>140</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>235</integer>
+					<key>key_y</key>
+					<integer>140</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>84</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>9</key>
 	<dict>
@@ -245,6 +455,30 @@
 			<string>他对我的印象</string>
 			<string>关系发展的可能性</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>78</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>242</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>10</key>
 	<dict>
@@ -263,6 +497,48 @@
 			<string>未来的发展、最后的结果</string>
 			<string>未来的发展、最后的结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>96</integer>
+					<key>key_y</key>
+					<integer>103</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>224</integer>
+					<key>key_y</key>
+					<integer>103</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>164</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>280</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>96</integer>
+					<key>key_y</key>
+					<integer>341</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>224</integer>
+					<key>key_y</key>
+					<integer>341</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>11</key>
 	<dict>
@@ -280,6 +556,42 @@
 			<string>影响因素</string>
 			<string>最后的结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>219</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>12</key>
 	<dict>
@@ -299,6 +611,54 @@
 			<string>面临的阻碍</string>
 			<string>最后的结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>78</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>84</integer>
+					<key>key_y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>102</integer>
+					<key>key_y</key>
+					<integer>283</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>360</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>218</integer>
+					<key>key_y</key>
+					<integer>283</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>236</integer>
+					<key>key_y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>78</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>13</key>
 	<dict>
@@ -316,6 +676,42 @@
 			<string>影响因素</string>
 			<string>最后的结果</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>219</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>14</key>
 	<dict>
@@ -332,6 +728,36 @@
 			<string>风要素，代表现在遇到的问题或伤害。</string>
 			<string>水要素，代表人际关系及感情方面的情况。与工作相关时，也表示同事或下级。</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>152</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>287</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>287</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>152</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>15</key>
 	<dict>
@@ -350,6 +776,48 @@
 			<string>你期望的双方关系</string>
 			<string>对方期望的双方关系</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>92</integer>
+					<key>key_y</key>
+					<integer>153</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>153</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>153</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>92</integer>
+					<key>key_y</key>
+					<integer>276</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>276</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>276</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>16</key>
 	<dict>
@@ -366,6 +834,40 @@
 			<string>双方关系未来的发展趋势</string>
 			<string>对双方关系的结论</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>79</integer>
+					<key>key_y</key>
+					<integer>185</integer>
+					<key>key_angle</key>
+					<integer>30</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>242</integer>
+					<key>key_y</key>
+					<integer>185</integer>
+					<key>key_angle</key>
+					<integer>330</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>172</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>300</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>17</key>
 	<dict>
@@ -385,6 +887,54 @@
 			<string>木星，代表机会和幸运，并与个人的长远目标有关。</string>
 			<string>土星，代表责任与限制，也和人的疾病有关。</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>354</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>54</integer>
+					<key>key_y</key>
+					<integer>259</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>165</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>72</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>165</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>266</integer>
+					<key>key_y</key>
+					<integer>259</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>354</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>18</key>
 	<dict>
@@ -401,6 +951,36 @@
 			<string>知识领域</string>
 			<string>感情生活</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>224</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>100</integer>
+					<key>key_y</key>
+					<integer>311</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>220</integer>
+					<key>key_y</key>
+					<integer>311</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>117</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>19</key>
 	<dict>
@@ -416,6 +996,30 @@
 			<string>心，代表心里状况或事件对心里的影响。</string>
 			<string>灵，代表精神状态或事件对精神的影响。</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>92</integer>
+					<key>key_y</key>
+					<integer>234</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>234</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>122</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 </dict>
 </plist>
