@@ -113,7 +113,8 @@
     if (self.delegate) {
         switch (_currentViewType) {
             case KENUiViewTypeStartXiPai:{
-                [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
+//                [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
+                [self.delegate showViewWithType:KENUiViewTypeChouPai];
             }
                 break;
             case KENUiViewTypeStartQiePai:{
@@ -121,8 +122,7 @@
             }
                 break;
             case KENUiViewTypeStartChouPai:{
-//                [self.delegate showViewWithType:KENUiViewTypeChouPai];
-                [self.delegate showViewWithType:KENUiViewTypeStartFanPai];
+                [self.delegate showViewWithType:KENUiViewTypeChouPai];
             }
                 break;
             case KENUiViewTypeStartFanPai:{

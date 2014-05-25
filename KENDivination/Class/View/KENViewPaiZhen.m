@@ -15,6 +15,7 @@
 #import "KENUiViewEndXiPai.h"
 #import "KENUiViewQiePai.h"
 #import "KENUiViewFanPai.h"
+#import "KENUiViewChouPai.h"
 
 @interface KENViewPaiZhen ()
 
@@ -59,6 +60,11 @@
                 break;
             case KENUiViewTypeQiePai:{
                 _currentUiView = [[KENUiViewQiePai alloc] initWithFrame:frame];
+                [_currentUiView setDelegate:self];
+            }
+                break;
+            case KENUiViewTypeChouPai:{
+                _currentUiView = [[KENUiViewChouPai alloc] initWithFrame:frame];
                 [_currentUiView setDelegate:self];
             }
                 break;
