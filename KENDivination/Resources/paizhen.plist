@@ -217,25 +217,13 @@
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>67</integer>
-					<key>key_y</key>
-					<integer>148</integer>
-				</dict>
-				<dict>
-					<key>key_x</key>
 					<integer>254</integer>
-					<key>key_y</key>
-					<integer>148</integer>
-				</dict>
-				<dict>
-					<key>key_x</key>
-					<integer>67</integer>
 					<key>key_y</key>
 					<integer>292</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>254</integer>
+					<integer>67</integer>
 					<key>key_y</key>
 					<integer>292</integer>
 				</dict>
@@ -244,6 +232,18 @@
 					<integer>161</integer>
 					<key>key_y</key>
 					<integer>365</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>148</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
@@ -287,13 +287,13 @@
 					<key>key_x</key>
 					<integer>112</integer>
 					<key>key_y</key>
-					<integer>245</integer>
+					<integer>225</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>112</integer>
 					<key>key_y</key>
-					<integer>245</integer>
+					<integer>225</integer>
 					<key>key_angle</key>
 					<integer>90</integer>
 				</dict>
@@ -301,49 +301,49 @@
 					<key>key_x</key>
 					<integer>112</integer>
 					<key>key_y</key>
-					<integer>132</integer>
+					<integer>112</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>37</integer>
 					<key>key_y</key>
-					<integer>246</integer>
+					<integer>226</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>112</integer>
 					<key>key_y</key>
-					<integer>360</integer>
+					<integer>340</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>208</integer>
 					<key>key_y</key>
-					<integer>245</integer>
+					<integer>225</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>284</integer>
 					<key>key_y</key>
-					<integer>379</integer>
+					<integer>359</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>284</integer>
 					<key>key_y</key>
-					<integer>277</integer>
+					<integer>257</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>284</integer>
 					<key>key_y</key>
-					<integer>176</integer>
+					<integer>156</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>284</integer>
 					<key>key_y</key>
-					<integer>74</integer>
+					<integer>54</integer>
 				</dict>
 			</array>
 		</dict>

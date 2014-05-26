@@ -8,6 +8,8 @@
 		<string>愚者</string>
 		<key>key_pai_keyword</key>
 		<string>流浪、自由、无经验的</string>
+		<key>key_pai_img</key>
+		<string>app_pai_0.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -44,6 +46,8 @@
 		<string>魔术师</string>
 		<key>key_pai_keyword</key>
 		<string>开始、创造、说服、运用</string>
+		<key>key_pai_img</key>
+		<string>app_pai_1.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -80,6 +84,8 @@
 		<string>女祭司</string>
 		<key>key_pai_keyword</key>
 		<string>智慧、二元性、思考、直觉、隐藏</string>
+		<key>key_pai_img</key>
+		<string>app_pai_2.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -116,6 +122,8 @@
 		<string>皇后</string>
 		<key>key_pai_keyword</key>
 		<string>丰收、怀孕、爱情、母亲</string>
+		<key>key_pai_img</key>
+		<string>app_pai_3.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -152,6 +160,8 @@
 		<string>皇帝</string>
 		<key>key_pai_keyword</key>
 		<string>支配、成熟、有经验的、深沉</string>
+		<key>key_pai_img</key>
+		<string>app_pai_4.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -188,6 +198,8 @@
 		<string>教皇</string>
 		<key>key_pai_keyword</key>
 		<string>援助、教导、传送与发给、制约</string>
+		<key>key_pai_img</key>
+		<string>app_pai_5.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -224,6 +236,8 @@
 		<string>恋人</string>
 		<key>key_pai_keyword</key>
 		<string>结合、选择、合作</string>
+		<key>key_pai_img</key>
+		<string>app_pai_6.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -260,6 +274,8 @@
 		<string>战车</string>
 		<key>key_pai_keyword</key>
 		<string>胜利、行动、调整</string>
+		<key>key_pai_img</key>
+		<string>app_pai_7.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -296,6 +312,8 @@
 		<string>力量</string>
 		<key>key_pai_keyword</key>
 		<string>意志、坚持、克制</string>
+		<key>key_pai_img</key>
+		<string>app_pai_8.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -332,6 +350,8 @@
 		<string>隐士</string>
 		<key>key_pai_keyword</key>
 		<string>寻求、年老、身陷黑暗之中却有些许光明</string>
+		<key>key_pai_img</key>
+		<string>app_pai_9.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -368,6 +388,8 @@
 		<string>命运之轮</string>
 		<key>key_pai_keyword</key>
 		<string>轮回、转变、好坏交替</string>
+		<key>key_pai_img</key>
+		<string>app_pai_10.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -404,6 +426,8 @@
 		<string>正义</string>
 		<key>key_pai_keyword</key>
 		<string>均衡、衡量、法律、反击</string>
+		<key>key_pai_img</key>
+		<string>app_pai_11.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -440,6 +464,8 @@
 		<string>倒吊人</string>
 		<key>key_pai_keyword</key>
 		<string>牺牲、付出、考验、受苦</string>
+		<key>key_pai_img</key>
+		<string>app_pai_12.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -476,6 +502,8 @@
 		<string>死神</string>
 		<key>key_pai_keyword</key>
 		<string>结束、该做决定的时候、改变</string>
+		<key>key_pai_img</key>
+		<string>app_pai_13.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -512,6 +540,8 @@
 		<string>节制</string>
 		<key>key_pai_keyword</key>
 		<string>净化、交流、斟酌、慢慢的给予</string>
+		<key>key_pai_img</key>
+		<string>app_pai_14.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -548,6 +578,8 @@
 		<string>魔鬼</string>
 		<key>key_pai_keyword</key>
 		<string>诅咒、本能与欲望、迷惑、限制</string>
+		<key>key_pai_img</key>
+		<string>app_pai_15.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -584,6 +616,8 @@
 		<string>塔</string>
 		<key>key_pai_keyword</key>
 		<string>毁灭、冲击、放弃、灾难、神之住所与考验</string>
+		<key>key_pai_img</key>
+		<string>app_pai_16.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -620,6 +654,8 @@
 		<string>星星</string>
 		<key>key_pai_keyword</key>
 		<string>希望、祝福、因难过流泪</string>
+		<key>key_pai_img</key>
+		<string>app_pai_17.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -656,6 +692,8 @@
 		<string>月亮</string>
 		<key>key_pai_keyword</key>
 		<string>不安、多变</string>
+		<key>key_pai_img</key>
+		<string>app_pai_18.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -692,6 +730,8 @@
 		<string>太阳</string>
 		<key>key_pai_keyword</key>
 		<string>生命、实现、纯真</string>
+		<key>key_pai_img</key>
+		<string>app_pai_19.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -728,6 +768,8 @@
 		<string>审判</string>
 		<key>key_pai_keyword</key>
 		<string>复活、觉醒、知道结果</string>
+		<key>key_pai_img</key>
+		<string>app_pai_20.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>
@@ -764,6 +806,8 @@
 		<string>世界</string>
 		<key>key_pai_keyword</key>
 		<string>达成、完美、完成命运、完成后衔接的另一个开始</string>
+		<key>key_pai_img</key>
+		<string>app_pai_21.jpg</string>
 		<key>key_pai_meaning</key>
 		<dict>
 			<key>key_forword</key>

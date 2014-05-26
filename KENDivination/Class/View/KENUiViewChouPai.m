@@ -41,7 +41,7 @@
     [self addSubview:_selectPaiBgView];
     
     UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
-    int count = [[KENModel shareModel] getPaiZhenNumber];
+    NSInteger count = [[KENModel shareModel] getPaiZhenNumber];
     float width = 240 / count;
     float space = width;
     if (width < image.size.width) {

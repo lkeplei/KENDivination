@@ -59,18 +59,31 @@
     }
     
     //animate
-    [UIView animateWithDuration:1.5 animations:^{
-        NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
-        if (pathArray) {
-            for (int i = 0; i < [pathArray count]; i++) {
-                NSDictionary* dic = [pathArray objectAtIndex:i];
-                UIImageView* view = [_imgViewArray objectAtIndex:i];
-                view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
-                if ([dic objectForKey:KDicKeyZhenAngle]) {
-                    view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180 * M_PI);
+    [UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
+                if (pathArray) {
+                    for (int i = 0; i < [pathArray count]; i++) {
+                        NSDictionary* dic = [pathArray objectAtIndex:i];
+                        UIImageView* view = [_imgViewArray objectAtIndex:i];
+                        view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
+                        if ([dic objectForKey:KDicKeyZhenAngle]) {
+                            view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180 * M_PI);
+                        }
+                    }
                 }
             }
-        }
-    }];
+                     completion:^(BOOL finished) {
+                         if (finished) {
+                             for (int i = 0; i < [_imgViewArray count]; i++) {
+                                 CGRect frame = ((UIImageView*)[_imgViewArray objectAtIndex:i]).frame;
+                                 UILabel* label = [KENUtils labelWithTxt:[KENUtils getStringByInt:i + 1]
+                                                                   frame:CGRectMake(frame.origin.x, CGRectGetMaxY(frame),
+                                                                                    frame.size.width, 20)
+                                                                    font:[UIFont fontWithName:KLabelFontArial size:14]
+                                                                   color:[UIColor whiteColor]];
+                                 [self addSubview:label];
+                             }
+                         }
+                     }];
 }
 @end
