@@ -151,6 +151,16 @@
     return [resdic objectForKey:KDicKeyZhenPosition];
 }
 
+-(BOOL)getPaiZhenAuto{
+    NSMutableDictionary* resdic = [LOADDIC(@"paizhen", @"plist") objectForKey:[KENUtils getStringByInt:_memoryData.memoryPaiZhen]];
+    return [[resdic objectForKey:KDicKeyZhenAuto] boolValue];
+}
+
+-(NSArray*)getPaiZHenAutoIndex{
+    NSMutableDictionary* resdic = [LOADDIC(@"paizhen", @"plist") objectForKey:[KENUtils getStringByInt:_memoryData.memoryPaiZhen]];
+    return [KENUtils getArrayFromStrByCharactersInSet:[resdic objectForKey:KDicKeyZhenAutoIndex] character:@","];
+}
+
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{
     
 }

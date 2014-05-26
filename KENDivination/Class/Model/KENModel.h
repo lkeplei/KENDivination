@@ -28,6 +28,8 @@
 //获取牌阵抬头图像
 -(UIImage*)getPaiZhenTitle;
 -(NSInteger)getPaiZhenNumber;
+-(BOOL)getPaiZhenAuto;
+-(NSArray*)getPaiZHenAutoIndex;
 -(NSDictionary*)getPaiZhenPostions;
 
 

@@ -4,6 +4,8 @@
 <dict>
 	<key>1</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>一张牌</string>
 		<key>key_question</key>
@@ -17,6 +19,10 @@
 	</dict>
 	<key>2</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>5,11,12,18,19</string>
 		<key>key_zhen_name</key>
 		<string>二选一</string>
 		<key>key_question</key>
@@ -70,6 +76,10 @@
 	</dict>
 	<key>3</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,13,20</string>
 		<key>key_zhen_name</key>
 		<string>圣三角</string>
 		<key>key_question</key>
@@ -109,6 +119,8 @@
 	</dict>
 	<key>4</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>未来发展</string>
 		<key>key_question</key>
@@ -171,6 +183,10 @@
 	</dict>
 	<key>5</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,7,8,9,16,17,18</string>
 		<key>key_zhen_name</key>
 		<string>六芒星</string>
 		<key>key_question</key>
@@ -240,6 +256,10 @@
 	</dict>
 	<key>6</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,7,8,9,10,11,18,19,20,21</string>
 		<key>key_zhen_name</key>
 		<string>克尔特十字</string>
 		<key>key_question</key>
@@ -330,6 +350,8 @@
 	</dict>
 	<key>7</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>爱情金字塔</string>
 		<key>key_question</key>
@@ -376,6 +398,10 @@
 	</dict>
 	<key>8</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>0,1,2,3,4,5,6</string>
 		<key>key_zhen_name</key>
 		<string>婚姻的预测</string>
 		<key>key_question</key>
@@ -443,6 +469,8 @@
 	</dict>
 	<key>9</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>一见钟情</string>
 		<key>key_question</key>
@@ -482,6 +510,8 @@
 	</dict>
 	<key>10</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>运程</string>
 		<key>key_question</key>
@@ -542,6 +572,8 @@
 	</dict>
 	<key>11</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>X字牌型</string>
 		<key>key_question</key>
@@ -595,6 +627,8 @@
 	</dict>
 	<key>12</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>当前财运</string>
 		<key>key_question</key>
@@ -662,6 +696,8 @@
 	</dict>
 	<key>13</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>X字牌型</string>
 		<key>key_question</key>
@@ -715,6 +751,10 @@
 	</dict>
 	<key>14</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>3,7,11,15</string>
 		<key>key_zhen_name</key>
 		<string>四要素</string>
 		<key>key_question</key>
@@ -761,6 +801,8 @@
 	</dict>
 	<key>15</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>友谊牌阵</string>
 		<key>key_question</key>
@@ -821,6 +863,8 @@
 	</dict>
 	<key>16</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>平安扇</string>
 		<key>key_question</key>
@@ -871,6 +915,8 @@
 	</dict>
 	<key>17</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>七行星</string>
 		<key>key_question</key>
@@ -938,6 +984,8 @@
 	</dict>
 	<key>18</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
 		<key>key_zhen_name</key>
 		<string>自我探索</string>
 		<key>key_question</key>
@@ -984,6 +1032,10 @@
 	</dict>
 	<key>19</key>
 	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,7,8</string>
 		<key>key_zhen_name</key>
 		<string>身心灵</string>
 		<key>key_question</key>
