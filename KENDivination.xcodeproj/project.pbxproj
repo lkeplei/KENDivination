@@ -175,6 +175,11 @@
 		042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 042635AA192718DC0057B4EF /* KENViewPaiZhen.m */; };
 		042CDFB0192F8FDC00A143BD /* paizhen_bg_path_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */; };
 		042CDFB1192F8FDC00A143BD /* paizhen_bg_path_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */; };
+		0443BC711934DCC7000F5C29 /* app_btn_detail_sec@2x..png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */; };
+		0443BC721934DCC7000F5C29 /* app_btn_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */; };
+		0443BC751934DD7B000F5C29 /* KENViewPaiZhenDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443BC741934DD7B000F5C29 /* KENViewPaiZhenDetail.m */; };
+		0443BC781934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */; };
+		0443BC791934DE2B000F5C29 /* app_btn_paizhen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */; };
 		045A4CD419337EC900463FF8 /* jie_pai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CD219337EC900463FF8 /* jie_pai_bg@2x.png */; };
 		045A4CD519337EC900463FF8 /* save_whether_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CD319337EC900463FF8 /* save_whether_alert@2x.png */; };
 		045A4D1F1933848F00463FF8 /* l_app_pai_0@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CDB1933848F00463FF8 /* l_app_pai_0@2x.jpg */; };
@@ -477,6 +482,12 @@
 		042635AA192718DC0057B4EF /* KENViewPaiZhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhen.m; sourceTree = "<group>"; };
 		042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_4@2x.png"; sourceTree = "<group>"; };
 		042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_5@2x.png"; sourceTree = "<group>"; };
+		0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail_sec@2x..png"; sourceTree = "<group>"; };
+		0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail@2x.png"; sourceTree = "<group>"; };
+		0443BC731934DD7B000F5C29 /* KENViewPaiZhenDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewPaiZhenDetail.h; sourceTree = "<group>"; };
+		0443BC741934DD7B000F5C29 /* KENViewPaiZhenDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhenDetail.m; sourceTree = "<group>"; };
+		0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_paizhen_sec@2x.png"; sourceTree = "<group>"; };
+		0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_paizhen@2x.png"; sourceTree = "<group>"; };
 		045A4CD219337EC900463FF8 /* jie_pai_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jie_pai_bg@2x.png"; sourceTree = "<group>"; };
 		045A4CD319337EC900463FF8 /* save_whether_alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save_whether_alert@2x.png"; sourceTree = "<group>"; };
 		045A4CDB1933848F00463FF8 /* l_app_pai_0@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "l_app_pai_0@2x.jpg"; sourceTree = "<group>"; };
@@ -675,6 +686,10 @@
 		0400E0891928B888004D3B30 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */,
+				0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */,
+				0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */,
+				0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */,
 				0400E08A1928B888004D3B30 /* app_btn_back@2x.png */,
 				0400E08B1928B888004D3B30 /* app_btn_back_sec@2x.png */,
 				0400E08C1928B888004D3B30 /* app_btn_ok@2x.png */,
@@ -1064,6 +1079,8 @@
 				041A0AFB1926531C007618C6 /* KENViewQuestion.m */,
 				04A07BB519224FAF00F33A1D /* KENViewSetting.h */,
 				04A07BB619224FAF00F33A1D /* KENViewSetting.m */,
+				0443BC731934DD7B000F5C29 /* KENViewPaiZhenDetail.h */,
+				0443BC741934DD7B000F5C29 /* KENViewPaiZhenDetail.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1227,6 +1244,7 @@
 				042CDFB1192F8FDC00A143BD /* paizhen_bg_path_5@2x.png in Resources */,
 				0400E04B1928AC36004D3B30 /* direction_paizhen_02@2x.png in Resources */,
 				045A4D5C1933848F00463FF8 /* s_app_pai_5@2x.jpg in Resources */,
+				0443BC721934DCC7000F5C29 /* app_btn_detail@2x.png in Resources */,
 				045A4D3F1933848F00463FF8 /* m_app_pai_19@2x.jpg in Resources */,
 				0400E0541928AC36004D3B30 /* direction_paizhen_06_sec@2x.png in Resources */,
 				0400E0E91928B888004D3B30 /* button_close_sec@2x.png in Resources */,
@@ -1274,6 +1292,7 @@
 				0400E00519289E08004D3B30 /* exit_whether_alert@2x.png in Resources */,
 				0400E11D1928B888004D3B30 /* direction_love_title@2x.png in Resources */,
 				0400E10F1928B888004D3B30 /* direction_paizhen_14@2x.png in Resources */,
+				0443BC711934DCC7000F5C29 /* app_btn_detail_sec@2x..png in Resources */,
 				0400E0EE1928B888004D3B30 /* button_start_choupai@2x.png in Resources */,
 				0400E1321928B888004D3B30 /* pai_zhen_title_16@2x.png in Resources */,
 				045A4D461933848F00463FF8 /* m_app_pai_5@2x.jpg in Resources */,
@@ -1284,6 +1303,7 @@
 				045A4D1F1933848F00463FF8 /* l_app_pai_0@2x.jpg in Resources */,
 				0400E04A1928AC36004D3B30 /* direction_paizhen_01_sec@2x.png in Resources */,
 				0400E1341928B888004D3B30 /* pai_zhen_title_18@2x.png in Resources */,
+				0443BC781934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png in Resources */,
 				045A4D561933848F00463FF8 /* s_app_pai_1@2x.jpg in Resources */,
 				0400E11B1928B888004D3B30 /* direction_paizhen_jiami@2x.png in Resources */,
 				0400E1241928B888004D3B30 /* pai_zhen_title_02@2x.png in Resources */,
@@ -1317,6 +1337,7 @@
 				0400E10B1928B888004D3B30 /* direction_paizhen_11@2x.png in Resources */,
 				0400E1171928B888004D3B30 /* direction_paizhen_18@2x.png in Resources */,
 				04246479192E2C94001A18D7 /* paizhen.plist in Resources */,
+				0443BC791934DE2B000F5C29 /* app_btn_paizhen@2x.png in Resources */,
 				0400E0621928AC36004D3B30 /* direction_paizhen_14_sec@2x.png in Resources */,
 				0400E0F21928B888004D3B30 /* button_start_qiepai@2x.png in Resources */,
 				045A4D381933848F00463FF8 /* m_app_pai_12@2x.jpg in Resources */,
@@ -1461,6 +1482,7 @@
 				04A07BB719224FAF00F33A1D /* KENViewSetting.m in Sources */,
 				040AF73F1924E77A00F5FDCB /* KENViewAboutUs.m in Sources */,
 				042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */,
+				0443BC751934DD7B000F5C29 /* KENViewPaiZhenDetail.m in Sources */,
 				04B323711920FA8700C055FF /* KENUtils.m in Sources */,
 				0400E0081928A7B5004D3B30 /* KENUiViewStartXiPai.m in Sources */,
 				042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */,

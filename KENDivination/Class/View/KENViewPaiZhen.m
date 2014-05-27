@@ -84,6 +84,18 @@
     }
 }
 
+-(void)setFinishStatus:(BOOL)finishStatus{
+    _finishStatus = finishStatus;
+    
+    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+                                         image:[UIImage imageNamed:@"app_btn_detail.png"]
+                                      imagesec:[UIImage imageNamed:@"app_btn_detail_sec.png"]
+                                        target:self
+                                        action:@selector(detailBtnClicked:)];
+    setBtn.center = CGPointMake(288, KNotificationHeight / 2);
+    [self.contentView addSubview:setBtn];
+}
+
 #pragma mark - others
 -(UIImage*)setViewTitleImage{
     return [[KENModel shareModel] getPaiZhenTitle];
@@ -104,6 +116,10 @@
 }
 
 #pragma mark - btn clicked
+-(void)detailBtnClicked:(UIButton*)button{
+    [self pushView:[SysDelegate.viewController getView:KENViewTypePaiZhenDetail] animatedType:KENTypeNull];
+}
+
 -(void)backBtnClicked:(UIButton*)button{
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[UIImage imageNamed:@"button_cancel.png"] forKey:KDicKeyImg];
@@ -113,13 +129,20 @@
     [dic1 setObject:[UIImage imageNamed:@"button_confirm.png"] forKey:KDicKeyImg];
     [dic1 setObject:[UIImage imageNamed:@"button_confirm_sec.png"] forKey:KDicKeyImgSec];
 
-    _alertView = [[KENUiViewAlert alloc] initWithMessage:[UIImage imageNamed:@"exit_whether_alert.png"]
-                                                       btnArray:[[NSArray alloc] initWithObjects:dic, dic1, nil]];
+    UIImage* img = [UIImage imageNamed:@"exit_whether_alert.png"];
+    if (_finishStatus) {
+        img = [UIImage imageNamed:@"save_whether_alert.png"];
+    }
+    _alertView = [[KENUiViewAlert alloc] initWithMessage:img btnArray:[[NSArray alloc] initWithObjects:dic, dic1, nil]];
     [_alertView show];
 
     _alertView.alertBlock = ^(int index){
         if (index == 1) {
-            [self popToRootView:KENTypeNull];
+            if (_finishStatus) {
+                
+            } else {
+                [self popToRootView:KENTypeNull];
+            }
         }
     };
 }

@@ -117,10 +117,15 @@
         }
     }
 
-    if (index != -1 && _currentPaiIndex < [_imgViewArray count]) {
+    if (index != -1) {
         if (index == _currentPaiIndex) {
             [self animateShowPai:index];
             _currentPaiIndex++;
+            if (_currentPaiIndex == [_imgViewArray count]) {
+                if (self.delegate) {
+                    [self.delegate setFinishStatus:YES];
+                }
+            }
         } else if (index < _currentPaiIndex) {
             [self showPaiDetail:index];
         } else if (index > _currentPaiIndex) {
@@ -133,7 +138,7 @@
     DebugLog(@"show pai --------- > index = %d", index);
     KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}];
     alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-    [alert setKaPaiMessage:[[KENModel shareModel] getKaPaiMessage:1]];
+    [alert setKaPaiMessage:index + 1];
     [self addSubview:alert];
 }
 

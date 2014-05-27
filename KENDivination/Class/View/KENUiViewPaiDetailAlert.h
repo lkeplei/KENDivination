@@ -10,6 +10,6 @@
 
 @interface KENUiViewPaiDetailAlert : UIView
 
--(void)setKaPaiMessage:(NSDictionary*)messageDic;
+-(void)setKaPaiMessage:(NSInteger)zhenWei;
 
 @end

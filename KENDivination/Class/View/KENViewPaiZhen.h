@@ -12,4 +12,6 @@
 
 -(void)showViewWithType:(KENViewType)type;
 
+@property (nonatomic, assign) BOOL finishStatus;
+
 @end
