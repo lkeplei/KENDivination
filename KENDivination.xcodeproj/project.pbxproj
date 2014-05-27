@@ -281,6 +281,7 @@
 		04B3237719210FEB00C055FF /* KENViewHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3237619210FEB00C055FF /* KENViewHome.m */; };
 		04E577F3192112F200688137 /* app_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E577F2192112F200688137 /* app_background_image@2x.png */; };
 		04E577F5192115BE00688137 /* home_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E577F4192115BE00688137 /* home_background_image@2x.png */; };
+		1813B6D7193466EE003FE066 /* KENUiViewPaiDetailAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -596,6 +597,8 @@
 		04B3237619210FEB00C055FF /* KENViewHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewHome.m; sourceTree = "<group>"; };
 		04E577F2192112F200688137 /* app_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_background_image@2x.png"; sourceTree = "<group>"; };
 		04E577F4192115BE00688137 /* home_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_background_image@2x.png"; sourceTree = "<group>"; };
+		1813B6D5193466EE003FE066 /* KENUiViewPaiDetailAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewPaiDetailAlert.h; sourceTree = "<group>"; };
+		1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewPaiDetailAlert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1039,6 +1042,8 @@
 				0400E1381928C8B2004D3B30 /* KENUiViewEndXiPai.m */,
 				048EBA4E192EB164002D9441 /* KENUiViewFanPai.h */,
 				048EBA4F192EB164002D9441 /* KENUiViewFanPai.m */,
+				1813B6D5193466EE003FE066 /* KENUiViewPaiDetailAlert.h */,
+				1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */,
 				042514B7192CF27700A670CF /* KENUiViewQiePai.h */,
 				042514B8192CF27700A670CF /* KENUiViewQiePai.m */,
 				0400E0061928A7B5004D3B30 /* KENUiViewStartXiPai.h */,
@@ -1452,6 +1457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1813B6D7193466EE003FE066 /* KENUiViewPaiDetailAlert.m in Sources */,
 				04A07BB719224FAF00F33A1D /* KENViewSetting.m in Sources */,
 				040AF73F1924E77A00F5FDCB /* KENViewAboutUs.m in Sources */,
 				042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */,

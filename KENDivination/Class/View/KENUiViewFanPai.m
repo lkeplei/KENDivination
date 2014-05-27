@@ -10,9 +10,11 @@
 #import "KENUtils.h"
 #import "KENModel.h"
 #import "KENConfig.h"
+#import "KENUiViewPaiDetailAlert.h"
 
 @interface KENUiViewFanPai ()
 
+@property (assign) NSInteger currentPaiIndex;
 @property (nonatomic, strong) NSMutableArray* imgViewArray;
 
 @end
@@ -24,6 +26,7 @@
     if (self) {
         // Initialization code
         self.viewType = KENUiViewTypeFanPai;
+        _currentPaiIndex = 0;
         [self initView];
     }
     return self;
@@ -67,7 +70,7 @@
                         UIImageView* view = [_imgViewArray objectAtIndex:i];
                         view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
                         if ([dic objectForKey:KDicKeyZhenAngle]) {
-                            view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180 * M_PI);
+                            view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
                         }
                     }
                 }
@@ -81,9 +84,60 @@
                                                                                     frame.size.width, 20)
                                                                     font:[UIFont fontWithName:KLabelFontArial size:14]
                                                                    color:[UIColor whiteColor]];
+                                 
+                                 if ([KENModel shareModel].memoryData.memoryPaiZhen == 6 && i == 1) {
+                                     label.textAlignment = KTextAlignmentLeft;
+                                     label.frame = CGRectOffset(label.frame, frame.size.width + 4, -frame.size.height / 2 - 10);
+                                 } else if ([KENModel shareModel].memoryData.memoryPaiZhen == 16) {
+                                     if (i == 0) {
+                                         label.frame = CGRectOffset(label.frame, 20, 0);
+                                     } else if (i == 1){
+                                         label.frame = CGRectOffset(label.frame, -20, 0);
+                                     }
+                                 }
+                                 
                                  [self addSubview:label];
                              }
                          }
                      }];
+}
+
+#pragma mark - touch
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    if ([touches count] != 1)
+        return;
+    
+    int index = -1;
+    UITouch *touch = [touches anyObject];
+    CGPoint pos = [touch locationInView:self];
+    for (int i = 0; i < [_imgViewArray count]; i++) {
+        if (CGRectContainsPoint(((UIImageView*)[_imgViewArray objectAtIndex:i]).frame, pos)) {
+            index = i;
+            break;
+        }
+    }
+
+    if (index != -1 && _currentPaiIndex < [_imgViewArray count]) {
+        if (index == _currentPaiIndex) {
+            [self animateShowPai:index];
+            _currentPaiIndex++;
+        } else if (index < _currentPaiIndex) {
+            [self showPaiDetail:index];
+        } else if (index > _currentPaiIndex) {
+            DebugLog(@"please tap pai in sequence");
+        }
+    }
+}
+
+-(void)showPaiDetail:(NSInteger)index{
+    DebugLog(@"show pai --------- > index = %d", index);
+    KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}];
+    alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+    [alert setKaPaiMessage:[[KENModel shareModel] getKaPaiMessage:1]];
+    [self addSubview:alert];
+}
+
+-(void)animateShowPai:(NSInteger)index{
+    DebugLog(@"animate , show pai message ===== > index = %d", index);
 }
 @end

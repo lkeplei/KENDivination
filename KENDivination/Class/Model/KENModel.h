@@ -32,6 +32,7 @@
 -(NSArray*)getPaiZHenAutoIndex;
 -(NSDictionary*)getPaiZhenPostions;
 
+-(NSDictionary*)getKaPaiMessage:(NSInteger)index;
 
 @property (nonatomic, strong) KENMemory* memoryData;
 

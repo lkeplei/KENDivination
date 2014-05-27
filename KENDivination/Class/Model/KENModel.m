@@ -161,6 +161,10 @@
     return [KENUtils getArrayFromStrByCharactersInSet:[resdic objectForKey:KDicKeyZhenAutoIndex] character:@","];
 }
 
+-(NSDictionary*)getKaPaiMessage:(NSInteger)index{
+    return [LOADDIC(@"paiMessage", @"plist") objectForKey:[KENUtils getStringByInt:index]];
+}
+
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{
     
 }

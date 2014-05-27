@@ -295,7 +295,7 @@
 					<key>key_y</key>
 					<integer>225</integer>
 					<key>key_angle</key>
-					<integer>90</integer>
+					<integer>270</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
@@ -888,15 +888,15 @@
 					<key>key_y</key>
 					<integer>185</integer>
 					<key>key_angle</key>
-					<integer>30</integer>
+					<integer>340</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
 					<integer>242</integer>
 					<key>key_y</key>
-					<integer>185</integer>
+					<integer>178</integer>
 					<key>key_angle</key>
-					<integer>330</integer>
+					<integer>20</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
