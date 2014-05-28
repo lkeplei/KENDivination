@@ -151,6 +151,11 @@
     return [resdic objectForKey:KDicKeyZhenPosition];
 }
 
+-(NSString*)getPaiZhenDaiBiao:(NSInteger)index{
+    NSMutableDictionary* resdic = [LOADDIC(@"paizhen", @"plist") objectForKey:[KENUtils getStringByInt:_memoryData.memoryPaiZhen]];
+    return [[resdic objectForKey:KDicKeyZhenPosSense] objectAtIndex:index];
+}
+
 -(BOOL)getPaiZhenAuto{
     NSMutableDictionary* resdic = [LOADDIC(@"paizhen", @"plist") objectForKey:[KENUtils getStringByInt:_memoryData.memoryPaiZhen]];
     return [[resdic objectForKey:KDicKeyZhenAuto] boolValue];
@@ -163,6 +168,28 @@
 
 -(NSDictionary*)getKaPaiMessage:(NSInteger)index{
     return [LOADDIC(@"paiMessage", @"plist") objectForKey:[KENUtils getStringByInt:index]];
+}
+
+-(NSString*)getPaiJieYu:(NSInteger)index{
+    NSDictionary* paiAndPaiwei = [_memoryData getPaiAndPaiWei:index];
+    NSDictionary* paiMessage = [self getKaPaiMessage:[[paiAndPaiwei objectForKey:KDicPaiIndex] intValue]];
+    
+    NSDictionary* resdic = nil;
+    if ([[paiAndPaiwei objectForKey:KDicPaiWei] boolValue]) {
+        resdic = [[paiMessage objectForKey:KDicKeyPaiMeaning] objectForKey:KDicKeyPaiWeiForword];
+    } else {
+        resdic = [[paiMessage objectForKey:KDicKeyPaiMeaning] objectForKey:KDicKeyPaiWeiReverse];
+    }
+    
+    return [resdic objectForKey:[KENUtils getStringByInt:[_memoryData memroyDirection]]];
+}
+
+-(void)saveData{
+    [self clearData];
+}
+
+-(void)clearData{
+    _memoryData = [[KENMemory alloc] init];
 }
 
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{
@@ -179,13 +206,45 @@
 
 
 @implementation KENMemory
+-(NSDictionary*)getPaiAndPaiWei:(NSInteger)index{
+    if (_memoryPaiMessage == nil) {
+        [self getPaiMessage];
+    }
+
+    NSArray* array = [KENUtils getArrayFromStrByCharactersInSet:[_memoryPaiMessage objectAtIndex:index] character:@"-"];
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
+    [dic setObject:[array objectAtIndex:0] forKey:KDicPaiIndex];
+    [dic setObject:[array objectAtIndex:1] forKey:KDicPaiWei];
+    return dic;
+}
+
 -(NSArray*)getPaiMessage{
-    NSMutableArray* array = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < [[KENModel shareModel] getPaiZhenNumber]; i++) {
+    if (_memoryPaiMessage == nil) {
+        _memoryPaiMessage = [[NSMutableArray alloc] init];
         
+        NSMutableArray* array = [[NSMutableArray alloc] init];
+        for (int i = 0; i < [[KENModel shareModel] getPaiZhenNumber]; i++) {
+            BOOL random = YES;
+            while (random) {
+                int pai = [KENUtils getRandomNumber:0 to:21];
+                int index = -1;
+                for (int j = 0; j < [array count]; j++) {
+                    if (pai == [[array objectAtIndex:j] intValue]) {
+                        index = j;
+                        break;
+                    }
+                }
+                if (index == -1) {
+                    random = NO;
+                    [array addObject:[NSNumber numberWithInt:pai]];
+                    [_memoryPaiMessage addObject:[NSString stringWithFormat:@"%d-%d", pai, [KENUtils getRandomNumber:0 to:1]]];
+                }
+            }
+        }
+        
+        DebugLog(@"_memoryPai = %@", _memoryPaiMessage);
     }
     
-    return array;
+    return _memoryPaiMessage;
 }
 @end

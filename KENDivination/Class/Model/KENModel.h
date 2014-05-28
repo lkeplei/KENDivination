@@ -31,8 +31,13 @@
 -(BOOL)getPaiZhenAuto;
 -(NSArray*)getPaiZHenAutoIndex;
 -(NSDictionary*)getPaiZhenPostions;
+-(NSString*)getPaiZhenDaiBiao:(NSInteger)index;
 
 -(NSDictionary*)getKaPaiMessage:(NSInteger)index;
+-(NSString*)getPaiJieYu:(NSInteger)index;
+
+-(void)saveData;
+-(void)clearData;
 
 @property (nonatomic, strong) KENMemory* memoryData;
 
@@ -43,9 +48,11 @@
 
 @interface KENMemory : NSObject
 
+-(NSDictionary*)getPaiAndPaiWei:(NSInteger)index;
+
 @property (assign) KENType memroyDirection;
 @property (assign) NSInteger memoryPaiZhen;
 @property (nonatomic, strong) NSString* memoryQuestion;
-@property (nonatomic, strong, getter=getPaiMessage) NSArray* memoryPaiMessage;
+@property (nonatomic, strong, getter=getPaiMessage) NSMutableArray* memoryPaiMessage;
 
 @end

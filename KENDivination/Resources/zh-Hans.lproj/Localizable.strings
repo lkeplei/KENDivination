@@ -17,3 +17,5 @@
 "kapai_guanjianzhi" = "关键字：";
 "kapai_paiwei" = "牌位：";
 "kapai_jieyu" = "解语：";
+"kapai_paiwei_zheng" = "正位";
+"kapai_paiwei_fan" = "逆位";

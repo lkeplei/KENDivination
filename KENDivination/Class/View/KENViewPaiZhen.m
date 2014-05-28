@@ -139,10 +139,11 @@
     _alertView.alertBlock = ^(int index){
         if (index == 1) {
             if (_finishStatus) {
-                
+                [[KENModel shareModel] saveData];
             } else {
-                [self popToRootView:KENTypeNull];
+                [[KENModel shareModel] clearData];
             }
+            [self popToRootView:KENTypeNull];
         }
     };
 }

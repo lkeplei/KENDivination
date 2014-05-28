@@ -135,14 +135,13 @@
 }
 
 -(void)showPaiDetail:(NSInteger)index{
-    DebugLog(@"show pai --------- > index = %d", index);
     KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}];
     alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-    [alert setKaPaiMessage:index + 1];
+    [alert setKaPaiMessage:index];
     [self addSubview:alert];
 }
 
 -(void)animateShowPai:(NSInteger)index{
-    DebugLog(@"animate , show pai message ===== > index = %d", index);
+    
 }
 @end

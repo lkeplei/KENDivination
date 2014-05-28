@@ -71,9 +71,15 @@
 #define KDicKeyZhenY            @"key_y"
 #define KDicKeyZhenAuto         @"key_zhen_auto"
 #define KDicKeyZhenAutoIndex    @"key_zhen_auto_index"
+#define KDicKeyPaiMeaning       @"key_pai_meaning"
+#define KDicKeyPaiWeiForword    @"key_forword"
+#define KDicKeyPaiWeiReverse    @"key_ reverse"
 #define KDicKeyPaiImg           @"key_pai_img"
 #define KDicKeyPaiName          @"key_pai_name"
 #define KDicKeyPaiKeyword       @"key_pai_keyword"
+
+#define KDicPaiWei              @"pai_wei"
+#define KDicPaiIndex            @"pai_index"
 
 //define for server
 #define KIosZhHansItunesIP      @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文
