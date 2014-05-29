@@ -19,7 +19,7 @@
 
 @implementation KENUiViewPaiDetailAlert
 
-- (id)initWithFrame:(CGRect)frame{
+-(id)initWithFrame:(CGRect)frame animate:(BOOL)animate{
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor clearColor]];
@@ -30,15 +30,45 @@
         
         [self addSubview:_bgView];
         
-        UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
-                                             image:[UIImage imageNamed:@"button_close.png"]
-                                          imagesec:[UIImage imageNamed:@"button_close_sec.png"]
-                                            target:self
-                                            action:@selector(closeBtnClicked:)];
-        button.center = CGPointMake(170, CGRectGetMaxY(_bgView.frame) - button.frame.size.height + 10);
-        [self addSubview:button];
+        if (animate) {
+            _bgView.layer.transform = CATransform3DScale(self.layer.transform, 4, 4, 4);
+            
+            UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+                                                 image:nil
+                                              imagesec:nil
+                                                target:self
+                                                action:@selector(stopBtnClicked:)];
+            button.frame = self.frame;
+            [self addSubview:button];
+        } else {
+            UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+                                                 image:[UIImage imageNamed:@"button_close.png"]
+                                              imagesec:[UIImage imageNamed:@"button_close_sec.png"]
+                                                target:self
+                                                action:@selector(closeBtnClicked:)];
+            button.center = CGPointMake(170, CGRectGetMaxY(_bgView.frame) - button.frame.size.height + 10);
+            [self addSubview:button];
+        }
     }
     return self;
+}
+
+-(void)animateKaPai:(NSInteger)zhenWei{
+    NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:zhenWei];
+    NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
+    UIImageView* largeImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[@"l_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
+    largeImg.center = CGPointMake(self.center.x, self.frame.size.height / 2);
+    if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
+        largeImg.transform = CGAffineTransformMakeRotation(M_PI);
+    }
+    [self addSubview:largeImg];
+    
+    CATransform3D currentTransform = largeImg.layer.transform;
+    CATransform3D scaled = CATransform3DScale(self.layer.transform, 0.2, 0.2, 0.2);
+    largeImg.layer.transform = scaled;
+    [UIView animateWithDuration:0.8 animations:^{
+        largeImg.layer.transform = currentTransform;
+    }];
 }
 
 -(void)setKaPaiMessage:(NSInteger)zhenWei{
@@ -108,6 +138,13 @@
 }
 
 #pragma mark - setting btn
+-(void)stopBtnClicked:(UIButton*)button{
+    //放声音
+    [[KENModel shareModel] playVoiceByType:KENVoiceFanPaiHou];
+    
+    [self removeFromSuperview];
+}
+
 -(void)closeBtnClicked:(UIButton*)button{
     [self removeFromSuperview];
 }

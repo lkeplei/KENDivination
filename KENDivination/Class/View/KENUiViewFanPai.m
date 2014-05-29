@@ -119,13 +119,14 @@
 
     if (index != -1) {
         if (index == _currentPaiIndex) {
-            [self animateShowPai:index];
             _currentPaiIndex++;
             if (_currentPaiIndex == [_imgViewArray count]) {
                 if (self.delegate) {
                     [self.delegate setFinishStatus:YES];
                 }
             }
+            
+            [self animateShowPai:index];
         } else if (index < _currentPaiIndex) {
             [self showPaiDetail:index];
         } else if (index > _currentPaiIndex) {
@@ -135,7 +136,7 @@
 }
 
 -(void)showPaiDetail:(NSInteger)index{
-    KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}];
+    KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size} animate:NO];
     alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     [alert setKaPaiMessage:index];
     [self addSubview:alert];
@@ -151,5 +152,12 @@
     
     //放声音
     [[KENModel shareModel] playVoiceByType:KENVoiceFanPai];
+    
+    //show pai
+    KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size} animate:YES];
+    alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+    [alert animateKaPai:index];
+    [self addSubview:alert];
 }
+
 @end

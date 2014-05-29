@@ -275,4 +275,20 @@
                          }
                      }];
 }
+
+//动画参考
+//- (void)startAnimation
+//{
+//    CGAffineTransform endAngle = CGAffineTransformMakeRotation(angle * (M_PI / 180.0f));
+//    
+//    [UIView animateWithDuration:0.01 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+//        <span style="color:#ff0000;">guabanImageBefore.layer.anchorPoint = CGPointMake(0.5f,0.048245f);//围绕点
+//        guabanImageBefore.layer.position = CGPointMake(160, 37+5);//位置</span>
+//        guabanImageBefore.transform = endAngle;
+//        
+//    } completion:^(BOOL finished) {
+//        angle += 10; [self startAnimation];
+//    }];
+//    
+//}
 @end

@@ -10,6 +10,9 @@
 
 @interface KENUiViewPaiDetailAlert : UIView
 
+-(id)initWithFrame:(CGRect)frame animate:(BOOL)animate;
+
 -(void)setKaPaiMessage:(NSInteger)zhenWei;
+-(void)animateKaPai:(NSInteger)zhenWei;
 
 @end
