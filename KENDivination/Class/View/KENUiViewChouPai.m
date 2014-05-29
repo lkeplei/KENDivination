@@ -154,6 +154,9 @@
         _currentActivePai = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
         _currentActivePai.center = ((UIImageView*)[_paiArray objectAtIndex:index]).center;
         [self addSubview:_currentActivePai];
+        
+        //抽牌声音
+        [[KENModel shareModel] playVoiceByType:KENVoiceChouPai];
     }
 }
 

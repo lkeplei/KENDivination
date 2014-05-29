@@ -65,6 +65,11 @@
     return YES;
 }
 
+-(void)textViewDidChange:(UITextView *)textView{
+    //放声音
+    [[KENModel shareModel] playVoiceByType:KENVoiceAnJian];
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (![_questionTextView isExclusiveTouch]) {
         [_questionTextView resignFirstResponder];

@@ -8,6 +8,6 @@
 
 #import "KENViewBase.h"
 
-@interface KENViewPaiZhenDetail : KENViewBase
+@interface KENViewPaiZhenDetail : KENViewBase<UITableViewDataSource, UITableViewDelegate>
 
 @end

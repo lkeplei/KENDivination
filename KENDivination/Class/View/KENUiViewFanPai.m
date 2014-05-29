@@ -142,6 +142,14 @@
 }
 
 -(void)animateShowPai:(NSInteger)index{
+    NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:index];
+    NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
+    [((UIImageView*)[_imgViewArray objectAtIndex:index]) setImage:[UIImage imageNamed:[@"s_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
+    if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
+        ((UIImageView*)[_imgViewArray objectAtIndex:index]).transform = CGAffineTransformMakeRotation(M_PI);
+    }
     
+    //放声音
+    [[KENModel shareModel] playVoiceByType:KENVoiceFanPai];
 }
 @end
