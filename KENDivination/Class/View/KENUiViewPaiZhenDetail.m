@@ -1,38 +1,41 @@
 //
-//  KENViewPaiZhenDetail.m
+//  KENUiViewPaiZhenDetail.m
 //  KENDivination
 //
 //  Created by 刘坤 on 14-5-27.
 //  Copyright (c) 2014年 ken. All rights reserved.
 //
 
-#import "KENViewPaiZhenDetail.h"
+#import "KENUiViewPaiZhenDetail.h"
 #import "KENModel.h"
 #import "KENUtils.h"
 #import "KENConfig.h"
 
-@interface KENViewPaiZhenDetail ()
+@interface KENUiViewPaiZhenDetail ()
 
 @property (nonatomic, strong) UITableView* tableView;
 
 @end
 
-@implementation KENViewPaiZhenDetail
+@implementation KENUiViewPaiZhenDetail
 
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.viewType = KENViewTypePaiZhenDetail;
+        self.viewType = KENUiViewTypePaiZhenDetail;
+        [self initView];
     }
     return self;
 }
 
+-(void)initView{
+    [self initTable];
+}
+
 #pragma mark - init area
 - (void) initTable{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, KNotificationHeight,
-                                                               self.contentView.frame.size.width,
-                                                               self.contentView.frame.size.height - KNotificationHeight)
+    _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
                                               style:UITableViewStylePlain];
 	_tableView.delegate = self;
 	_tableView.dataSource = self;
@@ -42,7 +45,7 @@
 	_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [_tableView setBackgroundView:nil];
     [_tableView setBackgroundColor:[UIColor clearColor]];
-	[self.contentView addSubview:_tableView];
+	[self addSubview:_tableView];
     
     [_tableView reloadData];
 }
@@ -129,26 +132,11 @@
     
 }
 
-#pragma mark - others
--(UIImage*)setViewTitleImage{
-    return [[KENModel shareModel] getPaiZhenTitle];
-}
-
--(void)showView{
-    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
-                                         image:[UIImage imageNamed:@"app_btn_paizhen.png"]
-                                      imagesec:[UIImage imageNamed:@"app_btn_paizhen_sec.png"]
-                                        target:self
-                                        action:@selector(btnClicked:)];
-    setBtn.center = CGPointMake(288, KNotificationHeight / 2);
-    [self.contentView addSubview:setBtn];
-    
-    [self initTable];
-}
-
 #pragma mark - btn clicked
 -(void)btnClicked:(UIButton*)button{
-    [self popView:KENTypeNull];
+    if (self.delegate) {
+        [self.delegate jumpToFanPai];
+    }
 }
 
 @end

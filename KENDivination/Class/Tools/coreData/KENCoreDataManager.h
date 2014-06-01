@@ -10,7 +10,7 @@
 //引入CoreData框架
 #import <CoreData/CoreData.h>
 
-#define KCoreVoiceFiles         @"MAVoiceFiles"
+#define KCoreMemoryEntity         @"KENMemoryEntity"
 
 @interface KENCoreDataManager : NSObject
 
@@ -65,5 +65,5 @@
  */
 -(NSManagedObject*)getNewManagedObject:(NSString*)object;
 
--(NSArray*)getMAVoiceFile:(NSString*)name;
+-(NSArray*)getMemoryEntity:(NSString*)unique;
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KENModelDef.h"
 
+@class KENMemoryEntity;
 @class KENMemory;
 
 @interface KENModel : NSObject
@@ -36,6 +37,7 @@
 -(NSDictionary*)getKaPaiMessage:(NSInteger)index;
 -(NSString*)getPaiJieYu:(NSInteger)index;
 
+-(void)setData:(KENMemoryEntity*)memory;
 -(void)saveData;
 -(void)clearData;
 
@@ -49,8 +51,10 @@
 @interface KENMemory : NSObject
 
 -(NSDictionary*)getPaiAndPaiWei:(NSInteger)index;
+-(NSString*)getPaiMessageString;
+-(void)setPaiMessage:(NSString*)string;
 
-@property (assign) KENType memroyDirection;
+@property (assign) KENType memoryDirection;
 @property (assign) NSInteger memoryPaiZhen;
 @property (nonatomic, strong) NSString* memoryQuestion;
 @property (nonatomic, strong, getter=getPaiMessage) NSMutableArray* memoryPaiMessage;

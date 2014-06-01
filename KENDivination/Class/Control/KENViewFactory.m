@@ -14,7 +14,6 @@
 #import "KENViewAboutUs.h"
 #import "KENViewQuestion.h"
 #import "KENViewPaiZhen.h"
-#import "KENViewPaiZhenDetail.h"
 
 @interface KENViewFactory ()
 
@@ -25,8 +24,6 @@
 @property (nonatomic, strong) KENViewAboutUs* aboutUsView;
 @property (nonatomic, strong) KENViewQuestion* questionView;
 @property (nonatomic, strong) KENViewPaiZhen* paiZhenView;
-@property (nonatomic, strong) KENViewPaiZhenDetail* paiZhenViewDetail;
-
 @end
 
 
@@ -84,14 +81,6 @@
             view = _paiZhenView;
         }
             break;
-        case KENViewTypePaiZhenDetail:{
-            if (_paiZhenViewDetail == nil) {
-                _paiZhenViewDetail = [[KENViewPaiZhenDetail alloc] initWithFrame:frame];
-            }
-            view = _paiZhenViewDetail;
-        }
-            break;
-
         default:
             break;
     }
@@ -149,15 +138,7 @@
                 _paiZhenView = nil;
             }
         }
-            break;
-        case KENViewTypePaiZhenDetail:{
-            if (_paiZhenViewDetail) {
-                [_paiZhenViewDetail removeFromSuperview];
-                _paiZhenViewDetail = nil;
-            }
-        }
-            break;
-        default:
+            break;        default:
             break;
     }
 }

@@ -16,6 +16,18 @@
 		<array>
 			<string>问题的答案</string>
 		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>200</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>2</key>
 	<dict>

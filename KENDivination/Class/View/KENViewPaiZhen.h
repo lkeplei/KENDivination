@@ -11,7 +11,9 @@
 @interface KENViewPaiZhen : KENViewBase
 
 -(void)showViewWithType:(KENViewType)type;
+-(void)jumpToFanPai;
 
 @property (nonatomic, assign) BOOL finishStatus;
+@property (assign) BOOL fromMemory;
 
 @end

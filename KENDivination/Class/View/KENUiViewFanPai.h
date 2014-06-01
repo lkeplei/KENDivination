@@ -10,4 +10,6 @@
 
 @interface KENUiViewFanPai : KENUiViewBase
 
+- (id)initWithFrame:(CGRect)frame finish:(BOOL)finish;
+
 @end

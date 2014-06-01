@@ -69,6 +69,45 @@
     [UIView animateWithDuration:0.8 animations:^{
         largeImg.layer.transform = currentTransform;
     }];
+    
+    
+    
+    
+//    [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    
+    [UIView animateWithDuration:1.5 animations:^{
+//        CATransform3D transloate = CATransform3DMakeTranslation(0, 0, -200);
+//        CATransform3D rotate = CATransform3DMakeRotation(0.8, 0, 1, 0);
+//        CATransform3D mat = CATransform3DConcat(rotate, transloate);
+//        largeImg.layer.transform = CATransform3DPerspect(mat, CGPointMake(0, 0), 500);
+        
+        
+        
+//        largeImg.layer.transform = CATransform3DMakeRotation(M_PI / 2, 0, 0, 1);
+    }];
+}
+CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ)
+{
+    CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
+    CATransform3D transBack = CATransform3DMakeTranslation(center.x, center.y, 0);
+    CATransform3D scale = CATransform3DIdentity;
+    scale.m34 = -1.0f/disZ;
+    return CATransform3DConcat(CATransform3DConcat(transToCenter, scale), transBack);
+}
+
+CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
+{
+    return CATransform3DConcat(t, CATransform3DMakePerspective(center, disZ));
+}
+- (void)update
+{
+    static float angle = 0;
+    angle += 0.05f;
+    
+//    CATransform3D transloate = CATransform3DMakeTranslation(0, 0, -200);
+//    CATransform3D rotate = CATransform3DMakeRotation(angle, 0, 1, 0);
+//    CATransform3D mat = CATransform3DConcat(rotate, transloate);
+//    image.layer.transform = CATransform3DPerspect(mat, CGPointMake(0, 0), 500);
 }
 
 -(void)setKaPaiMessage:(NSInteger)zhenWei{

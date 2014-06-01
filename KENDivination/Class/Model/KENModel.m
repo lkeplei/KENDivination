@@ -10,6 +10,8 @@
 #import "KENConfig.h"
 #import "KENDataManager.h"
 #import "KENUtils.h"
+#import "KENMemoryEntity.h"
+#import "KENCoreDataManager.h"
 
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -86,7 +88,7 @@
 
 -(NSArray*)getDirectionPaiZhen{
     NSMutableDictionary* resdic = LOADDIC(@"direction", @"plist");
-    switch (_memoryData.memroyDirection) {
+    switch (_memoryData.memoryDirection) {
         case KENTypeDirectionLove:
             return [resdic objectForKey:@"direction_love"];
             break;
@@ -103,7 +105,7 @@
             return [resdic objectForKey:@"direction_health"];
             break;
         default:{
-            _memoryData.memroyDirection = KENTypeDirectionLove;
+            _memoryData.memoryDirection = KENTypeDirectionLove;
             return [resdic objectForKey:@"direction_love"];
         }
             break;
@@ -112,7 +114,7 @@
 }
 
 -(UIImage*)getDirectionTitle{
-    switch ([_memoryData memroyDirection]) {
+    switch ([_memoryData memoryDirection]) {
         case KENTypeDirectionLove:
             return [UIImage imageNamed:@"direction_love_title.png"];
             break;
@@ -129,7 +131,7 @@
             return [UIImage imageNamed:@"direction_health_title.png"];
             break;
         default:{
-            _memoryData.memroyDirection = KENTypeDirectionLove;
+            _memoryData.memoryDirection = KENTypeDirectionLove;
             return [UIImage imageNamed:@"direction_love_title.png"];
         }
             break;
@@ -181,10 +183,27 @@
         resdic = [[paiMessage objectForKey:KDicKeyPaiMeaning] objectForKey:KDicKeyPaiWeiReverse];
     }
     
-    return [resdic objectForKey:[KENUtils getStringByInt:[_memoryData memroyDirection]]];
+    return [resdic objectForKey:[KENUtils getStringByInt:[_memoryData memoryDirection]]];
+}
+
+-(void)setData:(KENMemoryEntity*)memory{
+    _memoryData = [[KENMemory alloc] init];
+    _memoryData.memoryDirection = [[memory direction] intValue];
+    _memoryData.memoryPaiZhen = [[memory paizhen] intValue];
+    _memoryData.memoryQuestion = [memory question];
+    [_memoryData setPaiMessage:[memory paimessage]];
 }
 
 -(void)saveData{
+    KENMemoryEntity* entity = (KENMemoryEntity*)[[KENCoreDataManager sharedCoreDataManager] getNewManagedObject:KCoreMemoryEntity];
+    [entity setDirection:[NSNumber numberWithInt:_memoryData.memoryDirection]];
+    [entity setPaizhen:[NSNumber numberWithInt:_memoryData.memoryPaiZhen]];
+    [entity setQuestion:_memoryData.memoryQuestion];
+    [entity setPaimessage:_memoryData.getPaiMessageString];
+    [entity setUniquetime:[KENUtils getStringFromDate:[NSDate date] format:KUniqueTimeFormat]];
+
+    [[KENCoreDataManager sharedCoreDataManager] saveEntry];
+    
     [self clearData];
 }
 
@@ -210,12 +229,34 @@
     if (_memoryPaiMessage == nil) {
         [self getPaiMessage];
     }
+    if ([_memoryPaiMessage count] > 0) {
+        NSArray* array = [KENUtils getArrayFromStrByCharactersInSet:[_memoryPaiMessage objectAtIndex:index] character:@"-"];
+        NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
+        [dic setObject:[array objectAtIndex:0] forKey:KDicPaiIndex];
+        [dic setObject:[array objectAtIndex:1] forKey:KDicPaiWei];
+        return dic;
+    } else {
+        return nil;
+    }
+}
 
-    NSArray* array = [KENUtils getArrayFromStrByCharactersInSet:[_memoryPaiMessage objectAtIndex:index] character:@"-"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:[array objectAtIndex:0] forKey:KDicPaiIndex];
-    [dic setObject:[array objectAtIndex:1] forKey:KDicPaiWei];
-    return dic;
+-(NSString*)getPaiMessageString{
+    NSString* resStr = @"";
+    if (_memoryPaiMessage) {
+        for (NSString* message in _memoryPaiMessage) {
+            if ([resStr length] <= 0) {
+                resStr = [resStr stringByAppendingString:message];
+            } else {
+                resStr = [resStr stringByAppendingFormat:@";%@", message];
+            }
+        }
+    }
+    return resStr;
+}
+
+-(void)setPaiMessage:(NSString*)string{
+    NSArray* array = [KENUtils getArrayFromStrByCharactersInSet:string character:@";"];
+    _memoryPaiMessage = [NSMutableArray arrayWithArray:array];
 }
 
 -(NSArray*)getPaiMessage{

@@ -70,19 +70,19 @@
                                  } else {
                                      switch (index) {
                                          case 0:
-                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionLove];
+                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionLove];
                                              break;
                                          case 2:
-                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionHealth];
+                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionHealth];
                                              break;
                                          case 3:
-                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionRelation];
+                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionRelation];
                                              break;
                                          case 4:
-                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionMoney];
+                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionMoney];
                                              break;
                                          case 5:
-                                             [[KENModel shareModel].memoryData setMemroyDirection:KENTypeDirectionWork];
+                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionWork];
                                              break;
                                          default:
                                              break;

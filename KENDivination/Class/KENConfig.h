@@ -53,6 +53,8 @@
 #define KUserDefaultSetOpenVoice             @"default_open_voice"
 #define KUserDefaultJieMi                    @"default_jie_mi"
 
+#define KUniqueTimeFormat                    @"yyyy-MM-dd HH:mm:ss"
+
 
 //key
 #define KDicKeyImg              @"key_img"

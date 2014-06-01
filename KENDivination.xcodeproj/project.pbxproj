@@ -173,11 +173,12 @@
 		042514B6192CEFC500A670CF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 042514AF192CEFC500A670CF /* Default-Landscape@2x~ipad.png */; };
 		042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */ = {isa = PBXBuildFile; fileRef = 042514B8192CF27700A670CF /* KENUiViewQiePai.m */; };
 		042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 042635AA192718DC0057B4EF /* KENViewPaiZhen.m */; };
+		042C7BF1193A97A900935A1C /* KENMemoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C7BF0193A97A900935A1C /* KENMemoryEntity.m */; };
 		042CDFB0192F8FDC00A143BD /* paizhen_bg_path_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */; };
 		042CDFB1192F8FDC00A143BD /* paizhen_bg_path_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */; };
 		0443BC711934DCC7000F5C29 /* app_btn_detail_sec@2x..png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */; };
 		0443BC721934DCC7000F5C29 /* app_btn_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */; };
-		0443BC751934DD7B000F5C29 /* KENViewPaiZhenDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443BC741934DD7B000F5C29 /* KENViewPaiZhenDetail.m */; };
+		0443BC751934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */; };
 		0443BC781934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */; };
 		0443BC791934DE2B000F5C29 /* app_btn_paizhen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */; };
 		045A4CD419337EC900463FF8 /* jie_pai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CD219337EC900463FF8 /* jie_pai_bg@2x.png */; };
@@ -481,12 +482,14 @@
 		042514B8192CF27700A670CF /* KENUiViewQiePai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewQiePai.m; sourceTree = "<group>"; };
 		042635A9192718DC0057B4EF /* KENViewPaiZhen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewPaiZhen.h; sourceTree = "<group>"; };
 		042635AA192718DC0057B4EF /* KENViewPaiZhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhen.m; sourceTree = "<group>"; };
+		042C7BEF193A97A900935A1C /* KENMemoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KENMemoryEntity.h; path = KENDivination/Class/Tools/coreData/KENMemoryEntity.h; sourceTree = SOURCE_ROOT; };
+		042C7BF0193A97A900935A1C /* KENMemoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KENMemoryEntity.m; path = KENDivination/Class/Tools/coreData/KENMemoryEntity.m; sourceTree = SOURCE_ROOT; };
 		042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_4@2x.png"; sourceTree = "<group>"; };
 		042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_5@2x.png"; sourceTree = "<group>"; };
 		0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail_sec@2x..png"; sourceTree = "<group>"; };
 		0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail@2x.png"; sourceTree = "<group>"; };
-		0443BC731934DD7B000F5C29 /* KENViewPaiZhenDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewPaiZhenDetail.h; sourceTree = "<group>"; };
-		0443BC741934DD7B000F5C29 /* KENViewPaiZhenDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhenDetail.m; sourceTree = "<group>"; };
+		0443BC731934DD7B000F5C29 /* KENUiViewPaiZhenDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewPaiZhenDetail.h; sourceTree = "<group>"; };
+		0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewPaiZhenDetail.m; sourceTree = "<group>"; };
 		0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_paizhen_sec@2x.png"; sourceTree = "<group>"; };
 		0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_paizhen@2x.png"; sourceTree = "<group>"; };
 		045A4CD219337EC900463FF8 /* jie_pai_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jie_pai_bg@2x.png"; sourceTree = "<group>"; };
@@ -1063,6 +1066,8 @@
 				048EBA4F192EB164002D9441 /* KENUiViewFanPai.m */,
 				1813B6D5193466EE003FE066 /* KENUiViewPaiDetailAlert.h */,
 				1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */,
+				0443BC731934DD7B000F5C29 /* KENUiViewPaiZhenDetail.h */,
+				0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */,
 				042514B7192CF27700A670CF /* KENUiViewQiePai.h */,
 				042514B8192CF27700A670CF /* KENUiViewQiePai.m */,
 				0400E0061928A7B5004D3B30 /* KENUiViewStartXiPai.h */,
@@ -1083,8 +1088,6 @@
 				041A0AFB1926531C007618C6 /* KENViewQuestion.m */,
 				04A07BB519224FAF00F33A1D /* KENViewSetting.h */,
 				04A07BB619224FAF00F33A1D /* KENViewSetting.m */,
-				0443BC731934DD7B000F5C29 /* KENViewPaiZhenDetail.h */,
-				0443BC741934DD7B000F5C29 /* KENViewPaiZhenDetail.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1143,6 +1146,8 @@
 		1887F8F61938553B0064F8F8 /* coreData */ = {
 			isa = PBXGroup;
 			children = (
+				042C7BEF193A97A900935A1C /* KENMemoryEntity.h */,
+				042C7BF0193A97A900935A1C /* KENMemoryEntity.m */,
 				1887F8F71938553B0064F8F8 /* KENCoreDataManager.h */,
 				1887F8F81938553B0064F8F8 /* KENCoreDataManager.m */,
 			);
@@ -1496,7 +1501,7 @@
 				04A07BB719224FAF00F33A1D /* KENViewSetting.m in Sources */,
 				040AF73F1924E77A00F5FDCB /* KENViewAboutUs.m in Sources */,
 				042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */,
-				0443BC751934DD7B000F5C29 /* KENViewPaiZhenDetail.m in Sources */,
+				0443BC751934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m in Sources */,
 				04B323711920FA8700C055FF /* KENUtils.m in Sources */,
 				0400E0081928A7B5004D3B30 /* KENUiViewStartXiPai.m in Sources */,
 				042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */,
@@ -1516,6 +1521,7 @@
 				0400E1391928C8B2004D3B30 /* KENUiViewEndXiPai.m in Sources */,
 				040C21141923B2C800B2E38E /* KENViewDirection.m in Sources */,
 				048EBA50192EB164002D9441 /* KENUiViewFanPai.m in Sources */,
+				042C7BF1193A97A900935A1C /* KENMemoryEntity.m in Sources */,
 				04B323231920ED1400C055FF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

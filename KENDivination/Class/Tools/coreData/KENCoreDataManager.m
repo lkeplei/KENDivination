@@ -149,12 +149,12 @@
 }
 
 #pragma mark - special get methods
--(NSArray*)getMAVoiceFile:(NSString*)name{
+-(NSArray*)getMemoryEntity:(NSString*)unique{
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:[NSEntityDescription entityForName:KCoreVoiceFiles inManagedObjectContext:[self managedObjectContext]]];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:KCoreMemoryEntity inManagedObjectContext:[self managedObjectContext]]];
     
     //更新谁的条件在这里配置；
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"name==%@", name]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"uniquetime==%@", unique]];
     
     NSError* error = nil;
     
