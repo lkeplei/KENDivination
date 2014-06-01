@@ -60,12 +60,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    float height = 44;
-    CGSize size = [KENUtils getFontSize:[[_resourceArray objectAtIndex:indexPath.row] question] font:[UIFont fontWithName:KLabelFontArial size:12]];
-    if (size.width / 200 > 1) {
-        height = 12 + size.height * (size.width / 200);
-    }
-    return height;
+    return [self getCellHeight:indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -81,29 +76,37 @@
     
     UIView* lineView = [cell.contentView viewWithTag:1111];
     if (lineView == nil) {
-        lineView = [[UIView alloc] initWithFrame:CGRectMake(0, cell.contentView.frame.size.height - 1, cell.contentView.frame.size.width, 1)];
+        lineView = [[UIView alloc] initWithFrame:CGRectMake(0, [self getCellHeight:indexPath.row] - 1, cell.contentView.frame.size.width, 1)];
         lineView.tag = 1111;
         [lineView setBackgroundColor:[UIColor whiteColor]];
         [cell.contentView addSubview:lineView];
+    } else {
+        lineView.frame = CGRectMake(0, [self getCellHeight:indexPath.row] - 1, cell.contentView.frame.size.width, 1);
     }
     
     UILabel* content = (UILabel*)[cell.contentView viewWithTag:2222];
     if (content == nil) {
         content = [KENUtils labelWithTxt:[[_resourceArray objectAtIndex:indexPath.row] question]
-                                   frame:CGRectMake(5, 0, 200, cell.contentView.frame.size.height)
-                                    font:[UIFont fontWithName:KLabelFontArial size:12] color:[UIColor whiteColor]];
+                                   frame:CGRectMake(5, 0, 200, [self getCellHeight:indexPath.row])
+                                    font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
         content.tag = 2222;
         content.textAlignment = KTextAlignmentLeft;
+        content.numberOfLines = 0;
         [cell.contentView addSubview:content];
+    } else {
+        content.frame = CGRectMake(5, 0, 200, [self getCellHeight:indexPath.row]);
     }
     
     UILabel* timeLable = (UILabel*)[cell.contentView viewWithTag:3333];
+    NSDate* date = [KENUtils getDateFromString:[[_resourceArray objectAtIndex:indexPath.row] uniquetime] format:KUniqueTimeFormat];
     if (timeLable == nil) {
-        timeLable = [KENUtils labelWithTxt:[[_resourceArray objectAtIndex:indexPath.row] uniquetime]
-                                     frame:CGRectMake(5 + CGRectGetMaxX(content.frame), 0, 80, cell.contentView.frame.size.height)
-                                      font:[UIFont fontWithName:KLabelFontArial size:12] color:[UIColor whiteColor]];
+        NSString* str = [NSString stringWithFormat:@"%@\r\n%@",
+                         [KENUtils getStringFromDate:date format:KUniqueYMDFormat],[KENUtils getStringFromDate:date format:KUniqueHMSFormat]];
+        timeLable = [KENUtils labelWithTxt:str
+                                     frame:CGRectMake(5 + CGRectGetMaxX(content.frame), 0, 80, [self getCellHeight:indexPath.row])
+                                      font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
         timeLable.tag = 3333;
-        timeLable.textAlignment = KTextAlignmentRight;
+        timeLable.numberOfLines = 0;
         [cell.contentView addSubview:timeLable];
     }
     
@@ -165,6 +168,16 @@
     [self.contentView addSubview:_topOkBtn];
     
     [self initTable];
+}
+
+-(float)getCellHeight:(int)index{
+    float height = 44;
+    CGSize size = [KENUtils getFontSize:[[_resourceArray objectAtIndex:index] question] font:[UIFont fontWithName:KLabelFontArial size:14]];
+    if (size.width / 200 > 0) {
+        height = 16 + size.height * (size.width / 200);
+    }
+    height = height > 44 ? height : 44;
+    return height;
 }
 
 #pragma mark - setting btn

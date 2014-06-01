@@ -53,7 +53,9 @@
 #define KUserDefaultSetOpenVoice             @"default_open_voice"
 #define KUserDefaultJieMi                    @"default_jie_mi"
 
-#define KUniqueTimeFormat                    @"yyyy-MM-dd HH:mm:ss"
+#define KUniqueTimeFormat                       @"yyyy-MM-dd HH:mm:ss"
+#define KUniqueYMDFormat                        @"yyyy-MM-dd"
+#define KUniqueHMSFormat                        @"HH:mm:ss"
 
 
 //key

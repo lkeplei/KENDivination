@@ -65,9 +65,13 @@
     return YES;
 }
 
--(void)textViewDidChange:(UITextView *)textView{
-    //放声音
-    [[KENModel shareModel] playVoiceByType:KENVoiceAnJian];
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if (range.location >= 256){
+        return  NO;
+    }
+    else{
+        return YES;
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
