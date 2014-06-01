@@ -174,6 +174,8 @@
 		042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */ = {isa = PBXBuildFile; fileRef = 042514B8192CF27700A670CF /* KENUiViewQiePai.m */; };
 		042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 042635AA192718DC0057B4EF /* KENViewPaiZhen.m */; };
 		042C7BF1193A97A900935A1C /* KENMemoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C7BF0193A97A900935A1C /* KENMemoryEntity.m */; };
+		042C7BF5193B046300935A1C /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C7BF3193B046300935A1C /* libMobClickLibrary.a */; };
+		042C7BF7193B048A00935A1C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C7BF6193B048A00935A1C /* libz.dylib */; };
 		042CDFB0192F8FDC00A143BD /* paizhen_bg_path_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */; };
 		042CDFB1192F8FDC00A143BD /* paizhen_bg_path_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */; };
 		0443BC711934DCC7000F5C29 /* app_btn_detail_sec@2x..png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */; };
@@ -484,6 +486,9 @@
 		042635AA192718DC0057B4EF /* KENViewPaiZhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhen.m; sourceTree = "<group>"; };
 		042C7BEF193A97A900935A1C /* KENMemoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KENMemoryEntity.h; path = KENDivination/Class/Tools/coreData/KENMemoryEntity.h; sourceTree = SOURCE_ROOT; };
 		042C7BF0193A97A900935A1C /* KENMemoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KENMemoryEntity.m; path = KENDivination/Class/Tools/coreData/KENMemoryEntity.m; sourceTree = SOURCE_ROOT; };
+		042C7BF3193B046300935A1C /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		042C7BF4193B046300935A1C /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		042C7BF6193B048A00935A1C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_4@2x.png"; sourceTree = "<group>"; };
 		042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_5@2x.png"; sourceTree = "<group>"; };
 		0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail_sec@2x..png"; sourceTree = "<group>"; };
@@ -623,9 +628,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042C7BF7193B048A00935A1C /* libz.dylib in Frameworks */,
 				04A07BB41922495C00F33A1D /* AudioToolbox.framework in Frameworks */,
 				04B323171920ED1400C055FF /* CoreGraphics.framework in Frameworks */,
 				04B3231B1920ED1400C055FF /* CoreData.framework in Frameworks */,
+				042C7BF5193B046300935A1C /* libMobClickLibrary.a in Frameworks */,
 				04B323191920ED1400C055FF /* UIKit.framework in Frameworks */,
 				04B323151920ED1400C055FF /* Foundation.framework in Frameworks */,
 			);
@@ -831,6 +838,15 @@
 			path = appIcon;
 			sourceTree = "<group>";
 		};
+		042C7BF2193B046300935A1C /* UM */ = {
+			isa = PBXGroup;
+			children = (
+				042C7BF3193B046300935A1C /* libMobClickLibrary.a */,
+				042C7BF4193B046300935A1C /* MobClick.h */,
+			);
+			path = UM;
+			sourceTree = "<group>";
+		};
 		045A4CDA1933848F00463FF8 /* L */ = {
 			isa = PBXGroup;
 			children = (
@@ -954,6 +970,7 @@
 		04B323131920ED1400C055FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				042C7BF6193B048A00935A1C /* libz.dylib */,
 				04A07BB31922495C00F33A1D /* AudioToolbox.framework */,
 				04B323141920ED1400C055FF /* Foundation.framework */,
 				04B323161920ED1400C055FF /* CoreGraphics.framework */,
@@ -1042,6 +1059,7 @@
 		04B3234E1920EE0700C055FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				042C7BF2193B046300935A1C /* UM */,
 				1887F8F61938553B0064F8F8 /* coreData */,
 				04B3236F1920FA8700C055FF /* KENUtils.h */,
 				04B323701920FA8700C055FF /* KENUtils.m */,
@@ -1655,6 +1673,10 @@
 				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
 				INFOPLIST_FILE = "KENDivination/KENDivination-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KENDivination/Class/Tools/UM",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1668,6 +1690,10 @@
 				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
 				INFOPLIST_FILE = "KENDivination/KENDivination-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KENDivination/Class/Tools/UM",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
