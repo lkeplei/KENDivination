@@ -50,6 +50,7 @@
     [self startFirstAnimation];
 }
 
+///////////////zPosition 解决层级问题
 -(void)startFirstAnimation{
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         _paiMiddle.center = CGPointMake(160, 240);

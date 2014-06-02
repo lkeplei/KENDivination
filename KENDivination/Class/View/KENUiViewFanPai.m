@@ -168,7 +168,7 @@
             }
             
             [self animateShowPai:index];
-        } else if (index < _currentPaiIndex) {
+        } else if (index < _currentPaiIndex && _currentPaiIndex >= [_imgViewArray count]) {
             [self showPaiDetail:index];
         } else if (index > _currentPaiIndex) {
             DebugLog(@"please tap pai in sequence");
@@ -197,7 +197,7 @@
     //show pai
     KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size} animate:YES];
     alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-    [alert animateKaPai:index];
+    [alert animateKaPai:index center:((UIImageView*)[_imgViewArray objectAtIndex:index]).center];
     [self addSubview:alert];
 }
 

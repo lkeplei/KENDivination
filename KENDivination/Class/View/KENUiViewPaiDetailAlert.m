@@ -53,27 +53,94 @@
     return self;
 }
 
--(void)animateKaPai:(NSInteger)zhenWei{
+-(void)animateKaPai:(NSInteger)zhenWei center:(CGPoint)center{
     NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:zhenWei];
     NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
-    UIImageView* largeImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[@"l_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
-    largeImg.center = CGPointMake(self.center.x, self.frame.size.height / 2);
+    UIImageView* largeImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[@"s_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
+    largeImg.center = center;
     if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
         largeImg.transform = CGAffineTransformMakeRotation(M_PI);
     }
-    [self addSubview:largeImg];
+//    [self addSubview:largeImg];
     
-    CATransform3D currentTransform = largeImg.layer.transform;
-    CATransform3D scaled = CATransform3DScale(self.layer.transform, 0.2, 0.2, 0.2);
-    largeImg.layer.transform = scaled;
-    [UIView animateWithDuration:0.8 animations:^{
-        largeImg.layer.transform = currentTransform;
+//    CATransform3D currentTransform = largeImg.layer.transform;
+//    CATransform3D scaled = CATransform3DScale(self.layer.transform, 0.2, 0.2, 0.2);
+//    largeImg.layer.transform = scaled;
+//    [UIView animateWithDuration:0.8 animations:^{
+//        largeImg.layer.transform = currentTransform;
+//    }];
+    
+    
+    UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
+    
+    UIView* view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, image.size}];
+    view.center = self.center;
+    [self addSubview:view];
+    
+    UIImageView* imgView = [[UIImageView alloc] initWithImage:image];
+    imgView.center = CGPointMake(image.size.width * 1.5, image.size.height / 2);
+    [view addSubview:imgView];
+    
+    
+    CATransform3D original = view.layer.transform;
+    
+    [UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         CATransform3D rotation = CATransform3DMakeRotation(-M_PI_2, 0, 1, 0);
+                         CATransform3D scale = CATransform3DScale(original, 2, 2, 2);
+                         CATransform3D translation = CATransform3DMakeTranslation(100, 0, 0);
+                         CATransform3D group = CATransform3DConcat(CATransform3DConcat(rotation, scale), translation);
+                         view.layer.transform = group;
+                     }
+                     completion:^(BOOL finished){
+                         if (finished) {
+                             [imgView setImage:[UIImage imageNamed:[@"s_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
+                             if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
+                                 imgView.transform = CGAffineTransformMakeRotation(M_PI);
+                             }
+                             imgView.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
+                             
+                             [UIView animateWithDuration:1.5 animations:^{
+                                 CATransform3D rotation = CATransform3DMakeRotation(-M_PI, 0, 1, 0);
+                                 CATransform3D scale = CATransform3DScale(original, 3, 3, 3);
+                                 CATransform3D translation = CATransform3DMakeTranslation(100, 0, 0);
+                                 CATransform3D group = CATransform3DConcat(CATransform3DConcat(rotation, scale), translation);
+                                 view.layer.transform = group;
+                             }];
+                         }
+                     }];
+    
+    return;
+    
+    
+    CALayer* layer = [CALayer layer];
+	layer.frame = self.frame;
+//	layer.zPosition = -300000;
+    
+    CALayer *leftLayer = [CALayer layer];
+	leftLayer.frame = CGRectMake(self.frame.size.width / 2, 0, self.frame.size.width / 2, self.frame.size.height);
+	leftLayer.masksToBounds = YES;
+	leftLayer.contentsGravity = kCAGravityLeft;
+    
+    leftLayer.contents = (id) [[UIImage imageNamed:@"app_pai_bg.png"] CGImage];
+	
+	[layer addSublayer:leftLayer];
+	
+    [self.layer addSublayer:layer];
+    
+    [UIView animateWithDuration:1.5 animations:^{
+        layer.transform = CATransform3DMakeRotation(0.8, 0, 1, 0);
     }];
     
-    
+    return;
     
     
 //    [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    
+    
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+    imageView.center = center;
+    [self addSubview:imageView];
     
     [UIView animateWithDuration:1.5 animations:^{
 //        CATransform3D transloate = CATransform3DMakeTranslation(0, 0, -200);
@@ -82,8 +149,12 @@
 //        largeImg.layer.transform = CATransform3DPerspect(mat, CGPointMake(0, 0), 500);
         
         
+//        largeImg.layer.transform = CATransform3DMakeTranslation(0, 0, -200);
+//        largeImg.layer.transform = CATransform3DMakeRotation(-0.8, 0, 1, 0);
         
-//        largeImg.layer.transform = CATransform3DMakeRotation(M_PI / 2, 0, 0, 1);
+        CATransform3D rotation = CATransform3DMakeRotation(-0.8, 0, 1, 0);
+        rotation.m34 = -1.0 / 200;
+        imageView.layer.transform = rotation;
     }];
 }
 CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ)

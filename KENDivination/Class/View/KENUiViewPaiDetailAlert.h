@@ -13,6 +13,6 @@
 -(id)initWithFrame:(CGRect)frame animate:(BOOL)animate;
 
 -(void)setKaPaiMessage:(NSInteger)zhenWei;
--(void)animateKaPai:(NSInteger)zhenWei;
+-(void)animateKaPai:(NSInteger)zhenWei center:(CGPoint)center;
 
 @end
