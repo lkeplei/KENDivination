@@ -14,6 +14,10 @@
 @interface KENUiViewEndXiPai (){
     BOOL willJump;
     BOOL animating;
+    
+    int step;
+    BOOL canTrans;
+    BOOL trans;
 }
 
 @property (nonatomic, strong) UIImageView* paiTop;
@@ -30,6 +34,10 @@
         self.viewType = KENUiViewTypeEndXiPai;
         willJump = NO;
         animating = NO;
+        
+        step = 1;
+        canTrans = YES;
+        trans = NO;
         [self initView];
     }
     return self;
@@ -38,12 +46,12 @@
 -(void)initView{
     _paiTop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
     _paiTop.center = CGPointMake(160, 80);
-    _paiTop.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+    _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
     _paiBottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
     _paiBottom.center = CGPointMake(160, 80);
-    _paiBottom.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+    _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];
     
     UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -75,16 +83,16 @@
 }
 
 -(void)startAnimation{
-    static int step = 1;
-    static BOOL canTrans = YES;
-    int trans = [KENUtils getRandomNumber:0 to:1];
-    if (trans == 1 && step % 2 == 0 && canTrans) {
+    int random = [KENUtils getRandomNumber:0 to:1];
+    if (random == 1 && step % 2 == 0 && canTrans) {
         [self startTransAnimation:0.75];
+        trans = YES;
         canTrans = NO;
     } else {
         [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
             if (step % 2 == 1) {
                 animating = YES;
+                trans = NO;
                 _paiBottom.center = CGPointMake(160, 160);
             } else {
                 _paiBottom.center = CGPointMake(160, 80);
@@ -96,6 +104,13 @@
                              if (finished) {
                                  if (step % 2 == 1) {
                                      animating = NO;
+                                     
+                                     if (trans) {
+                                         _paiBottom.transform = CGAffineTransformRotate(_paiBottom.transform, M_PI);
+                                     }
+                                     [self sendSubviewToBack:_paiTop];
+                                 } else {
+                                     [self bringSubviewToFront:_paiTop];
                                  }
                                  
                                  if (willJump && !animating) {
@@ -108,47 +123,13 @@
     }
 }
 
-//-(void)startAnimation{
-//    static int step = 1;
-//    static int times = 1;
-//    static BOOL canTrans = YES;
-//    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-//        animating = YES;
-//        
-//        int trans = [KENUtils getRandomNumber:0 to:1];
-//        if (trans == 1 && step % 2 == 0 && canTrans) {
-////            _paiBottom.transform = CGAffineTransformMakeRotation(M_PI_2 + M_PI * times);
-//            DebugLog(@"times = %d", times);
-////            _paiBottom.transform = CGAffineTransformMakeRotation(times * M_PI);
-//            int angle = times * 180 + 90;
-////            angle = (angle - 90) / 360 == 0 ? angle - 1 : angle;
-//            _paiBottom.transform = CGAffineTransformMakeRotation(angle / 180.0 * M_PI);
-//            times++;
-//            canTrans = NO;
-//        } else {
-//            if (step % 2 == 1) {
-//                _paiBottom.center = CGPointMake(160, 160);
-//            } else {
-//                _paiBottom.center = CGPointMake(160, 70);
-//            }
-//            step++;
-//            canTrans = YES;
-//        }
-//    }
-//                     completion:^(BOOL finished) {
-//                         if (finished) {
-//                             animating = NO;
-//                             if (willJump) {
-//                                 [self btnClicked:nil];
-//                             } else {
-//                                [self startAnimation];
-//                             }
-//                         }
-//                     }];
-//}
-
 #pragma mark - button
 -(void)btnClicked:(UIButton*)button{
+    if (button) {
+        //按键声音
+        [[KENModel shareModel] playVoiceByType:KENVoiceAnJian];
+    }
+    
     if (willJump && !animating) {
         if (self.delegate) {
             [self.delegate showViewWithType:KENUiViewTypeStartQiePai];

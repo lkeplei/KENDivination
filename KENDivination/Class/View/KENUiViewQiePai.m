@@ -34,17 +34,17 @@
 -(void)initView{
     _paiMiddle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
     _paiMiddle.center = CGPointMake(160, 160);
-    _paiMiddle.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+    _paiMiddle.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiMiddle];
     
     _paiBottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
     _paiBottom.center = CGPointMake(160, 160);
-    _paiBottom.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+    _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];
 
     _paiTop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
     _paiTop.center = CGPointMake(160, 160);
-    _paiTop.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+    _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
     [self startFirstAnimation];
@@ -58,6 +58,7 @@
     }
                      completion:^(BOOL finished) {
                          if (finished) {
+                            [self bringSubviewToFront:_paiMiddle];
                             [self startSecondAnimation];
                          }
                      }];
@@ -69,6 +70,7 @@
     }
                      completion:^(BOOL finished) {
                          if (finished) {
+                             [self sendSubviewToBack:_paiMiddle];
                              [self startThirdAnimation];
                          }
                      }];
@@ -99,9 +101,9 @@
 
 -(void)startFifthAnimation{
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _paiTop.transform = CGAffineTransformMakeRotation(M_PI);
-        _paiMiddle.transform = CGAffineTransformMakeRotation(M_PI);
-        _paiBottom.transform = CGAffineTransformMakeRotation(M_PI);
+        _paiTop.transform = CGAffineTransformMakeRotation(M_PI*2);
+        _paiMiddle.transform = CGAffineTransformMakeRotation(M_PI*2);
+        _paiBottom.transform = CGAffineTransformMakeRotation(M_PI*2);
     }
                      completion:^(BOOL finished) {
                          if (finished) {

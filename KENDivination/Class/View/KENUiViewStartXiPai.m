@@ -14,6 +14,9 @@
 @interface KENUiViewStartXiPai ()
 
 @property (assign) KENViewType currentViewType;
+@property (nonatomic, strong) UILabel* contentLabel;
+@property (nonatomic, strong) UIButton* stepButton;
+@property (nonatomic, strong) UIImageView* imageView;
 
 @end
 
@@ -33,9 +36,9 @@
     _currentViewType = type;
     
     if (type == KENUiViewTypeStartFanPai) {
-        UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
-        imgView.center = CGPointMake(160, 80);
-        [self addSubview:imgView];
+        _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
+        _imageView.center = CGPointMake(160, 80);
+        [self addSubview:_imageView];
         
         UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
         int count = [[KENModel shareModel] getPaiZhenNumber];
@@ -45,19 +48,19 @@
             width = (240 - image.size.width) / (count - 1);
             space = image.size.width;
         }
-        float offset = (imgView.frame.size.width - 240) / 2;
+        float offset = (_imageView.frame.size.width - 240) / 2;
         for (int i = 0; i < count; i++) {
             UIImageView* pai = [[UIImageView alloc] initWithImage:image];
-            pai.center = CGPointMake(offset + space / 2 + width * i, imgView.frame.size.height / 2);
-            [imgView addSubview:pai];
+            pai.center = CGPointMake(offset + space / 2 + width * i, _imageView.frame.size.height / 2);
+            [_imageView addSubview:pai];
         }
     } else {
-        UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-        imgView.center = CGPointMake(160, 80);
+        _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+        _imageView.center = CGPointMake(160, 80);
         if (_currentViewType == KENUiViewTypeStartXiPai || _currentViewType == KENUiViewTypeStartQiePai) {
-            imgView.transform = CGAffineTransformMakeRotation(90 / 180.0 * M_PI);
+            _imageView.transform = CGAffineTransformMakeRotation(-M_PI_2);
         }
-        [self addSubview:imgView];
+        [self addSubview:_imageView];
     }
     
     NSString* content = nil;
@@ -91,21 +94,21 @@
         default:
             break;
     }
-    UILabel* label = [KENUtils labelWithTxt:content
+    _contentLabel = [KENUtils labelWithTxt:content
                                       frame:CGRectMake(60, 140, 210, 170)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
-    label.textAlignment = KTextAlignmentLeft;
-    label.numberOfLines = 0;
-    [self addSubview:label];
+    _contentLabel.textAlignment = KTextAlignmentLeft;
+    _contentLabel.numberOfLines = 0;
+    [self addSubview:_contentLabel];
     
-    UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _stepButton = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
                                          image:img
                                       imagesec:imgSec
                                         target:self
                                         action:@selector(btnClicked:)];
-    button.center = CGPointMake(160, 340);
-    [self addSubview:button];
+    _stepButton.center = CGPointMake(160, 340);
+    [self addSubview:_stepButton];
 }
 
 #pragma mark - button
@@ -117,11 +120,10 @@
         switch (_currentViewType) {
             case KENUiViewTypeStartXiPai:{
                 [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
-//                [self.delegate showViewWithType:KENUiViewTypeFanPai];
             }
                 break;
             case KENUiViewTypeStartQiePai:{
-                [self.delegate showViewWithType:KENUiViewTypeQiePai];
+                [self startQiePaiAnimate];
             }
                 break;
             case KENUiViewTypeStartChouPai:{
@@ -129,12 +131,37 @@
             }
                 break;
             case KENUiViewTypeStartFanPai:{
-                [self.delegate showViewWithType:KENUiViewTypeFanPai];
+                [self startQiePaiAnimate];
             }
                 break;
             default:
                 break;
         }
     }
+}
+
+-(void)startQiePaiAnimate{
+    [UIView animateWithDuration:0.75 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        _stepButton.alpha = 0;
+        _contentLabel.alpha = 0;
+    }
+                     completion:^(BOOL finished) {
+                         if (finished) {
+                             if (_currentViewType == KENUiViewTypeStartFanPai) {
+                                 [self.delegate showViewWithType:KENUiViewTypeFanPai];
+                             } else {
+                                 [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                                     _imageView.center = CGPointMake(160, 160);
+                                 }
+                                                  completion:^(BOOL finished) {
+                                                      if (finished) {
+                                                          if (_currentViewType == KENUiViewTypeStartQiePai) {
+                                                              [self.delegate showViewWithType:KENUiViewTypeQiePai];
+                                                          }
+                                                      }
+                                                  }];
+                             }
+                         }
+                     }];
 }
 @end

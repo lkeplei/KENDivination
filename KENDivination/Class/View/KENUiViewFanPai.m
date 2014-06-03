@@ -85,9 +85,20 @@
     _imgViewArray = [[NSMutableArray alloc] init];
     UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
     int count = [[KENModel shareModel] getPaiZhenNumber];
+    
+    UIImageView* tempView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
+    tempView.center = CGPointMake(160, 80);
+    float width = 240 / count;
+    float space = width;
+    if (width < image.size.width) {
+        width = (240 - image.size.width) / (count - 1);
+        space = image.size.width;
+    }
+    float offset = (tempView.frame.size.width - 240) / 2;
     for (int i = 0; i < count; i++) {
         UIImageView* pai = [[UIImageView alloc] initWithImage:image];
-        pai.center = CGPointMake(self.center.x, self.center.y - 45);
+        pai.center = CGPointMake(offset + space / 2 + width * i + tempView.frame.origin.x,
+                                 tempView.frame.size.height / 2 + tempView.frame.origin.y);
         [self addSubview:pai];
         
         [_imgViewArray addObject:pai];
