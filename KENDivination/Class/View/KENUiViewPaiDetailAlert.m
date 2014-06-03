@@ -113,8 +113,8 @@
                              
                              [UIView animateWithDuration:0.75  delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                  CATransform3D rotation = CATransform3DMakeRotation(-M_PI, 0, 1, 0);
-                                 CATransform3D scale = CATransform3DScale(original, 3.55, 3.55, 3.55);
-                                 CATransform3D translation = CATransform3DMakeTranslation(185 + self.center.x - _originalPosition.x, self.center.y - _originalPosition.y, 0);
+                                 CATransform3D scale = CATransform3DScale(original, 3.51, 3.58, 3.55);
+                                 CATransform3D translation = CATransform3DMakeTranslation(195 + self.center.x - _originalPosition.x, self.center.y - _originalPosition.y, 0);
                                  CATransform3D group = CATransform3DConcat(CATransform3DConcat(rotation, scale), translation);
                                  view.layer.transform = group;
                              } completion:^(BOOL finished){
@@ -215,6 +215,9 @@
             _paiView.layer.transform = group;
         } completion:^(BOOL finished){
             if (finished) {
+                if (self.alertBlock) {
+                    self.alertBlock();
+                }
                 [self removeFromSuperview];
             }
         }];

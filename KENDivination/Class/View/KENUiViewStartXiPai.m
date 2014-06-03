@@ -116,8 +116,8 @@
     if (self.delegate) {
         switch (_currentViewType) {
             case KENUiViewTypeStartXiPai:{
-//                [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
-                [self.delegate showViewWithType:KENUiViewTypeFanPai];
+                [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
+//                [self.delegate showViewWithType:KENUiViewTypeFanPai];
             }
                 break;
             case KENUiViewTypeStartQiePai:{

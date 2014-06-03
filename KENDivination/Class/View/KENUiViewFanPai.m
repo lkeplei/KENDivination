@@ -186,10 +186,14 @@
 -(void)animateShowPai:(NSInteger)index{
     NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:index];
     NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
-    [((UIImageView*)[_imgViewArray objectAtIndex:index]) setImage:[UIImage imageNamed:[@"s_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
+    
+    __block UIImageView* imgView = ((UIImageView*)[_imgViewArray objectAtIndex:index]);
+    [imgView setImage:[UIImage imageNamed:[@"s_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
     if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-        ((UIImageView*)[_imgViewArray objectAtIndex:index]).transform = CGAffineTransformMakeRotation(M_PI);
+        imgView.transform = CGAffineTransformMakeRotation(M_PI);
     }
+    
+    [imgView setHidden:YES];
     
     //放声音
     [[KENModel shareModel] playVoiceByType:KENVoiceFanPai];
@@ -199,6 +203,10 @@
     alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     [alert animateKaPai:index center:((UIImageView*)[_imgViewArray objectAtIndex:index]).center];
     [self addSubview:alert];
+    
+    alert.alertBlock = ^(){
+        [imgView setHidden:NO];
+    };
 }
 
 @end
