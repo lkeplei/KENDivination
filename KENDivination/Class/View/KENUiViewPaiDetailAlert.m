@@ -102,9 +102,14 @@
                          if (finished) {
                              [imgView setImage:[UIImage imageNamed:[@"l_" stringByAppendingString:imageName]]];
                              if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-                                 imgView.transform = CGAffineTransformMakeRotation(M_PI);
+                                 CGAffineTransform rotation = CGAffineTransformMakeRotation(M_PI);
+                                 CATransform3D rotation1 = CATransform3DMakeAffineTransform(rotation);
+                                 CATransform3D scale = CATransform3DMakeRotation(M_PI, 0, 1, 0);
+                                 CATransform3D group = CATransform3DConcat(rotation1, scale);
+                                 imgView.layer.transform = group;
+                             } else {
+                                imgView.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
                              }
-//                             imgView.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
                              
                              [UIView animateWithDuration:0.75  delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                  CATransform3D rotation = CATransform3DMakeRotation(-M_PI, 0, 1, 0);
@@ -213,6 +218,8 @@
                 [self removeFromSuperview];
             }
         }];
+    } else {
+        [self removeFromSuperview];
     }
 }
 

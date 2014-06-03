@@ -202,6 +202,7 @@
             } else if (index == 0) {
                 if (_finishStatus) {
                     [self popToRootView:KENTypeNull];
+                    [[KENModel shareModel] clearData];
                 }
             }
         };
