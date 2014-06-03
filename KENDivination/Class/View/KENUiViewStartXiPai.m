@@ -110,6 +110,9 @@
 
 #pragma mark - button
 -(void)btnClicked:(UIButton*)button{
+    //按键声音
+    [[KENModel shareModel] playVoiceByType:KENVoiceAnJian];
+    
     if (self.delegate) {
         switch (_currentViewType) {
             case KENUiViewTypeStartXiPai:{

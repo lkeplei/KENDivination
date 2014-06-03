@@ -69,6 +69,10 @@
 -(void)btnArrayClicked:(UIButton*)button{
     NSInteger paizhen = [[[_resourceArray objectAtIndex:button.tag - KDirectionBtnTagBase] objectForKey:KDicKeyPaiZhen] intValue];
     [[[KENModel shareModel] memoryData] setMemoryPaiZhen:paizhen];
+    
+    //按键声音
+    [[KENModel shareModel] playVoiceByType:KENVoiceAnJian];
+    
     [self pushView:[SysDelegate.viewController getView:KENViewTypePaiZhen] animatedType:KENTypeNull];
 }
 @end
