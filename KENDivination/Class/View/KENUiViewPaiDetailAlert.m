@@ -203,6 +203,7 @@
 
 #pragma mark - setting btn
 -(void)stopBtnClicked:(UIButton*)button{
+    [button setEnabled:NO];
     //放声音
     [[KENModel shareModel] playVoiceByType:KENVoiceFanPaiHou];
     

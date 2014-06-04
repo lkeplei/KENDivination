@@ -53,6 +53,8 @@
             case KENUiViewTypeStartChouPai:
             case KENUiViewTypeStartQiePai:
             case KENUiViewTypeStartXiPai:{
+//                _currentUiView = [[KENUiViewChouPai alloc] initWithFrame:frame];
+//                [_currentUiView setDelegate:self];
                 _currentUiView = [[KENUiViewStartXiPai alloc] initWithFrame:frame type:type];
                 [_currentUiView setDelegate:self];
             }

@@ -50,8 +50,13 @@
     [self startFirstAnimation];
 }
 
-///////////////zPosition 解决层级问题
+-(void)timerOut{
+    [[KENModel shareModel] playVoiceByType:KENVoiceXiPai];
+}
+
 -(void)startFirstAnimation{
+    [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
+    
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         _paiMiddle.center = CGPointMake(160, 240);
         _paiBottom.center = CGPointMake(160, 240);
@@ -65,6 +70,8 @@
 }
 
 -(void)startSecondAnimation{
+    [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
+    
     [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         _paiMiddle.center = CGPointMake(160, 80);
     }
@@ -77,6 +84,8 @@
 }
 
 -(void)startThirdAnimation{
+    [NSTimer scheduledTimerWithTimeInterval:0.7 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
+    
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         _paiTop.center = CGPointMake(160, 240);
     }
@@ -88,6 +97,8 @@
 }
 
 -(void)startFourthAnimation{
+    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
+    
     [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         _paiTop.center = CGPointMake(160, 80);
         _paiBottom.center = CGPointMake(160, 80);

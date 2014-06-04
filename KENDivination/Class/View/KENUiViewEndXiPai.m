@@ -89,6 +89,9 @@
         trans = YES;
         canTrans = NO;
     } else {
+        if (step % 2 == 0) {
+            [NSTimer scheduledTimerWithTimeInterval:0.7 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
+        }
         [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
             if (step % 2 == 1) {
                 animating = YES;
@@ -121,6 +124,10 @@
                              }
                          }];
     }
+}
+
+-(void)timerOut{
+    [[KENModel shareModel] playVoiceByType:KENVoiceXiPai];
 }
 
 #pragma mark - button
