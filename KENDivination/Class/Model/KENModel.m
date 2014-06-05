@@ -49,9 +49,7 @@
     if (![[KENDataManager getDataByKey:KUserDefaultSetOpenVoice] boolValue]) {
         return;
     }
-    
-    static SystemSoundID shake_sound_male_id = 0;
-    
+
     NSString* name;
     switch (type) {
         case KENVoiceAnJian:

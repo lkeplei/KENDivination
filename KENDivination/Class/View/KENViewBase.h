@@ -14,6 +14,8 @@
 
 @interface KENViewBase : UIView
 
+-(float)getRateIPad; //主要针对ipad
+
 -(void)showView;
 -(UIImage*)setBackGroundImage;
 -(UIImage*)setViewTitleImage;

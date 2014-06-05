@@ -15,7 +15,7 @@ typedef void (^AlertDetailBlock)();
 -(id)initWithFrame:(CGRect)frame animate:(BOOL)animate;
 
 -(void)setKaPaiMessage:(NSInteger)zhenWei;
--(void)animateKaPai:(NSInteger)zhenWei center:(CGPoint)center;
+-(void)animateKaPai:(NSInteger)zhenWei center:(CGPoint)center rate:(float)rate;
 
 @property(nonatomic, copy) AlertDetailBlock alertBlock;
 

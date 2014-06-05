@@ -75,8 +75,7 @@
             }
                 break;
             case KENUiViewTypeFanPai:{
-                _currentUiView = [[KENUiViewFanPai alloc] initWithFrame:frame finish:NO];
-                [_currentUiView setDelegate:self];
+                _currentUiView = [[KENUiViewFanPai alloc] initWithFrame:frame finish:NO delegate:self];
             }
                 break;
             case KENUiViewTypePaiZhenDetail:{
@@ -103,8 +102,7 @@
     
     CGRect frame = CGRectMake(0, KNotificationHeight, self.contentView.frame.size.width,
                               self.contentView.frame.size.height - KNotificationHeight);
-    _currentUiView = [[KENUiViewFanPai alloc] initWithFrame:frame finish:YES];
-    [_currentUiView setDelegate:self];
+    _currentUiView = [[KENUiViewFanPai alloc] initWithFrame:frame finish:YES delegate:self];
     
     [self.contentView addSubview:_currentUiView];
     if (_alertView) {

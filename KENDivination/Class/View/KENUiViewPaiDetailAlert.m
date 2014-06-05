@@ -11,6 +11,8 @@
 #import "KENModel.h"
 #import "KENConfig.h"
 
+#define KCloseButtonTag         (1001)
+
 @interface KENUiViewPaiDetailAlert ()
 
 @property (assign) CGPoint originalPosition;
@@ -40,7 +42,9 @@
                                               imagesec:nil
                                                 target:self
                                                 action:@selector(stopBtnClicked:)];
+            button.tag = KCloseButtonTag;
             button.frame = self.frame;
+            [button setEnabled:NO];
             [self addSubview:button];
         } else {
             UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -55,27 +59,12 @@
     return self;
 }
 
--(void)animateKaPai:(NSInteger)zhenWei center:(CGPoint)center{
+-(void)animateKaPai:(NSInteger)zhenWei center:(CGPoint)center rate:(float)rate{
     _originalPosition = CGPointMake(center.x, center.y);
     
     NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:zhenWei];
     NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
     NSString* imageName = [messageDic objectForKey:KDicKeyPaiImg];
-    UIImageView* largeImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[@"s_" stringByAppendingString:imageName]]];
-    largeImg.center = CGPointMake(_originalPosition.x, _originalPosition.y);
-    if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-        largeImg.transform = CGAffineTransformMakeRotation(M_PI);
-    }
-//    [self addSubview:largeImg];
-    
-//    CATransform3D currentTransform = largeImg.layer.transform;
-//    CATransform3D scaled = CATransform3DScale(self.layer.transform, 0.2, 0.2, 0.2); 0.28
-//    largeImg.layer.transform = scaled;
-//    [UIView animateWithDuration:0.8 animations:^{
-//        largeImg.layer.transform = currentTransform;
-//    }];
-    
-    
     UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
     
     UIView* view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, image.size}];
@@ -114,7 +103,8 @@
                              [UIView animateWithDuration:0.75  delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                                  CATransform3D rotation = CATransform3DMakeRotation(-M_PI, 0, 1, 0);
                                  CATransform3D scale = CATransform3DScale(original, 3.51, 3.58, 3.55);
-                                 CATransform3D translation = CATransform3DMakeTranslation(195 + self.center.x - _originalPosition.x, self.center.y - _originalPosition.y, 0);
+                                 CATransform3D translation = CATransform3DMakeTranslation(195 + self.center.x - _originalPosition.x,
+                                                                                          self.center.y - _originalPosition.y, 0);
                                  CATransform3D group = CATransform3DConcat(CATransform3DConcat(rotation, scale), translation);
                                  view.layer.transform = group;
                              } completion:^(BOOL finished){
@@ -127,6 +117,11 @@
                                      [self addSubview:_paiView];
                                      
                                      [view removeFromSuperview];
+                                     
+                                     UIButton* button = (UIButton*)[self viewWithTag:KCloseButtonTag];
+                                     if (button) {
+                                         [button setEnabled:YES];
+                                     }
                                  }
                              }];
                          }

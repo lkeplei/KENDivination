@@ -21,11 +21,12 @@
 
 @implementation KENUiViewFanPai
 
-- (id)initWithFrame:(CGRect)frame finish:(BOOL)finish{
+- (id)initWithFrame:(CGRect)frame finish:(BOOL)finish delegate:(KENViewPaiZhen *)delegate{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         self.viewType = KENUiViewTypeFanPai;
+        self.delegate = delegate;
         _currentPaiIndex = 0;
         if (finish) {
             [self finishView];
@@ -77,7 +78,13 @@
     NSString* bgPath = [resDic objectForKey:KDicKeyZhenBgPath];
     if (bgPath) {
         UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:bgPath]];
-        imgView.center = CGPointMake(self.center.x, self.center.y - 45);
+        float rate = [self.delegate getRateIPad];
+        if (IsPad) {
+            imgView.center = CGPointMake(self.center.x / rate, self.center.y / rate - 30);
+        } else {
+            imgView.center = CGPointMake(self.center.x, self.center.y - 45);
+        }
+        
         [self addSubview:imgView];
     }
     
@@ -166,6 +173,10 @@
 
     if (index != -1) {
         if (index == _currentPaiIndex) {
+            KENUiViewPaiDetailAlert* alert = (KENUiViewPaiDetailAlert*)[self viewWithTag:2001];
+            if (alert) {
+                return;
+            }
             _currentPaiIndex++;
             if (_currentPaiIndex == [_imgViewArray count]) {
                 if (self.delegate) {
@@ -188,10 +199,16 @@
 }
 
 -(void)showPaiDetail:(NSInteger)index{
-    KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size} animate:NO];
-    alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-    [alert setKaPaiMessage:index];
-    [self addSubview:alert];
+    KENUiViewPaiDetailAlert* alert = (KENUiViewPaiDetailAlert*)[self viewWithTag:1001];
+    if (alert == nil) {
+        float rate = [self.delegate getRateIPad];
+        CGSize size = CGSizeMake(self.frame.size.width / rate, self.frame.size.height / rate);
+        alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, size} animate:NO];
+        alert.center = CGPointMake(self.frame.size.width / 2 / rate, self.frame.size.height / 2 / rate);
+        [alert setKaPaiMessage:index];
+        alert.tag = 1001;
+        [self addSubview:alert];
+    }
 }
 
 -(void)animateShowPai:(NSInteger)index{
@@ -210,9 +227,12 @@
     [[KENModel shareModel] playVoiceByType:KENVoiceFanPai];
     
     //show pai
-    KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size} animate:YES];
-    alert.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-    [alert animateKaPai:index center:((UIImageView*)[_imgViewArray objectAtIndex:index]).center];
+    float rate = [self.delegate getRateIPad];
+    CGSize size = CGSizeMake(self.frame.size.width / rate, self.frame.size.height / rate);
+    KENUiViewPaiDetailAlert* alert = [[KENUiViewPaiDetailAlert alloc] initWithFrame:(CGRect){CGPointZero, size} animate:YES];
+    alert.center = CGPointMake(self.frame.size.width / 2 / rate, self.frame.size.height / 2 / rate);
+    [alert animateKaPai:index center:((UIImageView*)[_imgViewArray objectAtIndex:index]).center rate:[self.delegate getRateIPad]];
+    alert.tag = 2001;
     [self addSubview:alert];
     
     alert.alertBlock = ^(){

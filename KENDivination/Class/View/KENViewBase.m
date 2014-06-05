@@ -15,6 +15,7 @@
 
 @interface KENViewBase ()
 
+@property (assign) float rate;
 @property (nonatomic, strong) NSMutableArray* viewArray;
 @property (nonatomic, strong) KENViewBase* parentView;
 
@@ -27,6 +28,7 @@
     if (self) {
         // Initialization code
         _viewType = KENViewTypeBase;
+        _rate = 1;
         
         [self initView];
     }
@@ -60,8 +62,8 @@
     
     if (IsPad) {
         CATransform3D currentTransform = _contentView.layer.transform;
-        float rate = self.frame.size.height / _contentView.frame.size.height;
-        CATransform3D scaled = CATransform3DScale(currentTransform, rate, rate, rate);
+        _rate = self.frame.size.height / _contentView.frame.size.height;
+        CATransform3D scaled = CATransform3DScale(currentTransform, _rate, _rate, _rate);
         _contentView.layer.transform = scaled;
     }
 }
@@ -76,6 +78,10 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     
+}
+
+-(float)getRateIPad{
+    return _rate;
 }
 
 #pragma mark - for stack frame
