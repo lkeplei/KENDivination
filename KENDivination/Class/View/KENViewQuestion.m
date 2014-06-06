@@ -56,6 +56,7 @@
     _questionTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     _questionTextView.delegate = self;
     [_questionTextView becomeFirstResponder];           //激活键盘
+    _questionTextView.returnKeyType = UIReturnKeyDone;
     [self.contentView addSubview:_questionTextView];
 }
 
@@ -66,6 +67,11 @@
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]) {
+        [self okBtnClicked:nil];
+        return NO;
+    }
+    
     if (range.location >= 256){
         return  NO;
     }

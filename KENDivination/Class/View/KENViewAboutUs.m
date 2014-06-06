@@ -11,12 +11,6 @@
 #import "KENUiViewAlert.h"
 #import "KENConfig.h"
 
-@interface KENViewAboutUs ()
-
-@property (nonatomic, strong) UIImageView* qiqiView;
-
-@end
-
 @implementation KENViewAboutUs
 
 - (id)initWithFrame:(CGRect)frame{
@@ -38,25 +32,17 @@
     bgView.center = CGPointMake(160, 240);
     [self.contentView addSubview:bgView];
     
-    _qiqiView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"about_us_qiqi.png"]];
-    _qiqiView.center = CGPointMake(160, 316);
-    [_qiqiView setHidden:YES];
-    [self.contentView addSubview:_qiqiView];
-    
     UIButton* aboutBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
-                                          image:nil
-                                       imagesec:nil
+                                          image:[UIImage imageNamed:@"about_us_qiqi.png"]
+                                       imagesec:[UIImage imageNamed:@"about_us_qiqi.png"]
                                          target:self
                                          action:@selector(aboutBtnClicked:)];
-    aboutBtn.frame = CGRectMake(0, KNotificationHeight, self.contentView.frame.size.width,
-                                self.contentView.frame.size.height - KNotificationHeight);
+    aboutBtn.center = CGPointMake(160, 317);
     [self.contentView addSubview:aboutBtn];
 }
 
 #pragma mark - setting btn
 -(void)aboutBtnClicked:(UIButton*)button{
-    [_qiqiView setHidden:NO];
-    
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[UIImage imageNamed:@"button_close.png"] forKey:KDicKeyImg];
     [dic setObject:[UIImage imageNamed:@"button_close_sec.png"] forKey:KDicKeyImgSec];
@@ -66,7 +52,7 @@
     [alert show];
     
     alert.alertBlock = ^(int index){
-        [_qiqiView setHidden:YES];
+
     };
 }
 @end

@@ -117,26 +117,7 @@
     [[KENModel shareModel] playVoiceByType:KENVoiceAnJian];
     
     if (self.delegate) {
-        switch (_currentViewType) {
-            case KENUiViewTypeStartXiPai:{
-                [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
-            }
-                break;
-            case KENUiViewTypeStartQiePai:{
-                [self startQiePaiAnimate];
-            }
-                break;
-            case KENUiViewTypeStartChouPai:{
-                [self.delegate showViewWithType:KENUiViewTypeChouPai];
-            }
-                break;
-            case KENUiViewTypeStartFanPai:{
-                [self startQiePaiAnimate];
-            }
-                break;
-            default:
-                break;
-        }
+        [self startQiePaiAnimate];
     }
 }
 
@@ -147,19 +128,34 @@
     }
                      completion:^(BOOL finished) {
                          if (finished) {
-                             if (_currentViewType == KENUiViewTypeStartFanPai) {
-                                 [self.delegate showViewWithType:KENUiViewTypeFanPai];
-                             } else {
-                                 [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                                     _imageView.center = CGPointMake(160, 160);
+                             switch (_currentViewType) {
+                                 case KENUiViewTypeStartXiPai:{
+                                    [self.delegate showViewWithType:KENUiViewTypeEndXiPai];
                                  }
-                                                  completion:^(BOOL finished) {
-                                                      if (finished) {
-                                                          if (_currentViewType == KENUiViewTypeStartQiePai) {
-                                                              [self.delegate showViewWithType:KENUiViewTypeQiePai];
+                                     break;
+                                 case KENUiViewTypeStartQiePai:{
+                                     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                                         _imageView.center = CGPointMake(160, 160);
+                                     }
+                                                      completion:^(BOOL finished) {
+                                                          if (finished) {
+                                                              if (_currentViewType == KENUiViewTypeStartQiePai) {
+                                                                  [self.delegate showViewWithType:KENUiViewTypeQiePai];
+                                                              }
                                                           }
-                                                      }
-                                                  }];
+                                                      }];
+                                 }
+                                     break;
+                                 case KENUiViewTypeStartChouPai:{
+                                    [self.delegate showViewWithType:KENUiViewTypeChouPai];
+                                 }
+                                     break;
+                                 case KENUiViewTypeStartFanPai:{
+                                     [self.delegate showViewWithType:KENUiViewTypeFanPai];
+                                 }
+                                     break;
+                                 default:
+                                     break;
                              }
                          }
                      }];

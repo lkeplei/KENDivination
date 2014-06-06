@@ -186,6 +186,12 @@
         
         UIImage* img = [UIImage imageNamed:@"exit_whether_alert.png"];
         if (_finishStatus) {
+            [dic setObject:[UIImage imageNamed:@"button_unsave.png"] forKey:KDicKeyImg];
+            [dic setObject:[UIImage imageNamed:@"button_unsave_sec.png"] forKey:KDicKeyImgSec];
+            
+            [dic1 setObject:[UIImage imageNamed:@"button_save.png"] forKey:KDicKeyImg];
+            [dic1 setObject:[UIImage imageNamed:@"button_save_sec.png"] forKey:KDicKeyImgSec];
+            
             img = [UIImage imageNamed:@"save_whether_alert.png"];
         }
         _alertView = [[KENUiViewAlert alloc] initWithMessage:img btnArray:[[NSArray alloc] initWithObjects:dic, dic1, nil]];

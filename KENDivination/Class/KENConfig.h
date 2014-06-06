@@ -49,6 +49,8 @@
 
 #define KNotificationHeight     (54)
 
+#define KJiePaiKeyColor         RGBCOLOR(250,249,142)
+
 
 #define KUserDefaultSetOpenVoice             @"default_open_voice"
 #define KUserDefaultJieMi                    @"default_jie_mi"
@@ -86,7 +88,7 @@
 #define KDicPaiIndex            @"pai_index"
 
 //define for server
-#define KIosZhHansItunesIP      @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文
-#define KIosENItunesIP          @"https://itunes.apple.com/cn/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //英文、其他
+#define KIosZhHansItunesIP      @"https://itunes.apple.com/cn/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文
+#define KIosENItunesIP          @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //英文、其他
 
 #endif

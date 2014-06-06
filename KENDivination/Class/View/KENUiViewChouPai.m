@@ -9,8 +9,6 @@
 #import "KENUiViewChouPai.h"
 #import "KENConfig.h"
 
-#define KAnimation
-
 @interface KENUiViewChouPai ()
 
 @property (assign) BOOL animationing;
@@ -73,11 +71,7 @@
     _paiArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < 22; i++) {
         UIImageView* pai = [[UIImageView alloc] initWithImage:image];
-#ifdef KAnimation
-        pai.center = CGPointMake(160, -56);
-#else
-        pai.center = CGPointMake(160, 80);
-#endif
+        pai.center = CGPointMake(160, -82);
         [self addSubview:pai];
         
         [_paiArray addObject:pai];
@@ -115,6 +109,10 @@
         if (_currentActivePai == nil) {
             for (int i = [_paiArray count] - 1; i >= 0; i--) {
                 if (CGRectContainsPoint(((UIImageView*)[_paiArray objectAtIndex:i]).frame, locationInView) && ![[_paiArray objectAtIndex:i] isHidden]) {
+//                    UIView* view = [[UIView alloc] initWithFrame:((UIImageView*)[_paiArray objectAtIndex:i]).bounds];
+//                    [view setBackgroundColor:[UIColor whiteColor]];
+//                    [self addSubview:view];
+                    
                     [self showActivePai:i];
                     break;
                 }
@@ -143,12 +141,8 @@
 -(void)rollback{
     if (_currentActivePai) {
         [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-#ifdef KAnimation
-            float offy = _activeIndex > 10 ? 1.5 * (21 - _activeIndex) : 1.5 * _activeIndex;
-            _currentActivePai.center = CGPointMake(50 + _activeIndex * 12, 85 + offy);
-#else
-            _currentActivePai.center = ((UIImageView*)[_paiArray objectAtIndex:_activeIndex]).center;
-#endif
+            CGRect frame = ((UIImageView*)[_paiArray objectAtIndex:_activeIndex]).frame;
+            _currentActivePai.center = CGPointMake(frame.origin.x + frame.size.width / 2, frame.origin.y + frame.size.height / 2);
         }
                          completion:^(BOOL finished) {
                              if (finished) {
@@ -199,12 +193,10 @@
         _activeIndex = index;
         [[_paiArray objectAtIndex:_activeIndex] setHidden:YES];
         _currentActivePai = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-#ifdef KAnimation
-        float offy = _activeIndex > 10 ? 1.5 * (21 - _activeIndex) : 1.5 * _activeIndex;
-        _currentActivePai.center = CGPointMake(50 + _activeIndex * 12, 85 + offy);
-#else
-        _currentActivePai.center = ((UIImageView*)[_paiArray objectAtIndex:_activeIndex]).center;
-#endif
+
+        CGRect frame = ((UIImageView*)[_paiArray objectAtIndex:_activeIndex]).frame;
+        _currentActivePai.center = CGPointMake(frame.origin.x + frame.size.width / 2, frame.origin.y + frame.size.height / 2);
+        
         [self addSubview:_currentActivePai];
         
         //抽牌声音
@@ -214,77 +206,27 @@
 
 #pragma mark - animation
 -(void)startAnimation{
-#ifdef KAnimation
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         for (int i = 0; i < [_paiArray count]; i++) {
             UIImageView* view = [_paiArray objectAtIndex:i];
-            view.layer.anchorPoint = CGPointMake(0.5f,-1.5f);//围绕点
-            view.transform = CGAffineTransformMakeRotation(42 * (M_PI / 180.0f));
+            view.layer.anchorPoint = CGPointMake(0.5f,-1.45f);//围绕点
+            view.transform = CGAffineTransformMakeRotation(40 * (M_PI / 180.0f));
         }
     } completion:^(BOOL finished) {
         [self startExpandAnimation];
     }];
-    
-#else
-    
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        for (int i = 0; i < 22; i++) {
-            UIImageView* view = [_paiArray objectAtIndex:i];
-            view.center = CGPointMake(45, 50);
-            
-            view.transform = CGAffineTransformMakeRotation(45.0 / 180.0 * M_PI);
-        }
-    }
-                     completion:^(BOOL finished) {
-                         if (finished) {
-                             [self startExpandAnimation];
-                         }
-                     }];
-#endif
 }
 
 -(void)startExpandAnimation{
-#ifdef KAnimation
     [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         for (int i = 0; i < [_paiArray count]; i++) {
             UIImageView* view = [_paiArray objectAtIndex:i];
-            view.layer.anchorPoint = CGPointMake(0.5f,-1.5f);//围绕点
-            view.transform = CGAffineTransformMakeRotation((42 - 4 * i) * (M_PI / 180.0f));
+            view.layer.anchorPoint = CGPointMake(0.5f,-1.45f);//围绕点
+            view.transform = CGAffineTransformMakeRotation((40 - 3.9 * i) * (M_PI / 180.0f));
         }
     } completion:^(BOOL finished) {
         [self autoChuoPai];
     }];
-    
-#else
-    
-    [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        float x = ((UIImageView*)[_paiArray objectAtIndex:_animationIndex - 1]).center.x;
-        for (int i = _animationIndex; i < 22; i++) {
-            int off = 4;
-            if (_animationIndex <= 13 && _animationIndex >= 9) {
-                off = 1;
-            }
-            int offy = _animationIndex > 11 ? -off : off;
-            if (_animationIndex == 11) {
-                offy = 0;
-            }
-            UIImageView* view = [_paiArray objectAtIndex:i];
-            view.center = CGPointMake(x + 11, view.center.y + offy);
-            
-            view.transform = CGAffineTransformMakeRotation((45.0 - _animationIndex * 4)  / 180.0 * M_PI);
-        }
-    }
-                     completion:^(BOOL finished) {
-                         if (finished) {
-                             _animationIndex++;
-                             if (_animationIndex < 22) {
-                                 [self startExpandAnimation];
-                             } else {
-                                 [self autoChuoPai];
-                             }
-                         }
-                     }];
-#endif
 }
 
 -(void)autoChuoPai{
@@ -292,58 +234,22 @@
         NSArray* array = [[KENModel shareModel] getPaiZHenAutoIndex];
         if (_currentSelectIndex < [array count]) {
             int index = [[array objectAtIndex:_currentSelectIndex] intValue];
-            [self showActivePai:index];
+            [self showActivePai:21 - index];
             [self gestureStateEnd];
         }
     }
 }
 
 -(void)stopAnimation{
-#ifdef KAnimation
     [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         for (int i = 0; i < [_paiArray count]; i++) {
             UIImageView* view = [_paiArray objectAtIndex:i];
-            view.layer.anchorPoint = CGPointMake(0.5f,-1.5f);//围绕点
-            view.transform = CGAffineTransformMakeRotation(42 * (M_PI / 180.0f));
+            view.layer.anchorPoint = CGPointMake(0.5f,-1.45f);//围绕点
+            view.transform = CGAffineTransformMakeRotation(40 * (M_PI / 180.0f));
         }
     } completion:^(BOOL finished) {
         [self finishAnimation];
     }];
-
-#else
-    
-    [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _animationIndex = _animationIndex >= [_paiArray count] ? [_paiArray count] - 1 : _animationIndex;
-        float x = ((UIImageView*)[_paiArray objectAtIndex:_animationIndex - 1]).center.x;
-//        while ([[_paiArray objectAtIndex:_animationIndex - 1] isHidden]) {
-//            
-//        }
-        for (int i = _animationIndex; i < 22; i++) {
-            int off = 4;
-            if (_animationIndex <= 13 && _animationIndex >= 9) {
-                off = 1;
-            }
-            int offy = _animationIndex > 11 ? -off : off;
-            if (_animationIndex == 10) {
-                offy = 0;
-            }
-            UIImageView* view = [_paiArray objectAtIndex:i];
-            view.center = CGPointMake(x, view.center.y - offy);
-            
-            view.transform = CGAffineTransformMakeRotation((45.0 - _animationIndex * 4)  / 180.0 * M_PI);
-        }
-    }
-                     completion:^(BOOL finished) {
-                         if (finished) {
-                             _animationIndex--;
-                             if (_animationIndex > 0) {
-                                 [self stopAnimation];
-                             } else {
-                                 [self finishAnimation];
-                             }
-                         }
-                     }];
-#endif
 }
 
 -(void)finishAnimation{
@@ -363,20 +269,4 @@
                          }
                      }];
 }
-
-//动画参考
-//- (void)startAnimation
-//{
-//    CGAffineTransform endAngle = CGAffineTransformMakeRotation(angle * (M_PI / 180.0f));
-//    
-//    [UIView animateWithDuration:0.01 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-//        guabanImageBefore.layer.anchorPoint = CGPointMake(0.5f,0.048245f);//围绕点
-//        guabanImageBefore.layer.position = CGPointMake(160, 37+5);//位置</span>
-//        guabanImageBefore.transform = endAngle;
-//        
-//    } completion:^(BOOL finished) {
-//        angle += 10; [self startAnimation];
-//    }];
-//    
-//}
 @end

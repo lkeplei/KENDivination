@@ -53,6 +53,7 @@
     NSString* name;
     switch (type) {
         case KENVoiceAnJian:
+            return;
             name = @"an_jian";
             break;
         case KENVoiceChouPai:
