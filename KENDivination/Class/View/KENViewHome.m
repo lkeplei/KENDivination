@@ -98,19 +98,51 @@
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
         if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
             CGPoint point = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
-            int offx = abs(point.x - prePoint.x);
-            if (offx > 1) {
+            int offset = abs(point.x) > abs(point.y) ? abs(point.y - prePoint.y) : abs(point.x - prePoint.x);
+            if (offset > 1) {
                 if (point.y > 0) {
-                    if (prePoint.x < point.x) {
-                        rotateView += offx;
+                    if (abs(point.x) > abs(point.y)) {
+                        if (point.x > 0) {
+                            if (prePoint.y < point.y) {
+                                rotateView -= offset;
+                            } else {
+                                rotateView += offset;
+                            }
+                        } else {
+                            if (prePoint.y < point.y) {
+                                rotateView += offset;
+                            } else {
+                                rotateView -= offset;
+                            }
+                        }
                     } else {
-                        rotateView -= offx;
+                        if (prePoint.x < point.x) {
+                            rotateView += offset;
+                        } else {
+                            rotateView -= offset;
+                        }
                     }
                 } else {
-                    if (prePoint.x < point.x) {
-                        rotateView -= offx;
+                    if (abs(point.x) > abs(point.y)) {
+                        if (point.x > 0) {
+                            if (prePoint.y < point.y) {
+                                rotateView -= offset;
+                            } else {
+                                rotateView += offset;
+                            }
+                        } else {
+                            if (prePoint.y < point.y) {
+                                rotateView += offset;
+                            } else {
+                                rotateView -= offset;
+                            }
+                        }
                     } else {
-                        rotateView += offx;
+                        if (prePoint.x < point.x) {
+                            rotateView -= offset;
+                        } else {
+                            rotateView += offset;
+                        }
                     }
                 }
                 
