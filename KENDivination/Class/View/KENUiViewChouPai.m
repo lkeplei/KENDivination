@@ -109,10 +109,6 @@
         if (_currentActivePai == nil) {
             for (int i = [_paiArray count] - 1; i >= 0; i--) {
                 if (CGRectContainsPoint(((UIImageView*)[_paiArray objectAtIndex:i]).frame, locationInView) && ![[_paiArray objectAtIndex:i] isHidden]) {
-//                    UIView* view = [[UIView alloc] initWithFrame:((UIImageView*)[_paiArray objectAtIndex:i]).bounds];
-//                    [view setBackgroundColor:[UIColor whiteColor]];
-//                    [self addSubview:view];
-                    
                     [self showActivePai:i];
                     break;
                 }
@@ -226,6 +222,14 @@
         }
     } completion:^(BOOL finished) {
         [self autoChuoPai];
+        
+        for (int i = 0; i < [_paiArray count]; i++) {
+            UIView* view = [[UIView alloc] initWithFrame:((UIImageView*)[_paiArray objectAtIndex:i]).frame];
+//            view.center = ((UIImageView*)[_paiArray objectAtIndex:i]).center;
+            view.alpha = 0.5;
+            [view setBackgroundColor:RGBCOLOR(255 * i / 21, 255 * i / 21, 255 * i / 21)];
+            [self addSubview:view];
+        }
     }];
 }
 
