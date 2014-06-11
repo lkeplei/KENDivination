@@ -52,10 +52,18 @@
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
         [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanTing];
         int rotate = rotateView % 60;
-        if (rotate > 30) {
-            rotateView += 60 - rotate;
+        if (abs(rotate) >= 30) {
+            if (rotate >= 0) {
+                rotateView += 60 - rotate;
+            } else {
+                rotateView -= 60 - abs(rotate);
+            }
         } else {
-            rotateView -= rotate;
+            if (rotate >= 0) {
+                rotateView -= rotate;
+            } else {
+                rotateView -= rotate;
+            }
         }
         
         [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
