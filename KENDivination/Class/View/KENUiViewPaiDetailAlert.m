@@ -65,46 +65,45 @@
     NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:zhenWei];
     NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
     NSString* imageName = [messageDic objectForKey:KDicKeyPaiImg];
-    __block UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
+
+    UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+    imgView.center = CGPointMake(center.x, center.y);
+    imgView.layer.anchorPoint = CGPointMake(0.0f, 0.5f);
+    [self addSubview:imgView];
     
-    _paiView = [[UIImageView alloc] initWithImage:image];
+    _paiView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[@"l_" stringByAppendingString:imageName]]];
     _paiView.center = CGPointMake(center.x, center.y);
-    _paiView.layer.anchorPoint = CGPointMake(0.0f, 0.5f);
-    [self addSubview:_paiView];
-    
-    CATransform3D original = _paiView.layer.transform;
+    _paiView.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
+    if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
+        UIImageView* newView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[@"l_" stringByAppendingString:imageName]]];
+        [newView setImage:[UIImage imageNamed:[@"l_" stringByAppendingString:imageName]]];
+        newView.transform = CGAffineTransformMakeRotation(M_PI);
+        [_paiView addSubview:newView];
+    }
     
     [UIView animateWithDuration:0.75  delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         CATransform3D rotation = CATransform3DMakeRotation(-M_PI_2, 0, 1, 0);
-        CATransform3D scale = CATransform3DScale(original, 1.78, 1.78, 1.78);
+        CATransform3D scale = CATransform3DScale(imgView.layer.transform, 2, 2, 2);
         CATransform3D group = CATransform3DConcat(rotation, scale);
-        _paiView.layer.transform = group;
+        imgView.layer.transform = group;
     } completion:^(BOOL finished){
         if (finished) {
-            image = [UIImage imageNamed:[@"l_" stringByAppendingString:imageName]];
-            [_paiView setImage:image];
-            if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-                CGAffineTransform rotation = CGAffineTransformMakeRotation(M_PI);
-                CATransform3D rotation1 = CATransform3DMakeRotation(M_PI, 0, 0, 1);
-                CATransform3D scale = CATransform3DMakeRotation(M_PI, 0, 1, 0);
-                CATransform3D group = CATransform3DConcat(rotation1, scale);
-                _paiView.layer.transform = group;
-            } else {
-                _paiView.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
-            }
-
+            [imgView removeFromSuperview];
+            
+            [self addSubview:_paiView];
+            CATransform3D rotation = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
+            CATransform3D scale = CATransform3DScale(_paiView.layer.transform, 0.5, 0.5, 0.5);
+            _paiView.layer.transform = CATransform3DConcat(rotation, scale);
             
             [UIView animateWithDuration:1  delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                CATransform3D scale = CATransform3DScale(original, 3.53, 3.6, 3.55);
-                CATransform3D translation = CATransform3DMakeTranslation((self.center.x - _originalPosition.x - image.size.width / 2) / 3.53,
-                                                                         (self.center.y - _originalPosition.y) / 3.6, 0);
+                CATransform3D scale = CATransform3DMakeRotation(0, 0, 1, 0);
+                CATransform3D translation = CATransform3DMakeTranslation(self.center.x - _originalPosition.x + _paiView.bounds.size.width / 2,
+                                                                         self.center.y - _originalPosition.y, 0);
                 _paiView.layer.transform = CATransform3DConcat(translation, scale);
             } completion:^(BOOL finished){
-                if (finished) {
-                    UIButton* button = (UIButton*)[self viewWithTag:KCloseButtonTag];
-                    if (button) {
-                        [button setEnabled:YES];
-                    }
+                UIButton* button = (UIButton*)[self viewWithTag:KCloseButtonTag];
+                if (button) {
+                    [button setEnabled:YES];
                 }
             }];
         }
@@ -193,8 +192,8 @@
 
     if (_paiView) {
         [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            CATransform3D scale = CATransform3DScale(_paiView.layer.transform, 0.28, 0.28, 0.28);
-            CATransform3D translation = CATransform3DMakeTranslation(_originalPosition.x - self.center.x + 52,
+            CATransform3D scale = CATransform3DScale(_paiView.layer.transform, 0.285, 0.279, 0.28);
+            CATransform3D translation = CATransform3DMakeTranslation(_originalPosition.x - self.center.x - _paiView.bounds.size.width / 2 + 22,
                                                                      _originalPosition.y - self.center.y, 0);
             CATransform3D group = CATransform3DConcat(scale, translation);
             _paiView.layer.transform = group;
