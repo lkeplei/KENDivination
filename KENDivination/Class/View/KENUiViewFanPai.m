@@ -42,6 +42,21 @@
     int count = [[KENModel shareModel] getPaiZhenNumber];
     NSDictionary* resDic = [[KENModel shareModel] getPaiZhenPostions];
     NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
+    
+    //pai
+    NSString* bgPath = [resDic objectForKey:KDicKeyZhenBgPath];
+    if (bgPath) {
+        UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:bgPath]];
+        float rate = [self.delegate getRateIPad];
+        if (IsPad) {
+            imgView.center = CGPointMake(self.center.x / rate, self.center.y / rate - 30);
+        } else {
+            imgView.center = CGPointMake(self.center.x, self.center.y - 45);
+        }
+        
+        [self addSubview:imgView];
+    }
+    
     for (int i = 0; i < count; i++) {
         NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:i];
         NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
@@ -52,6 +67,10 @@
         pai.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
         if ([dic objectForKey:KDicKeyZhenAngle]) {
             pai.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
+        }
+        
+        if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
+            pai.transform = CGAffineTransformMakeRotation(M_PI);
         }
         
         [self addSubview:pai];

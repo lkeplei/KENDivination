@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UIImageView* selectPaiBgView;
 @property (nonatomic, strong) NSMutableArray* paiArray;
 @property (nonatomic, strong) NSMutableArray* selectPaiArray;
+@property (nonatomic, strong) NSMutableArray* pathArray;
 
 @end
 
@@ -108,7 +109,14 @@
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
         if (_currentActivePai == nil) {
             for (int i = [_paiArray count] - 1; i >= 0; i--) {
-                if (CGRectContainsPoint(((UIImageView*)[_paiArray objectAtIndex:i]).frame, locationInView) && ![[_paiArray objectAtIndex:i] isHidden]) {
+                BOOL contains = NO;
+                if (i <= 5 || i >= 16) {
+                    contains = [[_pathArray objectAtIndex:i] containsPoint:locationInView];
+                } else {
+                    contains = CGRectContainsPoint(((UIImageView*)[_paiArray objectAtIndex:i]).frame, locationInView);
+                }
+
+                if (contains && ![[_paiArray objectAtIndex:i] isHidden]) {
                     [self showActivePai:i];
                     break;
                 }
@@ -223,12 +231,48 @@
     } completion:^(BOOL finished) {
         [self autoChuoPai];
         
+        float c = [UIImage imageNamed:@"app_pai_bg.png"].size.height;
+        _pathArray = [[NSMutableArray alloc] init];
         for (int i = 0; i < [_paiArray count]; i++) {
-            UIView* view = [[UIView alloc] initWithFrame:((UIImageView*)[_paiArray objectAtIndex:i]).frame];
-//            view.center = ((UIImageView*)[_paiArray objectAtIndex:i]).center;
-            view.alpha = 0.5;
-            [view setBackgroundColor:RGBCOLOR(255 * i / 21, 255 * i / 21, 255 * i / 21)];
-            [self addSubview:view];
+            float angle = (40 - 3.9 * i) > 0 ? (40 - 3.9 * i) : 90 + (40 - 3.9 * i);
+            float du = M_PI / (180 / angle);
+            float a = cosf(du) * c;
+            float b = sinf(du) * c;
+
+            CGRect rect = ((UIImageView*)[_paiArray objectAtIndex:i]).frame;
+            UIBezierPath * path = [UIBezierPath bezierPath];
+            if (i <= 10) {
+                [path moveToPoint:CGPointMake(CGRectGetMinX(rect) + b, CGRectGetMinY(rect))];
+                [path addLineToPoint:CGPointMake(CGRectGetMinX(rect), CGRectGetMinY(rect) + a)];
+                [path addLineToPoint:CGPointMake(CGRectGetMinX(rect) + CGRectGetWidth(rect) - a, CGRectGetMaxY(rect))];
+                [path addLineToPoint:CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect) + CGRectGetHeight(rect) - b)];
+            } else {
+                [path moveToPoint:CGPointMake(CGRectGetMinX(rect) + CGRectGetWidth(rect) - b, CGRectGetMinY(rect))];
+                [path addLineToPoint:CGPointMake(CGRectGetMinX(rect), CGRectGetMinY(rect) + CGRectGetHeight(rect) - b)];
+                [path addLineToPoint:CGPointMake(CGRectGetMinX(rect) + a, CGRectGetMaxY(rect))];
+                [path addLineToPoint:CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect) + a)];
+            }
+            [path closePath];
+            
+            [_pathArray addObject:path];
+            
+//            DebugLog(@"a=%.1f rect=(%.1f,%.1f,%.1f,%.1f) bounds=(%.1f,%.1f,%.1f,%.1f)", angle, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height,
+//                     path.bounds.origin.x, path.bounds.origin.y, path.bounds.size.width, path.bounds.size.height);
+//            
+//            
+//            if (i == 0) {
+//                UIView* view = [[UIView alloc] initWithFrame:path.bounds];
+//                view.alpha = 0.7;
+//                //            [view setBackgroundColor:RGBCOLOR(255 * i / 21, 255 * i / 21, 255 * i / 21)];
+//                [view setBackgroundColor:[UIColor yellowColor]];
+//                [self addSubview:view];
+//                
+//                UIView* view1 = [[UIView alloc] initWithFrame:((UIImageView*)[_paiArray objectAtIndex:i]).frame];
+//                view1.alpha = 0.7;
+//                //            [view setBackgroundColor:RGBCOLOR(255 * i / 21, 255 * i / 21, 255 * i / 21)];
+//                [view1 setBackgroundColor:[UIColor redColor]];
+//                [self addSubview:view1];
+//            }
         }
     }];
 }
