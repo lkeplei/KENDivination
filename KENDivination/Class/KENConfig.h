@@ -51,6 +51,8 @@
 
 #define KJiePaiKeyColor         RGBCOLOR(250,249,142)
 
+#define KPaiCenter              CGPointMake(160, 110)
+
 
 #define KUserDefaultSetOpenVoice             @"default_open_voice"
 #define KUserDefaultJieMi                    @"default_jie_mi"

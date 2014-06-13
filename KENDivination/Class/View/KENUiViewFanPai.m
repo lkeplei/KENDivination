@@ -113,7 +113,7 @@
     int count = [[KENModel shareModel] getPaiZhenNumber];
     
     UIImageView* tempView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
-    tempView.center = CGPointMake(160, 80);
+    tempView.center = KPaiCenter;
     float width = 240 / count;
     float space = width;
     if (width < image.size.width) {

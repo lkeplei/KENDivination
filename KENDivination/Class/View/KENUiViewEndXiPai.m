@@ -22,6 +22,7 @@
 
 @property (nonatomic, strong) UIImageView* paiTop;
 @property (nonatomic, strong) UIImageView* paiBottom;
+@property (nonatomic, strong) UIButton* endButton;
 
 @end
 
@@ -45,22 +46,22 @@
 
 -(void)initView{
     _paiTop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiTop.center = CGPointMake(160, 80);
+    _paiTop.center = KPaiCenter;
     _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
     _paiBottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiBottom.center = CGPointMake(160, 80);
+    _paiBottom.center = KPaiCenter;
     _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];
     
-    UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _endButton = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
                                          image:[UIImage imageNamed:@"button_end_xipai.png"]
                                       imagesec:[UIImage imageNamed:@"button_end_xipai_sec.png"]
                                         target:self
                                         action:@selector(btnClicked:)];
-    button.center = CGPointMake(160, 340);
-    [self addSubview:button];
+    _endButton.center = CGPointMake(160, 370);
+    [self addSubview:_endButton];
     
     [self startAnimation];
 }
@@ -96,9 +97,9 @@
             if (step % 2 == 1) {
                 animating = YES;
                 trans = NO;
-                _paiBottom.center = CGPointMake(160, 160);
+                _paiBottom.center = CGPointMake(160, KPaiCenter.y + 80);
             } else {
-                _paiBottom.center = CGPointMake(160, 80);
+                _paiBottom.center = KPaiCenter;
             }
             canTrans = YES;
             step++;
@@ -138,9 +139,16 @@
     }
     
     if (willJump && !animating) {
-        if (self.delegate) {
-            [self.delegate showViewWithType:KENUiViewTypeStartQiePai];
+        [UIView animateWithDuration:0.75 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            _endButton.alpha = 0;
         }
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 if (self.delegate) {
+                                     [self.delegate showViewWithType:KENUiViewTypeStartQiePai];
+                                 }
+                             }
+                         }];
     } else {
         willJump = YES;
     }

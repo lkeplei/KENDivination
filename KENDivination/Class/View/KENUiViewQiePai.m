@@ -8,6 +8,7 @@
 
 #import "KENUiViewQiePai.h"
 #import "KENModel.h"
+#import "KENConfig.h"
 
 @interface KENUiViewQiePai ()
 
@@ -33,17 +34,17 @@
 
 -(void)initView{
     _paiBottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiBottom.center = CGPointMake(160, 160);
+    _paiBottom.center = CGPointMake(160, KPaiCenter.y + 80);
     _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];
     
     _paiTop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiTop.center = CGPointMake(160, 160);
+    _paiTop.center = CGPointMake(160, KPaiCenter.y + 80);
     _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
     _paiMiddle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiMiddle.center = CGPointMake(160, 160);
+    _paiMiddle.center = CGPointMake(160, KPaiCenter.y + 80);
     _paiMiddle.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiMiddle];
     
@@ -58,8 +59,8 @@
     [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
     
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _paiMiddle.center = CGPointMake(160, 240);
-        _paiBottom.center = CGPointMake(160, 240);
+        _paiMiddle.center = CGPointMake(160, KPaiCenter.y + 160);
+        _paiBottom.center = CGPointMake(160, KPaiCenter.y + 160);
     }
                      completion:^(BOOL finished) {
                          if (finished) {
@@ -73,7 +74,7 @@
     [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
     
     [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _paiMiddle.center = CGPointMake(160, 80);
+        _paiMiddle.center = KPaiCenter;
     }
                      completion:^(BOOL finished) {
                          if (finished) {
@@ -87,7 +88,7 @@
     [NSTimer scheduledTimerWithTimeInterval:0.7 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
     
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _paiTop.center = CGPointMake(160, 240);
+        _paiTop.center = CGPointMake(160, KPaiCenter.y + 160);
     }
                      completion:^(BOOL finished) {
                          if (finished) {
@@ -100,8 +101,8 @@
     [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
     
     [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _paiTop.center = CGPointMake(160, 80);
-        _paiBottom.center = CGPointMake(160, 80);
+        _paiTop.center = KPaiCenter;
+        _paiBottom.center = KPaiCenter;
     }
                      completion:^(BOOL finished) {
                          if (finished) {

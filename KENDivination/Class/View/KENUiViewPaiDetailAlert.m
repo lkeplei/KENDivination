@@ -98,7 +98,7 @@
             [UIView animateWithDuration:1  delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                 CATransform3D scale = CATransform3DMakeRotation(0, 0, 1, 0);
                 CATransform3D translation = CATransform3DMakeTranslation(self.center.x - _originalPosition.x + _paiView.bounds.size.width / 2,
-                                                                         self.center.y - _originalPosition.y, 0);
+                                                                         self.center.y - _originalPosition.y - KNotificationHeight / 2, 0);
                 _paiView.layer.transform = CATransform3DConcat(translation, scale);
             } completion:^(BOOL finished){
                 UIButton* button = (UIButton*)[self viewWithTag:KCloseButtonTag];
@@ -194,7 +194,7 @@
         [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
             CATransform3D scale = CATransform3DScale(_paiView.layer.transform, 0.285, 0.279, 0.28);
             CATransform3D translation = CATransform3DMakeTranslation(_originalPosition.x - self.center.x - _paiView.bounds.size.width / 2 + 22,
-                                                                     _originalPosition.y - self.center.y, 0);
+                                                                     _originalPosition.y - self.center.y + KNotificationHeight / 2, 0);
             CATransform3D group = CATransform3DConcat(scale, translation);
             _paiView.layer.transform = group;
         } completion:^(BOOL finished){

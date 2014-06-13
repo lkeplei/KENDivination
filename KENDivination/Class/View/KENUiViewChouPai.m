@@ -8,6 +8,7 @@
 
 #import "KENUiViewChouPai.h"
 #import "KENConfig.h"
+#import "KENUtils.h"
 
 @interface KENUiViewChouPai ()
 
@@ -42,6 +43,12 @@
 }
 
 -(void)initView{
+    UILabel* label = [KENUtils labelWithTxt:MyLocal(@"choupai_remind")
+                                      frame:CGRectMake(0, 5, 320, 20)
+                                       font:[UIFont fontWithName:KLabelFontArial size:17]
+                                      color:[UIColor whiteColor]];
+    [self addSubview:label];
+    
     _selectPaiBgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
     _selectPaiBgView.center = CGPointMake(160, 260);
     [self addSubview:_selectPaiBgView];
@@ -72,7 +79,7 @@
     _paiArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < 22; i++) {
         UIImageView* pai = [[UIImageView alloc] initWithImage:image];
-        pai.center = CGPointMake(160, -82);
+        pai.center = CGPointMake(160, -52);
         [self addSubview:pai];
         
         [_paiArray addObject:pai];
@@ -309,7 +316,7 @@
     }
     
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _selectPaiBgView.center = CGPointMake(160, 80);
+        _selectPaiBgView.center = KPaiCenter;
     }
                      completion:^(BOOL finished) {
                          if (finished) {

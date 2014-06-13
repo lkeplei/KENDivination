@@ -14,6 +14,7 @@
 @interface KENViewQuestion ()
 
 @property (nonatomic, strong) UITextView* questionTextView;
+@property (nonatomic, strong) UIButton* okButton;
 
 @end
 
@@ -35,13 +36,14 @@
 
 -(void)showView{
     //setting btn
-    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _okButton = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
                                          image:[UIImage imageNamed:@"app_btn_ok.png"]
                                       imagesec:[UIImage imageNamed:@"app_btn_ok_sec.png"]
                                         target:self
                                         action:@selector(okBtnClicked:)];
-    setBtn.center = CGPointMake(285, KNotificationHeight / 2);
-    [self.contentView addSubview:setBtn];
+    _okButton.center = CGPointMake(285, KNotificationHeight / 2);
+    [_okButton setEnabled:NO];
+    [self.contentView addSubview:_okButton];
     
     UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"question_write_down.png"]];
     imgView.center = CGPointMake(160, 79);
@@ -66,6 +68,10 @@
     return YES;
 }
 
+- (void)textViewDidChange:(UITextView *)textView{
+    [_okButton setEnabled:[[textView text] length] > 0];
+}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     if ([text isEqualToString:@"\n"]) {
         [self okBtnClicked:nil];
@@ -74,8 +80,7 @@
     
     if (range.location >= 256){
         return  NO;
-    }
-    else{
+    } else {
         return YES;
     }
 }
@@ -88,9 +93,11 @@
 
 #pragma mark - setting btn
 -(void)okBtnClicked:(UIButton*)button{
-    [[KENModel shareModel].memoryData setMemoryQuestion:_questionTextView.text];
-    [_questionTextView resignFirstResponder];
-    
-    [self pushView:[SysDelegate.viewController getView:KENViewTypeDirection] animatedType:KENTypeNull];
+    if ([_questionTextView.text length] > 0) {
+        [[KENModel shareModel].memoryData setMemoryQuestion:_questionTextView.text];
+        [_questionTextView resignFirstResponder];
+        
+        [self pushView:[SysDelegate.viewController getView:KENViewTypeDirection] animatedType:KENTypeNull];
+    }
 }
 @end

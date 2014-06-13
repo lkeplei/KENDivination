@@ -156,9 +156,10 @@
                 
                 prePoint = point;
                 _zhuanPanView.transform = CGAffineTransformMakeRotation(rotateView / 180.0 * M_PI);
-                if (rotateView > 360) {
+
+                if (abs(rotateView) > 360) {
                     [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanZhuanDong];
-                    rotateView -= 360;
+                    rotateView = rotateView > 0 ? rotateView - 360 : rotateView + 360;
                 }
             }
         }
