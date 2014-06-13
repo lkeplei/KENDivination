@@ -43,7 +43,11 @@
 }
 
 -(void)initView{
-    UILabel* label = [KENUtils labelWithTxt:MyLocal(@"choupai_remind")
+    NSString* string = MyLocal(@"choupai_remind");
+    if ([[KENModel shareModel] getPaiZhenAuto]) {
+        string = MyLocal(@"choupai_remind_auto");
+    }
+    UILabel* label = [KENUtils labelWithTxt:string
                                       frame:CGRectMake(0, 5, 320, 20)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
@@ -316,7 +320,7 @@
     }
     
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _selectPaiBgView.center = KPaiCenter;
+        _selectPaiBgView.center = CGPointMake(160, 80);
     }
                      completion:^(BOOL finished) {
                          if (finished) {

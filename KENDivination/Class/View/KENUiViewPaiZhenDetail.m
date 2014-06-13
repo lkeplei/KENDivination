@@ -80,26 +80,35 @@
     [cell addSubview:kaPai];
     
     //message
+    UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
+    //message
     float offx = CGRectGetMaxX(kaPai.frame) + 10;
     float width = cell.frame.size.width - offx - 20;
     NSString* string = [MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]];
-    CGSize size = [KENUtils getFontSize:string font:[UIFont fontWithName:KLabelFontArial size:12]];
+    CGSize size = [KENUtils getFontSize:string font:font];
     float height = (size.height + 1);
-    UILabel* label = [self addLabel:string frame:CGRectMake(offx, 15, width, height) cell:cell];
+    UILabel* label = [self addLabel:string
+                              frame:CGRectMake(offx, 15, width, height)
+                               font:font index:3 cell:cell];
     
     string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
-    size = [KENUtils getFontSize:string font:[UIFont fontWithName:KLabelFontArial size:12]];
+    size = [KENUtils getFontSize:string font:font];
     float lines = size.width > width ? size.width / width + 1 : 1;
-    label = [self addLabel:string frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1) cell:cell];
+    label = [self addLabel:string
+                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
+                      font:font index:3 cell:cell];
     label.numberOfLines = lines > 1 ? 0 : 1;
     
     label = [self addLabel:[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]]
-                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height) cell:cell];
+                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
+                      font:font index:3 cell:cell];
     
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
-    size = [KENUtils getFontSize:string font:[UIFont fontWithName:KLabelFontArial size:12]];
+    size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
-    label = [self addLabel:string frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1) cell:cell];
+    label = [self addLabel:string
+                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
+                      font:font index:4 cell:cell];
     label.numberOfLines = lines > 1 ? 0 : 1;
     
     if ([[paiMessage objectForKey:KDicPaiWei] boolValue]) {
@@ -107,21 +116,32 @@
     } else {
         string = [MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_fan")];
     }
-    label = [self addLabel:string frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height) cell:cell];
+    label = [self addLabel:string
+                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
+                      font:font index:3 cell:cell];
     
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
-    size = [KENUtils getFontSize:string font:[UIFont fontWithName:KLabelFontArial size:12]];
+    size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
-    label = [self addLabel:string frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1) cell:cell];
+    label = [self addLabel:string
+                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
+                      font:font index:3 cell:cell];
     label.numberOfLines = 0;
 }
 
--(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame cell:(UITableViewCell*)cell{
+-(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index cell:(UITableViewCell*)cell{
     UILabel* label = [KENUtils labelWithTxt:content
                                       frame:frame
-                                       font:[UIFont fontWithName:KLabelFontArial size:12]
+                                       font:font
                                       color:[UIColor whiteColor]];
     label.textAlignment = KTextAlignmentLeft;
+    
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:content];
+    [str addAttribute:NSForegroundColorAttributeName value:KJiePaiKeyColor range:NSMakeRange(0, index)];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(index, [content length] - index)];
+    //    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:30.0] range:NSMakeRange(0, 5)];
+    label.attributedText = str;
+    
     [cell addSubview:label];
     
     return label;

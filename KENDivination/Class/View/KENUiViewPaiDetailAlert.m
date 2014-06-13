@@ -33,7 +33,7 @@
         [_bgView setExclusiveTouch:YES];
         
         [self addSubview:_bgView];
-        
+
         if (animate) {
             _bgView.layer.transform = CATransform3DScale(self.layer.transform, 4, 4, 4);
             
@@ -120,33 +120,35 @@
     }
     [_bgView addSubview:kaPai];
 
-    UIFont* font = [UIFont fontWithName:KLabelFontArial size:12];
+    UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
     float offx = CGRectGetMaxX(kaPai.frame) + 10;
     float width = _bgView.frame.size.width - offx - 20;
     NSString* string = [MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]];
     CGSize size = [KENUtils getFontSize:string font:font];
     float height = (size.height + 1);
-    UILabel* label = [self addLabel:string frame:CGRectMake(offx, 15, width, height) font:font];
+    UILabel* label = [self addLabel:string
+                     frame:CGRectMake(offx, 15, width, height)
+                      font:font index:3];
     
     string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     float lines = size.width > width ? size.width / width + 1 : 1;
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
-                      font:font];
+                      font:font index:3];
     label.numberOfLines = lines > 1 ? 0 : 1;
-    
+
     label = [self addLabel:[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]]
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
-                      font:font];
+                      font:font index:3];
     
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
-                      font:font];
+                      font:font index:4];
     label.numberOfLines = lines > 1 ? 0 : 1;
     
     if ([[paiMessage objectForKey:KDicPaiWei] boolValue]) {
@@ -154,14 +156,16 @@
     } else {
         string = [MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_fan")];
     }
-    label = [self addLabel:string frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height) font:font];
+    label = [self addLabel:string
+                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
+                      font:font index:3];
     
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
     label = [self addLabel:string
-                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
-                      font:font];
+                     frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
+                      font:font index:3];
     label.numberOfLines = 0;
     
     //animate
@@ -173,12 +177,19 @@
     }];
 }
 
--(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font{
+-(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index{
     UILabel* label = [KENUtils labelWithTxt:content
                                       frame:frame
                                        font:font
                                       color:[UIColor whiteColor]];
     label.textAlignment = KTextAlignmentLeft;
+    
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:content];
+    [str addAttribute:NSForegroundColorAttributeName value:KJiePaiKeyColor range:NSMakeRange(0, index)];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(index, [content length] - index)];
+//    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:30.0] range:NSMakeRange(0, 5)];
+    label.attributedText = str;
+    
     [_bgView addSubview:label];
     
     return label;
@@ -199,9 +210,12 @@
             _paiView.layer.transform = group;
         } completion:^(BOOL finished){
             if (finished) {
+                DebugLog(@"alert block 1 ===== ");
                 if (self.alertBlock) {
+                    DebugLog(@"alert block 2 ===== ");
                     self.alertBlock();
                 }
+                DebugLog(@"alert block 3 ===== ");
                 [self removeFromSuperview];
             }
         }];

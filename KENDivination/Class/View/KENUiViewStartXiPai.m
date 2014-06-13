@@ -37,7 +37,7 @@
     
     if (type == KENUiViewTypeStartFanPai) {
         _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
-        _imageView.center = KPaiCenter;
+        _imageView.center = CGPointMake(160, 80);
         [self addSubview:_imageView];
         
         UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
@@ -56,7 +56,7 @@
         }
     } else {
         _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-        _imageView.center = KPaiCenter;
+        _imageView.center = CGPointMake(160, 80);
         if (_currentViewType == KENUiViewTypeStartXiPai || _currentViewType == KENUiViewTypeStartQiePai) {
             _imageView.transform = CGAffineTransformMakeRotation(-M_PI_2);
         }
@@ -83,6 +83,7 @@
             content = MyLocal(@"choupai_content");
             img = [UIImage imageNamed:@"button_start_choupai.png"];
             imgSec = [UIImage imageNamed:@"button_start_choupai_sec.png"];
+            _imageView.center = KPaiCenter;
         }
             break;
         case KENUiViewTypeStartFanPai:{
@@ -95,7 +96,7 @@
             break;
     }
     _contentLabel = [KENUtils labelWithTxt:content
-                                      frame:CGRectMake(60, 170, 210, 170)
+                                      frame:CGRectMake(60, 140, 210, 170)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
     _contentLabel.textAlignment = KTextAlignmentLeft;
@@ -108,7 +109,7 @@
                                       imagesec:imgSec
                                         target:self
                                         action:@selector(btnClicked:)];
-    _stepButton.center = CGPointMake(160, 370);
+    _stepButton.center = CGPointMake(160, 340);
     _stepButton.alpha = 0;
 //    [_stepButton setEnabled:NO];
     [self addSubview:_stepButton];
@@ -153,6 +154,7 @@
                                      break;
                                  case KENUiViewTypeStartQiePai:{
                                      [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+//                                         _imageView.center = CGPointMake(160, 160);
                                          _imageView.center = CGPointMake(160, KPaiCenter.y + 80);
                                      }
                                                       completion:^(BOOL finished) {

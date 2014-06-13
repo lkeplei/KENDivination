@@ -113,7 +113,7 @@
     int count = [[KENModel shareModel] getPaiZhenNumber];
     
     UIImageView* tempView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
-    tempView.center = KPaiCenter;
+    tempView.center = CGPointMake(160, 80);
     float width = 240 / count;
     float space = width;
     if (width < image.size.width) {
@@ -236,8 +236,16 @@
     
     __block UIImageView* imgView = ((UIImageView*)[_imgViewArray objectAtIndex:index]);
     [imgView setImage:[UIImage imageNamed:[@"s_" stringByAppendingString:[messageDic objectForKey:KDicKeyPaiImg]]]];
+    
+    NSDictionary* resDic = [[KENModel shareModel] getPaiZhenPostions];
+    NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
+    NSDictionary* dic = [pathArray objectAtIndex:index];
     if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-        imgView.transform = CGAffineTransformMakeRotation(M_PI);
+        if ([dic objectForKey:KDicKeyZhenAngle]) {
+            imgView.transform = CGAffineTransformMakeRotation(M_PI + [[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
+        } else {
+            imgView.transform = CGAffineTransformMakeRotation(M_PI);
+        }
     }
     
     [imgView setHidden:YES];
@@ -255,6 +263,7 @@
     [self addSubview:alert];
     
     alert.alertBlock = ^(){
+        DebugLog(@"alert block ing ===== ");
         [imgView setHidden:NO];
     };
 }

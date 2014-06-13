@@ -46,12 +46,13 @@
 
 -(void)initView{
     _paiTop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiTop.center = KPaiCenter;
+    _paiTop.center = CGPointMake(160, 80);
+
     _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
     _paiBottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
-    _paiBottom.center = KPaiCenter;
+    _paiBottom.center = CGPointMake(160, 80);
     _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];
     
@@ -60,7 +61,7 @@
                                       imagesec:[UIImage imageNamed:@"button_end_xipai_sec.png"]
                                         target:self
                                         action:@selector(btnClicked:)];
-    _endButton.center = CGPointMake(160, 370);
+    _endButton.center = CGPointMake(160, 340);
     [self addSubview:_endButton];
     
     [self startAnimation];
@@ -97,9 +98,9 @@
             if (step % 2 == 1) {
                 animating = YES;
                 trans = NO;
-                _paiBottom.center = CGPointMake(160, KPaiCenter.y + 80);
+                _paiBottom.center = CGPointMake(160, 160);
             } else {
-                _paiBottom.center = KPaiCenter;
+                _paiBottom.center = CGPointMake(160, 80);
             }
             canTrans = YES;
             step++;
