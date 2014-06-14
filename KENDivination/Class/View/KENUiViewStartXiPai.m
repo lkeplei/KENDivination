@@ -171,6 +171,8 @@
                                  }
                                      break;
                                  case KENUiViewTypeStartFanPai:{
+                                     [SysDelegate.viewController removeAd];
+                                     
                                      [self.delegate showViewWithType:KENUiViewTypeFanPai];
                                  }
                                      break;

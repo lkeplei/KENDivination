@@ -91,6 +91,9 @@
     
     [self setupGestures];
     [self startAnimation];
+    
+    //重置广告
+    [SysDelegate.viewController resetAd];
 }
 
 -(void)setSelectIndex{

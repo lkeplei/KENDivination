@@ -210,12 +210,9 @@
             _paiView.layer.transform = group;
         } completion:^(BOOL finished){
             if (finished) {
-                DebugLog(@"alert block 1 ===== ");
                 if (self.alertBlock) {
-                    DebugLog(@"alert block 2 ===== ");
                     self.alertBlock();
                 }
-                DebugLog(@"alert block 3 ===== ");
                 [self removeFromSuperview];
             }
         }];

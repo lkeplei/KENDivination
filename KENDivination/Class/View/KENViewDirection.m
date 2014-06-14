@@ -63,6 +63,9 @@
         pingBtn.tag = KDirectionBtnTagBase + i;
         [self.contentView addSubview:pingBtn];
     }
+    
+    //重置广告
+    [SysDelegate.viewController resetAd];
 }
 
 #pragma mark - btn clicked

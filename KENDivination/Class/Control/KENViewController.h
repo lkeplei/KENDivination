@@ -10,7 +10,21 @@
 #import "KENViewBase.h"
 #import "KENViewFactory.h"
 
-@interface KENViewController : UIViewController
+#import "AdMoGoDelegateProtocol.h"
+#import "AdMoGoView.h"
+#import "AdMoGoWebBrowserControllerUserDelegate.h"
+
+@interface KENViewController : UIViewController<AdMoGoDelegate, AdMoGoWebBrowserControllerUserDelegate>{
+    AdMoGoView* adView;
+}
+@property (nonatomic, strong) AdMoGoView* adView;
+
+-(void)resetAd;
+-(void)removeAd;
+
+-(void)showFullAd;
+-(void)cancelFullAd;
+
 
 -(KENViewBase*)getView:(KENViewType)type;
 /**

@@ -176,6 +176,12 @@
         [[KENModel shareModel] clearData];
         [self popView:KENTypeNull];
     } else {
+        if (_currentUiView.viewType == KENUiViewTypeFanPai || _currentUiView.viewType == KENUiViewTypePaiZhenDetail) {
+            //牌全翻开时展示全屏广告
+            [SysDelegate.viewController showFullAd];
+        }
+        
+        
         NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[UIImage imageNamed:@"button_cancel.png"] forKey:KDicKeyImg];
         [dic setObject:[UIImage imageNamed:@"button_cancel_sec.png"] forKey:KDicKeyImgSec];

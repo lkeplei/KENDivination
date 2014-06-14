@@ -61,6 +61,9 @@
                                          action:@selector(aboutBtnClicked:)];
     aboutBtn.center = CGPointMake(160, 255);
     [self.contentView addSubview:aboutBtn];
+    
+    //添加广告
+    [SysDelegate.viewController resetAd];
 }
 
 #pragma mark - switch

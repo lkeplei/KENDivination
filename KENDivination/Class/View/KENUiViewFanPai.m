@@ -263,8 +263,12 @@
     [self addSubview:alert];
     
     alert.alertBlock = ^(){
-        DebugLog(@"alert block ing ===== ");
         [imgView setHidden:NO];
+        
+        if (_currentPaiIndex >= [_imgViewArray count]) {
+            //牌全翻开时展示全屏广告
+            [SysDelegate.viewController showFullAd];
+        }
     };
 }
 
