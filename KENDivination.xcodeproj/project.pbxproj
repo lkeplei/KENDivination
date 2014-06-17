@@ -181,6 +181,7 @@
 		0443BC751934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */; };
 		0443BC781934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */; };
 		0443BC791934DE2B000F5C29 /* app_btn_paizhen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */; };
+		0453706C19505D6100586F95 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453706B19505D6100586F95 /* StoreKit.framework */; };
 		045A4CD419337EC900463FF8 /* jie_pai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CD219337EC900463FF8 /* jie_pai_bg@2x.png */; };
 		045A4CD519337EC900463FF8 /* save_whether_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CD319337EC900463FF8 /* save_whether_alert@2x.png */; };
 		045A4D1F1933848F00463FF8 /* l_app_pai_0@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CDB1933848F00463FF8 /* l_app_pai_0@2x.jpg */; };
@@ -699,6 +700,7 @@
 		0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewPaiZhenDetail.m; sourceTree = "<group>"; };
 		0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_paizhen_sec@2x.png"; sourceTree = "<group>"; };
 		0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_paizhen@2x.png"; sourceTree = "<group>"; };
+		0453706B19505D6100586F95 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		045A4CD219337EC900463FF8 /* jie_pai_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jie_pai_bg@2x.png"; sourceTree = "<group>"; };
 		045A4CD319337EC900463FF8 /* save_whether_alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save_whether_alert@2x.png"; sourceTree = "<group>"; };
 		045A4CDB1933848F00463FF8 /* l_app_pai_0@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "l_app_pai_0@2x.jpg"; sourceTree = "<group>"; };
@@ -1158,6 +1160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0453706C19505D6100586F95 /* StoreKit.framework in Frameworks */,
 				04ACEB24194C0C700018DF69 /* EventKit.framework in Frameworks */,
 				04ACEB22194C0C510018DF69 /* PassKit.framework in Frameworks */,
 				04ACEB20194C0BED0018DF69 /* Social.framework in Frameworks */,
@@ -2192,6 +2195,7 @@
 		04B323131920ED1400C055FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0453706B19505D6100586F95 /* StoreKit.framework */,
 				04ACEB23194C0C700018DF69 /* EventKit.framework */,
 				04ACEB21194C0C510018DF69 /* PassKit.framework */,
 				04ACEB1F194C0BED0018DF69 /* Social.framework */,
@@ -3090,6 +3094,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: liu kun (H775962835)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/AdChina_SDK_312/adchina/AdChinaSShareQQ/SDK",
@@ -3110,6 +3115,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "228AECAA-76D3-44C3-8EF8-A67C9E680C50";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3119,6 +3125,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: liu kun (H775962835)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/AdChina_SDK_312/adchina/AdChinaSShareQQ/SDK",
@@ -3139,6 +3146,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "228AECAA-76D3-44C3-8EF8-A67C9E680C50";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

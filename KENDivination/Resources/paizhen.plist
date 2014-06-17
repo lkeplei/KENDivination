@@ -110,21 +110,21 @@
 			<array>
 				<dict>
 					<key>key_x</key>
-					<integer>78</integer>
-					<key>key_y</key>
-					<integer>205</integer>
-				</dict>
-				<dict>
-					<key>key_x</key>
 					<integer>160</integer>
 					<key>key_y</key>
-					<integer>205</integer>
+					<integer>280</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>242</integer>
+					<integer>92</integer>
 					<key>key_y</key>
-					<integer>205</integer>
+					<integer>155</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>155</integer>
 				</dict>
 			</array>
 		</dict>
@@ -904,11 +904,11 @@
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>242</integer>
+					<integer>241</integer>
 					<key>key_y</key>
-					<integer>178</integer>
+					<integer>182</integer>
 					<key>key_angle</key>
-					<integer>20</integer>
+					<integer>18</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>

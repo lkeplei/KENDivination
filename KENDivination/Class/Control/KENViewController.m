@@ -27,12 +27,12 @@
     // Do any additional setup after loading the view.
     _viewFactory = [[KENViewFactory alloc] init];
 
+    //初始全屏广告
+    [self initFullMogo];
+    
     _currentShowView = [self addView:KENViewTypeHome];
     [_currentShowView viewDidAppear:NO];
     [_currentShowView showView];
-    
-    //初始全屏广告
-    [self initFullMogo];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -50,14 +50,80 @@
     //初始化(必须先设置默认的AppKey才能通过此方法初始化SDK)
     [[AdMoGoInterstitialManager shareInstance] initDefaultInterstitial];
     [AdMoGoInterstitialManager setRootViewController:self];
+    
+    [AdMoGoInterstitialManager setDefaultDelegate:self];
+    
+    
+//    interstitial = [[AdMoGoInterstitial alloc]
+//                    noautopollinginitWithAppKey:mogoId
+//                    isRefresh:YES
+//                    adInterval:4
+//                    adType:AdViewTypeFullScreen
+//                    adMoGoViewDelegate:self];
+//    interstitial.adWebBrowswerDelegate = self;
+//    /*
+//     启动广告轮换
+//     */
+//    [interstitial pollingInterstitialAd];
 }
 
 -(void)showFullAd{
-    [[AdMoGoInterstitialManager shareInstance] interstitialShow:YES];
+//    [interstitial interstitialShow:YES];
+    [[AdMoGoInterstitialManager shareInstance] interstitialShow:NO];
 }
 
 -(void)cancelFullAd{
+//    [interstitial interstitialCancel];
     [[AdMoGoInterstitialManager shareInstance] interstitialCancel];
+}
+
+/*
+ 返回广告rootViewController
+ */
+- (UIViewController *)viewControllerForPresentingInterstitialModalView{
+    return self;
+}
+
+/*
+ 全屏广告开始请求
+ */
+- (void)adsMoGoInterstitialAdDidStart{
+    NSLog(@"MOGO Full Screen Start");
+}
+
+/*
+ 全屏广告准备完毕
+ */
+- (void)adsMoGoInterstitialAdIsReady{
+    NSLog(@"MOGO Full Screen IsReady");
+}
+
+/*
+ 全屏广告接收成功
+ */
+- (void)adsMoGoInterstitialAdReceivedRequest{
+    NSLog(@"MOGO Full Screen Received");
+}
+
+/*
+ 全屏广告将要展示
+ */
+- (void)adsMoGoInterstitialAdWillPresent{
+    NSLog(@"MOGO Full Screen Will Present");
+}
+
+/*
+ 全屏广告接收失败
+ */
+- (void)adsMoGoInterstitialAdFailedWithError:(NSError *) error{
+    NSLog(@"MOGO Full Screen Failed");
+}
+
+/*
+ 全屏广告消失
+ */
+- (void)adsMoGoInterstitialAdDidDismiss{
+    NSLog(@"MOGO Full Screen Dismiss");
 }
 
 #pragma mark - AdMoGoDelegate delegate
@@ -90,7 +156,11 @@
     //        AdViewTypeiPadNormalBanner = 8, //ipad use iphone banner
     //    } AdViewType;
     
-    adView.frame = CGRectMake(0.0, _currentShowView.frame.size.height - 50, 320.0, 50.0);
+    if (IsPad) {
+        adView.frame = CGRectMake(0.0, 50, 320.0, 50.0);
+    } else {
+        adView.frame = CGRectMake(0.0, _currentShowView.frame.size.height - 50, 320.0, 50.0);
+    }
     [_currentShowView addSubview:adView];
     
     if ([[UIDevice currentDevice].systemVersion floatValue] >=7.0) {

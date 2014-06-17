@@ -19,11 +19,12 @@
 
 @implementation KENUiViewPaiZhenDetail
 
-- (id)initWithFrame:(CGRect)frame{
+- (id)initWithFrame:(CGRect)frame delegate:(KENViewPaiZhen*)delegate{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         self.viewType = KENUiViewTypePaiZhenDetail;
+        self.delegate = delegate;
         [self initView];
     }
     return self;
@@ -35,8 +36,14 @@
 
 #pragma mark - init area
 - (void) initTable{
-    _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
-                                              style:UITableViewStylePlain];
+    float rate = [self.delegate getRateIPad];
+    if (IsPad) {
+        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate}
+                                                  style:UITableViewStylePlain];
+    } else {
+        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
+                                                  style:UITableViewStylePlain];
+    }
 	_tableView.delegate = self;
 	_tableView.dataSource = self;
 	_tableView.showsVerticalScrollIndicator = YES;

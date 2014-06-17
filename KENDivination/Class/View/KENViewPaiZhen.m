@@ -79,8 +79,7 @@
             }
                 break;
             case KENUiViewTypePaiZhenDetail:{
-                _currentUiView = [[KENUiViewPaiZhenDetail alloc] initWithFrame:frame];
-                [_currentUiView setDelegate:self];
+                _currentUiView = [[KENUiViewPaiZhenDetail alloc] initWithFrame:frame delegate:self];
             }
                 break;
             default:

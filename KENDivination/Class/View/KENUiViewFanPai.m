@@ -70,7 +70,11 @@
         }
         
         if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-            pai.transform = CGAffineTransformMakeRotation(M_PI);
+            if ([[dic objectForKey:KDicKeyZhenAngle] intValue] == 270) {
+                pai.transform = CGAffineTransformMakeRotation(M_PI + [[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
+            } else {
+                pai.transform = CGAffineTransformMakeRotation(M_PI);
+            }
         }
         
         [self addSubview:pai];
@@ -241,7 +245,7 @@
     NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
     NSDictionary* dic = [pathArray objectAtIndex:index];
     if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-        if ([dic objectForKey:KDicKeyZhenAngle]) {
+        if ([[dic objectForKey:KDicKeyZhenAngle] intValue] == 270) {
             imgView.transform = CGAffineTransformMakeRotation(M_PI + [[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
         } else {
             imgView.transform = CGAffineTransformMakeRotation(M_PI);

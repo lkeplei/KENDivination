@@ -9,7 +9,9 @@
 #import "KENViewBase.h"
 #import "KENModel.h"
 
-@interface KENViewDirection : KENViewBase
+#import <StoreKit/StoreKit.h>
+
+@interface KENViewDirection : KENViewBase<SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (assign) KENType viewDirection;
 

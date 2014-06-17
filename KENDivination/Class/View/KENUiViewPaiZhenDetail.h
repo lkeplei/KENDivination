@@ -10,4 +10,6 @@
 
 @interface KENUiViewPaiZhenDetail : KENUiViewBase<UITableViewDataSource, UITableViewDelegate>
 
+- (id)initWithFrame:(CGRect)frame delegate:(KENViewPaiZhen*)delegate;
+
 @end

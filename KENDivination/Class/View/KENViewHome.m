@@ -200,9 +200,6 @@
     
     //add pan
     [self setupGestures];
-    
-    //到首页时取消全屏广告
-    [SysDelegate.viewController cancelFullAd];
 }
 
 #pragma mark - setting btn

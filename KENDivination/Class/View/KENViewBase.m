@@ -31,6 +31,8 @@
         _rate = 1;
         
         [self initView];
+        
+        [SysDelegate.viewController cancelFullAd];
     }
     return self;
 }
