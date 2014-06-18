@@ -34,6 +34,8 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
     // 监听购买结果
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
 }

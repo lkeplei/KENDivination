@@ -141,9 +141,7 @@
     if (IsPad) {
         mogoId = KADIpadId;
     }
-    adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeNormalBanner adMoGoViewDelegate:self];
-    adView.adWebBrowswerDelegate = self;
-    
+
     //    typedef enum {
     //        AdViewTypeUnknown = 0,          //error
     //        AdViewTypeNormalBanner = 1,     //e.g. 320 * 50 ; 320 * 48  iphone banner
@@ -157,10 +155,13 @@
     //    } AdViewType;
     
     if (IsPad) {
-        adView.frame = CGRectMake(0.0, 50, 320.0, 50.0);
+        adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeLargeBanner adMoGoViewDelegate:self];
+        adView.frame = CGRectMake(40, _currentShowView.frame.size.height - 90, 320.0, 90);
     } else {
+        adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeNormalBanner adMoGoViewDelegate:self];
         adView.frame = CGRectMake(0.0, _currentShowView.frame.size.height - 50, 320.0, 50.0);
     }
+    adView.adWebBrowswerDelegate = self;
     [_currentShowView addSubview:adView];
     
     if ([[UIDevice currentDevice].systemVersion floatValue] >=7.0) {
