@@ -156,7 +156,10 @@
     
     if (IsPad) {
         adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeLargeBanner adMoGoViewDelegate:self];
-        adView.frame = CGRectMake(40, _currentShowView.frame.size.height - 90, 320.0, 90);
+        CGRect rect = adView.frame;
+        DebugLog(@"");
+//        adView.frame = CGRectMake(40, _currentShowView.frame.size.height - 90, _currentShowView.frame.size.width, 90);
+//        adView.center = CGPointMake(_currentShowView.center.x, adView.center.y);
     } else {
         adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeNormalBanner adMoGoViewDelegate:self];
         adView.frame = CGRectMake(0.0, _currentShowView.frame.size.height - 50, 320.0, 50.0);
@@ -189,6 +192,11 @@
  */
 - (void)adMoGoDidReceiveAd:(AdMoGoView *)adMoGoView{
     NSLog(@"广告接收成功回调");
+    if (IsPad) {
+        adView.frame = CGRectOffset(adView.frame,
+                                    ([UIScreen mainScreen].bounds.size.width - adView.frame.size.width) / 2,
+                                    [UIScreen mainScreen].bounds.size.height - adView.frame.size.height);
+    }
 }
 /**
  * 广告接收失败回调
@@ -277,6 +285,11 @@
     //页面已切换
     [_currentShowView viewDidAppear:YES];
     [_preShowView viewDidDisappear:YES];
+    
+    if (adView) {
+        [_currentShowView addSubview:adView];
+        [_currentShowView bringSubviewToFront:adView];
+    }
 }
 
 -(void)popView:(KENViewBase*)lastView preView:(KENViewBase*)preView animatedType:(KENType)type{
