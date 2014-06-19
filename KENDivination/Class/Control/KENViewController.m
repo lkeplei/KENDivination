@@ -156,8 +156,6 @@
     
     if (IsPad) {
         adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeLargeBanner adMoGoViewDelegate:self];
-        CGRect rect = adView.frame;
-        DebugLog(@"");
 //        adView.frame = CGRectMake(40, _currentShowView.frame.size.height - 90, _currentShowView.frame.size.width, 90);
 //        adView.center = CGPointMake(_currentShowView.center.x, adView.center.y);
     } else {

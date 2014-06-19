@@ -21,3 +21,8 @@
 "kapai_jieyu" = "解语：";
 "kapai_paiwei_zheng" = "正位";
 "kapai_paiwei_fan" = "逆位";
+
+"purchase_title" = "购买提示";
+"purchase_failed" = "购买失败，请稍后再试";
+"restore_incomplete" = "恢复购买失败，请稍后再试";
+"restore_failed" = "恢复购买失败，请稍后再试";
