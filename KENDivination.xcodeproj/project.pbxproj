@@ -176,7 +176,6 @@
 		042C7BF7193B048A00935A1C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C7BF6193B048A00935A1C /* libz.dylib */; };
 		042CDFB0192F8FDC00A143BD /* paizhen_bg_path_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */; };
 		042CDFB1192F8FDC00A143BD /* paizhen_bg_path_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */; };
-		0443BC711934DCC7000F5C29 /* app_btn_detail_sec@2x..png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */; };
 		0443BC721934DCC7000F5C29 /* app_btn_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */; };
 		0443BC751934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */; };
 		0443BC781934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */; };
@@ -250,6 +249,7 @@
 		045A4D5E1933848F00463FF8 /* s_app_pai_7@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045A4D1C1933848F00463FF8 /* s_app_pai_7@2x.jpg */; };
 		045A4D5F1933848F00463FF8 /* s_app_pai_8@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045A4D1D1933848F00463FF8 /* s_app_pai_8@2x.jpg */; };
 		045A4D601933848F00463FF8 /* s_app_pai_9@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045A4D1E1933848F00463FF8 /* s_app_pai_9@2x.jpg */; };
+		046DA0E919559A3100CFE5AE /* app_btn_detail_sec@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DA0E819559A3100CFE5AE /* app_btn_detail_sec@2x.png */; };
 		0470238619530C320012EEBB /* EBPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0470238519530C320012EEBB /* EBPurchase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0470238819532C340012EEBB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0470238719532C340012EEBB /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0470238A19532C860012EEBB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0470238919532C860012EEBB /* AdSupport.framework */; };
@@ -623,7 +623,6 @@
 		042C7BF6193B048A00935A1C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_4@2x.png"; sourceTree = "<group>"; };
 		042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_5@2x.png"; sourceTree = "<group>"; };
-		0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail_sec@2x..png"; sourceTree = "<group>"; };
 		0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail@2x.png"; sourceTree = "<group>"; };
 		0443BC731934DD7B000F5C29 /* KENUiViewPaiZhenDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewPaiZhenDetail.h; sourceTree = "<group>"; };
 		0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewPaiZhenDetail.m; sourceTree = "<group>"; };
@@ -698,6 +697,7 @@
 		045A4D1C1933848F00463FF8 /* s_app_pai_7@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "s_app_pai_7@2x.jpg"; sourceTree = "<group>"; };
 		045A4D1D1933848F00463FF8 /* s_app_pai_8@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "s_app_pai_8@2x.jpg"; sourceTree = "<group>"; };
 		045A4D1E1933848F00463FF8 /* s_app_pai_9@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "s_app_pai_9@2x.jpg"; sourceTree = "<group>"; };
+		046DA0E819559A3100CFE5AE /* app_btn_detail_sec@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_btn_detail_sec@2x.png"; sourceTree = "<group>"; };
 		0470238419530C320012EEBB /* EBPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPurchase.h; sourceTree = "<group>"; };
 		0470238519530C320012EEBB /* EBPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPurchase.m; sourceTree = "<group>"; };
 		0470238719532C340012EEBB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -1120,13 +1120,13 @@
 		0400E0891928B888004D3B30 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				046DA0E819559A3100CFE5AE /* app_btn_detail_sec@2x.png */,
 				0470B93C1941D81E002C2059 /* button_save_sec@2x.png */,
 				0470B93D1941D81E002C2059 /* button_save@2x.png */,
 				0470B93E1941D81E002C2059 /* button_unsave_sec@2x.png */,
 				0470B93F1941D81E002C2059 /* button_unsave@2x.png */,
 				0443BC761934DE2B000F5C29 /* app_btn_paizhen_sec@2x.png */,
 				0443BC771934DE2B000F5C29 /* app_btn_paizhen@2x.png */,
-				0443BC6F1934DCC7000F5C29 /* app_btn_detail_sec@2x..png */,
 				0443BC701934DCC7000F5C29 /* app_btn_detail@2x.png */,
 				0400E08A1928B888004D3B30 /* app_btn_back@2x.png */,
 				0400E08B1928B888004D3B30 /* app_btn_back_sec@2x.png */,
@@ -2286,7 +2286,6 @@
 				0400E00519289E08004D3B30 /* exit_whether_alert@2x.png in Resources */,
 				0400E11D1928B888004D3B30 /* direction_love_title@2x.png in Resources */,
 				0400E10F1928B888004D3B30 /* direction_paizhen_14@2x.png in Resources */,
-				0443BC711934DCC7000F5C29 /* app_btn_detail_sec@2x..png in Resources */,
 				0400E0EE1928B888004D3B30 /* button_start_choupai@2x.png in Resources */,
 				0400E1321928B888004D3B30 /* pai_zhen_title_16@2x.png in Resources */,
 				04ACEA0D194C08220018DF69 /* sns_icon_1@2x.png in Resources */,
@@ -2346,6 +2345,7 @@
 				045A4D381933848F00463FF8 /* m_app_pai_12@2x.jpg in Resources */,
 				0400E1111928B888004D3B30 /* direction_paizhen_15@2x.png in Resources */,
 				047023DC19532DF80012EEBB /* Adwo iOS SDK6.1 Programming Guide.pdf in Resources */,
+				046DA0E919559A3100CFE5AE /* app_btn_detail_sec@2x.png in Resources */,
 				0400E0EF1928B888004D3B30 /* button_start_choupai_sec@2x.png in Resources */,
 				0400E1251928B888004D3B30 /* pai_zhen_title_03@2x.png in Resources */,
 				047023CF19532DF80012EEBB /* adwo_recordSlider.png in Resources */,

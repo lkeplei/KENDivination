@@ -53,22 +53,20 @@
     
     for (int i = 0; i < [_resourceArray count]; i++) {
         NSDictionary* res = [_resourceArray objectAtIndex:i];
-        UIImage* img = nil;
-        UIImage* imgSec = nil;
-        
-        if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] && [[res objectForKey:KDicKeyJiaMi] boolValue]) {
-            img = [UIImage imageNamed:@"direction_paizhen_jiami.png"];
-            imgSec = [UIImage imageNamed:@"direction_paizhen_jiami.png"];
-        } else {
-            img = [UIImage imageNamed:[res objectForKey:KDicKeyImg]];
-            imgSec = [UIImage imageNamed:[res objectForKey:KDicKeyImgSec]];
-        }
+        UIImage* img = [UIImage imageNamed:[res objectForKey:KDicKeyImg]];
+        UIImage* imgSec = [UIImage imageNamed:[res objectForKey:KDicKeyImgSec]];
         
         UIButton* pingBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
                                               image:img
                                            imagesec:imgSec
                                              target:self
                                              action:@selector(btnArrayClicked:)];
+        
+        if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] && [[res objectForKey:KDicKeyJiaMi] boolValue]) {
+            [pingBtn setImage:[UIImage imageNamed:@"direction_paizhen_jiami.png"] forState:UIControlStateNormal];
+            [pingBtn setImage:[UIImage imageNamed:@"direction_paizhen_jiami.png"] forState:UIControlStateHighlighted];
+            [pingBtn setImage:[UIImage imageNamed:@"direction_paizhen_jiami.png"] forState:UIControlStateSelected];
+        }
         pingBtn.center = CGPointMake(60 + 100 * (i % 3), 131 + 110 * (i / 3));
         pingBtn.tag = KDirectionBtnTagBase + i;
         [self.contentView addSubview:pingBtn];
@@ -95,8 +93,12 @@
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 1 && _purchase.validProduct != nil){
-        [_purchase purchaseProduct:_purchase.validProduct];
+    if (_purchase.validProduct != nil) {
+        if (buttonIndex == 1){
+            [_purchase purchaseProduct:_purchase.validProduct];
+        } else if (buttonIndex == 2){
+            [_purchase restorePurchase];
+        }
     }
 }
 
@@ -104,9 +106,11 @@
 -(void) requestedProduct:(EBPurchase*)ebp identifier:(NSString*)productId name:(NSString*)productName price:(NSString*)productPrice description:(NSString*)productDescription
 {
     if (productPrice != nil)    {
-        UIAlertView *unavailAlert = [[UIAlertView alloc] initWithTitle:ebp.validProduct.localizedTitle
-                                                               message:[ebp.validProduct.localizedDescription stringByAppendingString:productPrice]
-                                                              delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        UIAlertView *unavailAlert = [[UIAlertView alloc] initWithTitle:nil
+                                                               message:[NSString stringWithFormat:MyLocal(@"purchase_content"),
+                                                                        [productPrice floatValue]]
+                                                              delegate:self cancelButtonTitle:MyLocal(@"cancel")
+                                                     otherButtonTitles:MyLocal(@"purchase"), MyLocal(@"restore"), nil];
         [unavailAlert show];
     } else {
         UIAlertView *unavailAlert = [[UIAlertView alloc] initWithTitle:@"Not Available" message:@"This In-App Purchase item is not available in the App Store at this time. Please try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -118,14 +122,15 @@
     if (!_isPurchased){
         _isPurchased = YES;
         [KENDataManager setDataByKey:[NSNumber numberWithBool:YES] forkey:KUserDefaultJieMi];
+        [SysDelegate.viewController clearAllAd];
         
         for (int i = 0; i < [_resourceArray count]; i++) {
             NSDictionary* res = [_resourceArray objectAtIndex:i];
             if ([[res objectForKey:KDicKeyJiaMi] boolValue]) {
                 UIButton* button = (UIButton*)[self.contentView viewWithTag:KDirectionBtnTagBase + i];
-                [button setBackgroundImage:[UIImage imageNamed:[res objectForKey:KDicKeyImg]] forState:UIControlStateNormal];
-                [button setBackgroundImage:[UIImage imageNamed:[res objectForKey:KDicKeyImgSec]] forState:UIControlStateHighlighted];
-                [button setBackgroundImage:[UIImage imageNamed:[res objectForKey:KDicKeyImgSec]] forState:UIControlStateSelected];
+                [button setImage:[UIImage imageNamed:nil] forState:UIControlStateNormal];
+                [button setImage:[UIImage imageNamed:nil] forState:UIControlStateHighlighted];
+                [button setImage:[UIImage imageNamed:nil] forState:UIControlStateSelected];
             }
         }
     }

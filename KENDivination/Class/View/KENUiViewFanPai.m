@@ -28,6 +28,21 @@
         self.viewType = KENUiViewTypeFanPai;
         self.delegate = delegate;
         _currentPaiIndex = 0;
+        
+        if ([[[KENModel shareModel] memoryData] memoryPaiZhen] == 15) {
+            UILabel* label = [KENUtils labelWithTxt:MyLocal(@"myselft")
+                                              frame:CGRectMake(10, 145, 50, 20)
+                                               font:[UIFont fontWithName:KLabelFontArial size:17]
+                                              color:[UIColor whiteColor]];
+            [self addSubview:label];
+            
+            UILabel*label1 = [KENUtils labelWithTxt:MyLocal(@"opposite")
+                                              frame:CGRectMake(10, 268, 50, 20)
+                                               font:[UIFont fontWithName:KLabelFontArial size:17]
+                                              color:[UIColor whiteColor]];
+            [self addSubview:label1];
+        }
+        
         if (finish) {
             [self finishView];
         } else {
@@ -70,7 +85,7 @@
         }
         
         if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-            if ([[dic objectForKey:KDicKeyZhenAngle] intValue] == 270) {
+            if ([dic objectForKey:KDicKeyZhenAngle]) {
                 pai.transform = CGAffineTransformMakeRotation(M_PI + [[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
             } else {
                 pai.transform = CGAffineTransformMakeRotation(M_PI);
@@ -245,7 +260,7 @@
     NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
     NSDictionary* dic = [pathArray objectAtIndex:index];
     if (![[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-        if ([[dic objectForKey:KDicKeyZhenAngle] intValue] == 270) {
+        if ([dic objectForKey:KDicKeyZhenAngle]) {
             imgView.transform = CGAffineTransformMakeRotation(M_PI + [[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
         } else {
             imgView.transform = CGAffineTransformMakeRotation(M_PI);

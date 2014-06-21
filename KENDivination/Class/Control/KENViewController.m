@@ -8,6 +8,7 @@
 
 #import "KENViewController.h"
 #import "KENConfig.h"
+#import "KENDataManager.h"
 
 #import "AdMoGoInterstitialManager.h"
 
@@ -42,6 +43,10 @@
 
 #pragma mark - full admogo
 -(void)initFullMogo{
+    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
+        return;
+    }
+    
     NSString* mogoId = KADIphoneId;
     if (IsPad) {
         mogoId = KADIpadId;
@@ -52,29 +57,18 @@
     [AdMoGoInterstitialManager setRootViewController:self];
     
     [AdMoGoInterstitialManager setDefaultDelegate:self];
-    
-    
-//    interstitial = [[AdMoGoInterstitial alloc]
-//                    noautopollinginitWithAppKey:mogoId
-//                    isRefresh:YES
-//                    adInterval:4
-//                    adType:AdViewTypeFullScreen
-//                    adMoGoViewDelegate:self];
-//    interstitial.adWebBrowswerDelegate = self;
-//    /*
-//     启动广告轮换
-//     */
-//    [interstitial pollingInterstitialAd];
 }
 
 -(void)showFullAd{
-//    [interstitial interstitialShow:YES];
-    [[AdMoGoInterstitialManager shareInstance] interstitialShow:NO];
+    if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
+        [[AdMoGoInterstitialManager shareInstance] interstitialShow:NO];
+    }
 }
 
 -(void)cancelFullAd{
-//    [interstitial interstitialCancel];
-    [[AdMoGoInterstitialManager shareInstance] interstitialCancel];
+    if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
+        [[AdMoGoInterstitialManager shareInstance] interstitialCancel];
+    }
 }
 
 /*
@@ -127,6 +121,11 @@
 }
 
 #pragma mark - AdMoGoDelegate delegate
+-(void)clearAllAd{
+    [self removeAd];
+    [[AdMoGoInterstitialManager shareInstance] interstitialCancel];
+}
+
 -(void)removeAd{
     if (adView) {
         [adView removeFromSuperview];
@@ -135,6 +134,10 @@
 }
 
 -(void)resetAd{
+    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
+        return;
+    }
+    
     [self removeAd];
     
     NSString* mogoId = KADIphoneId;

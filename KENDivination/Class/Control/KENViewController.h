@@ -14,14 +14,11 @@
 #import "AdMoGoView.h"
 #import "AdMoGoWebBrowserControllerUserDelegate.h"
 
-#import "AdMoGoInterstitial.h"
 #import "AdMoGoInterstitialDelegate.h"
 
 @interface KENViewController : UIViewController<AdMoGoDelegate, AdMoGoWebBrowserControllerUserDelegate, AdMoGoInterstitialDelegate>{
     AdMoGoView* adView;
-    AdMoGoInterstitial *interstitial;
 }
-@property (nonatomic, strong) AdMoGoInterstitial *interstitial;
 @property (nonatomic, strong) AdMoGoView* adView;
 
 -(void)resetAd;
@@ -30,6 +27,7 @@
 -(void)showFullAd;
 -(void)cancelFullAd;
 
+-(void)clearAllAd;
 
 -(KENViewBase*)getView:(KENViewType)type;
 /**
