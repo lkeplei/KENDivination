@@ -12,6 +12,7 @@
 
 -(void)showViewWithType:(KENViewType)type;
 -(void)jumpToFanPai;
+-(void)dealWithAd;
 
 @property (nonatomic, assign) BOOL finishStatus;
 @property (assign) BOOL fromMemory;

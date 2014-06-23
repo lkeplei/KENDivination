@@ -20,4 +20,7 @@
     return self;
 }
 
+-(void)dealWithAd{
+    
+}
 @end

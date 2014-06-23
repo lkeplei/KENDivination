@@ -9,6 +9,7 @@
 #import "KENViewController.h"
 #import "KENConfig.h"
 #import "KENDataManager.h"
+#import "KENViewPaiZhen.h"
 
 #import "AdMoGoInterstitialManager.h"
 
@@ -210,6 +211,9 @@
  */
 - (void)adMoGoClickAd:(AdMoGoView *)adMoGoView{
     NSLog(@"点击广告回调");
+    if ([_currentShowView viewType] == KENViewTypePaiZhen) {
+        [(KENViewPaiZhen*)_currentShowView dealWithAd];
+    }
 }
 /**
  *You can get notified when the user delete the ad

@@ -86,7 +86,12 @@
     }
     [cell addSubview:kaPai];
     
-    //message
+    //scroll view
+    UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:(CGRect){CGPointZero, cell.frame.size}];
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.pagingEnabled = YES;
+    [cell addSubview:scrollView];
+    
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
     float offx = CGRectGetMaxX(kaPai.frame) + 10;
@@ -134,6 +139,11 @@
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
                       font:font index:3 cell:cell];
     label.numberOfLines = 0;
+    
+    //scroll view 设置
+    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame));
+    scrollView.contentOffset  = CGPointMake(0, 0);
+    [cell setUserInteractionEnabled:YES];
 }
 
 -(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index cell:(UITableViewCell*)cell{

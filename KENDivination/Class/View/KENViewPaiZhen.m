@@ -112,6 +112,10 @@
     [_topPaizhenBtn setHidden:YES];
 }
 
+-(void)dealWithAd{
+    [_currentUiView dealWithAd];
+}
+
 -(void)setFinishStatus:(BOOL)finishStatus{
     _finishStatus = finishStatus;
     
@@ -126,32 +130,35 @@
 -(void)showView{
     [self showViewWithType:KENUiViewTypeStartXiPai];
     
-    _topDetailBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _topDetailBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                       image:[UIImage imageNamed:@"app_btn_detail.png"]
                                    imagesec:[UIImage imageNamed:@"app_btn_detail_sec.png"]
                                      target:self
                                      action:@selector(detailBtnClicked:)];
     [_topDetailBtn setHidden:YES];
+    _topDetailBtn.frame = (CGRect){CGPointZero, 60, 40};
     _topDetailBtn.center = CGPointMake(288, KNotificationHeight / 2);
     [self.contentView addSubview:_topDetailBtn];
     
-    _topPaizhenBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _topPaizhenBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                        image:[UIImage imageNamed:@"app_btn_paizhen.png"]
                                     imagesec:[UIImage imageNamed:@"app_btn_paizhen_sec.png"]
                                       target:self
                                       action:@selector(paizhenBtnClicked:)];
     [_topPaizhenBtn setHidden:YES];
+    _topPaizhenBtn.frame = (CGRect){CGPointZero, 60, 40};
     _topPaizhenBtn.center = CGPointMake(288, KNotificationHeight / 2);
     [self.contentView addSubview:_topPaizhenBtn];
 }
 
 -(void)setTopLeftBtn{
-    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                          image:[UIImage imageNamed:@"app_btn_back.png"]
                                       imagesec:[UIImage imageNamed:@"app_btn_back_sec.png"]
                                         target:self
                                         action:@selector(backBtnClicked:)];
-    setBtn.center = CGPointMake(setBtn.center.x + 20, KNotificationHeight / 2);
+    setBtn.frame = (CGRect){CGPointZero, 60, 40};
+    setBtn.center = CGPointMake(setBtn.center.x, KNotificationHeight / 2);
     [self.contentView addSubview:setBtn];
 }
 

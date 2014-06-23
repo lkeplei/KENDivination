@@ -36,11 +36,12 @@
 
 -(void)showView{
     //setting btn
-    _okButton = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _okButton = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                          image:[UIImage imageNamed:@"app_btn_ok.png"]
                                       imagesec:[UIImage imageNamed:@"app_btn_ok_sec.png"]
                                         target:self
                                         action:@selector(okBtnClicked:)];
+    _okButton.frame = (CGRect){CGPointZero, 60, 40};
     _okButton.center = CGPointMake(285, KNotificationHeight / 2);
     [_okButton setEnabled:NO];
     [self.contentView addSubview:_okButton];

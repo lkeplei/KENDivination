@@ -132,6 +132,12 @@
     [[KENModel shareModel] playVoiceByType:KENVoiceXiPai];
 }
 
+-(void)dealWithAd{
+    if (self.delegate) {
+        [self.delegate showViewWithType:KENUiViewTypeStartXiPai];
+    }
+}
+
 #pragma mark - button
 -(void)btnClicked:(UIButton*)button{
     if (button) {

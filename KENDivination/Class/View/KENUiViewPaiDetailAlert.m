@@ -30,7 +30,6 @@
         
         _bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jie_pai_bg.png"]];
         _bgView.center = CGPointMake(160, _bgView.frame.size.height / 2 + 50);
-        _bgView.alpha = 0.65;
         [_bgView setExclusiveTouch:YES];
         
         [self addSubview:_bgView];
@@ -61,6 +60,7 @@
 }
 
 -(void)animateKaPai:(NSInteger)zhenWei center:(CGPoint)center rate:(float)rate{
+    _bgView.alpha = 0.65;
     _originalPosition = CGPointMake(center.x, center.y);
 
     NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:zhenWei];
@@ -121,6 +121,13 @@
     }
     [_bgView addSubview:kaPai];
 
+    //scroll view
+    UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:(CGRect){CGPointZero, _bgView.frame.size.width,
+        _bgView.frame.size.height - 40}];
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.pagingEnabled = YES;
+    [_bgView addSubview:scrollView];
+
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
     float offx = CGRectGetMaxX(kaPai.frame) + 10;
@@ -130,26 +137,26 @@
     float height = (size.height + 1);
     UILabel* label = [self addLabel:string
                      frame:CGRectMake(offx, 15, width, height)
-                      font:font index:3];
+                      font:font index:3 view:scrollView];
     
     string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     float lines = size.width > width ? size.width / width + 1 : 1;
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
-                      font:font index:3];
+                      font:font index:3 view:scrollView];
     label.numberOfLines = lines > 1 ? 0 : 1;
 
     label = [self addLabel:[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]]
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
-                      font:font index:3];
+                      font:font index:3 view:scrollView];
     
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
-                      font:font index:4];
+                      font:font index:4 view:scrollView];
     label.numberOfLines = lines > 1 ? 0 : 1;
     
     if ([[paiMessage objectForKey:KDicPaiWei] boolValue]) {
@@ -159,15 +166,20 @@
     }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
-                      font:font index:3];
+                      font:font index:3 view:scrollView];
     
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
-                      font:font index:3];
+                      font:font index:3 view:scrollView];
     label.numberOfLines = 0;
+
+    //scroll view 设置
+    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame));
+    scrollView.contentOffset  = CGPointMake(0, 0);
+    [_bgView setUserInteractionEnabled:YES];
     
     //animate
     CATransform3D currentTransform = self.layer.transform;
@@ -178,7 +190,7 @@
     }];
 }
 
--(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index{
+-(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index view:(UIScrollView*)view{
     UILabel* label = [KENUtils labelWithTxt:content
                                       frame:frame
                                        font:font
@@ -191,7 +203,8 @@
 //    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:30.0] range:NSMakeRange(0, 5)];
     label.attributedText = str;
     
-    [_bgView addSubview:label];
+//    [_bgView addSubview:label];
+    [view addSubview:label];
     
     return label;
 }

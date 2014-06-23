@@ -60,7 +60,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self getCellHeight:indexPath.row];
+    return [self getCellHeight:[_resourceArray objectAtIndex:_resourceArray.count - indexPath.row - 1]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -69,41 +69,43 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [cell setBackgroundColor:[UIColor clearColor]];
     }
     
+    KENMemoryEntity* memoryEntity = [_resourceArray objectAtIndex:_resourceArray.count - indexPath.row - 1];
+    
     UIView* lineView = [cell.contentView viewWithTag:1111];
     if (lineView == nil) {
-        lineView = [[UIView alloc] initWithFrame:CGRectMake(0, [self getCellHeight:indexPath.row] - 1, cell.contentView.frame.size.width, 1)];
+        lineView = [[UIView alloc] initWithFrame:CGRectMake(0, [self getCellHeight:memoryEntity] - 1, cell.contentView.frame.size.width, 1)];
         lineView.tag = 1111;
         [lineView setBackgroundColor:[UIColor whiteColor]];
         [cell.contentView addSubview:lineView];
     } else {
-        lineView.frame = CGRectMake(0, [self getCellHeight:indexPath.row] - 1, cell.contentView.frame.size.width, 1);
+        lineView.frame = CGRectMake(0, [self getCellHeight:memoryEntity] - 1, cell.contentView.frame.size.width, 1);
     }
     
     UILabel* content = (UILabel*)[cell.contentView viewWithTag:2222];
     if (content == nil) {
-        content = [KENUtils labelWithTxt:[[_resourceArray objectAtIndex:indexPath.row] question]
-                                   frame:CGRectMake(5, 0, 200, [self getCellHeight:indexPath.row])
+        content = [KENUtils labelWithTxt:[memoryEntity question]
+                                   frame:CGRectMake(5, 0, 200, [self getCellHeight:memoryEntity])
                                     font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
         content.tag = 2222;
         content.textAlignment = KTextAlignmentLeft;
         content.numberOfLines = 0;
         [cell.contentView addSubview:content];
     } else {
-        content.frame = CGRectMake(5, 0, 200, [self getCellHeight:indexPath.row]);
+        content.frame = CGRectMake(5, 0, 200, [self getCellHeight:memoryEntity]);
     }
     
     UILabel* timeLable = (UILabel*)[cell.contentView viewWithTag:3333];
-    NSDate* date = [KENUtils getDateFromString:[[_resourceArray objectAtIndex:indexPath.row] uniquetime] format:KUniqueTimeFormat];
+    NSDate* date = [KENUtils getDateFromString:[memoryEntity uniquetime] format:KUniqueTimeFormat];
     if (timeLable == nil) {
         NSString* str = [NSString stringWithFormat:@"%@\r\n%@",
                          [KENUtils getStringFromDate:date format:KUniqueYMDFormat],[KENUtils getStringFromDate:date format:KUniqueHMSFormat]];
         timeLable = [KENUtils labelWithTxt:str
-                                     frame:CGRectMake(5 + CGRectGetMaxX(content.frame), 0, 80, [self getCellHeight:indexPath.row])
+                                     frame:CGRectMake(5 + CGRectGetMaxX(content.frame), 0, 80, [self getCellHeight:memoryEntity])
                                       font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
         timeLable.tag = 3333;
         timeLable.numberOfLines = 0;
@@ -128,6 +130,14 @@
 
 //编辑状态
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    _editing = [_tableView isEditing];;
+    if (_editing) {
+        [_topEditBtn setHidden:YES];
+        [_topOkBtn setHidden:NO];
+    } else {
+        [_topEditBtn setHidden:NO];
+        [_topOkBtn setHidden:YES];
+    }
     return YES;
 }
 
@@ -150,19 +160,21 @@
 }
 
 -(void)showView{
-    _topEditBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _topEditBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                      image:[UIImage imageNamed:@"memory_btn_edit.png"]
                                   imagesec:[UIImage imageNamed:@"memory_btn_edit_sec.png"]
                                     target:self
                                     action:@selector(topRightBtnClicked:)];
+    _topEditBtn.frame = (CGRect){CGPointZero, 60, 40};
     _topEditBtn.center = CGPointMake(285, KNotificationHeight / 2);
     [self.contentView addSubview:_topEditBtn];
     
-    _topOkBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    _topOkBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                      image:[UIImage imageNamed:@"memory_btn_ok.png"]
                                   imagesec:[UIImage imageNamed:@"memory_btn_ok_sec.png"]
                                     target:self
                                     action:@selector(topRightBtnClicked:)];
+    _topOkBtn.frame = (CGRect){CGPointZero, 60, 40};
     _topOkBtn.center = CGPointMake(285, KNotificationHeight / 2);
     [_topOkBtn setHidden:YES];
     [self.contentView addSubview:_topOkBtn];
@@ -170,9 +182,9 @@
     [self initTable];
 }
 
--(float)getCellHeight:(int)index{
+-(float)getCellHeight:(KENMemoryEntity*)entity{
     float height = 44;
-    CGSize size = [KENUtils getFontSize:[[_resourceArray objectAtIndex:index] question] font:[UIFont fontWithName:KLabelFontArial size:14]];
+    CGSize size = [KENUtils getFontSize:[entity question] font:[UIFont fontWithName:KLabelFontArial size:14]];
     if (size.width / 200 > 0) {
         height = 16 + size.height * (size.width / 200);
     }

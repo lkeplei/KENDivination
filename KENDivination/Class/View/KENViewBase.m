@@ -160,12 +160,13 @@
 }
 
 -(void)setTopLeftBtn{
-    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                          image:[UIImage imageNamed:@"app_btn_back.png"]
                                       imagesec:[UIImage imageNamed:@"app_btn_back_sec.png"]
                                         target:self
                                         action:@selector(backBtnClicked:)];
-    setBtn.center = CGPointMake(setBtn.center.x + 20, KNotificationHeight / 2);
+    setBtn.frame = (CGRect){CGPointZero, 60, 40};
+    setBtn.center = CGPointMake(setBtn.center.x, KNotificationHeight / 2);
     [self.contentView addSubview:setBtn];
 }
 

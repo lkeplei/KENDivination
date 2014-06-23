@@ -181,11 +181,12 @@
 
 -(void)showView{
     //setting btn
-    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+    UIButton* setBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
                                  image:[UIImage imageNamed:@"home_setting.png"]
                               imagesec:[UIImage imageNamed:@"home_setting.png"]
                                 target:self
                                 action:@selector(settingBtnClicked:)];
+    setBtn.frame = (CGRect){CGPointZero, 60, 40};
     setBtn.center = CGPointMake(288, KNotificationHeight / 2);
     [self.contentView addSubview:setBtn];
     
