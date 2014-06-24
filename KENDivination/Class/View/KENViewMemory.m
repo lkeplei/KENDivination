@@ -117,7 +117,8 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSArray* array = [[KENCoreDataManager sharedCoreDataManager] getMemoryEntity:[[_resourceArray objectAtIndex:indexPath.row] uniquetime]];
+    NSArray* array = [[KENCoreDataManager sharedCoreDataManager]
+                      getMemoryEntity:[[_resourceArray objectAtIndex:_resourceArray.count - indexPath.row - 1] uniquetime]];
     if (array && [array count] > 0) {
         [[KENModel shareModel] setData:[array objectAtIndex:0]];
         
@@ -143,12 +144,13 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSArray* array = [[KENCoreDataManager sharedCoreDataManager] getMemoryEntity:[[_resourceArray objectAtIndex:indexPath.row] uniquetime]];
+        NSArray* array = [[KENCoreDataManager sharedCoreDataManager]
+                          getMemoryEntity:[[_resourceArray objectAtIndex:_resourceArray.count - indexPath.row - 1] uniquetime]];
         for (KENMemoryEntity* entity in array) {
             [[KENCoreDataManager sharedCoreDataManager] deleteObject:entity];
         }
         
-        [_resourceArray removeObjectAtIndex:indexPath.row];
+        [_resourceArray removeObjectAtIndex:_resourceArray.count - indexPath.row - 1];
         
         [_tableView reloadData];
     }

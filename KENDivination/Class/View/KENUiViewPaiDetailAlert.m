@@ -171,13 +171,16 @@
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
+    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+    }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
                       font:font index:3 view:scrollView];
     label.numberOfLines = 0;
 
     //scroll view 设置
-    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame));
+    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame) + 20);
     scrollView.contentOffset  = CGPointMake(0, 0);
     [_bgView setUserInteractionEnabled:YES];
     

@@ -38,7 +38,7 @@
 - (void) initTable{
     float rate = [self.delegate getRateIPad];
     if (IsPad) {
-        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate}
+        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate - 20}
                                                   style:UITableViewStylePlain];
     } else {
         _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
@@ -70,6 +70,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell setBackgroundColor:[UIColor clearColor]];
+        DebugLog(@"row = %d", indexPath.row);
         [self setKaPaiMessage:indexPath.row cell:cell];
     }
     
@@ -135,13 +136,17 @@
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
+    DebugLog(@"abs = %d", abs((int)size.width % (int)width - (int)width));
+    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+    }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
                       font:font index:3 cell:cell];
     label.numberOfLines = 0;
     
     //scroll view 设置
-    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame));
+    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame) + 20);
     scrollView.contentOffset  = CGPointMake(0, 0);
     [cell setUserInteractionEnabled:YES];
 }
