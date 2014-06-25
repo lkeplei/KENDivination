@@ -180,6 +180,7 @@
     label.numberOfLines = 0;
 
     //scroll view 设置
+    scrollView.bounces = NO;
     scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame) + 20);
     scrollView.contentOffset  = CGPointMake(0, 0);
     [_bgView setUserInteractionEnabled:YES];
