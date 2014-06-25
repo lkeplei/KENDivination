@@ -18,10 +18,24 @@
 #define kAdMoGoBaiduAppInterstitialIDKey @"AppID"
 #define kAdMoGoBaiduAppInterstitialSecretKey @"AppSEC"
 
+typedef enum AdsMogoBaiduMobInterstitialState
+{
+    AdsMogoBMobIState_INIT = 0,
+    
+    AdsMogoBMobIState_LOADSUC,
+    
+    AdsMogoBMobIState_LOADFAI,
+    
+    AdsMogoBMobIState_PRESENT,
+    
+    AdsMogoBMobIState_CLOSED
+    
+} AdsMogoBMobIState;
+
 @interface AdMoGoAdapterBaiduFullAds()<UIGestureRecognizerDelegate>{
     
     int clickCount;
-    
+    AdsMogoBMobIState curState;
 }
 
 @end
@@ -47,7 +61,7 @@
 - (void)getAd{
     
     clickCount = 0;
-    
+    curState = AdsMogoBMobIState_INIT;
     AdMoGoConfigDataCenter *configDataCenter = [AdMoGoConfigDataCenter singleton];
     
     AdMoGoConfigData *configData = [configDataCenter.config_dict objectForKey:[self getConfigKey]];
@@ -55,6 +69,7 @@
     baiduInterstitial = [[BaiduMobAdInterstitial alloc] init];
     baiduInterstitial.delegate = self;
     baiduInterstitial.interstitialType = BaiduMobAdViewTypeInterstitialRefresh;
+    
     [baiduInterstitial load];
     [self adapterDidStartRequestAd:self];
     
@@ -88,6 +103,7 @@
 }
 
 - (void)presentInterstitial{
+    curState = AdsMogoBMobIState_PRESENT;
     UIViewController *viewController = [self rootViewControllerForPresent];
     [baiduInterstitial presentFromRootViewController:viewController];
 }
@@ -98,11 +114,24 @@
     
     [self stopTimer];
     [self stopBeingDelegate];
-    [self adapter:self didFailAd:nil];
+    [self failAd];
 }
 -(void)dealloc{
     [super dealloc];
 }
+
+- (void)failAd{
+    
+    if (curState != AdsMogoBMobIState_INIT) {
+        return;
+    }
+    baiduInterstitial.delegate = nil;
+    curState = AdsMogoBMobIState_LOADFAI;
+    
+    [self adapter:self didFailAd:nil];
+    
+}
+
 #pragma mark BaiduMobAdInterstitialDelegate 
 /**
  *  应用在mounion.baidu.com上的id
@@ -141,6 +170,7 @@
  *  广告预加载成功
  */
 - (void)interstitialSuccessToLoadAd:(BaiduMobAdInterstitial *)_interstitial{
+    curState = AdsMogoBMobIState_LOADSUC;
     [self stopTimer];
     [self adapter:self didReceiveInterstitialScreenAd:baiduInterstitial];
 }
@@ -150,7 +180,7 @@
  */
 - (void)interstitialFailToLoadAd:(BaiduMobAdInterstitial *)_interstitial{
     [self stopTimer];
-    [self adapter:self didFailAd:nil];
+    [self failAd];
 }
 
 /**
@@ -175,13 +205,18 @@
  */
 - (void)interstitialFailPresentScreen:(BaiduMobAdInterstitial *)_interstitial withError:(BaiduMobFailReason) reason{
     [self stopTimer];
-    [self adapter:self didFailAd:nil];
+    if (curState != AdsMogoBMobIState_INIT) {
+        return;
+    }
+    [self failAd];
 }
 
 /**
  *  广告展示结束
  */
 - (void)interstitialDidDismissScreen:(BaiduMobAdInterstitial *)_interstitial{
+    
+    curState = AdsMogoBMobIState_CLOSED;
     
     if (clickCount >= 2) {
         [self specialSendRecordNum];
