@@ -132,7 +132,7 @@
     [[KENModel shareModel] playVoiceByType:KENVoiceXiPai];
 }
 
--(void)dealWithAd{
+-(void)viewDealWithAd{
     if (self.delegate) {
         [self.delegate showViewWithType:KENUiViewTypeStartXiPai];
     }

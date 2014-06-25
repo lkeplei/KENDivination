@@ -107,6 +107,10 @@
     string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     float lines = size.width > width ? size.width / width + 1 : 1;
+    DebugLog(@"abs 1 = %d", abs((int)size.width % (int)width - (int)width));
+    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+    }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
                       font:font index:3 cell:cell];
@@ -119,6 +123,10 @@
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
+    DebugLog(@"abs 2 = %d", abs((int)size.width % (int)width - (int)width));
+    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+    }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
                       font:font index:4 cell:cell];
@@ -136,7 +144,7 @@
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
-    DebugLog(@"abs = %d", abs((int)size.width % (int)width - (int)width));
+    DebugLog(@"abs 3 = %d", abs((int)size.width % (int)width - (int)width));
     if (abs((int)size.width % (int)width - (int)width) < 20) {
         lines++;
     }

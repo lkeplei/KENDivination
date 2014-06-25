@@ -12,6 +12,8 @@
 @interface KENUiViewBase : UIView
 
 -(void)dealWithAd;
+-(void)viewDealWithAd;
+-(void)startAnimation;
 
 @property (assign) KENViewType viewType;
 @property (assign) KENViewPaiZhen* delegate;
