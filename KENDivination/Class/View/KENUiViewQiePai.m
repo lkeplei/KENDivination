@@ -65,7 +65,9 @@
                      completion:^(BOOL finished) {
                          if (finished) {
                             [self bringSubviewToFront:_paiMiddle];
-                            [self startSecondAnimation];
+                            self.animationStep++;
+                            [self startBaseAnimation];
+//                            [self startSecondAnimation];
                          }
                      }];
 }
@@ -79,7 +81,9 @@
                      completion:^(BOOL finished) {
                          if (finished) {
                              [self sendSubviewToBack:_paiMiddle];
-                             [self startThirdAnimation];
+                             self.animationStep++;
+                             [self startBaseAnimation];
+//                             [self startThirdAnimation];
                          }
                      }];
 }
@@ -92,7 +96,9 @@
     }
                      completion:^(BOOL finished) {
                          if (finished) {
-                             [self startFourthAnimation];
+                             self.animationStep++;
+                             [self startBaseAnimation];
+//                             [self startFourthAnimation];
                          }
                      }];
 }
@@ -106,7 +112,9 @@
     }
                      completion:^(BOOL finished) {
                          if (finished) {
-                             [self startFifthAnimation];
+                             self.animationStep++;
+                             [self startBaseAnimation];
+//                             [self startFifthAnimation];
                          }
                      }];
 }
@@ -127,8 +135,28 @@
 }
 
 -(void)viewDealWithAd{
-    if (self.delegate) {
-        [self.delegate showViewWithType:KENUiViewTypeStartQiePai];
+    
+}
+
+-(void)startBaseAnimation{
+    switch (self.animationStep) {
+        case 0:
+            [self startFirstAnimation];
+            break;
+        case 1:
+            [self startSecondAnimation];
+            break;
+        case 2:
+            [self startThirdAnimation];
+            break;
+        case 3:
+            [self startFourthAnimation];
+            break;
+        case 4:
+            [self startFifthAnimation];
+            break;
+        default:
+            break;
     }
 }
 @end

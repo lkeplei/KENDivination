@@ -117,6 +117,20 @@
     [self initQiePaiAnimate];
 }
 
+-(void)viewDealWithAd{
+    self.animationStep = -1;
+}
+
+-(void)startBaseAnimation{
+    if (self.animationStep == -1) {
+        _stepButton.alpha = 1;
+        _contentLabel.alpha = 1;
+        self.animationStep = 0;
+    }
+    
+    [self startQiePaiAnimate];
+}
+
 #pragma mark - button
 -(void)btnClicked:(UIButton*)button{
     //按键声音
@@ -147,6 +161,11 @@
     }
                      completion:^(BOOL finished) {
                          if (finished) {
+                             if (self.animationStep == -1) {
+                                 _stepButton.alpha = 1;
+                                 _contentLabel.alpha = 1;
+                                 return;
+                             }
                              switch (_currentViewType) {
                                  case KENUiViewTypeStartXiPai:{
                                     [self.delegate showViewWithType:KENUiViewTypeEndXiPai];

@@ -10,7 +10,6 @@
 #import "KENUtils.h"
 
 @interface KENUiViewBase ()
-@property (assign) int animationStep;
 @property (nonatomic, strong) UIButton* fullButton;
 @end
 
@@ -41,7 +40,7 @@
     [self viewDealWithAd];
 }
 
--(void)startAnimation{
+-(void)startBaseAnimation{
     
 }
 
@@ -52,6 +51,6 @@
 #pragma mark - button click
 -(void)fullBtnClicked:(UIButton*)button{
     [_fullButton setEnabled:NO];
-    [self startAnimation];
+    [self startBaseAnimation];
 }
 @end

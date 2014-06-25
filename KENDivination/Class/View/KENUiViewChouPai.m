@@ -90,7 +90,7 @@
     }
     
     [self setupGestures];
-    [self startAnimation];
+    [self startBaseAnimation];
     
     //重置广告
     [SysDelegate.viewController resetAd];
@@ -201,7 +201,8 @@
                          }];
         
         if (_currentSelectIndex >= [_selectPaiArray count]) {
-            [self stopAnimation];
+            self.animationStep = 3;
+            [self startBaseAnimation];
         }
     }
 }
@@ -231,7 +232,8 @@
             view.transform = CGAffineTransformMakeRotation(40 * (M_PI / 180.0f));
         }
     } completion:^(BOOL finished) {
-        [self startExpandAnimation];
+        self.animationStep++;
+        [self startBaseAnimation];
     }];
 }
 
@@ -269,29 +271,13 @@
             [path closePath];
             
             [_pathArray addObject:path];
-            
-//            DebugLog(@"a=%.1f rect=(%.1f,%.1f,%.1f,%.1f) bounds=(%.1f,%.1f,%.1f,%.1f)", angle, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height,
-//                     path.bounds.origin.x, path.bounds.origin.y, path.bounds.size.width, path.bounds.size.height);
-//            
-//            
-//            if (i == 0) {
-//                UIView* view = [[UIView alloc] initWithFrame:path.bounds];
-//                view.alpha = 0.7;
-//                //            [view setBackgroundColor:RGBCOLOR(255 * i / 21, 255 * i / 21, 255 * i / 21)];
-//                [view setBackgroundColor:[UIColor yellowColor]];
-//                [self addSubview:view];
-//                
-//                UIView* view1 = [[UIView alloc] initWithFrame:((UIImageView*)[_paiArray objectAtIndex:i]).frame];
-//                view1.alpha = 0.7;
-//                //            [view setBackgroundColor:RGBCOLOR(255 * i / 21, 255 * i / 21, 255 * i / 21)];
-//                [view1 setBackgroundColor:[UIColor redColor]];
-//                [self addSubview:view1];
-//            }
         }
     }];
 }
 
 -(void)autoChuoPai{
+    self.animationStep = 2;
+    
     if ([[KENModel shareModel] getPaiZhenAuto]) {
         NSArray* array = [[KENModel shareModel] getPaiZHenAutoIndex];
         if (_currentSelectIndex < [array count]) {
@@ -310,7 +296,8 @@
             view.transform = CGAffineTransformMakeRotation(40 * (M_PI / 180.0f));
         }
     } completion:^(BOOL finished) {
-        [self finishAnimation];
+        self.animationStep++;
+        [self startBaseAnimation];
     }];
 }
 
@@ -330,5 +317,31 @@
                              [self.delegate showViewWithType:KENUiViewTypeStartFanPai];
                          }
                      }];
+}
+
+-(void)viewDealWithAd{
+    
+}
+
+-(void)startBaseAnimation{
+    switch (self.animationStep) {
+        case 0:
+            [self startAnimation];
+            break;
+        case 1:
+            [self startExpandAnimation];
+            break;
+        case 2:
+            [self autoChuoPai];
+            break;
+        case 3:
+            [self stopAnimation];
+            break;
+        case 4:
+            [self finishAnimation];
+            break;
+        default:
+            break;
+    }
 }
 @end

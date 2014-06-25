@@ -13,8 +13,9 @@
 
 -(void)dealWithAd;
 -(void)viewDealWithAd;
--(void)startAnimation;
+-(void)startBaseAnimation;
 
+@property (assign) int animationStep;
 @property (assign) KENViewType viewType;
 @property (assign) KENViewPaiZhen* delegate;
 

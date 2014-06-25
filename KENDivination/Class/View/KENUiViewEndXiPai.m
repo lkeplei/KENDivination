@@ -68,6 +68,7 @@
 }
 
 -(void)startTransAnimation:(NSTimeInterval)duration{
+    self.animationStep = 2;
     static int times = 1;
     [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         _paiBottom.transform = CGAffineTransformRotate(_paiBottom.transform, M_PI_2);
@@ -91,6 +92,7 @@
         trans = YES;
         canTrans = NO;
     } else {
+        self.animationStep = 1;
         if (step % 2 == 0) {
             [NSTimer scheduledTimerWithTimeInterval:0.7 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
         }
@@ -133,9 +135,14 @@
 }
 
 -(void)viewDealWithAd{
-    if (self.delegate) {
-        [self.delegate showViewWithType:KENUiViewTypeStartXiPai];
+
+}
+
+-(void)startBaseAnimation{
+    if (self.animationStep == 2) {
+        _paiBottom.transform = CGAffineTransformMakeRotation(M_PI_2);
     }
+    [self startAnimation];
 }
 
 #pragma mark - button

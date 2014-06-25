@@ -142,10 +142,13 @@
     string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     float lines = size.width > width ? size.width / width + 1 : 1;
+    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+    }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
                       font:font index:3 view:scrollView];
-    label.numberOfLines = lines > 1 ? 0 : 1;
+    label.numberOfLines = 0;
 
     label = [self addLabel:[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]]
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
@@ -154,10 +157,13 @@
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
+    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+    }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
                       font:font index:4 view:scrollView];
-    label.numberOfLines = lines > 1 ? 0 : 1;
+    label.numberOfLines = 0;
     
     if ([[paiMessage objectForKey:KDicPaiWei] boolValue]) {
         string = [MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_zheng")];

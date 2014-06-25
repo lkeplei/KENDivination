@@ -44,63 +44,75 @@
     CGPoint locationInView = [(UIPanGestureRecognizer*)sender locationInView:self.contentView];
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
-        [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanZhuanDong];
-        prePoint = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
-        rotateView = 0;
+        if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
+            [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanZhuanDong];
+            prePoint = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
+            rotateView = 0;
+        }
 	}
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
-        [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanTing];
-        int rotate = rotateView % 60;
-        if (abs(rotate) >= 30) {
-            if (rotate >= 0) {
-                rotateView += 60 - rotate;
+        if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
+            [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanTing];
+            int rotate = rotateView % 60;
+            if (abs(rotate) >= 30) {
+                if (rotate >= 0) {
+                    rotateView += 60 - rotate;
+                } else {
+                    rotateView -= 60 - abs(rotate);
+                }
             } else {
-                rotateView -= 60 - abs(rotate);
+                if (rotate >= 0) {
+                    rotateView -= rotate;
+                } else {
+                    rotateView -= rotate;
+                }
             }
-        } else {
-            if (rotate >= 0) {
-                rotateView -= rotate;
-            } else {
-                rotateView -= rotate;
+            
+            [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                _zhuanPanView.transform = CGAffineTransformMakeRotation(rotateView / 180.0 * M_PI);
             }
-        }
-        
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            _zhuanPanView.transform = CGAffineTransformMakeRotation(rotateView / 180.0 * M_PI);
-        }
-                         completion:^(BOOL finished) {
-                             if (finished) {
-                                 rotateView = rotateView >= 0 ? rotateView : 360 - abs(rotateView);
-                                 int index = rotateView / 60;
-                                 if (index == 1) {
-                                     [self pushView:[SysDelegate.viewController getView:KENViewTypeMemory] animatedType:KENTypeNull];
-                                 } else {
-                                     switch (index) {
-                                         case 0:
-                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionLove];
-                                             break;
-                                         case 2:
-                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionHealth];
-                                             break;
-                                         case 3:
-                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionRelation];
-                                             break;
-                                         case 4:
-                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionMoney];
-                                             break;
-                                         case 5:
-                                             [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionWork];
-                                             break;
-                                         default:
-                                             break;
+                             completion:^(BOOL finished) {
+                                 if (finished) {
+                                     rotateView = rotateView >= 0 ? rotateView : 360 - abs(rotateView);
+                                     int index = rotateView / 60;
+                                     if (index == 1) {
+                                         [self pushView:[SysDelegate.viewController getView:KENViewTypeMemory] animatedType:KENTypeNull];
+                                     } else {
+                                         switch (index) {
+                                             case 0:
+                                                 [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionLove];
+                                                 break;
+                                             case 2:
+                                                 [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionHealth];
+                                                 break;
+                                             case 3:
+                                                 [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionRelation];
+                                                 break;
+                                             case 4:
+                                                 [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionMoney];
+                                                 break;
+                                             case 5:
+                                                 [[KENModel shareModel].memoryData setMemoryDirection:KENTypeDirectionWork];
+                                                 break;
+                                             default:
+                                                 break;
+                                         }
+                                         [self pushView:[SysDelegate.viewController getView:KENViewTypeQuestion] animatedType:KENTypeNull];
                                      }
-                                     [self pushView:[SysDelegate.viewController getView:KENViewTypeQuestion] animatedType:KENTypeNull];
+                                     _zhuanPanView.transform = CGAffineTransformMakeRotation(0 / 180.0 * M_PI);
                                  }
-                                 _zhuanPanView.transform = CGAffineTransformMakeRotation(0 / 180.0 * M_PI);
-                             }
-                         }];
+                             }];
+        } else {
+            [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                _zhuanPanView.transform = CGAffineTransformMakeRotation(0);
+            }
+                             completion:^(BOOL finished) {
+                                 if (finished) {
 
+                                 }
+                             }];
+        }
 	}
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
