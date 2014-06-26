@@ -10,7 +10,7 @@
 
 typedef void (^AlertDetailBlock)();
 
-@interface KENUiViewPaiDetailAlert : UIView
+@interface KENUiViewPaiDetailAlert : UIView<UITableViewDataSource, UITableViewDelegate>
 
 -(id)initWithFrame:(CGRect)frame animate:(BOOL)animate;
 

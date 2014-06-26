@@ -70,7 +70,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell setBackgroundColor:[UIColor clearColor]];
-        DebugLog(@"row = %d", indexPath.row);
         [self setKaPaiMessage:indexPath.row cell:cell];
     }
     
@@ -88,10 +87,10 @@
     [cell addSubview:kaPai];
     
     //scroll view
-    UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:(CGRect){CGPointZero, cell.frame.size}];
-    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.pagingEnabled = YES;
-    [cell addSubview:scrollView];
+//    UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:(CGRect){CGPointZero, cell.frame.size}];
+//    scrollView.showsHorizontalScrollIndicator = NO;
+//    scrollView.pagingEnabled = YES;
+//    [cell addSubview:scrollView];
     
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
@@ -151,9 +150,9 @@
     label.numberOfLines = 0;
     
     //scroll view 设置
-    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame) + 20);
-    scrollView.contentOffset  = CGPointMake(0, 0);
-    [cell setUserInteractionEnabled:YES];
+//    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame) + 20);
+//    scrollView.contentOffset  = CGPointMake(0, 0);
+//    [cell setUserInteractionEnabled:YES];
 }
 
 -(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index cell:(UITableViewCell*)cell{

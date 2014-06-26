@@ -19,6 +19,9 @@
 @property (nonatomic, strong) UIImageView* bgView;
 @property (nonatomic, strong) UIImageView* paiView;
 
+@property (nonatomic, strong) UITableView* tableView;
+@property (nonatomic, strong) NSMutableArray* contentArray;
+
 @end
 
 @implementation KENUiViewPaiDetailAlert
@@ -120,6 +123,44 @@
         kaPai.transform = CGAffineTransformMakeRotation(M_PI);
     }
     [_bgView addSubview:kaPai];
+    
+    float offx = CGRectGetMaxX(kaPai.frame) + 10;
+    float width = _bgView.frame.size.width - offx - 20;
+    
+#if 1
+    [_bgView setUserInteractionEnabled:YES];
+    
+    offx = CGRectGetMaxX(kaPai.frame);
+    width = _bgView.frame.size.width - offx - 5;
+    _tableView = [[UITableView alloc] initWithFrame:(CGRect){offx, 10, width, _bgView.frame.size.height - 40 - 10}
+                                              style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.showsVerticalScrollIndicator = YES;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [_tableView setBackgroundView:nil];
+    [_tableView setBackgroundColor:[UIColor clearColor]];
+    [_bgView addSubview:_tableView];
+    
+    
+    _contentArray = [[NSMutableArray alloc] initWithCapacity:6];
+    [_contentArray addObject:[MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]]];
+    [_contentArray addObject:[MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]]];
+    [_contentArray addObject:[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]]];
+    [_contentArray addObject:[MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]]];
+    if ([[paiMessage objectForKey:KDicPaiWei] boolValue]) {
+        [_contentArray addObject:[MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_zheng")]];
+    } else {
+        [_contentArray addObject:[MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_fan")]];
+    }
+    [_contentArray addObject:[MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]]];
+    
+    
+    [_tableView reloadData];
+    
+    return;
+#endif
 
     //scroll view
     UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:(CGRect){CGPointZero, _bgView.frame.size.width,
@@ -130,8 +171,6 @@
 
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
-    float offx = CGRectGetMaxX(kaPai.frame) + 10;
-    float width = _bgView.frame.size.width - offx - 20;
     NSString* string = [MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]];
     CGSize size = [KENUtils getFontSize:string font:font];
     float height = (size.height + 1);
@@ -186,7 +225,6 @@
     label.numberOfLines = 0;
 
     //scroll view 设置
-    scrollView.bounces = NO;
     scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame) + 20);
     scrollView.contentOffset  = CGPointMake(0, 0);
     [_bgView setUserInteractionEnabled:YES];
@@ -217,6 +255,48 @@
     [view addSubview:label];
     
     return label;
+}
+
+#pragma mark - Table view data source
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_contentArray count];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
+    CGSize size = [KENUtils getFontSize:[_contentArray objectAtIndex:indexPath.row] font:font];
+    float width = _tableView.frame.size.width - 20;
+    int lines = size.width > width ? size.width / width + 1 : 1;
+    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+    }
+    
+    DebugLog(@"row = %d, height = %.1f",indexPath.row, (size.height + 2) * lines);
+    return (size.height + 2) * lines;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *reuseIdentifier = @"cell";
+    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [cell setBackgroundColor:[UIColor clearColor]];
+        cell.textLabel.font = [UIFont fontWithName:KLabelFontArial size:13];
+        cell.textLabel.numberOfLines = 0;
+    }
+    
+    NSString* content = [_contentArray objectAtIndex:indexPath.row];
+    int index = indexPath.row == 3 ? 4 : 3;
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:content];
+    [str addAttribute:NSForegroundColorAttributeName value:KJiePaiKeyColor range:NSMakeRange(0, index)];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(index, [content length] - index)];
+//    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:30.0] range:NSMakeRange(0, 5)];
+    cell.textLabel.attributedText = str;
+    
+    return cell;
 }
 
 #pragma mark - setting btn
