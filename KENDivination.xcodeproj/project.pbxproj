@@ -2671,7 +2671,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2704,7 +2704,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -2715,8 +2715,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: liu kun (H775962835)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: liu kun (H775962835)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Xu Ye (E3G4N27K8M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xu Ye (E3G4N27K8M)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/AdChina_SDK_312/adchina/AdChinaSShareQQ/SDK",
@@ -2739,7 +2739,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "228AECAA-76D3-44C3-8EF8-A67C9E680C50";
+				PROVISIONING_PROFILE = "98828014-3051-4824-8E74-192DB96A3ECA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2748,8 +2748,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: liu kun (H775962835)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: liu kun (H775962835)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Xu Ye (E3G4N27K8M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xu Ye (E3G4N27K8M)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/AdChina_SDK_312/adchina/AdChinaSShareQQ/SDK",
@@ -2772,7 +2772,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "228AECAA-76D3-44C3-8EF8-A67C9E680C50";
+				PROVISIONING_PROFILE = "98828014-3051-4824-8E74-192DB96A3ECA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
