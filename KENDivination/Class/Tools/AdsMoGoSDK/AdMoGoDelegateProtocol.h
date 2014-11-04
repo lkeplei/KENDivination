@@ -48,8 +48,20 @@
  广告关闭回调
  */
 - (void)adMoGoDeleteAd:(AdMoGoView *)adMoGoView;
+/**
+ *You can get notified when the user delete the ad
+ 返回 YES 表示由开发者处理关闭广告事件
+ 返回 NO 表示由sdk处理关闭广告事件
+ */
+- (BOOL)adMoGoDealCloseAd:(AdMoGoView *)adMoGoView;
 
 
+/**
+ *Ad Init Finish
+ *You can use this delegate method request a ad in manualrefresh status
+ *广告初始化完成
+ */
+- (void)adMoGoInitFinish:(AdMoGoView *)adMoGoView;
 
 /**
  

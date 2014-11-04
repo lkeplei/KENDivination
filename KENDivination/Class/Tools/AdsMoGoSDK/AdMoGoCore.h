@@ -160,6 +160,27 @@ typedef  enum{
     多盟适配器发送点击统计
  */
 - (void)domobSendCLK:(AdMoGoAdNetworkAdapter *)domobAdapter;
+
+/*
+    广点通适配器发送点击统计
+ */
+- (void)gdtSendCLK:(AdMoGoAdNetworkAdapter *)gdtAdapter;
+
+/*
+ 广点通适配器发送点击统计
+ */
+- (void)gdtSendCLK:(AdMoGoAdNetworkAdapter *)gdtAdapter;
+
+/*
+ tanx移动适配器发送点击统计
+ */
+- (void)tanxSendCLK:(AdMoGoAdNetworkAdapter *)gdtAdapter;
+
+/*
+    至美适配器发送点击统计
+ 
+- (void)zmediaSendCLK:(AdMoGoAdNetworkAdapter *)domobAdapter;
+*/
 /*
     特殊适配器请求回调
  */
@@ -205,5 +226,14 @@ typedef  enum{
  */
 - (UIView *)hideCloseButton;
 
+- (void)requestnextAd;
+
+/*
+    是否已经启动轮换广告
+ */
+- (BOOL)isbeginrequestAd;
+
+// 芒果驱动专用
+- (void)adapter:(AdMoGoAdNetworkAdapter *)_adapter didReceiveAdViewMogoJS:(UIView *)view;
 
 @end
