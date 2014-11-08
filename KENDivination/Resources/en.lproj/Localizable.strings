@@ -5,3 +5,31 @@
   Created by 刘坤 on 14-5-18.
   Copyright (c) 2014年 ken. All rights reserved.
 */
+"xipai_content" = "Please concentrate on and repeat your question in heart, it will deliver to each card through your spirit. Listen to your heart, you will feel when to stop.";
+"qipai_content" = "The shuffle is over, continue to concentrate on and repeat your question in heart. Remember that sincerity can excite Tarot's mysterious force.";
+"choupai_content" = "Cards have cut. Now you need to put away extraneous thoughts, use your innermost thoughts to communicate with Tarot's soul. The sincere feeling from Tarot's soul can bring you correct direction.";
+"fanpai_content" = "Cards have been drawn, and Tarot realize you already. You need to throw away agitation and perturbed,and you have got a sincere communion with Tarot. Now please start enjoying the process that Tarot is unscrambling your innermost subconscious, and accept its guiding.";
+"fanpai_remind" = "Please click the cards to open in order";
+"choupai_remind" = "Please draw cards and put them into homologous place";
+"choupai_remind_auto" = "Automatic draw cards in specific place";
+
+"myselft" = "Myself";
+"opposite" = "Opposite";
+
+"kapai_zhenwei" = "Array No.  ";
+"kapai_daibiao" = "Meaning  ";
+"kapai_paiming" = "Card  ";
+"kapai_guanjianzhi" = "Keywords  ";
+"kapai_paiwei" = "Position  ";
+"kapai_jieyu" = "Explanation  ";
+"kapai_paiwei_zheng" = "Positive";
+"kapai_paiwei_fan" = "Inverse";
+
+"purchase_title" = "Purchase";
+"purchase_failed" = "Purchase failed, please try again later.";
+"restore_incomplete" = "Restore purchase failed, please try again later.";
+"restore_failed" = "Restore purchase failed, please try again later.";
+"purchase_content" = "All functions will be opened and ads will be removed after purchase. Do you want to spend $1.99 on the app?";
+"purchase" = "Purchase";
+"restore" = "Restore";
+"cancel" = "Cancel";
