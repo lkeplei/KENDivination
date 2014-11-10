@@ -215,6 +215,17 @@
 -(void)changeView:(UIView*)from to:(UIView*)to type:(KENType)type delegate:(UIViewController*)delegate{
     
 }
+
+- (BOOL)isLanguageEnglish {
+    NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
+    NSArray* languages = [defs objectForKey:@"AppleLanguages"];
+    NSString* preferredLang = [languages objectAtIndex:0];
+    if ([preferredLang compare:@"zh-Hans"] == NSOrderedSame) {
+        return false;
+    } else {
+        return true;
+    }
+}
 @end
 
 
@@ -289,4 +300,6 @@
     
     return _memoryPaiMessage;
 }
+
+
 @end

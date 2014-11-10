@@ -14,6 +14,10 @@
 #import "KENViewAboutUs.h"
 #import "KENViewQuestion.h"
 #import "KENViewPaiZhen.h"
+#import "KENViewPare.h"
+#import "KENViewPareDaziran.h"
+#import "KENViewPareTaluo.h"
+#import "KENViewPareDaakana.h"
 
 @interface KENViewFactory ()
 
@@ -24,6 +28,10 @@
 @property (nonatomic, strong) KENViewAboutUs* aboutUsView;
 @property (nonatomic, strong) KENViewQuestion* questionView;
 @property (nonatomic, strong) KENViewPaiZhen* paiZhenView;
+@property (nonatomic, strong) KENViewPare *pareView;
+@property (nonatomic, strong) KENViewPareTaluo *pareTaluoView;
+@property (nonatomic, strong) KENViewPareDaakana *pareDaakanaView;
+@property (nonatomic, strong) KENViewPareDaziran *pareDaziranView;
 @end
 
 
@@ -79,6 +87,34 @@
                 _paiZhenView = [[KENViewPaiZhen alloc] initWithFrame:frame];
             }
             view = _paiZhenView;
+        }
+            break;
+        case KENViewTypePare: {
+            if (_pareView == nil) {
+                _pareView = [[KENViewPare alloc] initWithFrame:frame];
+            }
+            view = _pareView;
+        }
+            break;
+        case KENViewTypePareDaziran: {
+            if (_pareDaziranView == nil) {
+                _pareDaziranView = [[KENViewPareDaziran alloc] initWithFrame:frame];
+            }
+            view = _pareDaziranView;
+        }
+            break;
+        case KENViewTypePareDaakana: {
+            if (_pareDaakanaView == nil) {
+                _pareDaakanaView = [[KENViewPareDaakana alloc] initWithFrame:frame];
+            }
+            view = _pareDaakanaView;
+        }
+            break;
+        case KENViewTypePareTaluo: {
+            if (_pareTaluoView == nil) {
+                _pareTaluoView = [[KENViewPareTaluo alloc] initWithFrame:frame];
+            }
+            view = _pareTaluoView;
         }
             break;
         default:
@@ -138,7 +174,36 @@
                 _paiZhenView = nil;
             }
         }
-            break;        default:
+            break;
+        case KENViewTypePare: {
+            if (_pareView) {
+                [_pareView removeFromSuperview];
+                _pareView = nil;
+            }
+        }
+            break;
+        case KENViewTypePareDaakana: {
+            if (_pareDaakanaView) {
+                [_pareDaakanaView removeFromSuperview];
+                _pareDaakanaView = nil;
+            }
+        }
+            break;
+        case KENViewTypePareDaziran: {
+            if (_pareDaziranView) {
+                [_pareDaziranView removeFromSuperview];
+                _pareDaziranView = nil;
+            }
+        }
+            break;
+        case KENViewTypePareTaluo: {
+            if (_pareTaluoView) {
+                [_pareTaluoView removeFromSuperview];
+                _pareTaluoView = nil;
+            }
+        }
+            break;
+        default:
             break;
     }
 }

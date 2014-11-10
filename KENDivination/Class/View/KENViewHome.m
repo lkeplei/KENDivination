@@ -213,6 +213,25 @@
     
     //add pan
     [self setupGestures];
+    
+    //add pare button
+    [self addPareButton];
+}
+
+- (void)addPareButton {
+    if (![[KENModel shareModel] isLanguageEnglish]) {
+        UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+                                     image:[UIImage imageNamed:@"home_pare.png"]
+                                  imagesec:[UIImage imageNamed:@"home_pare_sec.png"]
+                                    target:self
+                                    action:@selector(btnPareClicked:)];
+        button.center = CGPointMake(250, 437);
+        [self.contentView addSubview:button];
+    }
+}
+
+- (void)btnPareClicked:(UIButton *)button {
+    [self pushView:[SysDelegate.viewController getView:KENViewTypePare] animatedType:KENTypeNull];
 }
 
 #pragma mark - setting btn

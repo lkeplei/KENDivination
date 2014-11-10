@@ -41,6 +41,9 @@
 -(void)saveData;
 -(void)clearData;
 
+//判断是否为英文
+- (BOOL)isLanguageEnglish;
+    
 @property (nonatomic, strong) KENMemory* memoryData;
 
 @end
