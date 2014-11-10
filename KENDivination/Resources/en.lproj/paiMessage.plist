@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The fool</string>
+		<key>key_pai_keyword</key>
+		<string>Stray, Freedom, Inexperienced</string>
+		<key>key_pai_img</key>
+		<string>app_pai_0.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You are the hunter in love, and proceed towards love without hesitation, even in one-sided love wishful thinking. One day, you will have a romantic love, and you fall in love free and easily. In the marriage, you will the feel over pressure because of your high requirement to your partner.</string>
+				<key>11</key>
+				<string>You like seeking fantastic dream and taking a risk. You will highlight this quality in the work. Don't seek dream blind and ignore the reality.</string>
+				<key>12</key>
+				<string>You will make a wrong choice, leading to the result of failure.</string>
+				<key>13</key>
+				<string>In the relationship, you are over independent, please ask other ones' advice sometimes.</string>
+				<key>14</key>
+				<string>Over pressure lead to your panasthenia.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You express your love frankly. You will acquire a pure love. Your love isn't stable because of your frivolity, and so is your marriage.</string>
+				<key>11</key>
+				<string>You make no progress in the work and study because of lack of responsibility. Your work and study will stop because of no plans.</string>
+				<key>12</key>
+				<string>You will lose something if bet all on a single throw.</string>
+				<key>13</key>
+				<string>Your behavior is overly perverse, which has a negative effect on your relationship.</string>
+				<key>14</key>
+				<string>In this stage, diseases and trouble will be solved easily.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The magician</string>
+		<key>key_pai_keyword</key>
+		<string>Start, Creation, Persuade, Apply</string>
+		<key>key_pai_img</key>
+		<string>app_pai_1.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You will start a new love. In the love, your relationship will further. You will propose marriage successfulli. You will start  the new married life.</string>
+				<key>11</key>
+				<string>Everything has a good start. It will be quite smooth going, such as entrance, employment, job hunting and  qualifying  certificates. Your creativity will develop you.</string>
+				<key>12</key>
+				<string>These days, you are good at investing and financing, and create wealth.</string>
+				<key>13</key>
+				<string>You may try to change yourself to reach a new achievement.</string>
+				<key>14</key>
+				<string>You can overcome  diseases depending on your willpower.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your love ceases to advance because of your laziness and weak will. Your love will be out of control because of your unfaith. Even you will be cheated in love. Of course, your mood will be changed too.</string>
+				<key>11</key>
+				<string>Your weakness is lack of a strong will. You will go to the wrong way. You will lose your job, can't find a job, or can't enter the school you want to, because you aren't hardworking, lack of knowledge and imagination.</string>
+				<key>12</key>
+				<string>You are easy to be cheated or meet a cheater, which will make you lose something in your wealth.</string>
+				<key>13</key>
+				<string>Your relationship will be affected by some misunderstandings, which will make you lose credits in your relatives. At the meantime, you will be blamed. Be careful in friends' issues.</string>
+				<key>14</key>
+				<string>Easy to get gastrointestinal problems.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The high priestess</string>
+		<key>key_pai_keyword</key>
+		<string>Wisdom, Quadratic, Think, Intuition, Conceal</string>
+		<key>key_pai_img</key>
+		<string>app_pai_2.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You are an independent woman. You will fall in love in the work or study easily. It may be Platonic love. Love will cool down easily, and be hard to step into marriage.</string>
+				<key>11</key>
+				<string>Your intelligence make you acquire achievement in the study and work. You has the ability to be a researcher, an litterateur and a religionist. You can enter university or learn specialized knowledge.</string>
+				<key>12</key>
+				<string>In this stage, your desire to money and material are increaing. Your sharp insight and  unerring instinct  will give you a hand.</string>
+				<key>13</key>
+				<string>You treat everyone around you full of enthusiasm, but hide it in your heart. You need to show it up, which will have a positive effect  on your relationship.</string>
+				<key>14</key>
+				<string>A fulfilled life keeps you healthy, everything is ok.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You are afraid of expressing your love actively because of your strong self-respect. You show such little consideration in love because of flaunting your superiority, and so is your marriage.</string>
+				<key>11</key>
+				<string>Your work will go to the wrong way. Don't be attention your position and degree to much, which will have a negative effect on your mood in the work. You will give up halfway in the study. Giving up is your largest enemy.</string>
+				<key>12</key>
+				<string>You are overly greedy and loses money because of gambling. You are  shortsighted  and can't make a good decision in investment. Your over confident shows that you can't invest and manage your money independently. You need more advice.</string>
+				<key>13</key>
+				<string>Your overly self-respect, mysophobia and self-glorification will affect your relationship.</string>
+				<key>14</key>
+				<string>Anemia, enterogastric disease.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The empress</string>
+		<key>key_pai_keyword</key>
+		<string>Harvest, Pregnant, Love, Mother</string>
+		<key>key_pai_img</key>
+		<string>app_pai_3.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Happiness will follow you. Happy love, pretty engagement, marriage full of best wishes, beatific family life, everything is perfect.</string>
+				<key>11</key>
+				<string>You enjoy yourself in the work and study. You will acquire more rewards than you can image in the work and study. Your talent in art will be dug out constantly.</string>
+				<key>12</key>
+				<string>Wealth will follow you if you are in investment and financing. Windfall will also follow you.</string>
+				<key>13</key>
+				<string>Your relationship will be smooth going. You will get the gifts you want from your friend.</string>
+				<key>14</key>
+				<string>Your physical condition makes you get in touch with nature heartily and have a happy leisure travel.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your love and marriage are dissatisfactory. Your love has no progress, being objected to your family. You has to many temptation around you, leading to your unfaith. You are Impatient because of your unhappy marriage.</string>
+				<key>11</key>
+				<string>You are hardworking, but can't get the reward. Your job isn't stable recently.</string>
+				<key>12</key>
+				<string>Your investment and money managerment will have no good results because of neglect. Your income will decrease. You will face financial crises such as lack of fund and deficits.</string>
+				<key>13</key>
+				<string>Your study, work and affection don't go well, which makes you feel low. You don't want to communicate with people, and goes far away from your friends.</string>
+				<key>14</key>
+				<string>Adiposis, uropoiesis disease, infertility.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>4</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The emperor</string>
+		<key>key_pai_keyword</key>
+		<string>Dominate, Mature, Experienced, Deep</string>
+		<key>key_pai_img</key>
+		<string>app_pai_4.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You hold dominant position whether in love or in marriage. You will arrange everything well to  reassure your partner.</string>
+				<key>11</key>
+				<string>You has leadship, a strong will, and are full of energy. A strong responsibility makes you be a real leader.</string>
+				<key>12</key>
+				<string>Your investment and financing is in a stable condition, steady and going up.</string>
+				<key>13</key>
+				<string>You play a lead role in relationship because of your leadership. Your  are fired with an enthusiasm for arranging everything for other ones.</string>
+				<key>14</key>
+				<string>You are full of energy and have a healthy body. You has a strong will to insist on your exercise plan.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You can't constrain someone to do things that are beyond his power in love and marriage. Don't be presumptuous and opinionated. In love, you must be brave in expressing your love and taking responsibility. Don't wear a double face.</string>
+				<key>11</key>
+				<string>You are lack of confidence, action and a strong will in the work and study. You like playing the role of being controled. You will be more and more ordinary and unknown, if you can't get rid of the outline.</string>
+				<key>12</key>
+				<string>You are lack of confident and your own opinions, and you don't fit to invest and manage money. Listen to other ones' ideas more and don't have high expectations with the profits, in order to avoid backfiring.</string>
+				<key>13</key>
+				<string>In your relationship, you always plays a passive role. You like being controlled. Maybe you will feel more comfortable and reassuring.</string>
+				<key>14</key>
+				<string>Have a little cold, adiposis.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>5</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The hierophant</string>
+		<key>key_pai_keyword</key>
+		<string>Help, Instruct, Convey, Restraint</string>
+		<key>key_pai_img</key>
+		<string>app_pai_5.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Years of friendship will develop a new love. Secret love fits you more. You will try your best to harvest the fruit of love.</string>
+				<key>11</key>
+				<string>You will get help from many people in the work and study. Your kind and generous will help you a lot in the work.</string>
+				<key>12</key>
+				<string>You will get help from others. You can listen to the advice from the people you trust.</string>
+				<key>13</key>
+				<string>You has a lot of friend. Your kind and generous can affect many ones. Your sympathy and assistance to other ones will make you acquire much friendship.</string>
+				<key>14</key>
+				<string>Good psychology lead to healthy body and mind.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You always show such little consideration and lack responsibility. Your idea of love can't be agreed by other ones.</string>
+				<key>11</key>
+				<string>You are lack of goals, and don't like obeying the rules in the work and study. You can't reach the goal even you has made a plan. You need to keep his feet on the ground keep your feet on the ground.</string>
+				<key>12</key>
+				<string>Recently, your investment plan will come to nothing, and you will have some loses in wealth. You will lose the real opportunity because of the wrong information and malicious instigation. Cool down and think. Don’t do something impulsively.</string>
+				<key>13</key>
+				<string>When dealing with the relationship, you are easy to be manipulated by other ones. You doean't fit to be a leader. You fit to make friends silently.</string>
+				<key>14</key>
+				<string>Hepatic disease, bad mental state.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>6</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The lovers</string>
+		<key>key_pai_keyword</key>
+		<string>Union, Choice, Cooperation</string>
+		<key>key_pai_img</key>
+		<string>app_pai_6.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You will fall in passionate love happily. Believing your glamour and making the invitation bravely, you will success. Please believe your feeling.</string>
+				<key>11</key>
+				<string>Your work and study are quiet smooth going. Your career fares well, and your cooperative partners are important to you.</string>
+				<key>12</key>
+				<string>It's the time to make a decision. A good copartner will appear to reduce your finance stress. You can make some investment with your idle fund.</string>
+				<key>13</key>
+				<string>Your club activities will increase, and your leisure and social cost also rise. You need to keep a virtuous cycle.</string>
+				<key>14</key>
+				<string>You will have a good physical condition because of love.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your lover is tired and leave you at last, because you treat love as a game. Your marriage will arise a crisis. Keeping a foot in both camps will accelerate the crisis.</string>
+				<key>11</key>
+				<string>You are lazy, overly self-satisfied and narcissistic. You can't set strict demands on yourself and reach your goals.</string>
+				<key>12</key>
+				<string>Don't believe the gossips in investment and financing. You are easy to trust someone and make a decision indecisively. You had better to find someone you trust to help you manage your money. You spends your money with open hands. You doesn't fit to finance because you are overly luxurious.</string>
+				<key>13</key>
+				<string>You has a lot of false friends. Your friendship can't be lasting because of lack of sincerity.</string>
+				<key>14</key>
+				<string>Venereal disease, iaryngopharyngitis.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>7</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The chariot</string>
+		<key>key_pai_keyword</key>
+		<string>Victory, Action, Adjustment</string>
+		<key>key_pai_img</key>
+		<string>app_pai_7.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You take the initiative in love. You are independent and try your best to hold the love. You will step into marriage bravely.</string>
+				<key>11</key>
+				<string>You work hard, have a strong executive power, and try new methods bravely. You can complete the goal successfully, and you will be the winner.</string>
+				<key>12</key>
+				<string>You has a good luck in wealth. You has a clear investment idea. What's more important, you are ambitious to acquire expectant earnings.</string>
+				<key>13</key>
+				<string>You has your own idea, and you play an active role in your relationship. You enjoy making atmosphere and trying. You like traveling and have a lot of friends.</string>
+				<key>14</key>
+				<string>Do more outdoor exercise, go out for a walk, your physical strength will increase. You will have a great healthy condition.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You will meet a large barrier in love, maybe a rival. Your emotional problems will be more serious because of your overly tough attitude.</string>
+				<key>11</key>
+				<string>You will suffer from setbacks in the work and study. You will face troubles easily because of sudden failures.</string>
+				<key>12</key>
+				<string>You make a mistake in investment suddenly, leading to wealth loses. It will affect your credit if you choose to escape. Don't choose speculative financial products, wich will bring you loses.</string>
+				<key>13</key>
+				<string>Birds of a feather flock together. Bad friends will have a negative effect on you. Be careful to choose your circle of friends.</string>
+				<key>14</key>
+				<string>Traffic accident, sciatica, hernia.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>8</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>Strength</string>
+		<key>key_pai_keyword</key>
+		<string>Volition, Insist, Moderation</string>
+		<key>key_pai_img</key>
+		<string>app_pai_8.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You are popular in the opposite six. You are easy to get the attention from the opposite six, because of your charm. You are active in love and announce your love in spite of oppositions. For love and marriage, you know patience and management very well. You will be on good terms as before.</string>
+				<key>11</key>
+				<string>You are brave and have a strong will to overcome difficulties, breakthrough the barrier and acquire what you want, such as qualification certificates, licenses and so on. Your work and job will enter a new development stage, and you will meet a large favourable turn.</string>
+				<key>12</key>
+				<string>Stable finance income and good investment profit. You will meet a large favourable turn. Hold on.</string>
+				<key>13</key>
+				<string>You are popular in the opposite six. you has many the opposite six friends, and get along well with them. You fit to play a role of an intimate sister. You will get the help of the opposite sex.</string>
+				<key>14</key>
+				<string>You are healthy and strong.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your love can't be stand the temptation from the other one. You will lose your love at last because you are lack of confidence, and seek love with money and body.</string>
+				<key>11</key>
+				<string>You aren't hardworking in the study and fails the exams. You are addicted to network and games. Your poor concentration leads to your failures.</string>
+				<key>12</key>
+				<string>You spends money like water and are hard to manager your money. You has a bad investment perspective. You can start with saving money, step-by-step.</string>
+				<key>13</key>
+				<string>You are timid and cowardly, and your friends will leave you. You are easy to surrender to authority. You can only make fair-weather friends because of your strong vanity.</string>
+				<key>14</key>
+				<string>Easy fatigue, Foot injuries, poor health.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>9</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The hermit</string>
+		<key>key_pai_keyword</key>
+		<string>Seeking, Old, A little bright in the dark</string>
+		<key>key_pai_img</key>
+		<string>app_pai_9.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You seek true love sincerely. You won't resist intensely, even in the Platonic love. You are fired with an enthusiasm for a long courtship,  even you like secret love, exciting and patience testing.</string>
+				<key>11</key>
+				<string>You seek the truth in the work and study. You like doing research alone. You fit for the work of researcher, philosopher and  ideologist more.</string>
+				<key>12</key>
+				<string>You save money in life. You can do some small investments with your free money. Try to plan your finance, you will have unexpected harvest.</string>
+				<key>13</key>
+				<string>You enjoy lonely and fit to live in seclusion, have little friends. But you will listen to your friends' advice, and talk to your friends acting as an elder.</string>
+				<key>14</key>
+				<string>In good physical condition, no diseases.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You like secret love and enjoy dating secretly. Your idea of love isn't mature enough. You are false, self-righteous and overly arrogant, leading to being detested by your lover.</string>
+				<key>11</key>
+				<string>You hates school and study and has a pooradaptability. You will make a wrong decision when you faces the choices about your future. You can't adjust to your company and has a poor ability in the work.</string>
+				<key>12</key>
+				<string>You has demands for life qualities. You likes buying bargains. You will lose your money continuously, though they are bargains.</string>
+				<key>13</key>
+				<string>You aren't good at communicating, doesn't understand to pay your sincerity. You has some difficulties to communicate with people.</string>
+				<key>14</key>
+				<string>Hypopiesia, hands or neck hurts, impossible to cure.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>10</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>Wheel of fortune</string>
+		<key>key_pai_keyword</key>
+		<string>Reincarnation, Transformation, Checkered</string>
+		<key>key_pai_img</key>
+		<string>app_pai_10.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Fall in love at first sight, just like the choice of fate. Meet the fated one accidentally. Breakup is temporary. You will be on good terms as before and you will be happier.</string>
+				<key>11</key>
+				<string>You will face a challenge again. Change the environment or the method, maybe you will get a better result. Suggest you to transfer to another school or change your job.</string>
+				<key>12</key>
+				<string>Good income condition, your spending income will be relatively abundant, and your pocket money will increase constantly.</string>
+				<key>13</key>
+				<string>Your relationship will take a turn. Everything will be smooth going with the new good beginning. My God of fortune will arrive.</string>
+				<key>14</key>
+				<string>In good physical condition, getting better.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You are depressed because of emotional betrayal, love failure and doomed love. It’s a smart chioce to let it go.</string>
+				<key>11</key>
+				<string>You are too trusting about fortune. Cramming doesn't work. Everything goes back to the beginning and start again. Don't be careless, or you will fail on the verge of success, even you are hardworking.</string>
+				<key>12</key>
+				<string>You will have wealth loses and are easy to lose something. Your investment plan will fail. Pay attention to your financing methods. Don't come into a vicious circle.</string>
+				<key>13</key>
+				<string>Your friendship worsens and steps into a dead circle. Maybe you will meet a  favourable turn if you separate from each other a while.</string>
+				<key>14</key>
+				<string>There will be a chronic disease.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>11</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>Justice</string>
+		<key>key_pai_keyword</key>
+		<string>Balance, Measurement, Law, Counterattack</string>
+		<key>key_pai_img</key>
+		<string>app_pai_11.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You don't realise each other deeply, and other one may keep a foot in both camps. You can sove the problem discussing with each other.</string>
+				<key>11</key>
+				<string>You are good at both studying and playing, and you are a overall talents. You can complete your job well, even doing a lot multitasking.</string>
+				<key>12</key>
+				<string>Balance between income and expenditure, borrow or lend money sometomes, but it doesn't affect your life quality to much.</string>
+				<key>13</key>
+				<string>You are happy to help the weak. you has a good overall sense of justice. You are friendly and have a lot of friends.</string>
+				<key>14</key>
+				<string>You need moderate sport and rest. Going out for a walk and getting in touch with nature is good for your health.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You are addicted to love and becomes blind and ignorant. You will be unsatisfied when demand to much. Let it go when meet the wrong one.</string>
+				<key>11</key>
+				<string>You are overly tired in the work and study and has less time to rest. You are foolhardy and has a serious leaning branch question in the study. Maybe you can't realise this problem.</string>
+				<key>12</key>
+				<string>You suffers from deficits and payments imbalances in economy, even more and more seriously. I doesn't fit to invest, and you will make a extreme and wrong decision.</string>
+				<key>13</key>
+				<string>Favouritism, too strict. You can't accept your friends' advice. You are easy to lose the balance in your heart.</string>
+				<key>14</key>
+				<string>Overfatigue, arthritis.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>12</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The hanged man</string>
+		<key>key_pai_keyword</key>
+		<string>Sacrifice, Paying, Test, Suffering</string>
+		<key>key_pai_img</key>
+		<string>app_pai_12.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Your love will meet difficulties and barrier, but you can't take action, leading to the bad result.</string>
+				<key>11</key>
+				<string>You has a bottle - neck in the work and study. You are disappointed in your test scores. You are depressed in the work.</string>
+				<key>12</key>
+				<string>Your income will decrease or not rise continually. You lose faith of money. You will make some wrong decision in investment, and lose some money.</string>
+				<key>13</key>
+				<string>You need to learn self-sacrifice and have more patience, then the situation will be better. Pay more attention on introspection, your friendship will be in a better condition.</string>
+				<key>14</key>
+				<string>Come back to life after hospitalization.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your love has no good result because of your impatience. Your love will be bitter because of your escape. Your love will be out of hand, even because of a small thing.</string>
+				<key>11</key>
+				<string>You can't get your rewards in the work and feels down. You can't get the rewards of your hard work, which will make you lose confidence. You can't do the right things.</string>
+				<key>12</key>
+				<string>Your greed leads to your failure, and you can't get your rewards. Your investment will fail and your plan will come to nothing. All your efforts will be to no avail.</string>
+				<key>13</key>
+				<string>In your friendship, you are self-centred and can't make allowance for other ones. Your unease and anxiety will make you disregard for your friends.</string>
+				<key>14</key>
+				<string>Be afraid of hospitalization or surgeries.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>13</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>Death</string>
+		<key>key_pai_keyword</key>
+		<string>End, The time to make a decision, Change</string>
+		<key>key_pai_img</key>
+		<string>app_pai_13.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Your love steps into a dead end, has no future. You will separate from your lover. Your engagement and marriage will end. You will break up because of quarrels.</string>
+				<key>11</key>
+				<string>You make no effort to seek progress in the work and study. You will lose your goal in the work. You will drop out of school. You will give up your goal easily and havn't a strong will.</string>
+				<key>12</key>
+				<string>Your idea havn't come up with the current change. Your investment insight is no longer original. Everything will finish quikly. Welcome the new start.</string>
+				<key>13</key>
+				<string>What happened in friends will have a result. Temporary separation is a new start. Say goodbye to the past and welcome the new journey with friends.</string>
+				<key>14</key>
+				<string>Serious disease, disaster.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your love and marriage will take a turn for the better. You will get rid of the pain of  love failure. You will find a new life, getting rid of the bad condition.</string>
+				<key>11</key>
+				<string>You makes a decision to change, which brings you  a favourable turn. You fails, but I will restart.</string>
+				<key>12</key>
+				<string>You will acquire new income. You will get a large amount of windfalls. You will get back years of your own money.</string>
+				<key>13</key>
+				<string>Your friendship will have a new neginning and everything will restart. You will get rid of the awkward situation in the past and meet a favourable turn.</string>
+				<key>14</key>
+				<string>Recover from diseases.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>14</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>Temperance</string>
+		<key>key_pai_keyword</key>
+		<string>Purification, Communication,Consideration, Giving slowly</string>
+		<key>key_pai_img</key>
+		<string>app_pai_14.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Your love is stable as friends for years. You help each other and depend on each other. Moderation makes marriage happy, and work and life in peace.</string>
+				<key>11</key>
+				<string>You make progress in study constantly. You work hard and your plan can be be underway smoothly. You get good teamwork with your partners.</string>
+				<key>12</key>
+				<string>You save money in life, and your wealth increases stably. Investment and financing are well arranged. You will not worry about money.</string>
+				<key>13</key>
+				<string>In the friends' relationship, you know self-control, put yourself in the right position. You are more emotional than rational. You can control your desire well.</string>
+				<key>14</key>
+				<string>Healthy mentallity, good physical condition.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You are naïve, overly idealistic, fickle, and don't how to deal with love. Your sexual orientation is questioned.</string>
+				<key>11</key>
+				<string>You misses the point when doing things, and wastes of time. Your self-partiality leads to failures. Your community activities will be your burdens in the study.</string>
+				<key>12</key>
+				<string>You can't hold your wealth because of your luxury and vanity. You has no free money to invest because you wastes too much money.</string>
+				<key>13</key>
+				<string>You don't know the dangerous world and has no progress because of too many desires. You will lose a lot of friends and lose the credit to friends.</string>
+				<key>14</key>
+				<string>Adiposity because of enjoying delicacies to much, optic nerve lesion.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>15</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The devil</string>
+		<key>key_pai_keyword</key>
+		<string>Curse, Instinct and desire, Puzzling,  Restriction</string>
+		<key>key_pai_img</key>
+		<string>app_pai_15.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Demon appears in the love. Treachery, adultery, cheat, all kinds of disharmony and unhappiness.</string>
+				<key>11</key>
+				<string>Your career step into the wrong way. You start a illeage business. Your work and study will step into the wrong way, even stealing and criming.</string>
+				<key>12</key>
+				<string>Your money will drease, unless you get illegal income. You will be defrauded to have a huge lose.</string>
+				<key>13</key>
+				<string>You make the wrong friend. You will be betrayed by friends, and fall into friends' trap, making youself go to the bad deep.</string>
+				<key>14</key>
+				<string>Illness about skin, joints and figures.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You will go out of the dark love. The doomed love will end and your sincerity will be accepted. Your love will step into the stable stage. Everything will be ok.</string>
+				<key>11</key>
+				<string>Your work and study step into the right way. You can get the correct knowledge, reach the goals and show ambitions gradually. You will acquire the achievements you wants.</string>
+				<key>12</key>
+				<string>Your life steps into the right way. You start to accumulate money. You can invest a little. Don't expect too much.</string>
+				<key>13</key>
+				<string>Say goodbye to the wrong past. Cut off from bad friends. Forget hatreds in the past and restart.</string>
+				<key>14</key>
+				<string>Diseases will take a turn for the better, cut out smoking and drinking, make life better.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>16</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The tower</string>
+		<key>key_pai_keyword</key>
+		<string>Destruction, Concussion, Give up, Disaster, The God's home and test</string>
+		<key>key_pai_img</key>
+		<string>app_pai_16.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Your love will be messy because of rumours, and your love will break up. Maybe you are dating with the wrong one. Treachery and adultery will be paid the price.</string>
+				<key>11</key>
+				<string>You are so overconfidence that ignore hard working. You will fall behind, even suffer from being dropped out of school. You will lose the belief from your teacher or boss. It's a disadvantage to your study or work.</string>
+				<key>12</key>
+				<string>You will lose a great deal of money. The finance is in serious deficit. In this stage, be careful of investment and financing.</string>
+				<key>13</key>
+				<string>You are overly arrogant. The friends around you will not pay the sincere because of your arrogant and prejudice. The situation turns down sharply, and maybe you will lose everything.</string>
+				<key>14</key>
+				<string>Fire burn, hospitalization, getting steadily worse.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Quarrels are finished, but you don't believe each other. Your love will cool down and finish in a short time.</string>
+				<key>11</key>
+				<string>You will fail, though you wants to restart. You loses the courage to reach your goals. Everything including your exams will be worse.</string>
+				<key>12</key>
+				<string>You will make wrong decisions in investment and lose some money. Your income decreases because of your failures in the work.</string>
+				<key>13</key>
+				<string>You will take the rap for someone. All troubles and accidents will be solved easily.</string>
+				<key>14</key>
+				<string>Psychoneurosis.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>17</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The star</string>
+		<key>key_pai_keyword</key>
+		<string>Hope, Bless, Sad tears</string>
+		<key>key_pai_img</key>
+		<string>app_pai_17.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You will meet your ideal one. You will devote yourself heartily,and believe your lover adequately with a pure heart. The development of love is natural.</string>
+				<key>11</key>
+				<string>You will make a little progress in the work or study with hard working. You fit to work at night more.</string>
+				<key>12</key>
+				<string>You will have a windfall. Your achievement of financing shows up. Invest properly, you will achieve something.</string>
+				<key>13</key>
+				<string>The relationship of friends and staffs are treated very well. Everything is smooth going.</string>
+				<key>14</key>
+				<string>Illness will be treated.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your key words of love are sentimentality, one sided love and hopeless. Jealousy and suspicion are the killer of your marriage. Be careful.</string>
+				<key>11</key>
+				<string>You hates studying or working. You aren't approved in the study or work, and lack of a sense of achievement. You are afraid of future, because of lack of creativity and confidence.</string>
+				<key>12</key>
+				<string>You has a lower financing value, and wastes money quickly. Recently, you will have money troubles. Be careful in investment and financing.</string>
+				<key>13</key>
+				<string>You lose credits in friends because of bad faith. Your pessimistic attitude will affect people around you, and make your friendship tense.</string>
+				<key>14</key>
+				<string>Adiposity， diseases caused by overfatigue, physocal changes.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>18</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The moon</string>
+		<key>key_pai_keyword</key>
+		<string>Uneasy, Changeable</string>
+		<key>key_pai_img</key>
+		<string>app_pai_18.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>The other one appears in your love. Your one may keep a foot in both camps. You will suffer from your lover's betrayal.</string>
+				<key>11</key>
+				<string>You will use the wrong way in the work or study, and fall into a wrong path. You will face the important change in the work. Maybe you will sacrifice your career for your family.</string>
+				<key>12</key>
+				<string>Unstable income, you are easy to be cheated, leading to property losses.</string>
+				<key>13</key>
+				<string>There is no sincerity between friends. you has many enemies secretly. You are easy to be betrayed by friends. You are perfunctory about your friends, also your friends are perfunctory about you, which makes your relationship has no progress.</string>
+				<key>14</key>
+				<string>Psychiosis, gynecological disease, minor injury, illness of family members.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You begin to know the true colour of your lover. You get rid of your lover's lies and falsity. You are the spoony one who can attracts the opposite sex.</string>
+				<key>11</key>
+				<string>You will make small mistakes in the work and study because of lack of a strong will. But the worst result won't appear. The situation will be better. You can believe your intuition occasionally.</string>
+				<key>12</key>
+				<string>You has a stable income, and reaches a small achievement. You will have windfalls.</string>
+				<key>13</key>
+				<string>The misunderstandings between your friends will be solved. Your view changes, which solves the problems properly. Recently, you will be responsibility for your behavior in the past.</string>
+				<key>14</key>
+				<string>Physical condition takes a turn for the better.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>19</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The sun</string>
+		<key>key_pai_keyword</key>
+		<string>Life, Come true, Pure</string>
+		<key>key_pai_img</key>
+		<string>app_pai_19.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Your love will acquire best wishes and have a happy ending. You are popular the in the opposite sex.</string>
+				<key>11</key>
+				<string>Pass the exam, you will have a new start in the work. You will get promotion and become a winner in life.</string>
+				<key>12</key>
+				<string>Your ability will be approved, and your income will increase. Believe your insight and idea, you will acquire great in investment and financing.</string>
+				<key>13</key>
+				<string>You will make good friends, treat people warm, and your life is full of energy. You are popular in friends and trusted by freands.</string>
+				<key>14</key>
+				<string>Good health, full of energy, doing sport actively.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your love fades and you face the crisis of separation. You will break off your engagement when the original appointment can't be come true, and you aren't happy any more.</string>
+				<key>11</key>
+				<string>You aren't dependable. You are presumptuous and believes fortune overly, which always lead to your failures. You can't stand up to temptations from outside sometimes. You will fall behind.</string>
+				<key>12</key>
+				<string>You are in bad luck. Your plan will be delayed, and your wealth will be affected. You aren't well done in the work. Your wealth decreases because of your luxurious and wasteful in life.</string>
+				<key>13</key>
+				<string>You are jealous of other ones' successes and talents. You are inferior and low-spirited.</string>
+				<key>14</key>
+				<string>You are in bad healthy condition. You pays no attention to your body because of over confident. You don't know your diseases.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>20</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>Judgement</string>
+		<key>key_pai_keyword</key>
+		<string>Relive, Awaken, Known result</string>
+		<key>key_pai_img</key>
+		<string>app_pai_20.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>You will make it up with your lover, and your love will be warmer and warmer. You will meet your first lover, maybe bring back the love.</string>
+				<key>11</key>
+				<string>You has a strong belief in your inner heart. You can restart to welcone the new dawn.</string>
+				<key>12</key>
+				<string>Everything goes back to the beginning and start again. You will reach your goal with the help of someone, make a profit instead of suffering a loss. You will take over the family business.</string>
+				<key>13</key>
+				<string>You will meet old friends, and make it up with them. You will restart with the help of your friends.</string>
+				<key>14</key>
+				<string>Come back to life,  successful surgery.</string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>You feel disappointed about love in heart. Your relationship can't be renewed because of the pains. You can't avoid the result of breaking up.</string>
+				<key>11</key>
+				<string>You can't make a decision in key issues. You are weak and has a feeling of inferiority. You don't fit the job of sales and public relations.</string>
+				<key>12</key>
+				<string>You can't pay off your debts. Your income will decrease and your burden is heavy.</string>
+				<key>13</key>
+				<string>Your relationship with friends is somewhat ambiguous. You are irresolute, hesitant and lack of loyalty and courage. Your friends will be less and less.</string>
+				<key>14</key>
+				<string>Valetudinarianism, impossible to cure, gastroenteropathy.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>21</key>
+	<dict>
+		<key>key_pai_name</key>
+		<string>The world</string>
+		<key>key_pai_keyword</key>
+		<string>Achieve, Perfect, Fate, Restart</string>
+		<key>key_pai_img</key>
+		<string>app_pai_21.jpg</string>
+		<key>key_pai_meaning</key>
+		<dict>
+			<key>key_forword</key>
+			<dict>
+				<key>10</key>
+				<string>Your one-sided love will have a result. You will acquire a enviable love. You will acquire a sincere marriage proposal after the passionate love. You will have a happy marriage at last.</string>
+				<key>11</key>
+				<string>You pass the exam, reach the expectant goal and study abroad  successfully. You will fina a ideal job. Starting your business independently is a new start. You  will promote step by step in career.</string>
+				<key>12</key>
+				<string>Successful career brings you high income. Own investment insight make you a strong one. You can pay off the debt.</string>
+				<key>13</key>
+				<string>You has good reputation in your friends. You are able to cope in relationship because of your noble character.</string>
+				<key>14</key>
+				<string></string>
+			</dict>
+			<key>key_ reverse</key>
+			<dict>
+				<key>10</key>
+				<string>Your love has a bad result, and your marriage can't go on. You will break off your engagement.</string>
+				<key>11</key>
+				<string>Your troubles in the work and study will increase constantly. You will leave your school or job, and can't keep on hardworking. You always stops halfway or are to no avail.</string>
+				<key>12</key>
+				<string>Because of the depressed economy, your investment and financing will fail, your income condition will worsen, and your money will be less and less.</string>
+				<key>13</key>
+				<string>Your relationship with friends is at a standstill. Your appointment with friends can't be carried out. It always stays in the past and has no new progress.</string>
+				<key>14</key>
+				<string>Debilitated health, heart disease, head injuries, bad results of  surgeries.</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

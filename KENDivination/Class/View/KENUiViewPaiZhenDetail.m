@@ -86,12 +86,6 @@
     }
     [cell addSubview:kaPai];
     
-    //scroll view
-//    UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:(CGRect){CGPointZero, cell.frame.size}];
-//    scrollView.showsHorizontalScrollIndicator = NO;
-//    scrollView.pagingEnabled = YES;
-//    [cell addSubview:scrollView];
-    
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
     float offx = CGRectGetMaxX(kaPai.frame) + 10;
@@ -101,7 +95,7 @@
     float height = (size.height + 1);
     UILabel* label = [self addLabel:string
                               frame:CGRectMake(offx, 15, width, height)
-                               font:font index:3 cell:cell];
+                               font:font index:MyLocal(@"kapai_zhenwei").length cell:cell];
     
     string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
@@ -111,12 +105,12 @@
     }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
-                      font:font index:3 cell:cell];
+                      font:font index:MyLocal(@"kapai_daibiao").length cell:cell];
     label.numberOfLines = 0;
     
     label = [self addLabel:[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]]
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
-                      font:font index:3 cell:cell];
+                      font:font index:MyLocal(@"kapai_paiming").length cell:cell];
     
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
     size = [KENUtils getFontSize:string font:font];
@@ -126,7 +120,7 @@
     }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
-                      font:font index:4 cell:cell];
+                      font:font index:MyLocal(@"kapai_guanjianzhi").length cell:cell];
     label.numberOfLines = 0;
     
     if ([[paiMessage objectForKey:KDicPaiWei] boolValue]) {
@@ -136,7 +130,7 @@
     }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height)
-                      font:font index:3 cell:cell];
+                      font:font index:MyLocal(@"kapai_paiwei").length cell:cell];
     
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
@@ -146,13 +140,8 @@
     }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
-                      font:font index:3 cell:cell];
+                      font:font index:MyLocal(@"kapai_jieyu").length cell:cell];
     label.numberOfLines = 0;
-    
-    //scroll view 设置
-//    scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(label.frame) + 20);
-//    scrollView.contentOffset  = CGPointMake(0, 0);
-//    [cell setUserInteractionEnabled:YES];
 }
 
 -(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index cell:(UITableViewCell*)cell{

@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>One Card</string>
+		<key>key_question</key>
+		<string>Normal problem</string>
+		<key>key_zhen_number</key>
+		<integer>1</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>The answer</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>200</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>5,11,12,18,19</string>
+		<key>key_zhen_name</key>
+		<string>One of Two</string>
+		<key>key_question</key>
+		<string>Double-barreled problem</string>
+		<key>key_zhen_number</key>
+		<integer>5</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Present situation of the asker or an event</string>
+			<string>The situation when making the first choice</string>
+			<string>The impression after making the first choice</string>
+			<string>The situation when making the second choice</string>
+			<string>The impression after making the second choice</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>353</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>105</integer>
+					<key>key_y</key>
+					<integer>233</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>83</integer>
+					<key>key_y</key>
+					<integer>113</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>216</integer>
+					<key>key_y</key>
+					<integer>233</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>238</integer>
+					<key>key_y</key>
+					<integer>113</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,13,20</string>
+		<key>key_zhen_name</key>
+		<string>Sacred Triangle</string>
+		<key>key_question</key>
+		<string>Problem in a short time or true - false</string>
+		<key>key_zhen_number</key>
+		<integer>3</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>The past</string>
+			<string>The present</string>
+			<string>The future</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>280</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>92</integer>
+					<key>key_y</key>
+					<integer>155</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>155</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>4</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Future Development</string>
+		<key>key_question</key>
+		<string>The future development of events</string>
+		<key>key_zhen_number</key>
+		<integer>6</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Your present situation</string>
+			<string>The development of your love</string>
+			<string>The development of your work/career</string>
+			<string>The development of your money/wealth</string>
+			<string>Your status/achievement</string>
+			<string>The last result</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_bg_path</key>
+			<string>paizhen_bg_path_4.png</string>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>75</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>365</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>5</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,7,8,9,16,17,18</string>
+		<key>key_zhen_name</key>
+		<string>Hexagram</string>
+		<key>key_question</key>
+		<string>The ins and outs of events</string>
+		<key>key_zhen_number</key>
+		<integer>7</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Past situation of a problem</string>
+			<string>Present situation of a problem</string>
+			<string>Future situation of a problem</string>
+			<string>The method to solve the problem</string>
+			<string>Surrounding environment</string>
+			<string>Your attitude-hope or fear</string>
+			<string>The last result</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_bg_path</key>
+			<string>paizhen_bg_path_5.png</string>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>75</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>292</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>365</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>148</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>161</integer>
+					<key>key_y</key>
+					<integer>218</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>6</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,7,8,9,10,11,18,19,20,21</string>
+		<key>key_zhen_name</key>
+		<string>Celtic Cross</string>
+		<key>key_question</key>
+		<string>All-round situation of events</string>
+		<key>key_zhen_number</key>
+		<integer>10</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Present situation of a problem</string>
+			<string>The meeting barrier or assist</string>
+			<string>Your ideal situation</string>
+			<string>Your original intention</string>
+			<string>The past situation of the problem</string>
+			<string>The future situation of the problem</string>
+			<string>Your present situation</string>
+			<string>The effect of surrounding environment on the problem</string>
+			<string>Your expectation of the problem</string>
+			<string>The last result of the problem</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>225</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>225</integer>
+					<key>key_angle</key>
+					<integer>270</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>112</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>112</integer>
+					<key>key_y</key>
+					<integer>340</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>37</integer>
+					<key>key_y</key>
+					<integer>226</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>208</integer>
+					<key>key_y</key>
+					<integer>225</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>359</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>257</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>156</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>284</integer>
+					<key>key_y</key>
+					<integer>54</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>7</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Love Pyramid</string>
+		<key>key_question</key>
+		<string>The future development of romantic relationship</string>
+		<key>key_zhen_number</key>
+		<integer>4</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>The diviner</string>
+			<string>The asker</string>
+			<string>The relationship of each other</string>
+			<string>The future development of each other</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>271</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>271</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>230</integer>
+					<key>key_y</key>
+					<integer>271</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>158</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>8</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>0,1,2,3,4,5,6</string>
+		<key>key_zhen_name</key>
+		<string>Marriage Prediction</string>
+		<key>key_question</key>
+		<string>Marital status</string>
+		<key>key_zhen_number</key>
+		<integer>7</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Yourself</string>
+			<string>Marriage situation in the past</string>
+			<string>Marriage situation in the present</string>
+			<string>Marital problem</string>
+			<string>Expectations of marriage</string>
+			<string>Fear of marriage</string>
+			<string>The last result</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>214</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>85</integer>
+					<key>key_y</key>
+					<integer>289</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>235</integer>
+					<key>key_y</key>
+					<integer>289</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>344</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>85</integer>
+					<key>key_y</key>
+					<integer>140</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>235</integer>
+					<key>key_y</key>
+					<integer>140</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>84</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>9</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Love at First Sight</string>
+		<key>key_question</key>
+		<string>The fate with an opposite sex</string>
+		<key>key_zhen_number</key>
+		<integer>3</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>My impression to him(her)</string>
+			<string>His(Her) impression to me</string>
+			<string>The posibility of the relationship development</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>78</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>242</integer>
+					<key>key_y</key>
+					<integer>205</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>10</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Fortune</string>
+		<key>key_question</key>
+		<string>The whole fortune of work and study</string>
+		<key>key_zhen_number</key>
+		<integer>6</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>The situation from past to present</string>
+			<string>The situation from past to present</string>
+			<string>The situation from present to future</string>
+			<string>The situation from present to future</string>
+			<string>The future development/the last result</string>
+			<string>The future development/the last result</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>96</integer>
+					<key>key_y</key>
+					<integer>103</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>224</integer>
+					<key>key_y</key>
+					<integer>103</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>164</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>280</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>96</integer>
+					<key>key_y</key>
+					<integer>341</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>224</integer>
+					<key>key_y</key>
+					<integer>341</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>11</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>X Spread</string>
+		<key>key_question</key>
+		<string>Odds-on of an event</string>
+		<key>key_zhen_number</key>
+		<integer>5</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>My attitude</string>
+			<string>The immediate opportunity</string>
+			<string>Success factor</string>
+			<string>Influencing factor</string>
+			<string>The last result</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>219</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>12</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Present Wealth</string>
+		<key>key_question</key>
+		<string>The method of holding the present wealth</string>
+		<key>key_zhen_number</key>
+		<integer>7</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Past situation</string>
+			<string>Present situation</string>
+			<string>Future situation</string>
+			<string>The best choice</string>
+			<string>The enviroment influence</string>
+			<string>The meeting barrier </string>
+			<string>The last result</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>67</integer>
+					<key>key_y</key>
+					<integer>78</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>84</integer>
+					<key>key_y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>102</integer>
+					<key>key_y</key>
+					<integer>283</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>360</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>218</integer>
+					<key>key_y</key>
+					<integer>283</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>236</integer>
+					<key>key_y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>254</integer>
+					<key>key_y</key>
+					<integer>78</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>13</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>X Spread</string>
+		<key>key_question</key>
+		<string>Odds-on of an event</string>
+		<key>key_zhen_number</key>
+		<integer>5</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>My attitude</string>
+			<string>The immediate opportunity </string>
+			<string>Success factor</string>
+			<string>Influencing factor</string>
+			<string>The last result</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>219</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>102</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>91</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>229</integer>
+					<key>key_y</key>
+					<integer>336</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>14</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>3,7,11,15</string>
+		<key>key_zhen_name</key>
+		<string>Four Elements</string>
+		<key>key_question</key>
+		<string>The possible change in the future</string>
+		<key>key_zhen_number</key>
+		<integer>4</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Fire, means the striving direction in the future and something in spirit. When it comes to work, means superiors or clients</string>
+			<string>Earth, means material and wealth situation. When it comes to relationship with a specific one, means sex</string>
+			<string>Wind, means the meeting problem or hurt in the present</string>
+			<string>Water, means the situation of relationship and love. When it comes to work, also means colleagues or subordinates</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>152</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>287</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>287</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>152</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>15</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Friend Spread</string>
+		<key>key_question</key>
+		<string>Friendship</string>
+		<key>key_zhen_number</key>
+		<integer>6</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Your opinion to the other one</string>
+			<string>The other one's opinion to you</string>
+			<string>Your opinion to the relationship</string>
+			<string>The other one's opinion to the relationship</string>
+			<string>Your expectation of the relationship</string>
+			<string>The other one's expectation of the relationship</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>92</integer>
+					<key>key_y</key>
+					<integer>153</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>92</integer>
+					<key>key_y</key>
+					<integer>276</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>153</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>276</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>153</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>276</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>16</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Ping'an Fan</string>
+		<key>key_question</key>
+		<string>The relationship with someone</string>
+		<key>key_zhen_number</key>
+		<integer>4</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Asker's relationship</string>
+			<string>The reason of the asker meeting someone</string>
+			<string>The future development of the relationship</string>
+			<string>The conclusion to the relationship</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>79</integer>
+					<key>key_y</key>
+					<integer>185</integer>
+					<key>key_angle</key>
+					<integer>340</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>241</integer>
+					<key>key_y</key>
+					<integer>182</integer>
+					<key>key_angle</key>
+					<integer>18</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>172</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>300</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>17</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Seven Planets</string>
+		<key>key_question</key>
+		<string>Personal fortune(about diseaes)</string>
+		<key>key_zhen_number</key>
+		<integer>7</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Moon, means family or a sense of security</string>
+			<string>Mercury, means business and trade, also means communicating and interacting with someone</string>
+			<string>Venus, means finance and relationship, also means the love life</string>
+			<string>Sun, means status and honour, also about personal performance</string>
+			<string>Mars, means problem and conflict, also about personal executive force</string>
+			<string>Jupiter, means opportunity and fortunate, also about personal long-term goal</string>
+			<string>Saturn, means responsibility and restriction, also about personal diseases</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>354</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>54</integer>
+					<key>key_y</key>
+					<integer>259</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>107</integer>
+					<key>key_y</key>
+					<integer>165</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>72</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>165</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>266</integer>
+					<key>key_y</key>
+					<integer>259</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>213</integer>
+					<key>key_y</key>
+					<integer>354</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>18</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<false/>
+		<key>key_zhen_name</key>
+		<string>Self-discovery</string>
+		<key>key_question</key>
+		<string>Detailed situation in spirit</string>
+		<key>key_zhen_number</key>
+		<integer>4</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Inner heart</string>
+			<string>Spiritual life</string>
+			<string>Knowledge area</string>
+			<string>Love life</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>224</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>100</integer>
+					<key>key_y</key>
+					<integer>311</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>117</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>220</integer>
+					<key>key_y</key>
+					<integer>311</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>19</key>
+	<dict>
+		<key>key_zhen_auto</key>
+		<true/>
+		<key>key_zhen_auto_index</key>
+		<string>6,7,8</string>
+		<key>key_zhen_name</key>
+		<string>Body, Heart, Soul</string>
+		<key>key_question</key>
+		<string>Daily fortune, physical and mental situation</string>
+		<key>key_zhen_number</key>
+		<integer>3</integer>
+		<key>key_zhen_positon_sense</key>
+		<array>
+			<string>Body, means physical state or the influence of events to physical state</string>
+			<string>Heart, means psychological state or the influence of events to psychological state</string>
+			<string>Soul, means mental state or the inflence of events to mental state</string>
+		</array>
+		<key>key_position</key>
+		<dict>
+			<key>key_pai_path</key>
+			<array>
+				<dict>
+					<key>key_x</key>
+					<integer>92</integer>
+					<key>key_y</key>
+					<integer>234</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>228</integer>
+					<key>key_y</key>
+					<integer>234</integer>
+				</dict>
+				<dict>
+					<key>key_x</key>
+					<integer>160</integer>
+					<key>key_y</key>
+					<integer>122</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -96,7 +96,7 @@
             break;
     }
     _contentLabel = [KENUtils labelWithTxt:content
-                                      frame:CGRectMake(60, 140, 210, 170)
+                                      frame:CGRectMake(60, 150, 210, 170)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
     _contentLabel.textAlignment = KTextAlignmentLeft;

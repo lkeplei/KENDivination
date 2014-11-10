@@ -145,22 +145,27 @@
     
     
     _contentArray = [[NSMutableArray alloc] initWithCapacity:6];
-    [_contentArray addObject:[MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]]];
-    [_contentArray addObject:[MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]]];
-    [_contentArray addObject:[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]]];
-    [_contentArray addObject:[MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]]];
+    [_contentArray addObject:@{@"value":[MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]],
+                               @"index":[NSNumber numberWithInt:MyLocal(@"kapai_zhenwei").length]}];
+    [_contentArray addObject:@{@"value":[MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]],
+                               @"index":[NSNumber numberWithInt:MyLocal(@"kapai_daibiao").length]}];
+    [_contentArray addObject:@{@"value":[MyLocal(@"kapai_paiming") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiName]],
+                               @"index":[NSNumber numberWithInt:MyLocal(@"kapai_paiming").length]}];
+    [_contentArray addObject:@{@"value":[MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]],
+                               @"index":[NSNumber numberWithInt:MyLocal(@"kapai_guanjianzhi").length]}];
     if ([[paiMessage objectForKey:KDicPaiWei] boolValue]) {
-        [_contentArray addObject:[MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_zheng")]];
+        [_contentArray addObject:@{@"value":[MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_zheng")],
+                                   @"index":[NSNumber numberWithInt:MyLocal(@"kapai_paiwei").length]}];
     } else {
-        [_contentArray addObject:[MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_fan")]];
+        [_contentArray addObject:@{@"value":[MyLocal(@"kapai_paiwei") stringByAppendingString:MyLocal(@"kapai_paiwei_fan")],
+                                   @"index":[NSNumber numberWithInt:MyLocal(@"kapai_paiwei").length]}];
     }
-    [_contentArray addObject:[MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]]];
-    
-    
+    [_contentArray addObject:@{@"value":[MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]],
+                               @"index":[NSNumber numberWithInt:MyLocal(@"kapai_jieyu").length]}];
+
     [_tableView reloadData];
     
-    return;
-#endif
+#else
 
     //scroll view
     UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:(CGRect){CGPointZero, _bgView.frame.size.width,
@@ -236,6 +241,8 @@
     [UIView animateWithDuration:0.8 animations:^{
         self.layer.transform = currentTransform;
     }];
+    
+#endif
 }
 
 -(UILabel*)addLabel:(NSString*)content frame:(CGRect)frame font:(UIFont*)font index:(int)index view:(UIScrollView*)view{
@@ -248,10 +255,8 @@
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:content];
     [str addAttribute:NSForegroundColorAttributeName value:KJiePaiKeyColor range:NSMakeRange(0, index)];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(index, [content length] - index)];
-//    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:30.0] range:NSMakeRange(0, 5)];
     label.attributedText = str;
     
-//    [_bgView addSubview:label];
     [view addSubview:label];
     
     return label;
@@ -264,7 +269,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
-    CGSize size = [KENUtils getFontSize:[_contentArray objectAtIndex:indexPath.row] font:font];
+    CGSize size = [KENUtils getFontSize:[[_contentArray objectAtIndex:indexPath.row] objectForKey:@"value"] font:font];
     float width = _tableView.frame.size.width - 20;
     int lines = size.width > width ? size.width / width + 1 : 1;
     if (abs((int)size.width % (int)width - (int)width) < 20) {
@@ -288,12 +293,12 @@
         cell.textLabel.numberOfLines = 0;
     }
     
-    NSString* content = [_contentArray objectAtIndex:indexPath.row];
-    int index = indexPath.row == 3 ? 4 : 3;
+    NSDictionary *dic = [_contentArray objectAtIndex:indexPath.row];
+    NSString *content = [dic objectForKey:@"value"];
+    int index = [[dic objectForKey:@"index"] intValue];
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:content];
     [str addAttribute:NSForegroundColorAttributeName value:KJiePaiKeyColor range:NSMakeRange(0, index)];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(index, [content length] - index)];
-//    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:30.0] range:NSMakeRange(0, 5)];
     cell.textLabel.attributedText = str;
     
     return cell;
