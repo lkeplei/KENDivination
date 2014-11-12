@@ -8,6 +8,6 @@
 
 #import "KENViewBase.h"
 
-@interface KENViewPareDaakana : KENViewBase
+@interface KENViewPareDaakana : KENViewBase<UITableViewDataSource, UITableViewDelegate>
 
 @end

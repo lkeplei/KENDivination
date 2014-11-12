@@ -4,6 +4,8 @@
 <dict>
 	<key>0</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【0】愚者（The Fool）</string>
 		<key>key_pai_name</key>
 		<string>愚者</string>
 		<key>key_pai_keyword</key>
@@ -42,6 +44,8 @@
 	</dict>
 	<key>1</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【1】魔术师（The Magician）</string>
 		<key>key_pai_name</key>
 		<string>魔术师</string>
 		<key>key_pai_keyword</key>
@@ -80,6 +84,8 @@
 	</dict>
 	<key>2</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【2】女祭司（The High Priestess）</string>
 		<key>key_pai_name</key>
 		<string>女祭司</string>
 		<key>key_pai_keyword</key>
@@ -118,6 +124,8 @@
 	</dict>
 	<key>3</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【3】女皇（The Empress）</string>
 		<key>key_pai_name</key>
 		<string>皇后</string>
 		<key>key_pai_keyword</key>
@@ -156,6 +164,8 @@
 	</dict>
 	<key>4</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【4】皇帝（The Emperor）</string>
 		<key>key_pai_name</key>
 		<string>皇帝</string>
 		<key>key_pai_keyword</key>
@@ -194,6 +204,8 @@
 	</dict>
 	<key>5</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【5】教皇（The Hierophant）</string>
 		<key>key_pai_name</key>
 		<string>教皇</string>
 		<key>key_pai_keyword</key>
@@ -232,6 +244,8 @@
 	</dict>
 	<key>6</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【6】恋人（The Lovers）</string>
 		<key>key_pai_name</key>
 		<string>恋人</string>
 		<key>key_pai_keyword</key>
@@ -270,6 +284,8 @@
 	</dict>
 	<key>7</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【7】战车（The Chariot）</string>
 		<key>key_pai_name</key>
 		<string>战车</string>
 		<key>key_pai_keyword</key>
@@ -308,6 +324,8 @@
 	</dict>
 	<key>8</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【8】力量（Strength）</string>
 		<key>key_pai_name</key>
 		<string>力量</string>
 		<key>key_pai_keyword</key>
@@ -346,6 +364,8 @@
 	</dict>
 	<key>9</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【9】隐士（The Hermit）</string>
 		<key>key_pai_name</key>
 		<string>隐士</string>
 		<key>key_pai_keyword</key>
@@ -384,6 +404,8 @@
 	</dict>
 	<key>10</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【10】命运之轮（Wheel of Fortune）</string>
 		<key>key_pai_name</key>
 		<string>命运之轮</string>
 		<key>key_pai_keyword</key>
@@ -422,6 +444,8 @@
 	</dict>
 	<key>11</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【11】正义（Justice）</string>
 		<key>key_pai_name</key>
 		<string>正义</string>
 		<key>key_pai_keyword</key>
@@ -460,6 +484,8 @@
 	</dict>
 	<key>12</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【12】倒吊人（The Hanged Man）</string>
 		<key>key_pai_name</key>
 		<string>倒吊人</string>
 		<key>key_pai_keyword</key>
@@ -498,6 +524,8 @@
 	</dict>
 	<key>13</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【13】死神（Death）</string>
 		<key>key_pai_name</key>
 		<string>死神</string>
 		<key>key_pai_keyword</key>
@@ -536,6 +564,8 @@
 	</dict>
 	<key>14</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【14】节制（Temperance）</string>
 		<key>key_pai_name</key>
 		<string>节制</string>
 		<key>key_pai_keyword</key>
@@ -574,6 +604,8 @@
 	</dict>
 	<key>15</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【15】魔鬼（The Devil）</string>
 		<key>key_pai_name</key>
 		<string>魔鬼</string>
 		<key>key_pai_keyword</key>
@@ -612,6 +644,8 @@
 	</dict>
 	<key>16</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【16】塔（The Tower）</string>
 		<key>key_pai_name</key>
 		<string>塔</string>
 		<key>key_pai_keyword</key>
@@ -650,6 +684,8 @@
 	</dict>
 	<key>17</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【17】星星（The Star）</string>
 		<key>key_pai_name</key>
 		<string>星星</string>
 		<key>key_pai_keyword</key>
@@ -688,6 +724,8 @@
 	</dict>
 	<key>18</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【18】月亮（The Moon）</string>
 		<key>key_pai_name</key>
 		<string>月亮</string>
 		<key>key_pai_keyword</key>
@@ -726,6 +764,8 @@
 	</dict>
 	<key>19</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【19】太阳（The Sun）</string>
 		<key>key_pai_name</key>
 		<string>太阳</string>
 		<key>key_pai_keyword</key>
@@ -764,6 +804,8 @@
 	</dict>
 	<key>20</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【20】审判（Judgement）</string>
 		<key>key_pai_name</key>
 		<string>审判</string>
 		<key>key_pai_keyword</key>
@@ -802,6 +844,8 @@
 	</dict>
 	<key>21</key>
 	<dict>
+		<key>key_person_name</key>
+		<string>【21】世界（The World）</string>
 		<key>key_pai_name</key>
 		<string>世界</string>
 		<key>key_pai_keyword</key>

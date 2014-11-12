@@ -9,5 +9,5 @@
 #import "KENViewBase.h"
 
 @interface KENViewParePerson : KENViewBase
-
+@property (nonatomic, assign) int personNumber;
 @end

@@ -42,6 +42,7 @@ typedef enum {
     KENViewTypePareTaluo,
     KENViewTypePareDaziran,
     KENViewTypePareDaakana,
+    KENViewTypeParePerson,
     
     KENUiViewTypeStartXiPai = 100,
     KENUiViewTypeEndXiPai,

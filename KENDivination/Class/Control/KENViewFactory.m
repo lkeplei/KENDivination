@@ -18,6 +18,7 @@
 #import "KENViewPareDaziran.h"
 #import "KENViewPareTaluo.h"
 #import "KENViewPareDaakana.h"
+#import "KENViewParePerson.h"
 
 @interface KENViewFactory ()
 
@@ -32,6 +33,8 @@
 @property (nonatomic, strong) KENViewPareTaluo *pareTaluoView;
 @property (nonatomic, strong) KENViewPareDaakana *pareDaakanaView;
 @property (nonatomic, strong) KENViewPareDaziran *pareDaziranView;
+@property (nonatomic, strong) KENViewParePerson *parePersonView;
+
 @end
 
 
@@ -117,6 +120,13 @@
             view = _pareTaluoView;
         }
             break;
+        case KENViewTypeParePerson: {
+            if (_parePersonView == nil) {
+                _parePersonView = [[KENViewParePerson alloc] initWithFrame:frame];
+            }
+            view = _parePersonView;
+        }
+            break;
         default:
             break;
     }
@@ -200,6 +210,13 @@
             if (_pareTaluoView) {
                 [_pareTaluoView removeFromSuperview];
                 _pareTaluoView = nil;
+            }
+        }
+            break;
+        case KENViewTypeParePerson: {
+            if (_parePersonView) {
+                [_parePersonView removeFromSuperview];
+                _parePersonView = nil;
             }
         }
             break;
