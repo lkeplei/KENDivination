@@ -8,6 +8,6 @@
 
 #import "KENViewBase.h"
 
-@interface KENViewParePerson : KENViewBase
+@interface KENViewParePerson : KENViewBase<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, assign) int personNumber;
 @end

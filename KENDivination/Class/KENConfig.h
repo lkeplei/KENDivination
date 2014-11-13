@@ -42,6 +42,8 @@
 
 #define KCellTag(a,b)           ((a) * 100 + (b) + 1000)
 
+#define KPersonDesc(a)          [@"pare_daakana_" stringByAppendingFormat:@"%d", a]
+
 //字体、字号、颜色
 #define KLabelFontArial         @"Arial"
 #define KLabelFontStd           @"Std"
@@ -85,6 +87,7 @@
 #define KDicKeyPaiImg           @"key_pai_img"
 #define KDicKeyPaiName          @"key_pai_name"
 #define KDicKeyPaiKeyword       @"key_pai_keyword"
+#define KDicKeyPaiPerson        @"key_person_name"
 
 #define KDicPaiWei              @"pai_wei"
 #define KDicPaiIndex            @"pai_index"
