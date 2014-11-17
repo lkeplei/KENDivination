@@ -8,9 +8,9 @@
 "xipai_content" = "Please concentrate on and repeat your question in heart, it will deliver to each card through your spirit. Listen to your heart, you will feel when to stop.";
 "qipai_content" = "The shuffle is over, continue to concentrate on and repeat your question in heart. Remember that sincerity can excite Tarot's mysterious force.";
 "choupai_content" = "Cards have cut. Now you need to put away extraneous thoughts, use your innermost thoughts to communicate with Tarot's soul. The sincere feeling from Tarot's soul can bring you correct direction.";
-"fanpai_content" = "Cards have been drawn, and Tarot realize you already. You need to throw away agitation and perturbed,and you have got a sincere communion with Tarot. Now please start enjoying the process that Tarot is unscrambling your innermost subconscious, and accept its guiding.";
-"fanpai_remind" = "Please click the cards to open in order";
-"choupai_remind" = "Please draw cards and put them into homologous place";
+"fanpai_content" = "Cards have been drawn, and Tarot realize you already. Now please start enjoying the process that Tarot is unscrambling your innermost subconscious, and accept its guiding.";
+"fanpai_remind" = "Click the cards to open in order";
+"choupai_remind" = "Draw cards and put them into the box below";
 "choupai_remind_auto" = "Automatic draw cards in specific place";
 
 "myselft" = "Myself";

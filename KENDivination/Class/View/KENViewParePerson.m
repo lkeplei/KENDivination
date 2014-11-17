@@ -34,6 +34,11 @@
     return [UIImage imageNamed:@"daakana_title.png"];
 }
 
+- (void)showView {
+    //添加广告
+    [SysDelegate.viewController resetAd];
+}
+
 - (void)setPersonNumber:(int)personNumber {
     _personNumber = personNumber;
     

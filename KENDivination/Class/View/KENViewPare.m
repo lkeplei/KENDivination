@@ -53,8 +53,8 @@
     daakanaBtn.center = CGPointMake(160, 255);
     [self.contentView addSubview:daakanaBtn];
     
-    //添加广告
-    [SysDelegate.viewController resetAd];
+    //去除广告
+    [SysDelegate.viewController removeAd];
 }
 
 #pragma mark - setting btn

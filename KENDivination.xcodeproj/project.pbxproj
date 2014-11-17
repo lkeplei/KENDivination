@@ -38,7 +38,7 @@
 		040F20241A124DC300B5E118 /* person_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FF81A124DC300B5E118 /* person_4@2x.png */; };
 		040F20251A124DC300B5E118 /* person_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FF91A124DC300B5E118 /* person_5@2x.png */; };
 		040F20261A124DC300B5E118 /* person_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FFA1A124DC300B5E118 /* person_6@2x.png */; };
-		040F20271A124DC300B5E118 /* person_7@2x.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FFB1A124DC300B5E118 /* person_7@2x.PNG */; };
+		040F20271A124DC300B5E118 /* person_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FFB1A124DC300B5E118 /* person_7@2x.png */; };
 		040F20281A124DC300B5E118 /* person_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FFC1A124DC300B5E118 /* person_8@2x.png */; };
 		040F20291A124DC300B5E118 /* person_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FFD1A124DC300B5E118 /* person_9@2x.png */; };
 		040F202A1A124DC300B5E118 /* person_sec_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040F1FFE1A124DC300B5E118 /* person_sec_0@2x.png */; };
@@ -615,7 +615,7 @@
 		040F1FF81A124DC300B5E118 /* person_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_4@2x.png"; sourceTree = "<group>"; };
 		040F1FF91A124DC300B5E118 /* person_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_5@2x.png"; sourceTree = "<group>"; };
 		040F1FFA1A124DC300B5E118 /* person_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_6@2x.png"; sourceTree = "<group>"; };
-		040F1FFB1A124DC300B5E118 /* person_7@2x.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_7@2x.PNG"; sourceTree = "<group>"; };
+		040F1FFB1A124DC300B5E118 /* person_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_7@2x.png"; sourceTree = "<group>"; };
 		040F1FFC1A124DC300B5E118 /* person_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_8@2x.png"; sourceTree = "<group>"; };
 		040F1FFD1A124DC300B5E118 /* person_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_9@2x.png"; sourceTree = "<group>"; };
 		040F1FFE1A124DC300B5E118 /* person_sec_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_sec_0@2x.png"; sourceTree = "<group>"; };
@@ -1610,7 +1610,7 @@
 				040F1FF81A124DC300B5E118 /* person_4@2x.png */,
 				040F1FF91A124DC300B5E118 /* person_5@2x.png */,
 				040F1FFA1A124DC300B5E118 /* person_6@2x.png */,
-				040F1FFB1A124DC300B5E118 /* person_7@2x.PNG */,
+				040F1FFB1A124DC300B5E118 /* person_7@2x.png */,
 				040F1FFC1A124DC300B5E118 /* person_8@2x.png */,
 				040F1FFD1A124DC300B5E118 /* person_9@2x.png */,
 				040F1FFE1A124DC300B5E118 /* person_sec_0@2x.png */,
@@ -3250,7 +3250,7 @@
 				0493D8F319FB6E82005F41BB /* adsmogo_btnbg@2x.png in Resources */,
 				040F20331A124DC300B5E118 /* person_sec_18@2x.png in Resources */,
 				0493D7F319FB6E74005F41BB /* adchina_back@2x.png in Resources */,
-				040F20271A124DC300B5E118 /* person_7@2x.PNG in Resources */,
+				040F20271A124DC300B5E118 /* person_7@2x.png in Resources */,
 				0493D93A19FB6E82005F41BB /* webview_bar_close.png in Resources */,
 				046722881A0DEF2F0095930A /* direction_paizhen_15@2x.png in Resources */,
 				046722501A0DEEEE0095930A /* direction_paizhen_07@2x.png in Resources */,
@@ -4491,7 +4491,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6AC3ECF2-6918-4FAB-B82F-8285E55A1D48";
+				PROVISIONING_PROFILE = "1425f930-7b72-4e73-aaef-3d8f20586a18";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -4530,7 +4530,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6AC3ECF2-6918-4FAB-B82F-8285E55A1D48";
+				PROVISIONING_PROFILE = "1425f930-7b72-4e73-aaef-3d8f20586a18";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

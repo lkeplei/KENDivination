@@ -48,6 +48,10 @@
     [self.contentView addSubview:_tableView];
     
     [_tableView reloadData];
+    
+    
+    //去除广告
+    [SysDelegate.viewController removeAd];
 }
 
 #pragma mark - Table view data source
