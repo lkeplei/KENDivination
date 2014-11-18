@@ -47,7 +47,6 @@
 	_tableView.delegate = self;
 	_tableView.dataSource = self;
 	_tableView.showsVerticalScrollIndicator = YES;
-    _tableView.rowHeight = 240;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	_tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [_tableView setBackgroundView:nil];
@@ -62,6 +61,14 @@
     return [[KENModel shareModel] getPaiZhenNumber];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([[KENModel shareModel] isLanguageEnglish]) {
+        return [self getCellHeight:indexPath.row];
+    } else {
+        return 240.f;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *reuseIdentifier = @"cell";
     UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -74,6 +81,40 @@
     }
     
     return cell;
+}
+
+- (CGFloat)getCellHeight:(NSInteger)zhenWei {
+    NSDictionary* paiMessage = [[KENModel shareModel].memoryData getPaiAndPaiWei:zhenWei];
+    NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
+    
+    float offx = 93 + 25 + 10;
+    float width = self.frame.size.width - offx - 20;
+    
+    UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
+    CGSize size = [KENUtils getFontSize:@"Array" font:font];
+    float lineHeight = (size.height + 1);
+    float lines = 1;
+    
+    NSString *string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
+    size = [KENUtils getFontSize:string font:font];
+    lines += size.width > width ? size.width / width + 1 : 1;
+    
+    lines++;
+    
+    string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
+    size = [KENUtils getFontSize:string font:font];
+    lines += size.width > width ? size.width / width + 1 : 1;
+    
+    lines++;
+    
+    string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
+    size = [KENUtils getFontSize:string font:font];
+    lines += size.width > width ? size.width / width + 1 : 1;
+//    if (abs((int)size.width % (int)width - (int)width) < 20) {
+        lines++;
+//    }
+    
+    return lines * lineHeight + 20;
 }
 
 -(void)setKaPaiMessage:(NSInteger)zhenWei cell:(UITableViewCell*)cell{
@@ -135,9 +176,9 @@
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
-    if (abs((int)size.width % (int)width - (int)width) < 20) {
+//    if (abs((int)size.width % (int)width - (int)width) < 20) {
         lines++;
-    }
+//    }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines)
                       font:font index:MyLocal(@"kapai_jieyu").length cell:cell];
