@@ -167,6 +167,7 @@ typedef enum {
     AdMoGoAdNetworkTypeXingYun           = 114,
     AdMoGoAdNetworkTypeBJMobile          = 115,
     AdMoGoAdNetwokrTypeZmedia            = 145,
+    AdMOGOAdNetworkTypeQm                = 167,
     AdMoGoAdNetworkTypeS2S_First         = 1000,
     AdMoGoAdNetworkTypeS2S_Last          = 1499,
     AdMoGoAdNetworkTypeAutoOptimization  = 2000,
@@ -249,6 +250,12 @@ typedef enum {
     是否是API
  */
 - (BOOL)isAPI;
+
+
+/*
+    SDK平台是否支持点击
+ */
+- (BOOL)isSDKSupportClickDelegate;
 /*
 - (BOOL)isBannerAnimationOK:(AMBannerAnimationType)animType;
 */

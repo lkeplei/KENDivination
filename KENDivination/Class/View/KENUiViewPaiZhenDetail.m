@@ -36,14 +36,14 @@
 
 #pragma mark - init area
 - (void) initTable{
-    float rate = [self.delegate getRateIPad];
-    if (IsPad) {
-        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate - 20}
-                                                  style:UITableViewStylePlain];
-    } else {
+//    float rate = [self.delegate getRateIPad];
+//    if (IsPad) {
+//        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate - 20}
+//                                                  style:UITableViewStylePlain];
+//    } else {
         _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
                                                   style:UITableViewStylePlain];
-    }
+//    }
 	_tableView.delegate = self;
 	_tableView.dataSource = self;
 	_tableView.showsVerticalScrollIndicator = YES;
@@ -93,7 +93,7 @@
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     CGSize size = [KENUtils getFontSize:@"Array" font:font];
     float lineHeight = (size.height + 1);
-    float lines = 1;
+    int lines = 1;
     
     NSString *string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
@@ -110,11 +110,10 @@
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines += size.width > width ? size.width / width + 1 : 1;
-//    if (abs((int)size.width % (int)width - (int)width) < 20) {
         lines++;
-//    }
     
-    return lines * lineHeight + 20;
+    float height = lines * lineHeight + 20;
+    return height > 240.f ? height : 240.f;
 }
 
 -(void)setKaPaiMessage:(NSInteger)zhenWei cell:(UITableViewCell*)cell{
