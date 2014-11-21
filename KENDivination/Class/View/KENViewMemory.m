@@ -182,6 +182,9 @@
     [self.contentView addSubview:_topOkBtn];
     
     [self initTable];
+    
+    //添加广告
+    [SysDelegate.viewController removeAd];
 }
 
 -(float)getCellHeight:(KENMemoryEntity*)entity{

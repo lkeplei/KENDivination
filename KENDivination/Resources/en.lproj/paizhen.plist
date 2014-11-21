@@ -824,11 +824,11 @@
 		<key>key_zhen_positon_sense</key>
 		<array>
 			<string>Your opinion to the other one</string>
-			<string>The other one's opinion to you</string>
+			<string>The other one&apos;s opinion to you</string>
 			<string>Your opinion to the relationship</string>
-			<string>The other one's opinion to the relationship</string>
+			<string>The other one&apos;s opinion to the relationship</string>
 			<string>Your expectation of the relationship</string>
-			<string>The other one's expectation of the relationship</string>
+			<string>The other one&apos;s expectation of the relationship</string>
 		</array>
 		<key>key_position</key>
 		<dict>
@@ -836,37 +836,37 @@
 			<array>
 				<dict>
 					<key>key_x</key>
-					<integer>92</integer>
+					<integer>112</integer>
 					<key>key_y</key>
 					<integer>153</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>92</integer>
+					<integer>112</integer>
 					<key>key_y</key>
 					<integer>276</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>160</integer>
+					<integer>180</integer>
 					<key>key_y</key>
 					<integer>153</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>160</integer>
+					<integer>180</integer>
 					<key>key_y</key>
 					<integer>276</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>228</integer>
+					<integer>248</integer>
 					<key>key_y</key>
 					<integer>153</integer>
 				</dict>
 				<dict>
 					<key>key_x</key>
-					<integer>228</integer>
+					<integer>248</integer>
 					<key>key_y</key>
 					<integer>276</integer>
 				</dict>
@@ -878,14 +878,14 @@
 		<key>key_zhen_auto</key>
 		<false/>
 		<key>key_zhen_name</key>
-		<string>Ping'an Fan</string>
+		<string>Ping&apos;an Fan</string>
 		<key>key_question</key>
 		<string>The relationship with someone</string>
 		<key>key_zhen_number</key>
 		<integer>4</integer>
 		<key>key_zhen_positon_sense</key>
 		<array>
-			<string>Asker's relationship</string>
+			<string>Asker&apos;s relationship</string>
 			<string>The reason of the asker meeting someone</string>
 			<string>The future development of the relationship</string>
 			<string>The conclusion to the relationship</string>

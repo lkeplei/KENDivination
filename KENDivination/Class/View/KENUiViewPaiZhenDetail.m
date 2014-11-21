@@ -36,14 +36,14 @@
 
 #pragma mark - init area
 - (void) initTable{
-//    float rate = [self.delegate getRateIPad];
-//    if (IsPad) {
-//        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate - 20}
-//                                                  style:UITableViewStylePlain];
-//    } else {
+    float rate = [self.delegate getRateIPad];
+    if (IsPad) {
+        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate - 20}
+                                                  style:UITableViewStylePlain];
+    } else {
         _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
                                                   style:UITableViewStylePlain];
-//    }
+    }
 	_tableView.delegate = self;
 	_tableView.dataSource = self;
 	_tableView.showsVerticalScrollIndicator = YES;
@@ -88,7 +88,7 @@
     NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
     
     float offx = 93 + 25 + 10;
-    float width = self.frame.size.width - offx - 20;
+    float width = 320 - offx - 20;
     
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     CGSize size = [KENUtils getFontSize:@"Array" font:font];
@@ -110,7 +110,7 @@
     string = [MyLocal(@"kapai_jieyu") stringByAppendingString:[[KENModel shareModel] getPaiJieYu:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines += size.width > width ? size.width / width + 1 : 1;
-        lines++;
+    lines++;
     
     float height = lines * lineHeight + 20;
     return height > 240.f ? height : 240.f;
@@ -129,7 +129,7 @@
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
     float offx = CGRectGetMaxX(kaPai.frame) + 10;
-    float width = cell.frame.size.width - offx - 20;
+    float width = 320 - offx - 20;
     NSString* string = [MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]];
     CGSize size = [KENUtils getFontSize:string font:font];
     float height = (size.height + 1);

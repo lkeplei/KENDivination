@@ -31,14 +31,14 @@
         
         if ([[[KENModel shareModel] memoryData] memoryPaiZhen] == 15) {
             UILabel* label = [KENUtils labelWithTxt:MyLocal(@"myselft")
-                                              frame:CGRectMake(10, 145, 50, 20)
-                                               font:[UIFont fontWithName:KLabelFontArial size:17]
+                                              frame:CGRectMake(10, 145, 70, 20)
+                                               font:[UIFont fontWithName:KLabelFontArial size:16]
                                               color:[UIColor whiteColor]];
             [self addSubview:label];
             
             UILabel*label1 = [KENUtils labelWithTxt:MyLocal(@"opposite")
-                                              frame:CGRectMake(10, 268, 50, 20)
-                                               font:[UIFont fontWithName:KLabelFontArial size:17]
+                                              frame:CGRectMake(10, 268, 70, 20)
+                                               font:[UIFont fontWithName:KLabelFontArial size:16]
                                               color:[UIColor whiteColor]];
             [self addSubview:label1];
         }
