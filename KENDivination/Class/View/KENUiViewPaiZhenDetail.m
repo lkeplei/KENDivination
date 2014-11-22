@@ -38,7 +38,7 @@
 - (void) initTable{
     float rate = [self.delegate getRateIPad];
     if (IsPad) {
-        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate - 20}
+        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height}
                                                   style:UITableViewStylePlain];
     } else {
         _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
@@ -98,12 +98,30 @@
     NSString *string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     lines += size.width > width ? size.width / width + 1 : 1;
+    if ([[KENModel shareModel] isLanguageEnglish]) {
+        if (abs((int)size.width % (int)width - (int)width) < 70) {
+            lines++;
+        }
+    } else {
+        if (abs((int)size.width % (int)width - (int)width) < 20) {
+            lines++;
+        }
+    }
     
     lines++;
     
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
     size = [KENUtils getFontSize:string font:font];
     lines += size.width > width ? size.width / width + 1 : 1;
+    if ([[KENModel shareModel] isLanguageEnglish]) {
+        if (abs((int)size.width % (int)width - (int)width) < 70) {
+            lines++;
+        }
+    } else {
+        if (abs((int)size.width % (int)width - (int)width) < 20) {
+            lines++;
+        }
+    }
     
     lines++;
     
@@ -112,7 +130,7 @@
     lines += size.width > width ? size.width / width + 1 : 1;
     lines++;
     
-    float height = lines * lineHeight + 20;
+    float height = lines * lineHeight + 40;
     return height > 240.f ? height : 240.f;
 }
 
@@ -140,8 +158,14 @@
     string = [MyLocal(@"kapai_daibiao") stringByAppendingString:[[KENModel shareModel] getPaiZhenDaiBiao:zhenWei]];
     size = [KENUtils getFontSize:string font:font];
     float lines = size.width > width ? size.width / width + 1 : 1;
-    if (abs((int)size.width % (int)width - (int)width) < 20) {
-        lines++;
+    if ([[KENModel shareModel] isLanguageEnglish]) {
+        if (abs((int)size.width % (int)width - (int)width) < 70) {
+            lines++;
+        }
+    } else {
+        if (abs((int)size.width % (int)width - (int)width) < 20) {
+            lines++;
+        }
     }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)
@@ -155,8 +179,14 @@
     string = [MyLocal(@"kapai_guanjianzhi") stringByAppendingString:[messageDic objectForKey:KDicKeyPaiKeyword]];
     size = [KENUtils getFontSize:string font:font];
     lines = size.width > width ? size.width / width + 1 : 1;
-    if (abs((int)size.width % (int)width - (int)width) < 20) {
-        lines++;
+    if ([[KENModel shareModel] isLanguageEnglish]) {
+        if (abs((int)size.width % (int)width - (int)width) < 70) {
+            lines++;
+        }
+    } else {
+        if (abs((int)size.width % (int)width - (int)width) < 20) {
+            lines++;
+        }
     }
     label = [self addLabel:string
                      frame:CGRectMake(offx, CGRectGetMaxY(label.frame), width, height * lines - lines + 1)

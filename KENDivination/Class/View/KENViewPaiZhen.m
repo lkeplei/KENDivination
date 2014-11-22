@@ -79,7 +79,8 @@
             }
                 break;
             case KENUiViewTypePaiZhenDetail:{
-                _currentUiView = [[KENUiViewPaiZhenDetail alloc] initWithFrame:frame delegate:self];
+                _currentUiView = [[KENUiViewPaiZhenDetail alloc] initWithFrame:CGRectMake(0, KNotificationHeight, 320, 480 - KNotificationHeight)
+                                                                      delegate:self];
             }
                 break;
             default:

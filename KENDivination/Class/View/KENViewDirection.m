@@ -79,9 +79,9 @@
 #pragma mark - btn clicked
 -(void)btnArrayClicked:(UIButton*)button{
     NSDictionary* res = [_resourceArray objectAtIndex:button.tag - KDirectionBtnTagBase];
-//    if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] && [[res objectForKey:KDicKeyJiaMi] boolValue]) {
-//        [_purchase requestProduct:SUB_PRODUCT_ID];
-//    } else {
+    if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] && [[res objectForKey:KDicKeyJiaMi] boolValue]) {
+        [_purchase requestProduct:SUB_PRODUCT_ID];
+    } else {
         NSInteger paizhen = [[res objectForKey:KDicKeyPaiZhen] intValue];
         [[[KENModel shareModel] memoryData] setMemoryPaiZhen:paizhen];
         
@@ -89,7 +89,7 @@
         [[KENModel shareModel] playVoiceByType:KENVoiceAnJian];
         
         [self pushView:[SysDelegate.viewController getView:KENViewTypePaiZhen] animatedType:KENTypeNull];
-//    }
+    }
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
