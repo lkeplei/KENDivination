@@ -70,7 +70,7 @@
     NSDictionary* messageDic = [[KENModel shareModel] getKaPaiMessage:[[paiMessage objectForKey:KDicPaiIndex] intValue]];
     NSString* imageName = [messageDic objectForKey:KDicKeyPaiImg];
 
-    UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+    UIImageView* imgView = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
     imgView.center = CGPointMake(center.x, center.y);
     imgView.layer.anchorPoint = CGPointMake(0.0f, 0.5f);
     [self addSubview:imgView];

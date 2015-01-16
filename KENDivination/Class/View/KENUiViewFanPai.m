@@ -128,7 +128,7 @@
     
     //
     _imgViewArray = [[NSMutableArray alloc] init];
-    UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
+    UIImage* image = [[KENModel shareModel] getKapaiBgImg];
     int count = [[KENModel shareModel] getPaiZhenNumber];
     
     UIImageView* tempView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];

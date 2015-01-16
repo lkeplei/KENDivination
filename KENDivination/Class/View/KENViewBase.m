@@ -155,7 +155,7 @@
 
 #pragma mark - other
 -(UIImage*)setBackGroundImage{
-    return [UIImage imageNamed:@"app_background_image.png"];
+    return [[KENModel shareModel] getAppBackgroundImg];
 }
 
 -(UIImage*)setViewTitleImage{

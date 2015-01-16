@@ -226,6 +226,83 @@
         return true;
     }
 }
+
+
+- (UIImage *)getAppBackgroundImg {
+    KENSubjectType type = KENSubjectTypeAppbg1;
+    switch (type) {
+        case KENSubjectTypeAppbg1: {
+            return [UIImage imageNamed:@"app_bg_1.png"];
+        }
+            break;
+        case KENSubjectTypeAppbg2: {
+            return [UIImage imageNamed:@"app_bg_2.png"];
+        }
+            break;
+        case KENSubjectTypeAppbg3: {
+            return [UIImage imageNamed:@"app_bg_3.png"];
+        }
+            break;
+        case KENSubjectTypeAppbg4: {
+            return [UIImage imageNamed:@"app_bg_4.png"];
+        }
+            break;
+        case KENSubjectTypeAppbg5: {
+            return [UIImage imageNamed:@"app_bg_5.png"];
+        }
+            break;
+        case KENSubjectTypeAppbg6: {
+            return [UIImage imageNamed:@"app_bg_6.png"];
+        }
+            break;
+        case KENSubjectTypeAppbg7: {
+            return [UIImage imageNamed:@"app_bg_7.png"];
+        }
+            break;
+        default: {
+            return [UIImage imageNamed:@"app_bg_1.png"];
+        }
+            break;
+    }
+}
+
+- (UIImage *)getKapaiBgImg {
+    KENSubjectType type = KENSubjectTypePaibg1;
+    switch (type) {
+        case KENSubjectTypePaibg1: {
+            return [UIImage imageNamed:@"kapai_bg_1.png"];
+        }
+            break;
+        case KENSubjectTypePaibg2: {
+            return [UIImage imageNamed:@"kapai_bg_2.png"];
+        }
+            break;
+        case KENSubjectTypePaibg3: {
+            return [UIImage imageNamed:@"kapai_bg_3.png"];
+        }
+            break;
+        case KENSubjectTypePaibg4: {
+            return [UIImage imageNamed:@"kapai_bg_4.png"];
+        }
+            break;
+        case KENSubjectTypePaibg5: {
+            return [UIImage imageNamed:@"kapai_bg_5.png"];
+        }
+            break;
+        case KENSubjectTypePaibg6: {
+            return [UIImage imageNamed:@"kapai_bg_6.png"];
+        }
+            break;
+        case KENSubjectTypePaibg7: {
+            return [UIImage imageNamed:@"kapai_bg_7.png"];
+        }
+            break;
+        default: {
+            return [UIImage imageNamed:@"kapai_bg_1.png"];
+        }
+            break;
+    }
+}
 @end
 
 

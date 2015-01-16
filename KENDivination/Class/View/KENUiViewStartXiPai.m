@@ -40,7 +40,7 @@
         _imageView.center = CGPointMake(160, 80);
         [self addSubview:_imageView];
         
-        UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
+        UIImage* image = [[KENModel shareModel] getKapaiBgImg];
         int count = [[KENModel shareModel] getPaiZhenNumber];
         float width = 240 / count;
         float space = width;
@@ -55,7 +55,7 @@
             [_imageView addSubview:pai];
         }
     } else {
-        _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+        _imageView = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
         _imageView.center = CGPointMake(160, 80);
         if (_currentViewType == KENUiViewTypeStartXiPai || _currentViewType == KENUiViewTypeStartQiePai) {
             _imageView.transform = CGAffineTransformMakeRotation(-M_PI_2);

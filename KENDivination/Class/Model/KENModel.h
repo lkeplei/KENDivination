@@ -41,6 +41,11 @@
 -(void)saveData;
 -(void)clearData;
 
+
+//获取应用背景
+- (UIImage *)getAppBackgroundImg;
+- (UIImage *)getKapaiBgImg;
+
 //判断是否为英文
 - (BOOL)isLanguageEnglish;
     

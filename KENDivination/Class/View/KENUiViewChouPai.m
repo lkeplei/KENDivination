@@ -57,7 +57,7 @@
     _selectPaiBgView.center = CGPointMake(160, 260);
     [self addSubview:_selectPaiBgView];
     
-    UIImage* image = [UIImage imageNamed:@"app_pai_bg.png"];
+    UIImage* image = [[KENModel shareModel] getKapaiBgImg];
     NSInteger count = [[KENModel shareModel] getPaiZhenNumber];
     float width = 240 / count;
     float space = width;
@@ -184,7 +184,7 @@
         }
                          completion:^(BOOL finished) {
                              if (finished) {
-                                 UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+                                 UIImageView* imgView = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
                                  imgView.center = CGPointMake(_currentActivePai.center.x - _selectPaiBgView.frame.origin.x,
                                                               _currentActivePai.center.y - _selectPaiBgView.frame.origin.y);
                                  [_selectPaiBgView addSubview:imgView];
@@ -211,7 +211,7 @@
     if (index < [_paiArray count]) {
         _activeIndex = index;
         [[_paiArray objectAtIndex:_activeIndex] setHidden:YES];
-        _currentActivePai = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+        _currentActivePai = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
 
         CGRect frame = ((UIImageView*)[_paiArray objectAtIndex:_activeIndex]).frame;
         _currentActivePai.center = CGPointMake(frame.origin.x + frame.size.width / 2, frame.origin.y + frame.size.height / 2);
@@ -247,7 +247,7 @@
     } completion:^(BOOL finished) {
         [self autoChuoPai];
         
-        float c = [UIImage imageNamed:@"app_pai_bg.png"].size.height;
+        float c = [[KENModel shareModel] getKapaiBgImg].size.height;
         _pathArray = [[NSMutableArray alloc] init];
         for (int i = 0; i < [_paiArray count]; i++) {
             float angle = (40 - 3.9 * i) > 0 ? (40 - 3.9 * i) : 90 + (40 - 3.9 * i);

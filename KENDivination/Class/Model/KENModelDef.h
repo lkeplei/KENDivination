@@ -43,6 +43,7 @@ typedef enum {
     KENViewTypePareDaziran,
     KENViewTypePareDaakana,
     KENViewTypeParePerson,
+    KENViewTypeSubjectSetting,
     
     KENUiViewTypeStartXiPai = 100,
     KENUiViewTypeEndXiPai,
@@ -56,4 +57,21 @@ typedef enum {
     KENUiViewTypePaiZhenDetail,
 } KENViewType;
 
+typedef NS_ENUM(NSUInteger, KENSubjectType) {
+    KENSubjectTypeAppbg1 = 0,
+    KENSubjectTypeAppbg2,
+    KENSubjectTypeAppbg3,
+    KENSubjectTypeAppbg4,
+    KENSubjectTypeAppbg5,
+    KENSubjectTypeAppbg6,
+    KENSubjectTypeAppbg7,
+    
+    KENSubjectTypePaibg1,
+    KENSubjectTypePaibg2,
+    KENSubjectTypePaibg3,
+    KENSubjectTypePaibg4,
+    KENSubjectTypePaibg5,
+    KENSubjectTypePaibg6,
+    KENSubjectTypePaibg7,
+};
 #endif

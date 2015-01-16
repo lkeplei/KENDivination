@@ -179,10 +179,6 @@
 }
 
 #pragma mark - others
--(UIImage*)setBackGroundImage{
-    return [UIImage imageNamed:@"home_background_image.png"];
-}
-
 -(UIImage*)setViewTitleImage{
     return [UIImage imageNamed:@"home_title.png"];
 }
@@ -202,6 +198,9 @@
     setBtn.center = CGPointMake(288, KNotificationHeight / 2);
     [self.contentView addSubview:setBtn];
     
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_background_image.png"]];
+    [self.contentView addSubview:bgView];
+    
     //zhuan pai
     _zhuanPanView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_zhuanpan.png"]];
     _zhuanPanView.center = CGPointMake(160, 240);
@@ -216,6 +215,9 @@
     
     //add pare button
     [self addPareButton];
+    
+    //add subject setting
+    [self addSubjectSetting];
 }
 
 - (void)addPareButton {
@@ -230,6 +232,16 @@
     }
 }
 
+- (void)addSubjectSetting {
+    UIButton* button = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
+                                 image:[UIImage imageNamed:@"home_subject_setting.png"]
+                              imagesec:[UIImage imageNamed:@"home_subject_setting_sec.png"]
+                                target:self
+                                action:@selector(btnSubjectSettingClicked:)];
+    button.center = CGPointMake(56, 437);
+    [self.contentView addSubview:button];
+}
+
 - (void)btnPareClicked:(UIButton *)button {
     [self pushView:[SysDelegate.viewController getView:KENViewTypePare] animatedType:KENTypeNull];
 }
@@ -237,5 +249,9 @@
 #pragma mark - setting btn
 -(void)settingBtnClicked:(UIButton*)button{
     [self pushView:[SysDelegate.viewController getView:KENViewTypeSetting] animatedType:KENTypeNull];
+}
+
+- (void)btnSubjectSettingClicked:(UIButton *)button {
+    [self pushView:[SysDelegate.viewController getView:KENViewTypeSubjectSetting] animatedType:KENTypeNull];
 }
 @end

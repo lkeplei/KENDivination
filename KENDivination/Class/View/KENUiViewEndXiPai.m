@@ -45,13 +45,13 @@
 }
 
 -(void)initView{
-    _paiTop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+    _paiTop = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
     _paiTop.center = CGPointMake(160, 80);
 
     _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
-    _paiBottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_pai_bg.png"]];
+    _paiBottom = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
     _paiBottom.center = CGPointMake(160, 80);
     _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];

@@ -19,6 +19,7 @@
 #import "KENViewPareTaluo.h"
 #import "KENViewPareDaakana.h"
 #import "KENViewParePerson.h"
+#import "KENViewSubjectSetting.h"
 
 @interface KENViewFactory ()
 
@@ -34,6 +35,7 @@
 @property (nonatomic, strong) KENViewPareDaakana *pareDaakanaView;
 @property (nonatomic, strong) KENViewPareDaziran *pareDaziranView;
 @property (nonatomic, strong) KENViewParePerson *parePersonView;
+@property (nonatomic, strong) KENViewSubjectSetting *subjectSettingView;
 
 @end
 
@@ -55,6 +57,13 @@
                 _settingView = [[KENViewSetting alloc] initWithFrame:frame];
             }
             view = _settingView;
+        }
+            break;
+        case KENViewTypeSubjectSetting:{
+            if (_subjectSettingView == nil) {
+                _subjectSettingView = [[KENViewSubjectSetting alloc] initWithFrame:frame];
+            }
+            view = _subjectSettingView;
         }
             break;
         case KENViewTypeMemory:{
@@ -147,6 +156,13 @@
             if (_settingView) {
                 [_settingView removeFromSuperview];
                 _settingView = nil;
+            }
+        }
+            break;
+        case KENViewTypeSubjectSetting: {
+            if (_subjectSettingView) {
+                [_subjectSettingView removeFromSuperview];
+                _subjectSettingView = nil;
             }
         }
             break;
