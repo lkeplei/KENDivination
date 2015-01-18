@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) SListView *appBgTableView;
 @property (nonatomic, strong) SListView *paiBgTableView;
+@property (nonatomic, strong) EBPurchase* purchase;
+@property (assign) BOOL isPurchased;
 
 @end
 
@@ -26,6 +28,12 @@
     if (self) {
         // Initialization code
         self.viewType = KENViewTypeSubjectSetting;
+        
+        // Create an instance of EBPurchase.
+        _purchase = [[EBPurchase alloc] init];
+        _purchase.delegate = self;
+        
+        _isPurchased = NO; // default.
     }
     return self;
 }
@@ -79,7 +87,7 @@
     _appBgTableView.delegate = self;
     _appBgTableView.dataSource = self;
     
-    [_appBgTableView setSelectedIndex:[[KENDataManager getDataByKey:KUserDefaultAppBg] intValue] - KENSubjectTypeAppbg1];
+    [_appBgTableView setSelectedIndex:[[KENDataManager getDataByKey:KUserDefaultAppBg] intValue]];
     
     [self.contentView addSubview:_appBgTableView];
 }
@@ -106,15 +114,20 @@
     _paiBgTableView.delegate = self;
     _paiBgTableView.dataSource = self;
     
-    [_paiBgTableView setSelectedIndex:[[KENDataManager getDataByKey:KUserDefaultPaiBg] intValue] - KENSubjectTypePaibg1];
+    [_paiBgTableView setSelectedIndex:[[KENDataManager getDataByKey:KUserDefaultPaiBg] intValue]];
     
     [self.contentView addSubview:_paiBgTableView];
 }
 
 #pragma mark - setting btn
 - (void)btnConfirmClicked:(UIButton *)button {
-    [[KENModel shareModel] setBgMessage:[_appBgTableView selectedIndex] - KENSubjectTypeAppbg1
-                                  paiBg:[_paiBgTableView selectedIndex] - KENSubjectTypePaibg1];
+    int appSec = [_appBgTableView selectedIndex];
+    int paiSec = [_paiBgTableView selectedIndex];
+    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] || (appSec < 2 && paiSec < 3)){
+        [[KENModel shareModel] setBgMessage:appSec paiBg:paiSec];
+    } else {
+        [_purchase requestProduct:SUB_PRODUCT_ID];
+    }
 }
 
 - (void)btnLeftAppClicked:(UIButton *)button {
@@ -131,6 +144,73 @@
 
 - (void)btnRightPaiClicked:(UIButton *)button {
     [_paiBgTableView moveNext];
+}
+
+#pragma mark - btn clicked
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (_purchase.validProduct != nil) {
+        if (buttonIndex == 1){
+            [_purchase purchaseProduct:_purchase.validProduct];
+        } else if (buttonIndex == 2){
+            [_purchase restorePurchase];
+        }
+    }
+}
+
+#pragma mark - SKPayment
+-(void) requestedProduct:(EBPurchase*)ebp identifier:(NSString*)productId name:(NSString*)productName price:(NSString*)productPrice description:(NSString*)productDescription
+{
+    if (productPrice != nil)    {
+        UIAlertView *unavailAlert = [[UIAlertView alloc] initWithTitle:nil
+                                                               message:[NSString stringWithFormat:MyLocal(@"purchase_content"),
+                                                                        [productPrice floatValue]]
+                                                              delegate:self cancelButtonTitle:MyLocal(@"cancel")
+                                                     otherButtonTitles:MyLocal(@"purchase"), MyLocal(@"restore"), nil];
+        [unavailAlert show];
+    } else {
+        UIAlertView *unavailAlert = [[UIAlertView alloc] initWithTitle:@"Not Available" message:@"This In-App Purchase item is not available in the App Store at this time. Please try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [unavailAlert show];
+    }
+}
+
+-(void)successfulPurchase:(EBPurchase*)ebp identifier:(NSString*)productId receipt:(NSData*)transactionReceipt{
+    if (!_isPurchased){
+        _isPurchased = YES;
+        [KENDataManager setDataByKey:[NSNumber numberWithBool:YES] forkey:KUserDefaultJieMi];
+        [SysDelegate.viewController clearAllAd];
+        
+
+        [_appBgTableView removeFromSuperview];
+        _appBgTableView = nil;
+        //初始页面背景
+        [self initAppBgSelect];
+        
+        [_paiBgTableView removeFromSuperview];
+        _paiBgTableView = nil;
+        //初始卡牌背景
+        [self initPaiBgSelect];
+    }
+}
+
+-(void)failedPurchase:(EBPurchase*)ebp error:(NSInteger)errorCode message:(NSString*)errorMessage{
+    //@"Either you cancelled the request or Apple reported a transaction error. Please try again later, or contact the app's customer support for assistance."
+    UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:MyLocal(@"purchase_title") message:MyLocal(@"purchase_failed")
+                                                         delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [failedAlert show];
+}
+
+-(void)incompleteRestore:(EBPurchase*)ebp{
+    //@"A prior purchase transaction could not be found. To restore the purchased product, tap the Buy button. Paid customers will NOT be charged again, but the purchase will be restored."
+    UIAlertView *restoreAlert = [[UIAlertView alloc] initWithTitle:MyLocal(@"purchase_title") message:MyLocal(@"restore_incomplete")
+                                                          delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [restoreAlert show];
+}
+
+-(void)failedRestore:(EBPurchase*)ebp error:(NSInteger)errorCode message:(NSString*)errorMessage{
+    //@"Either you cancelled the request or your prior purchase could not be restored. Please try again later, or contact the app's customer support for assistance."
+    UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:MyLocal(@"purchase_title") message:MyLocal(@"restore_failed")
+                                                         delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [failedAlert show];
 }
 
 #pragma mark - list view
@@ -196,6 +276,18 @@
         imgView.center = CGPointMake(47, _appBgTableView.frame.size.height / 2);
         [cell.contentView addSubview:imgView];
     }
+    
+    UIImageView *lockImgView = (UIImageView *)[cell.contentView viewWithTag:1002];
+    if (lockImgView) {
+        [lockImgView removeFromSuperview];
+    }
+    
+    if (index > 1) {
+        lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_bg_lock.png"]];
+        lockImgView.tag = 1002;
+        lockImgView.center = CGPointMake(47, _appBgTableView.frame.size.height / 2);
+        [cell.contentView addSubview:lockImgView];
+    }
 }
 
 - (void)setPaiBgCellContent:(SListViewCell *)cell index:(NSInteger)index {
@@ -211,6 +303,18 @@
         imgView.tag = 1001;
         imgView.center = CGPointMake(32, _paiBgTableView.frame.size.height / 2);
         [cell.contentView addSubview:imgView];
+    }
+    
+    UIImageView *lockImgView = (UIImageView *)[cell.contentView viewWithTag:1002];
+    if (lockImgView) {
+        [lockImgView removeFromSuperview];
+    }
+    
+    if (index > 2) {
+        lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_pai_bg.png"]];
+        lockImgView.tag = 1002;
+        lockImgView.center = CGPointMake(32, _paiBgTableView.frame.size.height / 2);
+        [cell.contentView addSubview:lockImgView];
     }
 }
 

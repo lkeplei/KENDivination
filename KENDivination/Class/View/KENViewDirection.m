@@ -14,7 +14,6 @@
 
 #define KDirectionBtnTagBase        (400)
 
-#define SUB_PRODUCT_ID @"teamqi.zhanbu.jiesuo"
 
 @interface KENViewDirection ()
 

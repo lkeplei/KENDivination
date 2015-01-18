@@ -7,6 +7,8 @@
 //
 
 #import "SListViewCell.h"
+#import "KENConfig.h"
+#import "KENDataManager.h"
 
 @interface SListViewCell ()
 

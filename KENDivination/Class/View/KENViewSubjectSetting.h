@@ -8,7 +8,8 @@
 
 #import "KENViewBase.h"
 #import "SListView.h"
+#import "EBPurchase.h"
 
-@interface KENViewSubjectSetting : KENViewBase<SListViewDelegate, SListViewDataSource>
+@interface KENViewSubjectSetting : KENViewBase<SListViewDelegate, SListViewDataSource, EBPurchaseDelegate>
 
 @end

@@ -101,4 +101,6 @@
 #define KIosZhHansItunesIP      @"https://itunes.apple.com/cn/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文
 #define KIosENItunesIP          @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //英文、其他
 
+#define SUB_PRODUCT_ID          @"teamqi.zhanbu.jiesuo"                 //内购id
+
 #endif

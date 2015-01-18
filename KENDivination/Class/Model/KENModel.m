@@ -235,7 +235,7 @@
 
 
 - (UIImage *)getAppBackgroundImg {
-    KENSubjectType type = [[KENDataManager getDataByKey:KUserDefaultAppBg] intValue];
+    KENSubjectType type = [[KENDataManager getDataByKey:KUserDefaultAppBg] intValue] + KENSubjectTypeAppbg1;
     switch (type) {
         case KENSubjectTypeAppbg1: {
             return [UIImage imageNamed:@"app_bg_1.png"];
@@ -273,7 +273,7 @@
 }
 
 - (UIImage *)getKapaiBgImg {
-    KENSubjectType type = [[KENDataManager getDataByKey:KUserDefaultPaiBg] intValue];
+    KENSubjectType type = [[KENDataManager getDataByKey:KUserDefaultPaiBg] intValue] + KENSubjectTypePaibg1;
     switch (type) {
         case KENSubjectTypePaibg1: {
             return [UIImage imageNamed:@"kapai_bg_1.png"];
