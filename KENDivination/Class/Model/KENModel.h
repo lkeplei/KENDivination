@@ -45,6 +45,7 @@
 //获取应用背景
 - (UIImage *)getAppBackgroundImg;
 - (UIImage *)getKapaiBgImg;
+- (void)setBgMessage:(KENSubjectType)appBg paiBg:(KENSubjectType)paiBg;
 
 //判断是否为英文
 - (BOOL)isLanguageEnglish;

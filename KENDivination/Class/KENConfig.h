@@ -56,8 +56,10 @@
 #define KPaiCenter              CGPointMake(160, 110)
 
 
-#define KUserDefaultSetOpenVoice             @"default_open_voice"
-#define KUserDefaultJieMi                    @"default_jie_mi"
+#define KUserDefaultSetOpenVoice                @"default_open_voice"
+#define KUserDefaultJieMi                       @"default_jie_mi"
+#define KUserDefaultAppBg                       @"default_app_bg"
+#define KUserDefaultPaiBg                       @"default_pai_bg"
 
 #define KUniqueTimeFormat                       @"yyyy-MM-dd HH:mm:ss"
 #define KUniqueYMDFormat                        @"yyyy-MM-dd"

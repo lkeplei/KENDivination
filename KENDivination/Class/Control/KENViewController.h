@@ -29,6 +29,9 @@
 
 -(void)clearAllAd;
 
+
+- (void)resetBgMessage;
+
 -(KENViewBase*)getView:(KENViewType)type;
 /**
  *  视图进栈

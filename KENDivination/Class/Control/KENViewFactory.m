@@ -240,4 +240,14 @@
             break;
     }
 }
+
+- (void)setAppBg {
+    if (_homeView) {
+        [_homeView resetBackground];
+    }
+    
+    if (_subjectSettingView) {
+        [_subjectSettingView resetBackground];
+    }
+}
 @end

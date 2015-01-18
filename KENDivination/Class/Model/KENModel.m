@@ -43,6 +43,12 @@
     if ([KENDataManager getDataByKey:KUserDefaultJieMi] == nil) {
         [KENDataManager setDataByKey:[NSNumber numberWithBool:NO] forkey:KUserDefaultJieMi];
     }
+    
+    if ([KENDataManager getDataByKey:KUserDefaultAppBg] == nil ||
+        [KENDataManager getDataByKey:KUserDefaultPaiBg] == nil) {
+        [KENDataManager setDataByKey:[NSNumber numberWithInt:KENSubjectTypeAppbg1] forkey:KUserDefaultAppBg];
+        [KENDataManager setDataByKey:[NSNumber numberWithInt:KENSubjectTypePaibg1] forkey:KUserDefaultPaiBg];
+    }
 }
 
 -(void)playVoiceByType:(KENType)type{
@@ -229,34 +235,34 @@
 
 
 - (UIImage *)getAppBackgroundImg {
-    KENSubjectType type = KENSubjectTypeAppbg1;
+    KENSubjectType type = [[KENDataManager getDataByKey:KUserDefaultAppBg] intValue];
     switch (type) {
         case KENSubjectTypeAppbg1: {
             return [UIImage imageNamed:@"app_bg_1.png"];
         }
             break;
         case KENSubjectTypeAppbg2: {
-            return [UIImage imageNamed:@"app_bg_2.png"];
+            return [UIImage imageNamed:@"app_bg_2.jpg"];
         }
             break;
         case KENSubjectTypeAppbg3: {
-            return [UIImage imageNamed:@"app_bg_3.png"];
+            return [UIImage imageNamed:@"app_bg_3.jpg"];
         }
             break;
         case KENSubjectTypeAppbg4: {
-            return [UIImage imageNamed:@"app_bg_4.png"];
+            return [UIImage imageNamed:@"app_bg_4.jpg"];
         }
             break;
         case KENSubjectTypeAppbg5: {
-            return [UIImage imageNamed:@"app_bg_5.png"];
+            return [UIImage imageNamed:@"app_bg_5.jpg"];
         }
             break;
         case KENSubjectTypeAppbg6: {
-            return [UIImage imageNamed:@"app_bg_6.png"];
+            return [UIImage imageNamed:@"app_bg_6.jpg"];
         }
             break;
         case KENSubjectTypeAppbg7: {
-            return [UIImage imageNamed:@"app_bg_7.png"];
+            return [UIImage imageNamed:@"app_bg_7.jpg"];
         }
             break;
         default: {
@@ -267,34 +273,34 @@
 }
 
 - (UIImage *)getKapaiBgImg {
-    KENSubjectType type = KENSubjectTypePaibg1;
+    KENSubjectType type = [[KENDataManager getDataByKey:KUserDefaultPaiBg] intValue];
     switch (type) {
         case KENSubjectTypePaibg1: {
             return [UIImage imageNamed:@"kapai_bg_1.png"];
         }
             break;
         case KENSubjectTypePaibg2: {
-            return [UIImage imageNamed:@"kapai_bg_2.png"];
+            return [UIImage imageNamed:@"kapai_bg_2.jpg"];
         }
             break;
         case KENSubjectTypePaibg3: {
-            return [UIImage imageNamed:@"kapai_bg_3.png"];
+            return [UIImage imageNamed:@"kapai_bg_3.jpg"];
         }
             break;
         case KENSubjectTypePaibg4: {
-            return [UIImage imageNamed:@"kapai_bg_4.png"];
+            return [UIImage imageNamed:@"kapai_bg_4.jpg"];
         }
             break;
         case KENSubjectTypePaibg5: {
-            return [UIImage imageNamed:@"kapai_bg_5.png"];
+            return [UIImage imageNamed:@"kapai_bg_5.jpg"];
         }
             break;
         case KENSubjectTypePaibg6: {
-            return [UIImage imageNamed:@"kapai_bg_6.png"];
+            return [UIImage imageNamed:@"kapai_bg_6.jpg"];
         }
             break;
         case KENSubjectTypePaibg7: {
-            return [UIImage imageNamed:@"kapai_bg_7.png"];
+            return [UIImage imageNamed:@"kapai_bg_7.jpg"];
         }
             break;
         default: {
@@ -302,6 +308,13 @@
         }
             break;
     }
+}
+
+- (void)setBgMessage:(KENSubjectType)appBg paiBg:(KENSubjectType)paiBg {
+    [KENDataManager setDataByKey:[NSNumber numberWithInt:appBg] forkey:KUserDefaultAppBg];
+    [KENDataManager setDataByKey:[NSNumber numberWithInt:paiBg] forkey:KUserDefaultPaiBg];
+    
+    [SysDelegate.viewController resetBgMessage];
 }
 @end
 

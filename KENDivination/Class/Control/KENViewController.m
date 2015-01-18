@@ -264,6 +264,11 @@
     
 }
 
+#pragma mark - public method
+- (void)resetBgMessage {
+    [_viewFactory setAppBg];
+}
+
 #pragma mark - about view control
 -(KENViewBase*)getView:(KENViewType)type{
     return [_viewFactory getView:type frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];

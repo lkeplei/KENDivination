@@ -188,6 +188,8 @@
 		042C7BF7193B048A00935A1C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C7BF6193B048A00935A1C /* libz.dylib */; };
 		042CDFB0192F8FDC00A143BD /* paizhen_bg_path_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */; };
 		042CDFB1192F8FDC00A143BD /* paizhen_bg_path_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */; };
+		04431CB51A6B687B00B99FF7 /* SListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04431CB21A6B687B00B99FF7 /* SListView.m */; };
+		04431CB61A6B687B00B99FF7 /* SListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04431CB41A6B687B00B99FF7 /* SListViewCell.m */; };
 		0443BC751934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */; };
 		0453706C19505D6100586F95 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453706B19505D6100586F95 /* StoreKit.framework */; };
 		045A4CD419337EC900463FF8 /* jie_pai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045A4CD219337EC900463FF8 /* jie_pai_bg@2x.png */; };
@@ -724,6 +726,10 @@
 		042C7BF6193B048A00935A1C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_4@2x.png"; sourceTree = "<group>"; };
 		042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_5@2x.png"; sourceTree = "<group>"; };
+		04431CB11A6B687B00B99FF7 /* SListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SListView.h; sourceTree = "<group>"; };
+		04431CB21A6B687B00B99FF7 /* SListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SListView.m; sourceTree = "<group>"; };
+		04431CB31A6B687B00B99FF7 /* SListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SListViewCell.h; sourceTree = "<group>"; };
+		04431CB41A6B687B00B99FF7 /* SListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SListViewCell.m; sourceTree = "<group>"; };
 		0443BC731934DD7B000F5C29 /* KENUiViewPaiZhenDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewPaiZhenDetail.h; sourceTree = "<group>"; };
 		0443BC741934DD7B000F5C29 /* KENUiViewPaiZhenDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewPaiZhenDetail.m; sourceTree = "<group>"; };
 		0453706B19505D6100586F95 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -1758,6 +1764,17 @@
 			path = UM;
 			sourceTree = "<group>";
 		};
+		04431CB01A6B687B00B99FF7 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				04431CB11A6B687B00B99FF7 /* SListView.h */,
+				04431CB21A6B687B00B99FF7 /* SListView.m */,
+				04431CB31A6B687B00B99FF7 /* SListViewCell.h */,
+				04431CB41A6B687B00B99FF7 /* SListViewCell.m */,
+			);
+			path = Customs;
+			sourceTree = "<group>";
+		};
 		045A4CDA1933848F00463FF8 /* L */ = {
 			isa = PBXGroup;
 			children = (
@@ -2262,8 +2279,8 @@
 			isa = PBXGroup;
 			children = (
 				04B323491920EE0700C055FF /* Class */,
-				04B323501920EE0700C055FF /* Resources */,
 				04B3232B1920ED1400C055FF /* Images.xcassets */,
+				04B323501920EE0700C055FF /* Resources */,
 				04B3231D1920ED1400C055FF /* Supporting Files */,
 			);
 			path = KENDivination;
@@ -2336,6 +2353,7 @@
 		04B3234E1920EE0700C055FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				04431CB01A6B687B00B99FF7 /* Customs */,
 				0493D6D719FB6E74005F41BB /* AdSDK */,
 				0493D7BF19FB6E74005F41BB /* AdsMoGoSDK */,
 				0470238419530C320012EEBB /* EBPurchase.h */,
@@ -2973,12 +2991,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04431CB51A6B687B00B99FF7 /* SListView.m in Sources */,
 				040F20421A1252BF00B5E118 /* KENViewParePerson.m in Sources */,
 				0493D82919FB6E74005F41BB /* AdMoGoAdapterGoogleAdMobFullAds.m in Sources */,
 				0493D82B19FB6E74005F41BB /* AdMoGoAdapterAdwo.m in Sources */,
 				1813B6D7193466EE003FE066 /* KENUiViewPaiDetailAlert.m in Sources */,
 				0493D82C19FB6E74005F41BB /* AdMoGoAdapterAdwoFullAd.m in Sources */,
 				1887F8F91938553B0064F8F8 /* KENCoreDataManager.m in Sources */,
+				04431CB61A6B687B00B99FF7 /* SListViewCell.m in Sources */,
 				0493D82819FB6E74005F41BB /* AdMoGoAdapterGoogleAdMobAds.m in Sources */,
 				0493D86819FB6E75005F41BB /* unzip.c in Sources */,
 				04A07BB719224FAF00F33A1D /* KENViewSetting.m in Sources */,

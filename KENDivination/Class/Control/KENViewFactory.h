@@ -15,4 +15,6 @@
 -(KENViewBase*)getView:(KENViewType)type frame:(CGRect)frame;
 -(void)removeView:(KENViewType)type;
 
+- (void)setAppBg;
+
 @end

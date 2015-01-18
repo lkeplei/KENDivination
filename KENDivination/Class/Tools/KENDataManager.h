@@ -10,8 +10,6 @@
 
 @interface KENDataManager : NSObject
 
-+(KENDataManager*)shareDataManager;
-
 +(void)setDataByKey:(id)object forkey:(NSString*)key;
 +(void)removeDataByKey:(NSString*)key;
 +(id)getDataByKey:(NSString*)key;

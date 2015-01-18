@@ -18,6 +18,7 @@
 @property (assign) float rate;
 @property (nonatomic, strong) NSMutableArray* viewArray;
 @property (nonatomic, strong) KENViewBase* parentView;
+@property (nonatomic, strong) UIImageView *bgImgView;
 
 @end
 
@@ -38,12 +39,12 @@
 }
 
 -(void)initView{
-    UIImageView* imgView = [[UIImageView alloc] initWithImage:[self setBackGroundImage]];
-    imgView.center = self.center;
+    _bgImgView = [[UIImageView alloc] initWithImage:[self setBackGroundImage]];
+    _bgImgView.center = self.center;
 
-    _contentView = [[UIView alloc] initWithFrame:imgView.frame];
-    imgView.frame = (CGRect){CGPointZero, imgView.frame.size};
-    [_contentView addSubview:imgView];
+    _contentView = [[UIView alloc] initWithFrame:_bgImgView.frame];
+    _bgImgView.frame = (CGRect){CGPointZero, _bgImgView.frame.size};
+    [_contentView addSubview:_bgImgView];
     
     [self addSubview:_contentView];
     
@@ -65,9 +66,6 @@
     if (IsPad) {
         CATransform3D currentTransform = _contentView.layer.transform;
         _rate = self.frame.size.height / _contentView.frame.size.height;
-        float rate = self.frame.size.width / _contentView.frame.size.width;
-        DebugLog(@"height = %.1f width = %.1f contentHeight = %.1f, contentWidth = %.1f",
-                 self.frame.size.height, self.frame.size.width, _contentView.frame.size.height, _contentView.frame.size.width);
         CATransform3D scaled = CATransform3DScale(currentTransform, _rate, _rate, _rate);
         _contentView.layer.transform = scaled;
     }
@@ -156,6 +154,12 @@
 #pragma mark - other
 -(UIImage*)setBackGroundImage{
     return [[KENModel shareModel] getAppBackgroundImg];
+}
+
+- (void)resetBackground {
+    if (_bgImgView) {
+        [_bgImgView setImage:[self setBackGroundImage]];
+    }
 }
 
 -(UIImage*)setViewTitleImage{

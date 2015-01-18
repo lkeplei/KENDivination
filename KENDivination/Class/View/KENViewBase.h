@@ -30,6 +30,9 @@
 -(void)popView:(KENType)type;
 -(void)popToRootView:(KENType)type;
 
+
+- (void)resetBackground;
+
 @property (assign) KENViewType viewType;
 @property (nonatomic, strong) UIView* contentView;
 

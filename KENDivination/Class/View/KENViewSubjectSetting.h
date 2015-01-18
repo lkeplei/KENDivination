@@ -7,7 +7,8 @@
 //
 
 #import "KENViewBase.h"
+#import "SListView.h"
 
-@interface KENViewSubjectSetting : KENViewBase
+@interface KENViewSubjectSetting : KENViewBase<SListViewDelegate, SListViewDataSource>
 
 @end

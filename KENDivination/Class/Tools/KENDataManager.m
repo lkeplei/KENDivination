@@ -9,16 +9,6 @@
 #import "KENDataManager.h"
 
 @implementation KENDataManager
-static KENDataManager* _shareDataManager = nil;
-
-+(KENDataManager*)shareDataManager{
-	if (!_shareDataManager) {
-        _shareDataManager = [[self alloc]init];
-	}
-    
-	return _shareDataManager;
-};
-
 #pragma mark - user default
 +(void)setDataByKey:(id)object forkey:(NSString *)key{
     NSUserDefaults* defaults =[NSUserDefaults standardUserDefaults];
