@@ -19,15 +19,16 @@ if([[AdMoGoLogCenter shareInstance]canLog:lv]){\
         NSLog((@"ADSMOGO-Log Debug" "<FUNCTION:%s>: " fmt),__FUNCTION__, ##__VA_ARGS__);\
     }\
     if((logleve & AdMoGoLogTemp)==AdMoGoLogTemp && lv == MGT){\
-        NSLog((@"ADSMOGO-Log Temp: " fmt), ##__VA_ARGS__);\
+        NSLog((@"ADSMOGO-Log Warning: " fmt), ##__VA_ARGS__);\
     }\
     if((logleve & AdMoGoLogProduction)==AdMoGoLogProduction && lv == MGP){\
-        NSLog((@"ADSMOGO-Log Production" "<FUNCTION:%s>: " fmt),__FUNCTION__, ##__VA_ARGS__);\
+        NSLog((@"ADSMOGO-Log Info" "<FUNCTION:%s>: " fmt),__FUNCTION__, ##__VA_ARGS__);\
     }\
 }
 
 //        NSLog((@"ADSMOGO-" "<FUNCTION:%s>-" "<LINE:%d>: " fmt),__FUNCTION__, __LINE__, ##__VA_ARGS__);
 #endif
+
 
 typedef enum {
     AdMoGoLogProduction = 1<<0,

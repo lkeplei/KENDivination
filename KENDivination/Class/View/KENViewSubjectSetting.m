@@ -12,6 +12,8 @@
 #import "KENModel.h"
 #import "KENDataManager.h"
 
+#define kLockStart          (2)
+
 @interface KENViewSubjectSetting ()
 
 @property (nonatomic, strong) SListView *appBgTableView;
@@ -83,7 +85,7 @@
     [self.contentView addSubview:right];
     
     _appBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 268, 134)];
-    _appBgTableView.center = CGPointMake(self.center.x, 142);
+    _appBgTableView.center = CGPointMake(160, 142);
     _appBgTableView.delegate = self;
     _appBgTableView.dataSource = self;
     
@@ -110,7 +112,7 @@
     [self.contentView addSubview:right];
     
     _paiBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 268, 104)];
-    _paiBgTableView.center = CGPointMake(self.center.x, 303);
+    _paiBgTableView.center = CGPointMake(160, 303);
     _paiBgTableView.delegate = self;
     _paiBgTableView.dataSource = self;
     
@@ -123,7 +125,7 @@
 - (void)btnConfirmClicked:(UIButton *)button {
     int appSec = [_appBgTableView selectedIndex];
     int paiSec = [_paiBgTableView selectedIndex];
-    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] || (appSec < 2 && paiSec < 3)){
+    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] || (appSec <= kLockStart && paiSec <= kLockStart)){
         [[KENModel shareModel] setBgMessage:appSec paiBg:paiSec];
     } else {
         [_purchase requestProduct:SUB_PRODUCT_ID];
@@ -282,7 +284,7 @@
         [lockImgView removeFromSuperview];
     }
     
-    if (index > 1) {
+    if (index > kLockStart) {
         lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_bg_lock.png"]];
         lockImgView.tag = 1002;
         lockImgView.center = CGPointMake(47, _appBgTableView.frame.size.height / 2);
@@ -310,7 +312,7 @@
         [lockImgView removeFromSuperview];
     }
     
-    if (index > 2) {
+    if (index > kLockStart) {
         lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_pai_bg.png"]];
         lockImgView.tag = 1002;
         lockImgView.center = CGPointMake(32, _paiBgTableView.frame.size.height / 2);
@@ -319,5 +321,10 @@
 }
 
 - (void)listView:(SListView *)listView didSelectColumnAtIndex:(NSInteger)index {
+    if (index > kLockStart) {
+        if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]) {
+            [_purchase requestProduct:SUB_PRODUCT_ID];
+        }
+    }
 }
 @end

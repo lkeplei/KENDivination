@@ -47,7 +47,7 @@
     if ([KENDataManager getDataByKey:KUserDefaultAppBg] == nil ||
         [KENDataManager getDataByKey:KUserDefaultPaiBg] == nil) {
         [KENDataManager setDataByKey:[NSNumber numberWithInt:KENSubjectTypeAppbg1] forkey:KUserDefaultAppBg];
-        [KENDataManager setDataByKey:[NSNumber numberWithInt:KENSubjectTypePaibg1] forkey:KUserDefaultPaiBg];
+        [KENDataManager setDataByKey:[NSNumber numberWithInt:KENSubjectTypePaibg1 - KENSubjectTypePaibg1] forkey:KUserDefaultPaiBg];
     }
 }
 

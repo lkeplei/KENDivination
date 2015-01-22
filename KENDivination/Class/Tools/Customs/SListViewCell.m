@@ -28,6 +28,7 @@
 //        _separatorView1 = [[UIView alloc] init];
 //        [_separatorView1 setBackgroundColor:[UIColor clearColor]];
 //        [self addSubview:_separatorView1];
+        [self setBackgroundColor:[UIColor clearColor]];
         
     }
     return self;
