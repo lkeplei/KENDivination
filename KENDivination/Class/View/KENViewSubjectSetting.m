@@ -63,11 +63,16 @@
                           imagesec:[UIImage imageNamed:@"subject_confirm_sec.png"]
                             target:self
                             action:@selector(btnConfirmClicked:)];
-    button.center = CGPointMake(160, 382);
+    button.center = CGPointMake(160, 392);
     [self.contentView addSubview:button];
 }
 
 - (void)initAppBgSelect {
+    UILabel *title = [KENUtils labelWithTxt:@"背景" frame:(CGRect){CGPointZero, 50, 20}
+                                       font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
+    title.center = CGPointMake(30, 69);
+    [self.contentView addSubview:title];
+    
     UIButton* left = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
                                        image:[UIImage imageNamed:@"subject_arrow_left.png"]
                                     imagesec:[UIImage imageNamed:@"subject_arrow_left.png"]
@@ -84,7 +89,7 @@
     right.center = CGPointMake(302, 142);
     [self.contentView addSubview:right];
     
-    _appBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 268, 134)];
+    _appBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 270, 134)];
     _appBgTableView.center = CGPointMake(160, 142);
     _appBgTableView.delegate = self;
     _appBgTableView.dataSource = self;
@@ -119,6 +124,11 @@
     [_paiBgTableView setSelectedIndex:[[KENDataManager getDataByKey:KUserDefaultPaiBg] intValue]];
     
     [self.contentView addSubview:_paiBgTableView];
+    
+    UILabel *title = [KENUtils labelWithTxt:@"背景" frame:(CGRect){CGPointZero, 40, 20}
+                                       font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
+    title.center = CGPointMake(30, 242);
+    [self.contentView addSubview:title];
 }
 
 #pragma mark - setting btn
@@ -180,7 +190,6 @@
         _isPurchased = YES;
         [KENDataManager setDataByKey:[NSNumber numberWithBool:YES] forkey:KUserDefaultJieMi];
         [SysDelegate.viewController clearAllAd];
-        
 
         [_appBgTableView removeFromSuperview];
         _appBgTableView = nil;
@@ -284,7 +293,7 @@
         [lockImgView removeFromSuperview];
     }
     
-    if (index > kLockStart) {
+    if (index > kLockStart && ![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]) {
         lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_bg_lock.png"]];
         lockImgView.tag = 1002;
         lockImgView.center = CGPointMake(47, _appBgTableView.frame.size.height / 2);
@@ -312,7 +321,7 @@
         [lockImgView removeFromSuperview];
     }
     
-    if (index > kLockStart) {
+    if (index > kLockStart && ![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]) {
         lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_pai_bg.png"]];
         lockImgView.tag = 1002;
         lockImgView.center = CGPointMake(32, _paiBgTableView.frame.size.height / 2);

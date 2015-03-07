@@ -29,7 +29,7 @@
 "purchase_failed" = "购买失败，请稍后再试";
 "restore_incomplete" = "恢复购买失败，请稍后再试";
 "restore_failed" = "恢复购买失败，请稍后再试";
-"purchase_content" = "购买后开启所有牌阵，并去除广告。请问您是否愿意花费￥%.2f购买我们的应用？";
+"purchase_content" = "购买后开启所有功能，并去除广告。请问您是否愿意花费￥%.2f购买我们的应用？";
 "purchase" = "购买";
 "restore" = "恢复";
 "cancel" = "取消";

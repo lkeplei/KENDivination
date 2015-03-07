@@ -70,6 +70,21 @@
         }
         
         [_scrollView scrollRectToVisible:CGRectFromString([_columnRects objectAtIndex:_selectedIndex]) animated:YES];
+        
+        while (!InRange(_visibleRange, _selectedIndex)) {
+            CGRect rect;
+            if (_visibleRange.start > _selectedIndex) {
+                rect = CGRectFromString([_columnRects objectAtIndex:_visibleRange.start - 1]);
+            }
+            
+            if (_visibleRange.end < _selectedIndex) {
+                rect = CGRectFromString([_columnRects objectAtIndex:_visibleRange.end + 1]);
+            }
+            
+            CGFloat offsetX = rect.origin.x - _visibleRect.origin.x;
+            _visibleRect = CGRectOffset(_visibleRect, offsetX, 0);
+            [self reLayoutSubViewsWithOffset:offsetX];
+        }
     }
 }
 
@@ -116,10 +131,11 @@
     if (!_visibleListCells) {
         _visibleListCells = [NSMutableArray arrayWithCapacity:5];
     }
-    CGRect rect = [_scrollView visibleRect];
     int index = _visibleRange.start;
     CGFloat left = 0;
-    while (left <= rect.size.width) {
+#if 1
+    CGRect rect = [_scrollView visibleRect];
+    while (left <= rect.size.width) {       //这里有点儿问题，每次都是从第一个开始算起，超过区域就不加载，没有考虑记忆的选中项的情况
         CGRect frame = CGRectFromString([_columnRects objectAtIndex:index]);
         [self requestCellWithIndex:index direction:SDirectionTypeLeft];
         left += frame.size.width;
@@ -127,6 +143,15 @@
             index ++;
         }
     }
+#else
+    while (index < [_columnRects count]) {       //这里有点儿问题，每次都是从第一个开始算起，超过区域就不加载，没有考虑记忆的选中项的情况
+        CGRect frame = CGRectFromString([_columnRects objectAtIndex:index]);
+        [self requestCellWithIndex:index direction:SDirectionTypeLeft];
+        left += frame.size.width;
+            index ++;
+    }
+#endif
+    
     _visibleRange.end = index;
 }
 
