@@ -68,9 +68,9 @@
 }
 
 - (void)initAppBgSelect {
-    UILabel *title = [KENUtils labelWithTxt:@"背景" frame:(CGRect){CGPointZero, 50, 20}
+    UILabel *title = [KENUtils labelWithTxt:MyLocal(@"subject_bg") frame:(CGRect){20, 58, 90, 20}
                                        font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
-    title.center = CGPointMake(30, 69);
+    title.textAlignment = KTextAlignmentLeft;
     [self.contentView addSubview:title];
     
     UIButton* left = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -125,9 +125,9 @@
     
     [self.contentView addSubview:_paiBgTableView];
     
-    UILabel *title = [KENUtils labelWithTxt:@"背景" frame:(CGRect){CGPointZero, 40, 20}
+    UILabel *title = [KENUtils labelWithTxt:MyLocal(@"subject_ka_bei") frame:(CGRect){20, 230, 90, 20}
                                        font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
-    title.center = CGPointMake(30, 242);
+    title.textAlignment = KTextAlignmentLeft;
     [self.contentView addSubview:title];
 }
 

@@ -160,12 +160,11 @@
     
     if (IsPad) {
         adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeLargeBanner adMoGoViewDelegate:self];
-//        adView.frame = CGRectMake(40, _currentShowView.frame.size.height - 90, _currentShowView.frame.size.width, 90);
-//        adView.center = CGPointMake(_currentShowView.center.x, adView.center.y);
     } else {
         adView = [[AdMoGoView alloc] initWithAppKey:mogoId adType:AdViewTypeNormalBanner adMoGoViewDelegate:self];
-        adView.frame = CGRectMake(0.0, _currentShowView.frame.size.height - 50, 320.0, 50.0);
+//        adView.frame = CGRectMake(0.0, _currentShowView.frame.size.height - 50, 320.0, 50.0);
     }
+    [adView setViewPointType:AdMoGoViewPointTypeDown_middle];
     adView.adWebBrowswerDelegate = self;
     [_currentShowView addSubview:adView];
     
@@ -194,9 +193,9 @@
  */
 - (void)adMoGoDidReceiveAd:(AdMoGoView *)adMoGoView{
     NSLog(@"广告接收成功回调");
-    if (IsPad) {
-        [adMoGoView setViewPointType:AdMoGoViewPointTypeDown_middle];
-    }
+//    if (IsPad) {
+//        [adMoGoView setViewPointType:AdMoGoViewPointTypeDown_middle];
+//    }
 }
 /**
  * 广告接收失败回调

@@ -168,6 +168,7 @@ typedef enum {
     AdMoGoAdNetworkTypeBJMobile          = 115,
     AdMoGoAdNetwokrTypeZmedia            = 145,
     AdMoGoAdNetworkTypePagodaPearl       = 160,
+    AdMoGoAdNetworkTypeAdShow            = 165,
     AdMOGOAdNetworkTypeQm                = 167,
     AdMoGoAdNetworkTypeS2S_First         = 1000,
     AdMoGoAdNetworkTypeS2S_Last          = 1499,
