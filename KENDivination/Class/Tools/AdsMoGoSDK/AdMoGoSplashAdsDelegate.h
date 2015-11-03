@@ -24,8 +24,9 @@ typedef enum{
 @required
 - (UIViewController *)adsMoGoSplashAdsViewControllerForPresentingModalView;
 @optional
-
-- (NSString *)adsMoGoSplashAdsiPhone5Image;
+//- (NSString *)adsMoGoSplashAdsiPhone6Image;
+//- (NSString *)adsMoGoSplashAdsiPhone6Image;
+//- (NSString *)adsMoGoSplashAdsiPhone5Image;
 
 - (NSString *)adsMoGoSplashAdsiPhoneImage;
 

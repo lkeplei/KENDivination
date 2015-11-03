@@ -8,6 +8,8 @@
 
 #import "AdMoGoAdNetworkAdapter.h"
 
+
+
 @interface AdMoGoAdNetworkInterstitialAdapter : AdMoGoAdNetworkAdapter
 - (void)adapterDidStartRequestAd:(AdMoGoAdNetworkInterstitialAdapter *)adapter;
 - (void)adapterS2SDidStartRequestAd:(AdMoGoAdNetworkInterstitialAdapter *)adapter withAdPlatformId:(id)pid;
@@ -32,4 +34,12 @@
 
 
 - (UIViewController *)rootViewControllerForPresent;
+
+- (void)s2sSDKNoPerloadinit;
+
+- (void)s2sSDKNoPerloadImp;
+
+- (BOOL)isCloseMoGoInterstitialBackground;
+- (BOOL)isCanTouchMoGoInterstitialBackgroundNoAdArea;
+- (void)onVideoReward:(NSString*)adName  reward:(NSNumber *)reward;
 @end

@@ -164,5 +164,16 @@
 
 - (NSString *)getMoGoSDKVersion;
 
+// mac base64
+- (NSString *)getMacAddressforbase64;
 
+// 获取语言
+// 简体中文 ： zh-jt
+// 繁体中文  :   zh-ft
+- (NSString *)getDeviceLan;
+
+// 
+- (NSString *)getDeviceBroken;
+
+- (NSString *)getNetworktype;
 @end

@@ -226,7 +226,7 @@
     NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
     NSArray* languages = [defs objectForKey:@"AppleLanguages"];
     NSString* preferredLang = [languages objectAtIndex:0];
-    if ([preferredLang compare:@"zh-Hans"] == NSOrderedSame) {
+    if ([preferredLang compare:@"zh-Hans"] == NSOrderedSame || [preferredLang compare:@"zh-Hans-CN"] == NSOrderedSame) {
         return false;
     } else {
         return true;

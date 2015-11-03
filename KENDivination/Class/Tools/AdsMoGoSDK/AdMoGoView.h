@@ -33,6 +33,7 @@ typedef NS_OPTIONS(NSUInteger, AdMoGoViewPointType) {
     
 }
 @property (nonatomic, assign) BOOL  autoScale;
+
 @property(nonatomic,assign) id<AdMoGoDelegate> delegate;
 
 
@@ -114,6 +115,18 @@ typedef NS_OPTIONS(NSUInteger, AdMoGoViewPointType) {
  */
 -(BOOL)isManualRefresh;
 
+// 仅限制iPhone横幅自定义尺寸
+- (id)initBannerCustomerSizeWithAppKey:(NSString *)ak
+              adMoGoViewDelegate:(id<AdMoGoDelegate>)delegate adViewPointType:(AdMoGoViewPointType) AdPointType isManualRefresh:(BOOL)isManualRefresh
+                customSize:(CGSize)size;
+
+/*
+    返回横幅自定义尺寸大小
+ */
+-(CGSize)getBannerCustomSize;
+
+// 设置自动优化autoscale
+- (BOOL)s2sautoScale;
 @end
 
 

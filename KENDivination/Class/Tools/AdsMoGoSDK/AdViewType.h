@@ -13,13 +13,14 @@ typedef enum {
     AdViewTypeLargeBanner      = 2,  //e.g. 728 * 90 ; 768 * 110             ipad only
     AdViewTypeMediumBanner     = 3,  //e.g. 468 * 60 ; 508 * 80              ipad only
     AdViewTypeRectangle        = 4,  //e.g. 300 * 250; 320 * 270             ipad only
-    AdViewTypeSky              = 5,  //Don't support
+    AdViewTypeSky              = 5, // no support
     AdViewTypeFullScreen       = 6,  //iphone full screen ad
     AdViewTypeVideo            = 11, //iPad and iPhone use video ad
     AdViewTypeiPadNormalBanner = 8,  //ipad use iphone banner
     AdViewTypeiPadFullScreen   = 9,  //ipad full screen ad e.g. 1024*768     ipad only
     AdViewTypeCustomSize       = 10, //iPad and iPhone use custom size
     AdViewTypeSplash           = 12, // IOS Splash Ad
-    AdViewTypeiPhoneRectangle = 14,// iPhone 300*250
+    AdViewTypeiPhoneRectangle  = 14, // iPhone 300*250
+    AdViewTypeBannerCustomSize = 15,  //1.6.1 support Banner Customser size
 
 } AdViewType;
