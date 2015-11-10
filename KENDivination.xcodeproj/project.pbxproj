@@ -2725,7 +2725,7 @@
 				ORGANIZATIONNAME = ken;
 				TargetAttributes = {
 					04B323101920ED1400C055FF = {
-						DevelopmentTeam = 5BDYTYLTH3;
+						DevelopmentTeam = E3G4N27K8M;
 					};
 					04B323301920ED1400C055FF = {
 						TestTargetID = 04B323101920ED1400C055FF;
