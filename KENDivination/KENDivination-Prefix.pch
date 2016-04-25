@@ -16,6 +16,9 @@
     #import <CoreData/CoreData.h>
 
     #import "KENAppDelegate.h"
+
+    #import "UIView+KenView.h"
+
     #define SysDelegate ((KENAppDelegate *)[[UIApplication sharedApplication] delegate])
     #endif
 

@@ -227,7 +227,7 @@
                                   imagesec:[UIImage imageNamed:@"home_pare_sec.png"]
                                     target:self
                                     action:@selector(btnPareClicked:)];
-        button.center = CGPointMake(250, 437);
+        button.center = CGPointMake(250, (437.f / 480.f) * self.contentView.height);
         [self.contentView addSubview:button];
     }
 }
@@ -238,7 +238,7 @@
                               imagesec:[UIImage imageNamed:@"home_subject_setting_sec.png"]
                                 target:self
                                 action:@selector(btnSubjectSettingClicked:)];
-    button.center = CGPointMake(56, 437);
+    button.center = CGPointMake(56, (437.f / 480.f) * self.contentView.height);
     [self.contentView addSubview:button];
 }
 

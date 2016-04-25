@@ -37,8 +37,8 @@
 #pragma mark - init area
 - (void) initTable{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, KNotificationHeight,
-                                                               self.contentView.frame.size.width,
-                                                               self.contentView.frame.size.height - KNotificationHeight)
+                                                               self.contentView.width,
+                                                               self.contentView.height - KNotificationHeight)
                                               style:UITableViewStylePlain];
 	_tableView.delegate = self;
 	_tableView.dataSource = self;

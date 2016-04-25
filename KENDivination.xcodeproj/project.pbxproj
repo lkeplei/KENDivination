@@ -537,6 +537,7 @@
 		04A07BB41922495C00F33A1D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A07BB31922495C00F33A1D /* AudioToolbox.framework */; };
 		04A07BB719224FAF00F33A1D /* KENViewSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A07BB619224FAF00F33A1D /* KENViewSetting.m */; };
 		04A07BC0192261C300F33A1D /* KENDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A07BBF192261C300F33A1D /* KENDataManager.m */; };
+		04A484EF1CCE65FE00710759 /* UIView+KenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A484EE1CCE65FE00710759 /* UIView+KenView.m */; };
 		04ACEB0C194C08860018DF69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ACEB0B194C08860018DF69 /* SystemConfiguration.framework */; };
 		04ACEB0E194C08960018DF69 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ACEB0D194C08960018DF69 /* libsqlite3.dylib */; };
 		04ACEB10194C08A70018DF69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ACEB0F194C08A70018DF69 /* MapKit.framework */; };
@@ -1353,6 +1354,8 @@
 		04A07BB619224FAF00F33A1D /* KENViewSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewSetting.m; sourceTree = "<group>"; };
 		04A07BBE192261C300F33A1D /* KENDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENDataManager.h; sourceTree = "<group>"; };
 		04A07BBF192261C300F33A1D /* KENDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENDataManager.m; sourceTree = "<group>"; };
+		04A484ED1CCE65FE00710759 /* UIView+KenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KenView.h"; sourceTree = "<group>"; };
+		04A484EE1CCE65FE00710759 /* UIView+KenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KenView.m"; sourceTree = "<group>"; };
 		04ACEB0B194C08860018DF69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		04ACEB0D194C08960018DF69 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		04ACEB0F194C08A70018DF69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -1674,6 +1677,8 @@
 		04431CB01A6B687B00B99FF7 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				04A484ED1CCE65FE00710759 /* UIView+KenView.h */,
+				04A484EE1CCE65FE00710759 /* UIView+KenView.m */,
 				04431CB11A6B687B00B99FF7 /* SListView.h */,
 				04431CB21A6B687B00B99FF7 /* SListView.m */,
 				04431CB31A6B687B00B99FF7 /* SListViewCell.h */,
@@ -3247,6 +3252,7 @@
 				046DA53A1BE8E32700947ED1 /* AdMoGoAdapterAdwo.m in Sources */,
 				1887F8F91938553B0064F8F8 /* KENCoreDataManager.m in Sources */,
 				04431CB61A6B687B00B99FF7 /* SListViewCell.m in Sources */,
+				04A484EF1CCE65FE00710759 /* UIView+KenView.m in Sources */,
 				046DA5701BE8E32700947ED1 /* CJSONSerialization.m in Sources */,
 				04A07BB719224FAF00F33A1D /* KENViewSetting.m in Sources */,
 				040AF73F1924E77A00F5FDCB /* KENViewAboutUs.m in Sources */,
@@ -4466,8 +4472,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

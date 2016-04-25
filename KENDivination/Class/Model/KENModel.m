@@ -238,35 +238,35 @@
     KENSubjectType type = [[KENDataManager getDataByKey:KUserDefaultAppBg] intValue] + KENSubjectTypeAppbg1;
     switch (type) {
         case KENSubjectTypeAppbg1: {
-            return [UIImage imageNamed:@"app_bg_1.png"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_1.png" : @"app_bg_iphone5s_1.jpg"];
         }
             break;
         case KENSubjectTypeAppbg2: {
-            return [UIImage imageNamed:@"app_bg_2.jpg"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_2.jpg" : @"app_bg_iphone5s_2.jpg"];
         }
             break;
         case KENSubjectTypeAppbg3: {
-            return [UIImage imageNamed:@"app_bg_3.jpg"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_3.jpg" : @"app_bg_iphone5s_3.jpg"];
         }
             break;
         case KENSubjectTypeAppbg4: {
-            return [UIImage imageNamed:@"app_bg_4.jpg"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_4.jpg" : @"app_bg_iphone5s_4.jpg"];
         }
             break;
         case KENSubjectTypeAppbg5: {
-            return [UIImage imageNamed:@"app_bg_5.jpg"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_5.jpg" : @"app_bg_iphone5s_5.jpg"];
         }
             break;
         case KENSubjectTypeAppbg6: {
-            return [UIImage imageNamed:@"app_bg_6.jpg"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_6.jpg" : @"app_bg_iphone5s_6.jpg"];
         }
             break;
         case KENSubjectTypeAppbg7: {
-            return [UIImage imageNamed:@"app_bg_7.jpg"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_7.jpg" : @"app_bg_iphone5s_7.jpg"];
         }
             break;
         default: {
-            return [UIImage imageNamed:@"app_bg_1.png"];
+            return [UIImage imageNamed:isIPhone4 ? @"app_bg_1.png" : @"app_bg_iphone5s_1.jpg"];
         }
             break;
     }

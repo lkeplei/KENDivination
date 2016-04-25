@@ -61,7 +61,7 @@
                                       imagesec:[UIImage imageNamed:@"button_end_xipai_sec.png"]
                                         target:self
                                         action:@selector(btnClicked:)];
-    _endButton.center = CGPointMake(160, 340);
+    _endButton.center = CGPointMake(160, (340.f / 480.f) * self.height);
     [self addSubview:_endButton];
     
     [self startAnimation];

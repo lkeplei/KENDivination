@@ -46,8 +46,7 @@
             _currentUiView = nil;
         }
         
-        CGRect frame = CGRectMake(0, KNotificationHeight, self.contentView.frame.size.width,
-                                  self.contentView.frame.size.height - KNotificationHeight);
+        CGRect frame = CGRectMake(0, KNotificationHeight, self.contentView.width, self.contentView.height - KNotificationHeight);
         switch (type) {
             case KENUiViewTypeStartFanPai:
             case KENUiViewTypeStartChouPai:
@@ -79,8 +78,7 @@
             }
                 break;
             case KENUiViewTypePaiZhenDetail:{
-                _currentUiView = [[KENUiViewPaiZhenDetail alloc] initWithFrame:CGRectMake(0, KNotificationHeight, 320, 480 - KNotificationHeight)
-                                                                      delegate:self];
+                _currentUiView = [[KENUiViewPaiZhenDetail alloc] initWithFrame:frame delegate:self];
             }
                 break;
             default:

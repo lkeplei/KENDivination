@@ -109,7 +109,7 @@
                                       imagesec:imgSec
                                         target:self
                                         action:@selector(btnClicked:)];
-    _stepButton.center = CGPointMake(160, 340);
+    _stepButton.center = CGPointMake(160, (340.f / 480.f) * self.height);
     _stepButton.alpha = 0;
 //    [_stepButton setEnabled:NO];
     [self addSubview:_stepButton];
