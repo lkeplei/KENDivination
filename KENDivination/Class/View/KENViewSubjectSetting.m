@@ -54,7 +54,7 @@
     
     //分隔线
     UIImageView *line = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_separator.png"]];
-    line.center = CGPointMake(160, 222);
+    line.center = CGPointMake(160, (222.f / 480.f) * self.contentView.height);
     [self.contentView addSubview:line];
     
     //确认修改按钮
@@ -63,12 +63,12 @@
                           imagesec:[UIImage imageNamed:@"subject_confirm_sec.png"]
                             target:self
                             action:@selector(btnConfirmClicked:)];
-    button.center = CGPointMake(160, 392);
+    button.center = CGPointMake(160, (392.f / 480.f) * self.contentView.height);
     [self.contentView addSubview:button];
 }
 
 - (void)initAppBgSelect {
-    UILabel *title = [KENUtils labelWithTxt:MyLocal(@"subject_bg") frame:(CGRect){20, 58, 90, 20}
+    UILabel *title = [KENUtils labelWithTxt:MyLocal(@"subject_bg") frame:(CGRect){20, (58.f / 480.f) * self.contentView.height, 90, 20}
                                        font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
     title.textAlignment = KTextAlignmentLeft;
     [self.contentView addSubview:title];
@@ -78,7 +78,7 @@
                                     imagesec:[UIImage imageNamed:@"subject_arrow_left.png"]
                                       target:self
                                       action:@selector(btnLeftAppClicked:)];
-    left.center = CGPointMake(18, 142);
+    left.center = CGPointMake(18, (142.f / 480.f) * self.contentView.height);
     [self.contentView addSubview:left];
     
     UIButton* right = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -86,11 +86,11 @@
                                     imagesec:[UIImage imageNamed:@"subject_arrow_right.png"]
                                       target:self
                                       action:@selector(btnRightAppClicked:)];
-    right.center = CGPointMake(302, 142);
+    right.center = CGPointMake(302, (142.f / 480.f) * self.contentView.height);
     [self.contentView addSubview:right];
     
     _appBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 270, 134)];
-    _appBgTableView.center = CGPointMake(160, 142);
+    _appBgTableView.center = CGPointMake(160, (142.f / 480.f) * self.contentView.height);
     _appBgTableView.delegate = self;
     _appBgTableView.dataSource = self;
     
@@ -105,7 +105,7 @@
                                     imagesec:[UIImage imageNamed:@"subject_arrow_left.png"]
                                       target:self
                                       action:@selector(btnLeftPaiClicked:)];
-    left.center = CGPointMake(18, 303);
+    left.center = CGPointMake(18, (303.f / 480.f) * self.contentView.height);
     [self.contentView addSubview:left];
     
     UIButton* right = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -113,11 +113,11 @@
                                     imagesec:[UIImage imageNamed:@"subject_arrow_right.png"]
                                       target:self
                                       action:@selector(btnRightPaiClicked:)];
-    right.center = CGPointMake(302, 303);
+    right.center = CGPointMake(302, (303.f / 480.f) * self.contentView.height);
     [self.contentView addSubview:right];
     
     _paiBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 268, 104)];
-    _paiBgTableView.center = CGPointMake(160, 303);
+    _paiBgTableView.center = CGPointMake(160, (303.f / 480.f) * self.contentView.height);
     _paiBgTableView.delegate = self;
     _paiBgTableView.dataSource = self;
     
@@ -125,7 +125,7 @@
     
     [self.contentView addSubview:_paiBgTableView];
     
-    UILabel *title = [KENUtils labelWithTxt:MyLocal(@"subject_ka_bei") frame:(CGRect){20, 230, 90, 20}
+    UILabel *title = [KENUtils labelWithTxt:MyLocal(@"subject_ka_bei") frame:(CGRect){20, (230.f / 480.f) * self.contentView.height, 90, 20}
                                        font:[UIFont fontWithName:KLabelFontArial size:14] color:[UIColor whiteColor]];
     title.textAlignment = KTextAlignmentLeft;
     [self.contentView addSubview:title];
@@ -133,8 +133,8 @@
 
 #pragma mark - setting btn
 - (void)btnConfirmClicked:(UIButton *)button {
-    int appSec = [_appBgTableView selectedIndex];
-    int paiSec = [_paiBgTableView selectedIndex];
+    NSInteger appSec = [_appBgTableView selectedIndex];
+    NSInteger paiSec = [_paiBgTableView selectedIndex];
     if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] || (appSec <= kLockStart && paiSec <= kLockStart)){
         [[KENModel shareModel] setBgMessage:appSec paiBg:paiSec];
     } else {
@@ -276,7 +276,7 @@
 - (void)setAppBgCellContent:(SListViewCell *)cell index:(NSInteger)index {
     UIImage *img = [UIImage imageNamed:@"subject_bg_1.png"];
     if (index > 0) {
-        img = [UIImage imageNamed:[NSString stringWithFormat:@"subject_bg_%d.jpg", index + 1]];
+        img = [UIImage imageNamed:[NSString stringWithFormat:@"subject_bg_%zd.jpg", index + 1]];
     }
     UIImageView *imgView = (UIImageView *)[cell.contentView viewWithTag:1001];
     if (imgView) {
@@ -304,7 +304,7 @@
 - (void)setPaiBgCellContent:(SListViewCell *)cell index:(NSInteger)index {
     UIImage *img = [UIImage imageNamed:@"kapai_bg_1.png"];
     if (index > 0) {
-        img = [UIImage imageNamed:[NSString stringWithFormat:@"kapai_bg_%d.jpg", index + 1]];
+        img = [UIImage imageNamed:[NSString stringWithFormat:@"kapai_bg_%zd.jpg", index + 1]];
     }
     UIImageView *imgView = (UIImageView *)[cell.contentView viewWithTag:1001];
     if (imgView) {
