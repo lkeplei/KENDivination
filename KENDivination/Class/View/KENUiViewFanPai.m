@@ -66,7 +66,11 @@
         if (IsPad) {
             imgView.center = CGPointMake(self.center.x / rate, self.center.y / rate - 30);
         } else {
-            imgView.center = CGPointMake(self.center.x, self.center.y - 45);
+            if (isIPhone4) {
+                imgView.center = CGPointMake(self.center.x, self.center.y - 45);
+            } else {
+                imgView.center = CGPointMake(self.center.x, self.center.y - 45 - 30);
+            }
         }
         
         [self addSubview:imgView];
@@ -79,7 +83,7 @@
         
         UIImageView* pai = [[UIImageView alloc] initWithImage:img];
         NSDictionary* dic = [pathArray objectAtIndex:i];
-        pai.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
+        pai.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], ([[dic objectForKey:KDicKeyZhenY] floatValue] / 480.f) * self.height);
         if ([dic objectForKey:KDicKeyZhenAngle]) {
             pai.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
         }

@@ -147,7 +147,7 @@
 }
 
 -(UIImage*)getPaiZhenTitle{
-    return [UIImage imageNamed:[NSString stringWithFormat:@"pai_zhen_title_%02d.png", _memoryData.memoryPaiZhen]];;
+    return [UIImage imageNamed:[NSString stringWithFormat:@"pai_zhen_title_%02zd.png", _memoryData.memoryPaiZhen]];;
 }
 
 -(NSInteger)getPaiZhenNumber{

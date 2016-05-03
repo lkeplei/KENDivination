@@ -11,6 +11,8 @@
 
 //#define KAppTest
 
+#define kFullScreenAdaptive(a)          (a / 480.f) * self.contentView.height
+
 #define IsPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)    //是否为pad判断
 #define MyLocal(x, ...) NSLocalizedString(x, nil)       //定义国际化使用
 

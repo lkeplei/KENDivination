@@ -46,7 +46,7 @@
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
         if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
             [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanZhuanDong];
-            prePoint = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
+            prePoint = CGPointMake(locationInView.x - 160, kFullScreenAdaptive(240.f) - locationInView.y);
             rotateView = 0;
         }
 	}
@@ -117,11 +117,11 @@
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
         if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
-            CGPoint point = CGPointMake(locationInView.x - 160, 240 - locationInView.y);
-            int offset = abs(point.x) > abs(point.y) ? abs(point.y - prePoint.y) : abs(point.x - prePoint.x);
+            CGPoint point = CGPointMake(locationInView.x - 160, kFullScreenAdaptive(240.f) - locationInView.y);
+            int offset = fabs(point.x) > fabs(point.y) ? fabs(point.y - prePoint.y) : fabs(point.x - prePoint.x);
             if (offset > 1) {
                 if (point.y > 0) {
-                    if (abs(point.x) > abs(point.y)) {
+                    if (fabs(point.x) > fabs(point.y)) {
                         if (point.x > 0) {
                             if (prePoint.y < point.y) {
                                 rotateView -= offset;
@@ -143,7 +143,7 @@
                         }
                     }
                 } else {
-                    if (abs(point.x) > abs(point.y)) {
+                    if (fabs(point.x) > fabs(point.y)) {
                         if (point.x > 0) {
                             if (prePoint.y < point.y) {
                                 rotateView -= offset;
@@ -203,7 +203,7 @@
     
     //zhuan pai
     _zhuanPanView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_zhuanpan.png"]];
-    _zhuanPanView.center = CGPointMake(160, 240);
+    _zhuanPanView.center = CGPointMake(160, kFullScreenAdaptive(240.f));
     [self.contentView addSubview:_zhuanPanView];
     
     UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_point.png"]];
@@ -227,7 +227,7 @@
                                   imagesec:[UIImage imageNamed:@"home_pare_sec.png"]
                                     target:self
                                     action:@selector(btnPareClicked:)];
-        button.center = CGPointMake(250, (437.f / 480.f) * self.contentView.height);
+        button.center = CGPointMake(250, kFullScreenAdaptive(437.f));
         [self.contentView addSubview:button];
     }
 }
@@ -238,7 +238,7 @@
                               imagesec:[UIImage imageNamed:@"home_subject_setting_sec.png"]
                                 target:self
                                 action:@selector(btnSubjectSettingClicked:)];
-    button.center = CGPointMake(56, (437.f / 480.f) * self.contentView.height);
+    button.center = CGPointMake(56, kFullScreenAdaptive(437.f));
     [self.contentView addSubview:button];
 }
 
