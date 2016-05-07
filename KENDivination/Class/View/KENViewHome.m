@@ -198,7 +198,7 @@
     setBtn.center = CGPointMake(288, KNotificationHeight / 2);
     [self.contentView addSubview:setBtn];
     
-    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_background_image.png"]];
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:isIPhone4 ? @"home_background_image" : @"home_background_image_iphone5s"]];
     [self.contentView addSubview:bgView];
     
     //zhuan pai

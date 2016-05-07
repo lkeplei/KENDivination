@@ -54,7 +54,7 @@
 
 -(void)finishView{
     _imgViewArray = [[NSMutableArray alloc] init];
-    int count = [[KENModel shareModel] getPaiZhenNumber];
+    NSInteger count = [[KENModel shareModel] getPaiZhenNumber];
     NSDictionary* resDic = [[KENModel shareModel] getPaiZhenPostions];
     NSArray* pathArray = [resDic objectForKey:KDicKeyZhenPaiPath];
     
@@ -124,7 +124,11 @@
         if (IsPad) {
             imgView.center = CGPointMake(self.center.x / rate, self.center.y / rate - 30);
         } else {
-            imgView.center = CGPointMake(self.center.x, self.center.y - 45);
+            if (isIPhone4) {
+                imgView.center = CGPointMake(self.center.x, self.center.y - 45);
+            } else {
+                imgView.center = CGPointMake(self.center.x, self.center.y - 45 - 30);
+            }
         }
         
         [self addSubview:imgView];
@@ -133,7 +137,7 @@
     //
     _imgViewArray = [[NSMutableArray alloc] init];
     UIImage* image = [[KENModel shareModel] getKapaiBgImg];
-    int count = [[KENModel shareModel] getPaiZhenNumber];
+    NSInteger count = [[KENModel shareModel] getPaiZhenNumber];
     
     UIImageView* tempView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
     tempView.center = CGPointMake(160, 80);
@@ -160,7 +164,7 @@
                     for (int i = 0; i < [pathArray count]; i++) {
                         NSDictionary* dic = [pathArray objectAtIndex:i];
                         UIImageView* view = [_imgViewArray objectAtIndex:i];
-                        view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], [[dic objectForKey:KDicKeyZhenY] intValue]);
+                        view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], ([[dic objectForKey:KDicKeyZhenY] floatValue] / 480.f) * self.height);
                         if ([dic objectForKey:KDicKeyZhenAngle]) {
                             view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
                         }

@@ -573,7 +573,6 @@
 		04B323741920FB0500C055FF /* KENViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B323731920FB0500C055FF /* KENViewFactory.m */; };
 		04B3237719210FEB00C055FF /* KENViewHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3237619210FEB00C055FF /* KENViewHome.m */; };
 		04E577F3192112F200688137 /* app_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E577F2192112F200688137 /* app_background_image@2x.png */; };
-		04E577F5192115BE00688137 /* home_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E577F4192115BE00688137 /* home_background_image@2x.png */; };
 		1813B6D7193466EE003FE066 /* KENUiViewPaiDetailAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */; };
 		1887F8F91938553B0064F8F8 /* KENCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887F8F81938553B0064F8F8 /* KENCoreDataManager.m */; };
 /* End PBXBuildFile section */
@@ -1402,7 +1401,6 @@
 		04B3237519210FEB00C055FF /* KENViewHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENViewHome.h; sourceTree = "<group>"; };
 		04B3237619210FEB00C055FF /* KENViewHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewHome.m; sourceTree = "<group>"; };
 		04E577F2192112F200688137 /* app_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_background_image@2x.png"; sourceTree = "<group>"; };
-		04E577F4192115BE00688137 /* home_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_background_image@2x.png"; sourceTree = "<group>"; };
 		1813B6D5193466EE003FE066 /* KENUiViewPaiDetailAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENUiViewPaiDetailAlert.h; sourceTree = "<group>"; };
 		1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewPaiDetailAlert.m; sourceTree = "<group>"; };
 		1887F8F71938553B0064F8F8 /* KENCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENCoreDataManager.h; sourceTree = "<group>"; };
@@ -2645,7 +2643,6 @@
 				0400E0891928B888004D3B30 /* buttons */,
 				04246476192E29CA001A18D7 /* chou_pai_bg@2x.png */,
 				0467217E1A0DEC440095930A /* exit_whether_alert@2x.png */,
-				04E577F4192115BE00688137 /* home_background_image@2x.png */,
 				04A07BAB1922479400F33A1D /* home_point@2x.png */,
 				04A07BAC1922479400F33A1D /* home_setting@2x.png */,
 				046721821A0DEC650095930A /* home_zhuanpan@2x.png */,
@@ -2796,7 +2793,6 @@
 				046DA55D1BE8E32700947ED1 /* adwo_videoMuteBig.png in Resources */,
 				042514B5192CEFC500A670CF /* Default-Portrait@2x~ipad.png in Resources */,
 				046DA6381BE8E33700947ED1 /* admogoVideo_11.png in Resources */,
-				04E577F5192115BE00688137 /* home_background_image@2x.png in Resources */,
 				045A4D211933848F00463FF8 /* l_app_pai_11@2x.jpg in Resources */,
 				046722C81A0DEFB60095930A /* memory_title@2x.png in Resources */,
 				046DA55C1BE8E32700947ED1 /* adwo_videoMute.png in Resources */,
