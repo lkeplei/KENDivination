@@ -34,17 +34,17 @@
 
 -(void)initView{
     _paiBottom = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
-    _paiBottom.center = CGPointMake(160, KPaiCenter.y + 80);
+    _paiBottom.center = CGPointMake(kFullScreenAdaptiveX(160.f), KPaiCenter.y + 80);
     _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];
     
     _paiTop = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
-    _paiTop.center = CGPointMake(160, KPaiCenter.y + 80);
+    _paiTop.center = CGPointMake(kFullScreenAdaptiveX(160.f), KPaiCenter.y + 80);
     _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
     _paiMiddle = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
-    _paiMiddle.center = CGPointMake(160, KPaiCenter.y + 80);
+    _paiMiddle.center = CGPointMake(kFullScreenAdaptiveX(160.f), KPaiCenter.y + 80);
     _paiMiddle.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiMiddle];
     
@@ -59,8 +59,8 @@
     [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
     
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _paiMiddle.center = CGPointMake(160, KPaiCenter.y + 160);
-        _paiBottom.center = CGPointMake(160, KPaiCenter.y + 160);
+        _paiMiddle.center = CGPointMake(kFullScreenAdaptiveX(160.f), KPaiCenter.y + 160);
+        _paiBottom.center = CGPointMake(kFullScreenAdaptiveX(160.f), KPaiCenter.y + 160);
     }
                      completion:^(BOOL finished) {
                          if (finished) {
@@ -92,7 +92,7 @@
     [NSTimer scheduledTimerWithTimeInterval:0.7 target:self selector:@selector(timerOut) userInfo:nil repeats:NO];
     
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _paiTop.center = CGPointMake(160, KPaiCenter.y + 160);
+        _paiTop.center = CGPointMake(kFullScreenAdaptiveX(160.f), KPaiCenter.y + 160);
     }
                      completion:^(BOOL finished) {
                          if (finished) {

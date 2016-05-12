@@ -168,7 +168,7 @@
                                     target:self
                                     action:@selector(topRightBtnClicked:)];
     _topEditBtn.frame = (CGRect){CGPointZero, 60, 40};
-    _topEditBtn.center = CGPointMake(285, KNotificationHeight / 2);
+    _topEditBtn.center = CGPointMake(kFullScreenAdaptiveX(285.f), KNotificationHeight / 2);
     [self.contentView addSubview:_topEditBtn];
     
     _topOkBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
@@ -177,7 +177,7 @@
                                     target:self
                                     action:@selector(topRightBtnClicked:)];
     _topOkBtn.frame = (CGRect){CGPointZero, 60, 40};
-    _topOkBtn.center = CGPointMake(285, KNotificationHeight / 2);
+    _topOkBtn.center = CGPointMake(kFullScreenAdaptiveX(285.f), KNotificationHeight / 2);
     [_topOkBtn setHidden:YES];
     [self.contentView addSubview:_topOkBtn];
     

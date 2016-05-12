@@ -135,8 +135,8 @@
                                      target:self
                                      action:@selector(detailBtnClicked:)];
     [_topDetailBtn setHidden:YES];
-    _topDetailBtn.frame = (CGRect){CGPointZero, 60, 40};
-    _topDetailBtn.center = CGPointMake(288, KNotificationHeight / 2);
+    _topDetailBtn.frame = (CGRect){CGPointZero, kFullScreenAdaptiveX(60.f), 40};
+    _topDetailBtn.center = CGPointMake(kFullScreenAdaptiveX(288.f), KNotificationHeight / 2);
     [self.contentView addSubview:_topDetailBtn];
     
     _topPaizhenBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:YES
@@ -145,8 +145,8 @@
                                       target:self
                                       action:@selector(paizhenBtnClicked:)];
     [_topPaizhenBtn setHidden:YES];
-    _topPaizhenBtn.frame = (CGRect){CGPointZero, 60, 40};
-    _topPaizhenBtn.center = CGPointMake(288, KNotificationHeight / 2);
+    _topPaizhenBtn.frame = (CGRect){CGPointZero, kFullScreenAdaptiveX(60.f), 40};
+    _topPaizhenBtn.center = CGPointMake(kFullScreenAdaptiveX(288.f), KNotificationHeight / 2);
     [self.contentView addSubview:_topPaizhenBtn];
 }
 
@@ -156,7 +156,7 @@
                                       imagesec:[UIImage imageNamed:@"app_btn_back_sec.png"]
                                         target:self
                                         action:@selector(backBtnClicked:)];
-    setBtn.frame = (CGRect){CGPointZero, 60, 40};
+    setBtn.frame = (CGRect){CGPointZero, kFullScreenAdaptiveX(60.f), 40};
     setBtn.center = CGPointMake(setBtn.center.x, KNotificationHeight / 2);
     [self.contentView addSubview:setBtn];
 }

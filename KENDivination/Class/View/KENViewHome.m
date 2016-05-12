@@ -46,7 +46,7 @@
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
         if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
             [[KENModel shareModel] playVoiceByType:KENVoiceZhuanPanZhuanDong];
-            prePoint = CGPointMake(locationInView.x - 160, kFullScreenAdaptive(240.f) - locationInView.y);
+            prePoint = CGPointMake(locationInView.x - kFullScreenAdaptiveX(160.f), kFullScreenAdaptiveY(240.f) - locationInView.y);
             rotateView = 0;
         }
 	}
@@ -117,7 +117,7 @@
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
         if (CGRectContainsPoint(_zhuanPanView.frame, locationInView)) {
-            CGPoint point = CGPointMake(locationInView.x - 160, kFullScreenAdaptive(240.f) - locationInView.y);
+            CGPoint point = CGPointMake(locationInView.x - kFullScreenAdaptiveX(160.f), kFullScreenAdaptiveY(240.f) - locationInView.y);
             int offset = fabs(point.x) > fabs(point.y) ? fabs(point.y - prePoint.y) : fabs(point.x - prePoint.x);
             if (offset > 1) {
                 if (point.y > 0) {
@@ -195,7 +195,7 @@
                                 target:self
                                 action:@selector(settingBtnClicked:)];
     setBtn.frame = (CGRect){CGPointZero, 60, 40};
-    setBtn.center = CGPointMake(288, KNotificationHeight / 2);
+    setBtn.center = CGPointMake(kFullScreenAdaptiveX(288.f), KNotificationHeight / 2);
     [self.contentView addSubview:setBtn];
     
     UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:isIPhone4 ? @"home_background_image" : @"home_background_image_iphone5s"]];
@@ -203,7 +203,7 @@
     
     //zhuan pai
     _zhuanPanView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_zhuanpan.png"]];
-    _zhuanPanView.center = CGPointMake(160, kFullScreenAdaptive(240.f));
+    _zhuanPanView.center = CGPointMake(kFullScreenAdaptiveX(160.f), kFullScreenAdaptiveY(240.f));
     [self.contentView addSubview:_zhuanPanView];
     
     UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_point.png"]];
@@ -227,7 +227,7 @@
                                   imagesec:[UIImage imageNamed:@"home_pare_sec.png"]
                                     target:self
                                     action:@selector(btnPareClicked:)];
-        button.center = CGPointMake(250, kFullScreenAdaptive(437.f));
+        button.center = CGPointMake(kFullScreenAdaptiveX(250.f), kFullScreenAdaptiveY(437.f));
         [self.contentView addSubview:button];
     }
 }
@@ -238,7 +238,7 @@
                               imagesec:[UIImage imageNamed:@"home_subject_setting_sec.png"]
                                 target:self
                                 action:@selector(btnSubjectSettingClicked:)];
-    button.center = CGPointMake(56, kFullScreenAdaptive(437.f));
+    button.center = CGPointMake(kFullScreenAdaptiveX(56.f), kFullScreenAdaptiveY(437.f));
     [self.contentView addSubview:button];
 }
 

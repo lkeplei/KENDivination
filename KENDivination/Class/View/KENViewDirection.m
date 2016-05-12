@@ -66,7 +66,7 @@
             [pingBtn setImage:[UIImage imageNamed:@"direction_paizhen_jiami.png"] forState:UIControlStateHighlighted];
             [pingBtn setImage:[UIImage imageNamed:@"direction_paizhen_jiami.png"] forState:UIControlStateSelected];
         }
-        pingBtn.center = CGPointMake(60 + 100 * (i % 3), 131 + 110 * (i / 3));
+        pingBtn.center = CGPointMake(kFullScreenAdaptiveX(60.f + 100.f * (i % 3)), 131 + 110 * (i / 3));
         pingBtn.tag = KDirectionBtnTagBase + i;
         [self.contentView addSubview:pingBtn];
     }
@@ -127,9 +127,9 @@
             NSDictionary* res = [_resourceArray objectAtIndex:i];
             if ([[res objectForKey:KDicKeyJiaMi] boolValue]) {
                 UIButton* button = (UIButton*)[self.contentView viewWithTag:KDirectionBtnTagBase + i];
-                [button setImage:[UIImage imageNamed:nil] forState:UIControlStateNormal];
-                [button setImage:[UIImage imageNamed:nil] forState:UIControlStateHighlighted];
-                [button setImage:[UIImage imageNamed:nil] forState:UIControlStateSelected];
+                [button setImage:nil forState:UIControlStateNormal];
+                [button setImage:nil forState:UIControlStateHighlighted];
+                [button setImage:nil forState:UIControlStateSelected];
             }
         }
     }

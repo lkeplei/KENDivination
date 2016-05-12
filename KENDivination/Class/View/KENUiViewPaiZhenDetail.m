@@ -146,7 +146,7 @@
     UIFont* font = [UIFont fontWithName:KLabelFontArial size:13];
     //message
     float offx = CGRectGetMaxX(kaPai.frame) + 10;
-    float width = 320 - offx - 20;
+    float width = kFullScreenAdaptiveX(320.f) - offx - 20;
     NSString* string = [MyLocal(@"kapai_zhenwei") stringByAppendingString:[KENUtils getStringByInt:zhenWei + 1]];
     CGSize size = [KENUtils getFontSize:string font:font];
     float height = (size.height + 1);

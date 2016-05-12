@@ -140,7 +140,7 @@
     NSInteger count = [[KENModel shareModel] getPaiZhenNumber];
     
     UIImageView* tempView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
-    tempView.center = CGPointMake(160, 80);
+    tempView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 80);
     float width = 240 / count;
     float space = width;
     if (width < image.size.width) {

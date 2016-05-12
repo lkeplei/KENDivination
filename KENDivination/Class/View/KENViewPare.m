@@ -34,7 +34,7 @@
                                        imagesec:[UIImage imageNamed:@"pare_taluo_sec.png"]
                                          target:self
                                          action:@selector(taluoBtnClicked:)];
-    taluoBtn.center = CGPointMake(160, 169);
+    taluoBtn.center = CGPointMake(kFullScreenAdaptiveX(160.f), 169);
     [self.contentView addSubview:taluoBtn];
     
     UIButton* daziranBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -42,7 +42,7 @@
                                         imagesec:[UIImage imageNamed:@"pare_daziran_sec.png"]
                                           target:self
                                           action:@selector(daziranBtnClicked:)];
-    daziranBtn.center = CGPointMake(160, 212);
+    daziranBtn.center = CGPointMake(kFullScreenAdaptiveX(160.f), 212);
     [self.contentView addSubview:daziranBtn];
     
     UIButton* daakanaBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -50,7 +50,7 @@
                                         imagesec:[UIImage imageNamed:@"pare_daakana_sec.png"]
                                           target:self
                                           action:@selector(daakanaBtnClicked:)];
-    daakanaBtn.center = CGPointMake(160, 255);
+    daakanaBtn.center = CGPointMake(kFullScreenAdaptiveX(160.f), 255);
     [self.contentView addSubview:daakanaBtn];
     
     //去除广告

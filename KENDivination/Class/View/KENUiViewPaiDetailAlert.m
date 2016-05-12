@@ -32,7 +32,7 @@
         [self setBackgroundColor:[UIColor clearColor]];
         
         _bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jie_pai_bg.png"]];
-        _bgView.center = CGPointMake(160, _bgView.frame.size.height / 2 + 50);
+        _bgView.center = CGPointMake(kFullScreenAdaptiveX(160.f), _bgView.frame.size.height / 2 + 50);
         [_bgView setExclusiveTouch:YES];
         
         [self addSubview:_bgView];

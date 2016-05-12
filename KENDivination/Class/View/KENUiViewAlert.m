@@ -21,7 +21,7 @@
         [self setBackgroundColor:[UIColor clearColor]];
         
         UIImageView* bgView = [[UIImageView alloc] initWithImage:img];
-        bgView.center = CGPointMake(160, 240);
+        bgView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 240);
         
         [self addSubview:bgView];
         
@@ -32,10 +32,10 @@
 
 -(void)setButtons:(NSArray*)array{
     if ([array count] == 1) {
-        [self addButton:CGPointMake(160, 275) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
+        [self addButton:CGPointMake(kFullScreenAdaptiveX(160.f), 275) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
     } else if ([array count] == 2) {
-        [self addButton:CGPointMake(90, 275) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
-        [self addButton:CGPointMake(234, 275) res:[array objectAtIndex:1] tag:KButtonsBaseTag + 1];
+        [self addButton:CGPointMake(kFullScreenAdaptiveX(90.f), 275) res:[array objectAtIndex:0] tag:KButtonsBaseTag];
+        [self addButton:CGPointMake(kFullScreenAdaptiveX(234.f), 275) res:[array objectAtIndex:1] tag:KButtonsBaseTag + 1];
     } else {
         
     }

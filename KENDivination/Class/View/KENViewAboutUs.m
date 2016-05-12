@@ -29,7 +29,7 @@
 
 -(void)showView{
     UIImageView* bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"about_us_bg.png"]];
-    bgView.center = CGPointMake(160, 240);
+    bgView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 240);
     [self.contentView addSubview:bgView];
     
     UIButton* aboutBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -37,7 +37,7 @@
                                        imagesec:[UIImage imageNamed:@"about_us_qiqi.png"]
                                          target:self
                                          action:@selector(aboutBtnClicked:)];
-    aboutBtn.center = CGPointMake(160, 317);
+    aboutBtn.center = CGPointMake(kFullScreenAdaptiveX(160.f), 317);
     [self.contentView addSubview:aboutBtn];
 }
 

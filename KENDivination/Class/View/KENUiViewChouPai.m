@@ -54,7 +54,7 @@
     [self addSubview:label];
     
     _selectPaiBgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
-    _selectPaiBgView.center = CGPointMake(160, 260);
+    _selectPaiBgView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 260);
     [self addSubview:_selectPaiBgView];
     
     UIImage* image = [[KENModel shareModel] getKapaiBgImg];
@@ -83,7 +83,7 @@
     _paiArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < 22; i++) {
         UIImageView* pai = [[UIImageView alloc] initWithImage:image];
-        pai.center = CGPointMake(160, -52);
+        pai.center = CGPointMake(kFullScreenAdaptiveX(160.f), -52);
         [self addSubview:pai];
         
         [_paiArray addObject:pai];
@@ -310,7 +310,7 @@
     }
     
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _selectPaiBgView.center = CGPointMake(160, 80);
+        _selectPaiBgView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 80);
     }
                      completion:^(BOOL finished) {
                          if (finished) {

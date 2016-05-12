@@ -65,7 +65,7 @@
     
     if (IsPad) {
         CATransform3D currentTransform = _contentView.layer.transform;
-        _rate = self.frame.size.height / _contentView.frame.size.height;
+        _rate = self.height / _contentView.height;
         CATransform3D scaled = CATransform3DScale(currentTransform, _rate, _rate, _rate);
         _contentView.layer.transform = scaled;
     }

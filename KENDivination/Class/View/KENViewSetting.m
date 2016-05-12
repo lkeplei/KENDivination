@@ -30,7 +30,7 @@
 
 -(void)showView{
     UIImageView* voiceView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"setting_voice.png"]];
-    voiceView.center = CGPointMake(160, 169);
+    voiceView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 169);
     [self.contentView addSubview:voiceView];
 
     //switch
@@ -40,7 +40,7 @@
 //    switchVoice.thumbTintColor = [UIColor blueColor]; // 设置开关上左右滑动的小圆点的颜色
 //    switchVoice.onImage = [UIImage imageNamed:@"min.png"]; // 打开状态显示的图片
 //    switchVoice.offImage = [UIImage imageNamed:@"max.png"]; // 关闭状态下的图片
-    switchVoice.center = CGPointMake(259, 169);
+    switchVoice.center = CGPointMake(kFullScreenAdaptiveX(259.f), 169);
     [switchVoice setOn:[[KENDataManager getDataByKey:KUserDefaultSetOpenVoice] boolValue]];
     [switchVoice addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
     [self.contentView addSubview:switchVoice];
@@ -51,7 +51,7 @@
                                       imagesec:[UIImage imageNamed:@"setting_ping_jia_sec.png"]
                                         target:self
                                         action:@selector(pingBtnClicked:)];
-    pingBtn.center = CGPointMake(160, 212);
+    pingBtn.center = CGPointMake(kFullScreenAdaptiveX(160.f), 212);
     [self.contentView addSubview:pingBtn];
     
     UIButton* aboutBtn = [KENUtils buttonWithImg:nil off:0 zoomIn:NO
@@ -59,7 +59,7 @@
                                        imagesec:[UIImage imageNamed:@"setting_about_us_sec.png"]
                                          target:self
                                          action:@selector(aboutBtnClicked:)];
-    aboutBtn.center = CGPointMake(160, 255);
+    aboutBtn.center = CGPointMake(kFullScreenAdaptiveX(160.f), 255);
     [self.contentView addSubview:aboutBtn];
     
     //添加广告

@@ -46,13 +46,13 @@
 
 -(void)initView{
     _paiTop = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
-    _paiTop.center = CGPointMake(160, 80);
+    _paiTop.center = CGPointMake(kFullScreenAdaptiveX(160.f), 80);
 
     _paiTop.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiTop];
     
     _paiBottom = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
-    _paiBottom.center = CGPointMake(160, 80);
+    _paiBottom.center = CGPointMake(kFullScreenAdaptiveX(160.f), 80);
     _paiBottom.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self addSubview:_paiBottom];
     
@@ -61,7 +61,7 @@
                                       imagesec:[UIImage imageNamed:@"button_end_xipai_sec.png"]
                                         target:self
                                         action:@selector(btnClicked:)];
-    _endButton.center = CGPointMake(160, (340.f / 480.f) * self.height);
+    _endButton.center = CGPointMake(kFullScreenAdaptiveX(160.f), (IsPad ? 340.f : (340.f / 480.f) * self.height));
     [self addSubview:_endButton];
     
     [self startAnimation];
@@ -100,9 +100,9 @@
             if (step % 2 == 1) {
                 animating = YES;
                 trans = NO;
-                _paiBottom.center = CGPointMake(160, 160);
+                _paiBottom.center = CGPointMake(kFullScreenAdaptiveX(160.f), 160);
             } else {
-                _paiBottom.center = CGPointMake(160, 80);
+                _paiBottom.center = CGPointMake(kFullScreenAdaptiveX(160.f), 80);
             }
             canTrans = YES;
             step++;

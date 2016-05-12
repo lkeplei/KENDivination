@@ -42,16 +42,16 @@
                                         target:self
                                         action:@selector(okBtnClicked:)];
     _okButton.frame = (CGRect){CGPointZero, 60, 40};
-    _okButton.center = CGPointMake(285, KNotificationHeight / 2);
+    _okButton.center = CGPointMake(kFullScreenAdaptiveX(285.f), KNotificationHeight / 2);
     [_okButton setEnabled:NO];
     [self.contentView addSubview:_okButton];
     
     UIImageView* imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"question_write_down.png"]];
-    imgView.center = CGPointMake(160, 79);
+    imgView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 79);
     [self.contentView addSubview:imgView];
     
     //textView
-    _questionTextView = [[UITextView alloc] initWithFrame:CGRectMake(10, 95, 300, 180)];
+    _questionTextView = [[UITextView alloc] initWithFrame:CGRectMake(kFullScreenAdaptiveX(10.f), 95, kFullScreenAdaptiveX(300.f), 180)];
     _questionTextView.scrollEnabled = YES;
     _questionTextView.textColor = [UIColor whiteColor];
     [_questionTextView setBackgroundColor:[UIColor clearColor]];

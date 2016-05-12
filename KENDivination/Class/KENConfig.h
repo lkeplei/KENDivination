@@ -11,7 +11,8 @@
 
 //#define KAppTest
 
-#define kFullScreenAdaptive(a)          (a / 480.f) * self.contentView.height
+#define kFullScreenAdaptiveY(a)          (IsPad ? (a) : ((a) / 480.f) * self.contentView.height)
+#define kFullScreenAdaptiveX(a)          (IsPad ? ((a) / 320.f) * 360.f : (a))
 
 #define IsPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)    //是否为pad判断
 #define MyLocal(x, ...) NSLocalizedString(x, nil)       //定义国际化使用
@@ -62,7 +63,7 @@
 
 #define KJiePaiKeyColor         RGBCOLOR(250,249,142)
 
-#define KPaiCenter              CGPointMake(160, 110)
+#define KPaiCenter              CGPointMake(kFullScreenAdaptiveX(160.f), 110)
 
 
 #define KUserDefaultSetOpenVoice                @"default_open_voice"

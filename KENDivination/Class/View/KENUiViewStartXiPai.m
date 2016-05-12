@@ -37,7 +37,7 @@
     
     if (type == KENUiViewTypeStartFanPai) {
         _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chou_pai_bg.png"]];
-        _imageView.center = CGPointMake(160, 80);
+        _imageView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 80);
         [self addSubview:_imageView];
         
         UIImage* image = [[KENModel shareModel] getKapaiBgImg];
@@ -56,7 +56,7 @@
         }
     } else {
         _imageView = [[UIImageView alloc] initWithImage:[[KENModel shareModel] getKapaiBgImg]];
-        _imageView.center = CGPointMake(160, 80);
+        _imageView.center = CGPointMake(kFullScreenAdaptiveX(160.f), 80);
         if (_currentViewType == KENUiViewTypeStartXiPai || _currentViewType == KENUiViewTypeStartQiePai) {
             _imageView.transform = CGAffineTransformMakeRotation(-M_PI_2);
         }
@@ -96,7 +96,7 @@
             break;
     }
     _contentLabel = [KENUtils labelWithTxt:content
-                                      frame:CGRectMake(60, 150, 210, 170)
+                                      frame:CGRectMake(kFullScreenAdaptiveX(60.f), 150, kFullScreenAdaptiveX(210.f), 170)
                                        font:[UIFont fontWithName:KLabelFontArial size:17]
                                       color:[UIColor whiteColor]];
     _contentLabel.textAlignment = KTextAlignmentLeft;
@@ -109,7 +109,7 @@
                                       imagesec:imgSec
                                         target:self
                                         action:@selector(btnClicked:)];
-    _stepButton.center = CGPointMake(160, (340.f / 480.f) * self.height);
+    _stepButton.center = CGPointMake(kFullScreenAdaptiveX(160.f), (IsPad ? (340.f) : (340.f / 480.f) * self.height));
     _stepButton.alpha = 0;
 //    [_stepButton setEnabled:NO];
     [self addSubview:_stepButton];
@@ -173,8 +173,7 @@
                                      break;
                                  case KENUiViewTypeStartQiePai:{
                                      [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-//                                         _imageView.center = CGPointMake(160, 160);
-                                         _imageView.center = CGPointMake(160, KPaiCenter.y + 80);
+                                         _imageView.center = CGPointMake(kFullScreenAdaptiveX(160.f), KPaiCenter.y + 80);
                                      }
                                                       completion:^(BOOL finished) {
                                                           if (finished) {
