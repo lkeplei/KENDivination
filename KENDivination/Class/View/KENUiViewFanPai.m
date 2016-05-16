@@ -83,7 +83,11 @@
         
         UIImageView* pai = [[UIImageView alloc] initWithImage:img];
         NSDictionary* dic = [pathArray objectAtIndex:i];
-        pai.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], ([[dic objectForKey:KDicKeyZhenY] floatValue] / 480.f) * self.height);
+        
+        CGFloat offsetY = [[dic objectForKey:KDicKeyZhenY] floatValue];
+        CGFloat offsetX = [[dic objectForKey:KDicKeyZhenX] floatValue];
+        pai.center = CGPointMake(kFullScreenAdaptiveX(offsetX), (IsPad ? offsetY : (offsetY / 480.f) * self.height));
+        
         if ([dic objectForKey:KDicKeyZhenAngle]) {
             pai.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
         }
@@ -164,7 +168,10 @@
                     for (int i = 0; i < [pathArray count]; i++) {
                         NSDictionary* dic = [pathArray objectAtIndex:i];
                         UIImageView* view = [_imgViewArray objectAtIndex:i];
-                        view.center = CGPointMake([[dic objectForKey:KDicKeyZhenX] intValue], ([[dic objectForKey:KDicKeyZhenY] floatValue] / 480.f) * self.height);
+                        
+                        CGFloat offsetY = [[dic objectForKey:KDicKeyZhenY] floatValue];
+                        CGFloat offsetX = [[dic objectForKey:KDicKeyZhenX] floatValue];
+                        view.center = CGPointMake(kFullScreenAdaptiveX(offsetX), (IsPad ? offsetY : (offsetY / 480.f) * self.height));
                         if ([dic objectForKey:KDicKeyZhenAngle]) {
                             view.transform = CGAffineTransformMakeRotation([[dic objectForKey:KDicKeyZhenAngle] intValue] / 180.0 * M_PI);
                         }
