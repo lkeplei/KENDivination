@@ -89,7 +89,7 @@
     right.center = CGPointMake(kFullScreenAdaptiveX(302.f), kFullScreenAdaptiveY(142.f));
     [self.contentView addSubview:right];
     
-    _appBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 270, 134)];
+    _appBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, kFullScreenAdaptiveX(270.f), 134)];
     _appBgTableView.center = CGPointMake(kFullScreenAdaptiveX(160.f), kFullScreenAdaptiveY(142.f));
     _appBgTableView.delegate = self;
     _appBgTableView.dataSource = self;
@@ -116,7 +116,7 @@
     right.center = CGPointMake(kFullScreenAdaptiveX(302.f), kFullScreenAdaptiveY(303.f));
     [self.contentView addSubview:right];
     
-    _paiBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, 268, 104)];
+    _paiBgTableView = [[SListView alloc] initWithFrame:CGRectMake(0, 0, kFullScreenAdaptiveX(268.f), 104)];
     _paiBgTableView.center = CGPointMake(kFullScreenAdaptiveX(160.f), kFullScreenAdaptiveY(303.f));
     _paiBgTableView.delegate = self;
     _paiBgTableView.dataSource = self;
@@ -284,7 +284,7 @@
     } else {
         imgView = [[UIImageView alloc] initWithImage:img];
         imgView.tag = 1001;
-        imgView.center = CGPointMake(kFullScreenAdaptiveX(47.f), _appBgTableView.frame.size.height / 2);
+        imgView.center = CGPointMake(48.f, _appBgTableView.frame.size.height / 2);
         [cell.contentView addSubview:imgView];
     }
     
@@ -296,7 +296,7 @@
     if (index > kLockStart && ![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]) {
         lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_bg_lock.png"]];
         lockImgView.tag = 1002;
-        lockImgView.center = CGPointMake(kFullScreenAdaptiveX(47.f), _appBgTableView.frame.size.height / 2);
+        lockImgView.center = CGPointMake(48.f, _appBgTableView.frame.size.height / 2);
         [cell.contentView addSubview:lockImgView];
     }
 }
@@ -312,7 +312,7 @@
     } else {
         imgView = [[UIImageView alloc] initWithImage:img];
         imgView.tag = 1001;
-        imgView.center = CGPointMake(kFullScreenAdaptiveX(32.f), _paiBgTableView.frame.size.height / 2);
+        imgView.center = CGPointMake(33.f, _paiBgTableView.frame.size.height / 2);
         [cell.contentView addSubview:imgView];
     }
     
@@ -324,7 +324,7 @@
     if (index > kLockStart && ![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]) {
         lockImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"subject_pai_bg.png"]];
         lockImgView.tag = 1002;
-        lockImgView.center = CGPointMake(kFullScreenAdaptiveX(32.f), _paiBgTableView.frame.size.height / 2);
+        lockImgView.center = CGPointMake(33.f, _paiBgTableView.frame.size.height / 2);
         [cell.contentView addSubview:lockImgView];
     }
 }

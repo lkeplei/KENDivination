@@ -37,7 +37,8 @@
 #pragma mark - init area
 - (void) initTable{
     if (IsPad) {
-        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height}
+        float rate = [self.delegate getRateIPad];
+        _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size.width, self.frame.size.height / rate}
                                                   style:UITableViewStylePlain];
     } else {
         _tableView = [[UITableView alloc] initWithFrame:(CGRect){CGPointZero, self.frame.size}
