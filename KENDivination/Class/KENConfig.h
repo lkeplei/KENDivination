@@ -105,9 +105,6 @@
 #define KDicPaiIndex            @"pai_index"
 
 //define for server
-#define KADIphoneId             @"225d09bd2ba644af9b39d1730b5bdcd0"     //90b5af94a09841cb92c9d7eef432f7c9,(ken) 225d09bd2ba644af9b39d1730b5bdcd0
-#define KADIpadId               @"f01ac9ea7c1543e2b457a5d8b9f0dd18"
-
 #define KIosZhHansItunesIP      @"https://itunes.apple.com/cn/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文
 #define KIosENItunesIP          @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //英文、其他
 

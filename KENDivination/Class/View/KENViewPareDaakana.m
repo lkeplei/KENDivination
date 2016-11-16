@@ -69,7 +69,7 @@
         [cell setBackgroundColor:[UIColor clearColor]];
     }
     
-    UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"person_%d.png", indexPath.row]];
+    UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"person_%zd.png", indexPath.row]];
     [cell setBackgroundView:[[UIImageView alloc] initWithImage:img]];
 
     return cell;
@@ -79,7 +79,7 @@
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (cell) {
-        UIImage *imgsec = [UIImage imageNamed:[NSString stringWithFormat:@"person_sec_%d.png", indexPath.row]];
+        UIImage *imgsec = [UIImage imageNamed:[NSString stringWithFormat:@"person_sec_%zd.png", indexPath.row]];
         [cell setBackgroundView:[[UIImageView alloc] initWithImage:imgsec]];
     }
 }
@@ -87,7 +87,7 @@
 - (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (cell) {
-        UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"person_%d.png", indexPath.row]];
+        UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"person_%zd.png", indexPath.row]];
         [cell setBackgroundView:[[UIImageView alloc] initWithImage:img]];
     }
 }

@@ -10,24 +10,16 @@
 #import "KENViewBase.h"
 #import "KENViewFactory.h"
 
-#import "AdMoGoDelegateProtocol.h"
-#import "AdMoGoView.h"
-#import "AdMoGoWebBrowserControllerUserDelegate.h"
 
-#import "AdMoGoInterstitialDelegate.h"
+@interface KENViewController : UIViewController
 
-@interface KENViewController : UIViewController<AdMoGoDelegate, AdMoGoWebBrowserControllerUserDelegate, AdMoGoInterstitialDelegate>{
-    AdMoGoView* adView;
-}
-@property (nonatomic, strong) AdMoGoView* adView;
+- (void)resetAd;
+- (void)removeAd;
 
--(void)resetAd;
--(void)removeAd;
+- (void)showFullAd;
+- (void)cancelFullAd;
 
--(void)showFullAd;
--(void)cancelFullAd;
-
--(void)clearAllAd;
+- (void)clearAllAd;
 
 
 - (void)resetBgMessage;
