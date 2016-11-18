@@ -344,6 +344,10 @@
 		04E577F3192112F200688137 /* app_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E577F2192112F200688137 /* app_background_image@2x.png */; };
 		1813B6D7193466EE003FE066 /* KENUiViewPaiDetailAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */; };
 		1887F8F91938553B0064F8F8 /* KENCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887F8F81938553B0064F8F8 /* KENCoreDataManager.m */; };
+		BE93D59A1DDC707F0037150E /* baidumobadsdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE93D5981DDC707F0037150E /* baidumobadsdk.bundle */; };
+		BE93D59B1DDC707F0037150E /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D5991DDC707F0037150E /* BaiduMobAdSDK.framework */; };
+		BE93D59D1DDC70EA0037150E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D59C1DDC70EA0037150E /* libc++.tbd */; };
+		BE93D59F1DDC76B60037150E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D59E1DDC76B60037150E /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -847,6 +851,10 @@
 		1813B6D6193466EE003FE066 /* KENUiViewPaiDetailAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENUiViewPaiDetailAlert.m; sourceTree = "<group>"; };
 		1887F8F71938553B0064F8F8 /* KENCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENCoreDataManager.h; sourceTree = "<group>"; };
 		1887F8F81938553B0064F8F8 /* KENCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENCoreDataManager.m; sourceTree = "<group>"; };
+		BE93D5981DDC707F0037150E /* baidumobadsdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = baidumobadsdk.bundle; sourceTree = "<group>"; };
+		BE93D5991DDC707F0037150E /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
+		BE93D59C1DDC70EA0037150E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		BE93D59E1DDC76B60037150E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -854,6 +862,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE93D59F1DDC76B60037150E /* SafariServices.framework in Frameworks */,
+				BE93D59D1DDC70EA0037150E /* libc++.tbd in Frameworks */,
 				0470239219532CD40012EEBB /* QuartzCore.framework in Frameworks */,
 				0470239019532CC10012EEBB /* CoreTelephony.framework in Frameworks */,
 				0470238E19532CB70012EEBB /* CoreMedia.framework in Frameworks */,
@@ -867,6 +877,7 @@
 				04ACEB1E194C0BCA0018DF69 /* EventKitUI.framework in Frameworks */,
 				04ACEB1B194C0B910018DF69 /* AddressBook.framework in Frameworks */,
 				04ACEB1C194C0B910018DF69 /* AddressBookUI.framework in Frameworks */,
+				BE93D59B1DDC707F0037150E /* BaiduMobAdSDK.framework in Frameworks */,
 				04ACEB18194C0B460018DF69 /* CoreMotion.framework in Frameworks */,
 				04A07BB41922495C00F33A1D /* AudioToolbox.framework in Frameworks */,
 				04ACEB16194C08D90018DF69 /* iAd.framework in Frameworks */,
@@ -1269,6 +1280,8 @@
 		04B323131920ED1400C055FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE93D59E1DDC76B60037150E /* SafariServices.framework */,
+				BE93D59C1DDC70EA0037150E /* libc++.tbd */,
 				04ACEB19194C0B910018DF69 /* AddressBook.framework */,
 				04ACEB1A194C0B910018DF69 /* AddressBookUI.framework */,
 				0470238919532C860012EEBB /* AdSupport.framework */,
@@ -1378,6 +1391,7 @@
 		04B3234E1920EE0700C055FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BE93D5951DDC707F0037150E /* AdSDK */,
 				04431CB01A6B687B00B99FF7 /* Customs */,
 				0470238419530C320012EEBB /* EBPurchase.h */,
 				0470238519530C320012EEBB /* EBPurchase.m */,
@@ -1504,6 +1518,31 @@
 				1887F8F81938553B0064F8F8 /* KENCoreDataManager.m */,
 			);
 			path = coreData;
+			sourceTree = "<group>";
+		};
+		BE93D5951DDC707F0037150E /* AdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BE93D5961DDC707F0037150E /* admob */,
+				BE93D5971DDC707F0037150E /* baidu */,
+			);
+			path = AdSDK;
+			sourceTree = "<group>";
+		};
+		BE93D5961DDC707F0037150E /* admob */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = admob;
+			sourceTree = "<group>";
+		};
+		BE93D5971DDC707F0037150E /* baidu */ = {
+			isa = PBXGroup;
+			children = (
+				BE93D5981DDC707F0037150E /* baidumobadsdk.bundle */,
+				BE93D5991DDC707F0037150E /* BaiduMobAdSDK.framework */,
+			);
+			path = baidu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1752,6 +1791,7 @@
 				045A4D4A1933848F00463FF8 /* m_app_pai_9@2x.jpg in Resources */,
 				045A4D481933848F00463FF8 /* m_app_pai_7@2x.jpg in Resources */,
 				040F203F1A124DC300B5E118 /* person_sec_9@2x.png in Resources */,
+				BE93D59A1DDC707F0037150E /* baidumobadsdk.bundle in Resources */,
 				042514A7192CEF8D00A670CF /* icon-iphone.png in Resources */,
 				046722181A0DEE110095930A /* button_start_xipai@2x.png in Resources */,
 				046722941A0DEF400095930A /* direction_paizhen_16_sec@2x.png in Resources */,
@@ -3029,7 +3069,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/baidu",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
 				INFOPLIST_FILE = "KENDivination/KENDivination-Info.plist";
@@ -3052,7 +3095,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/baidu",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
 				INFOPLIST_FILE = "KENDivination/KENDivination-Info.plist";

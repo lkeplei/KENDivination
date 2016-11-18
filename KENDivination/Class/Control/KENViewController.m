@@ -11,7 +11,18 @@
 #import "KENDataManager.h"
 #import "KENViewPaiZhen.h"
 
-@interface KENViewController ()
+#import "BaiduMobAdSDK/BaiduMobAdSetting.h"
+#import "BaiduMobAdSDK/BaiduMobAdView.h"
+#import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
+
+
+#define kScreenWidth self.view.frame.size.width
+#define kScreenHeight self.view.frame.size.height
+
+@interface KENViewController ()<BaiduMobAdViewDelegate>
+{
+    BaiduMobAdView* sharedAdView;
+}
 
 @property (nonatomic, strong) KENViewBase* preShowView;
 
@@ -32,11 +43,59 @@
     _currentShowView = [self addView:KENViewTypeHome];
     [_currentShowView viewDidAppear:NO];
     [_currentShowView showView];
+    
+    [self addBaiduAdView];
 }
 
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)addBaiduAdView {
+    //lp颜色配置
+    [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
+#warning ATS默认开启状态, 可根据需要关闭App Transport Security Settings，设置关闭BaiduMobAdSetting的supportHttps，以请求http广告，多个产品只需要设置一次.    [BaiduMobAdSetting sharedInstance].supportHttps = NO;
+    
+    //使用嵌入广告的方法实例。
+    sharedAdView = [[BaiduMobAdView alloc] init];
+    sharedAdView.AdUnitTag = @"2932555";
+    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+    CGFloat bannerY = kScreenHeight - 0.15*kScreenWidth;
+    sharedAdView.frame = CGRectMake(0, bannerY, kScreenWidth, 0.15*kScreenWidth);
+    [self.view addSubview:sharedAdView];
+    
+    sharedAdView.delegate = self;
+    [sharedAdView start];
+}
+
+#pragma mark - baidu delegate
+- (NSString *)publisherId {
+    return  kBaiduPublisherId; //@"your_own_app_id";注意，iOS和android的app请使用不同的app ID
+}
+
+-(BOOL) enableLocation {
+    //启用location会有一次alert提示
+    return YES;
+}
+
+
+-(void) willDisplayAd:(BaiduMobAdView*) adview
+{
+    NSLog(@"delegate: will display ad");
+}
+
+-(void) failedDisplayAd:(BaiduMobFailReason) reason;
+{
+    NSLog(@"delegate: failedDisplayAd %d", reason);
+}
+
+- (void)didAdImpressed {
+    NSLog(@"delegate: didAdImpressed");
+    
+}
+
+- (void)didAdClicked {
+    NSLog(@"delegate: didAdClicked");
+}
+
+- (void)didAdClose {
+    NSLog(@"delegate: didAdClose");
 }
 
 #pragma mark - full admogo
@@ -56,55 +115,6 @@
     if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
         
     }
-}
-
-/*
- 返回广告rootViewController
- */
-- (UIViewController *)viewControllerForPresentingInterstitialModalView{
-    return self;
-}
-
-/*
- 全屏广告开始请求
- */
-- (void)adsMoGoInterstitialAdDidStart{
-    NSLog(@"MOGO Full Screen Start");
-}
-
-/*
- 全屏广告准备完毕
- */
-- (void)adsMoGoInterstitialAdIsReady{
-    NSLog(@"MOGO Full Screen IsReady");
-}
-
-/*
- 全屏广告接收成功
- */
-- (void)adsMoGoInterstitialAdReceivedRequest{
-    NSLog(@"MOGO Full Screen Received");
-}
-
-/*
- 全屏广告将要展示
- */
-- (void)adsMoGoInterstitialAdWillPresent{
-    NSLog(@"MOGO Full Screen Will Present");
-}
-
-/*
- 全屏广告接收失败
- */
-- (void)adsMoGoInterstitialAdFailedWithError:(NSError *) error{
-    NSLog(@"MOGO Full Screen Failed");
-}
-
-/*
- 全屏广告消失
- */
-- (void)adsMoGoInterstitialAdDidDismiss{
-    NSLog(@"MOGO Full Screen Dismiss");
 }
 
 #pragma mark - AdMoGoDelegate delegate

@@ -105,6 +105,8 @@
 #define KDicPaiIndex            @"pai_index"
 
 //define for server
+#define kBaiduPublisherId       @"c725f94a"
+
 #define KIosZhHansItunesIP      @"https://itunes.apple.com/cn/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //简体中文
 #define KIosENItunesIP          @"https://itunes.apple.com/us/app/jing-dian-ta-luo-zhan-bo/id880102242?l=zh&ls=1&mt=8"        //英文、其他
 
