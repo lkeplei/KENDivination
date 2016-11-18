@@ -3072,6 +3072,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/baidu",
+					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/admob",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";
@@ -3098,6 +3099,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/baidu",
+					"$(PROJECT_DIR)/KENDivination/Class/Tools/AdSDK/admob",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KENDivination/KENDivination-Prefix.pch";

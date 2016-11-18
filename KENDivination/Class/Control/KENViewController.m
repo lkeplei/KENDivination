@@ -20,11 +20,9 @@
 #define kScreenHeight self.view.frame.size.height
 
 @interface KENViewController ()<BaiduMobAdViewDelegate>
-{
-    BaiduMobAdView* sharedAdView;
-}
 
 @property (nonatomic, strong) KENViewBase* preShowView;
+@property (nonatomic, strong) BaiduMobAdView *sharedAdView;
 
 @end
 
@@ -43,25 +41,6 @@
     _currentShowView = [self addView:KENViewTypeHome];
     [_currentShowView viewDidAppear:NO];
     [_currentShowView showView];
-    
-    [self addBaiduAdView];
-}
-
-- (void)addBaiduAdView {
-    //lp颜色配置
-    [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
-#warning ATS默认开启状态, 可根据需要关闭App Transport Security Settings，设置关闭BaiduMobAdSetting的supportHttps，以请求http广告，多个产品只需要设置一次.    [BaiduMobAdSetting sharedInstance].supportHttps = NO;
-    
-    //使用嵌入广告的方法实例。
-    sharedAdView = [[BaiduMobAdView alloc] init];
-    sharedAdView.AdUnitTag = @"2932555";
-    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
-    CGFloat bannerY = kScreenHeight - 0.15*kScreenWidth;
-    sharedAdView.frame = CGRectMake(0, bannerY, kScreenWidth, 0.15*kScreenWidth);
-    [self.view addSubview:sharedAdView];
-    
-    sharedAdView.delegate = self;
-    [sharedAdView start];
 }
 
 #pragma mark - baidu delegate
@@ -120,11 +99,11 @@
 #pragma mark - AdMoGoDelegate delegate
 -(void)clearAllAd{
     [self removeAd];
-    
 }
 
 -(void)removeAd{
-
+    [_sharedAdView removeFromSuperview];
+    _sharedAdView = nil;
 }
 
 -(void)resetAd{
@@ -134,14 +113,13 @@
     
     [self removeAd];
     
-
-//    [_currentShowView addSubview:adView];
+    [_currentShowView addSubview:self.sharedAdView];
     
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
-//    [_currentShowView bringSubviewToFront:adView];
+    [_currentShowView bringSubviewToFront:self.sharedAdView];
 }
 
 #pragma mark - public method
@@ -176,10 +154,10 @@
     [_currentShowView viewDidAppear:YES];
     [_preShowView viewDidDisappear:YES];
     
-//    if (adView) {
-//        [_currentShowView addSubview:adView];
-//        [_currentShowView bringSubviewToFront:adView];
-//    }
+    if (_sharedAdView) {
+        [_currentShowView addSubview:_sharedAdView];
+        [_currentShowView bringSubviewToFront:_sharedAdView];
+    }
 }
 
 -(void)popView:(KENViewBase*)lastView preView:(KENViewBase*)preView animatedType:(KENType)type{
@@ -213,6 +191,27 @@
         [_viewFactory removeView:((KENViewBase*)[array objectAtIndex:i]).viewType];
     }
 }
+
+#pragma mark - getter setter 
+- (BaiduMobAdView *)sharedAdView {
+    if (_sharedAdView == nil) {
+        //lp颜色配置
+        [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
+#warning ATS默认开启状态, 可根据需要关闭App Transport Security Settings，设置关闭BaiduMobAdSetting的supportHttps，以请求http广告，多个产品只需要设置一次.    [BaiduMobAdSetting sharedInstance].supportHttps = NO;
+        
+        //使用嵌入广告的方法实例。
+        _sharedAdView = [[BaiduMobAdView alloc] init];
+        _sharedAdView.AdUnitTag = @"2932555";
+        _sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+        CGFloat bannerY = kScreenHeight - 0.15 * kScreenWidth;
+        _sharedAdView.frame = CGRectMake(0, bannerY, kScreenWidth, 0.15*kScreenWidth);
+        
+        _sharedAdView.delegate = self;
+        [_sharedAdView start];
+    }
+    return _sharedAdView;
+}
+
 @end
 
 

@@ -93,7 +93,6 @@
 #warning ATS默认开启状态, 可根据需要关闭App Transport Security Settings，设置关闭BaiduMobAdSetting的supportHttps，以请求http广告，多个产品只需要设置一次.    [BaiduMobAdSetting sharedInstance].supportHttps = NO;
     [BaiduMobAdSetting sharedInstance].supportHttps = YES;
     //    自定义开屏
-    //
     BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
     splash.delegate = self;
     splash.AdUnitTag = @"3064346";
@@ -111,12 +110,7 @@
     //在baiduSplashContainer用做上展现百度广告的容器，注意尺寸必须大于200*200，并且baiduSplashContainer需要全部在window内，同时开机画面不建议旋转
     UIView * baiduSplashContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight - 40)];
     [self.customSplashView addSubview:baiduSplashContainer];
-    
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, screenHeight - 40, screenWidth, 20)];
-    label.text = @"上方为开屏广告位";
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.customSplashView addSubview:label];
-    //
+
     //在的baiduSplashContainer里展现百度广告
     [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
 }
