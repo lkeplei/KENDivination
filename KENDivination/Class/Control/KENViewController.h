@@ -21,7 +21,9 @@
 
 - (void)clearAllAd;
 
-
+- (void)showBaiduBanner;
+- (void)showAdmobBanner;
+    
 - (void)resetBgMessage;
 
 -(KENViewBase*)getView:(KENViewType)type;

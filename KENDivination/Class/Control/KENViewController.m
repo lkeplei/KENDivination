@@ -20,14 +20,13 @@
 #define kScreenWidth self.view.frame.size.width
 #define kScreenHeight self.view.frame.size.height
 
-@interface KENViewController ()<BaiduMobAdViewDelegate, GADInterstitialDelegate>
+@interface KENViewController ()<BaiduMobAdViewDelegate, GADInterstitialDelegate, GADBannerViewDelegate>
 
 @property (nonatomic, strong) KENViewBase* preShowView;
 @property (nonatomic, strong) BaiduMobAdView *sharedAdView;
 
-
-
 @property(nonatomic, strong) GADInterstitial *interstitial;
+@property(nonatomic, strong) GADBannerView *bannerView;
 
 @end
 
@@ -39,9 +38,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _viewFactory = [[KENViewFactory alloc] init];
-
-    //初始全屏广告
-    [self initFullMogo];
     
     _currentShowView = [self addView:KENViewTypeHome];
     [_currentShowView viewDidAppear:NO];
@@ -53,19 +49,16 @@
     return  kBaiduPublisherId; //@"your_own_app_id";注意，iOS和android的app请使用不同的app ID
 }
 
--(BOOL) enableLocation {
+- (BOOL)enableLocation {
     //启用location会有一次alert提示
     return YES;
 }
 
-
--(void) willDisplayAd:(BaiduMobAdView*) adview
-{
+- (void)willDisplayAd:(BaiduMobAdView*)adview {
     NSLog(@"delegate: will display ad");
 }
 
--(void) failedDisplayAd:(BaiduMobFailReason) reason;
-{
+- (void)failedDisplayAd:(BaiduMobFailReason)reason {
     NSLog(@"delegate: failedDisplayAd %d", reason);
 }
 
@@ -117,12 +110,6 @@
 }
 
 #pragma mark - full admogo
--(void)initFullMogo{
-    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
-        return;
-    }
-}
-
 -(void)showFullAd{
     if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
         [self.interstitial loadRequest:[GADRequest request]];
@@ -143,6 +130,9 @@
 -(void)removeAd{
     [_sharedAdView removeFromSuperview];
     _sharedAdView = nil;
+    
+    [_bannerView removeFromSuperview];
+    _bannerView = nil;
 }
 
 -(void)resetAd{
@@ -159,6 +149,15 @@
     }
     
     [_currentShowView bringSubviewToFront:self.sharedAdView];
+}
+
+- (void)showBaiduBanner {
+    [_currentShowView addSubview:self.sharedAdView];
+}
+
+- (void)showAdmobBanner {
+    [_currentShowView addSubview:self.bannerView];
+    [self.bannerView loadRequest:[GADRequest request]];
 }
 
 - (void)resetBgMessage {
@@ -195,6 +194,10 @@
     if (_sharedAdView) {
         [_currentShowView addSubview:_sharedAdView];
         [_currentShowView bringSubviewToFront:_sharedAdView];
+    }
+    if (_bannerView) {
+        [_currentShowView addSubview:_bannerView];
+        [_currentShowView bringSubviewToFront:_bannerView];
     }
 }
 
@@ -262,6 +265,15 @@
     return _interstitial;
 }
 
+- (GADBannerView *)bannerView {
+    if (_bannerView == nil) {
+        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+        _bannerView.originY = _currentShowView.height - _bannerView.height;
+        _bannerView.adUnitID = @"ca-app-pub-3782605513789953/3234504222";
+        _bannerView.rootViewController = self;
+    }
+    return _bannerView;
+}
 @end
 
 

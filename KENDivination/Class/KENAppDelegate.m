@@ -55,7 +55,7 @@
     [self umengTrack];
     
     //添加百度的开屏广告
-    [self addBaiduMobAdSplash];
+//    [self addBaiduMobAdSplash];
 
     return YES;
 }
