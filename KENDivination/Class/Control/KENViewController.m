@@ -152,10 +152,16 @@
 }
 
 - (void)showBaiduBanner {
+    [_bannerView removeFromSuperview];
+    _bannerView = nil;
+    
     [_currentShowView addSubview:self.sharedAdView];
 }
 
 - (void)showAdmobBanner {
+    [_sharedAdView removeFromSuperview];
+    _sharedAdView = nil;
+    
     [_currentShowView addSubview:self.bannerView];
     [self.bannerView loadRequest:[GADRequest request]];
 }

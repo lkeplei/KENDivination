@@ -39,7 +39,7 @@
     [self.contentView addSubview:textView];//加入到整个页面中
     
     //添加广告
-    [SysDelegate.viewController resetAd];
+    [SysDelegate.viewController showAdmobBanner];
 }
 
 @end

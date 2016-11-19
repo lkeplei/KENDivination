@@ -72,7 +72,7 @@
     }
     
     //重置广告
-    [SysDelegate.viewController resetAd];
+    [SysDelegate.viewController showAdmobBanner];
 }
 
 #pragma mark - btn clicked

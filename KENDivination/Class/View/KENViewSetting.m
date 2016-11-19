@@ -63,7 +63,7 @@
     [self.contentView addSubview:aboutBtn];
     
     //添加广告
-    [SysDelegate.viewController resetAd];
+    [SysDelegate.viewController showBaiduBanner];
 }
 
 #pragma mark - switch

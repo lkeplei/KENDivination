@@ -93,7 +93,7 @@
     [self startBaseAnimation];
     
     //重置广告
-    [SysDelegate.viewController resetAd];
+    [SysDelegate.viewController showBaiduBanner];
 }
 
 -(void)setSelectIndex{
