@@ -276,7 +276,7 @@
         lines++;
     }
     
-    DebugLog(@"row = %d, height = %.1f",indexPath.row, (size.height + 2) * lines);
+    DebugLog("row = %d, height = %.1f",indexPath.row, (size.height + 2) * lines);
     return (size.height + 2) * lines;
 }
 

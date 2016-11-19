@@ -15,14 +15,19 @@
 #import "BaiduMobAdSDK/BaiduMobAdView.h"
 #import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
 
+@import GoogleMobileAds;
 
 #define kScreenWidth self.view.frame.size.width
 #define kScreenHeight self.view.frame.size.height
 
-@interface KENViewController ()<BaiduMobAdViewDelegate>
+@interface KENViewController ()<BaiduMobAdViewDelegate, GADInterstitialDelegate>
 
 @property (nonatomic, strong) KENViewBase* preShowView;
 @property (nonatomic, strong) BaiduMobAdView *sharedAdView;
+
+
+
+@property(nonatomic, strong) GADInterstitial *interstitial;
 
 @end
 
@@ -77,6 +82,40 @@
     NSLog(@"delegate: didAdClose");
 }
 
+#pragma mark - admob delegate
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
+    DebugLog("interstitialDidReceiveAd");
+    
+    if (self.interstitial.isReady) {
+        [self.interstitial presentFromRootViewController:self];
+    }
+}
+
+- (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error {
+    DebugLog("didFailToReceiveAdWithError error = %@", error);
+}
+
+#pragma mark Display-Time Lifecycle Notifications
+- (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
+    DebugLog("interstitialWillPresentScreen");
+}
+
+- (void)interstitialDidFailToPresentScreen:(GADInterstitial *)ad {
+    DebugLog("interstitialDidFailToPresentScreen");
+}
+
+- (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
+    DebugLog("interstitialWillDismissScreen");
+}
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+    DebugLog("interstitialDidDismissScreen");
+}
+
+- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
+    DebugLog("interstitialWillLeaveApplication");
+}
+
 #pragma mark - full admogo
 -(void)initFullMogo{
     if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
@@ -86,7 +125,7 @@
 
 -(void)showFullAd{
     if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
-        
+        [self.interstitial loadRequest:[GADRequest request]];
     }
 }
 
@@ -96,7 +135,7 @@
     }
 }
 
-#pragma mark - AdMoGoDelegate delegate
+#pragma mark - public method
 -(void)clearAllAd{
     [self removeAd];
 }
@@ -122,7 +161,6 @@
     [_currentShowView bringSubviewToFront:self.sharedAdView];
 }
 
-#pragma mark - public method
 - (void)resetBgMessage {
     [_viewFactory setAppBg];
 }
@@ -210,6 +248,18 @@
         [_sharedAdView start];
     }
     return _sharedAdView;
+}
+
+- (GADInterstitial *)interstitial {
+    if (_interstitial == nil) {
+        _interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-3782605513789953/4711237420"];
+        
+//        GADRequest *request = [GADRequest request];
+//        request.testDevices = @[ kGADSimulatorID, @"2077ef9a63d2b398840261c8221a0c9a" ];
+//        [self.interstitial loadRequest:request];
+        _interstitial.delegate = self;
+    }
+    return _interstitial;
 }
 
 @end

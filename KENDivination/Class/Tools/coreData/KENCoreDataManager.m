@@ -51,7 +51,7 @@
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:[self managedObjectModel]];
     
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
-        DebugLog(@"persistentStoreCoordinator Error: %@,%@",error,[error userInfo]);
+        DebugLog("persistentStoreCoordinator Error: %@,%@",error,[error userInfo]);
     }
     
     return _persistentStoreCoordinator;
@@ -79,7 +79,7 @@
     if (_managedObjectContext != nil) {
         //hasChanges方法是检查是否有未保存的上下文更改，如果有，则执行save方法保存上下文
         if ([_managedObjectContext hasChanges] && ![_managedObjectContext save:&error]) {
-            DebugLog(@"safelyExit Error: %@,%@",error,[error userInfo]);
+            DebugLog("safelyExit Error: %@,%@",error,[error userInfo]);
             abort();
         }
     }
@@ -92,9 +92,9 @@
     isSaveSuccess = [[self managedObjectContext] save:&error];
     
     if (!isSaveSuccess) {
-        DebugLog(@"saveEntry Error: %@,%@",error,[error userInfo]);
+        DebugLog("saveEntry Error: %@,%@",error,[error userInfo]);
     }else {
-        DebugLog(@"Save successful!");
+        DebugLog("Save successful!");
     }
     
     return isSaveSuccess;

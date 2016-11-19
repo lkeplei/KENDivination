@@ -385,7 +385,7 @@
             }
         }
         
-        DebugLog(@"_memoryPai = %@", _memoryPaiMessage);
+        DebugLog("_memoryPai = %@", _memoryPaiMessage);
     }
     
     return _memoryPaiMessage;

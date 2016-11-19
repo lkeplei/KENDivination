@@ -26,9 +26,20 @@
 
 //日志输出定义
 #ifdef DEBUG
-#   define DebugLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#   ifdef __IPHONE_10_0
+#       define DebugLog(fmt, ...)   printf("%s 第%d行: %s\n\n", \
+__PRETTY_FUNCTION__, \
+__LINE__, \
+[[NSString stringWithFormat:@fmt, ##__VA_ARGS__] UTF8String]);
+#   else
+#       define DebugLog(fmt, ...)       NSLog((@"%s 第%d行: " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#   endif
+
 #else
+
 #   define DebugLog(...)
+
 #endif
 
 #define KSafeRelease(a)     if(a){delete a;a = nil;}

@@ -348,6 +348,9 @@
 		BE93D59B1DDC707F0037150E /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D5991DDC707F0037150E /* BaiduMobAdSDK.framework */; };
 		BE93D59D1DDC70EA0037150E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D59C1DDC70EA0037150E /* libc++.tbd */; };
 		BE93D59F1DDC76B60037150E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D59E1DDC76B60037150E /* SafariServices.framework */; };
+		BE93D5DA1DDF12270037150E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D5D91DDF12270037150E /* GoogleMobileAds.framework */; };
+		BE93D5DC1DDF12A20037150E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D5DB1DDF12A20037150E /* GLKit.framework */; };
+		BE93D5DE1DE005F00037150E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE93D5DD1DE005F00037150E /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -855,6 +858,9 @@
 		BE93D5991DDC707F0037150E /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		BE93D59C1DDC70EA0037150E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		BE93D59E1DDC76B60037150E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		BE93D5D91DDF12270037150E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		BE93D5DB1DDF12A20037150E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		BE93D5DD1DE005F00037150E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -862,6 +868,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE93D5DE1DE005F00037150E /* MobileCoreServices.framework in Frameworks */,
+				BE93D5DC1DDF12A20037150E /* GLKit.framework in Frameworks */,
 				BE93D59F1DDC76B60037150E /* SafariServices.framework in Frameworks */,
 				BE93D59D1DDC70EA0037150E /* libc++.tbd in Frameworks */,
 				0470239219532CD40012EEBB /* QuartzCore.framework in Frameworks */,
@@ -889,6 +897,7 @@
 				042C7BF7193B048A00935A1C /* libz.dylib in Frameworks */,
 				04B323171920ED1400C055FF /* CoreGraphics.framework in Frameworks */,
 				04B3231B1920ED1400C055FF /* CoreData.framework in Frameworks */,
+				BE93D5DA1DDF12270037150E /* GoogleMobileAds.framework in Frameworks */,
 				042C7BF5193B046300935A1C /* libMobClickLibrary.a in Frameworks */,
 				04B323191920ED1400C055FF /* UIKit.framework in Frameworks */,
 				04B323151920ED1400C055FF /* Foundation.framework in Frameworks */,
@@ -1280,6 +1289,8 @@
 		04B323131920ED1400C055FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE93D5DD1DE005F00037150E /* MobileCoreServices.framework */,
+				BE93D5DB1DDF12A20037150E /* GLKit.framework */,
 				BE93D59E1DDC76B60037150E /* SafariServices.framework */,
 				BE93D59C1DDC70EA0037150E /* libc++.tbd */,
 				04ACEB19194C0B910018DF69 /* AddressBook.framework */,
@@ -1532,6 +1543,7 @@
 		BE93D5961DDC707F0037150E /* admob */ = {
 			isa = PBXGroup;
 			children = (
+				BE93D5D91DDF12270037150E /* GoogleMobileAds.framework */,
 			);
 			path = admob;
 			sourceTree = "<group>";

@@ -246,7 +246,7 @@
         } else if (index < _currentPaiIndex && _currentPaiIndex >= [_imgViewArray count]) {
             [self showPaiDetail:index];
         } else if (index > _currentPaiIndex) {
-            DebugLog(@"please tap pai in sequence");
+            DebugLog("please tap pai in sequence");
         }
     }
 }
