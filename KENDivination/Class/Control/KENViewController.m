@@ -112,7 +112,9 @@
 #pragma mark - full admogo
 -(void)showFullAd{
     if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
-        [self.interstitial loadRequest:[GADRequest request]];
+        _interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-3782605513789953/4711237420"];
+        _interstitial.delegate = self;
+        [_interstitial loadRequest:[GADRequest request]];
     }
 }
 
@@ -259,21 +261,14 @@
     return _sharedAdView;
 }
 
-- (GADInterstitial *)interstitial {
-    if (_interstitial == nil) {
-        _interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-3782605513789953/4711237420"];
-        
-//        GADRequest *request = [GADRequest request];
-//        request.testDevices = @[ kGADSimulatorID, @"2077ef9a63d2b398840261c8221a0c9a" ];
-//        [self.interstitial loadRequest:request];
-        _interstitial.delegate = self;
-    }
-    return _interstitial;
-}
-
 - (GADBannerView *)bannerView {
     if (_bannerView == nil) {
-        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+        if (IsPad) {
+            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLeaderboard];
+            _bannerView.width = self.view.width;
+        } else {
+            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];  
+        }
         _bannerView.originY = _currentShowView.height - _bannerView.height;
         _bannerView.adUnitID = @"ca-app-pub-3782605513789953/3234504222";
         _bannerView.rootViewController = self;
