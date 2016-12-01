@@ -44,12 +44,15 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _viewController = [[KENViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:_viewController];
+    
     _viewController.navigationController.navigationBarHidden = YES;
     
     self.window.rootViewController = navigation;
     
     [self.window addSubview:navigation.view];
     [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
     //  友盟的方法本身是异步执行，所以不需要再异步调用
     [self umengTrack];
@@ -108,7 +111,7 @@
     CGFloat screenHeight = self.window.frame.size.height;
     
     //在baiduSplashContainer用做上展现百度广告的容器，注意尺寸必须大于200*200，并且baiduSplashContainer需要全部在window内，同时开机画面不建议旋转
-    UIView * baiduSplashContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight - 40)];
+    UIView * baiduSplashContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
     [self.customSplashView addSubview:baiduSplashContainer];
 
     //在的baiduSplashContainer里展现百度广告
