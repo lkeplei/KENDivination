@@ -98,7 +98,7 @@
     //    自定义开屏
     BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
     splash.delegate = self;
-    splash.AdUnitTag = @"3064346";
+    splash.AdUnitTag = @"3342165";
     splash.canSplashClick = YES;
     self.splash = splash;
     
