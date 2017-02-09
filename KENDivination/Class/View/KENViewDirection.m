@@ -79,7 +79,11 @@
 -(void)btnArrayClicked:(UIButton*)button{
     NSDictionary* res = [_resourceArray objectAtIndex:button.tag - KDirectionBtnTagBase];
     if (![[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue] && [[res objectForKey:KDicKeyJiaMi] boolValue]) {
-        [_purchase requestProduct:SUB_PRODUCT_ID];
+        
+        [KENDataManager setDataByKey:[NSNumber numberWithBool:YES] forkey:KUserDefaultJieMi];
+        [SysDelegate.viewController clearAllAd];
+        
+//        [_purchase requestProduct:SUB_PRODUCT_ID];
     } else {
         NSInteger paizhen = [[res objectForKey:KDicKeyPaiZhen] intValue];
         [[[KENModel shareModel] memoryData] setMemoryPaiZhen:paizhen];

@@ -11,6 +11,8 @@
 #import "KENConfig.h"
 #import "KENCoreDataManager.h"
 
+#import "KENDataManager.h"
+
 #import "MobClick.h"
 
 #import "BaiduMobAdSDK/BaiduMobAdSplash.h"
@@ -93,6 +95,10 @@
 
 #pragma mark - baidu ad splash
 - (void)addBaiduMobAdSplash {
+    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
+        return;
+    }
+    
 #warning ATS默认开启状态, 可根据需要关闭App Transport Security Settings，设置关闭BaiduMobAdSetting的supportHttps，以请求http广告，多个产品只需要设置一次.    [BaiduMobAdSetting sharedInstance].supportHttps = NO;
     [BaiduMobAdSetting sharedInstance].supportHttps = YES;
     //    自定义开屏

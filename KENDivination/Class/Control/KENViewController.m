@@ -138,11 +138,11 @@
 }
 
 -(void)resetAd{
+    [self removeAd];
+    
     if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
         return;
     }
-    
-    [self removeAd];
     
     [_currentShowView addSubview:self.sharedAdView];
     
@@ -157,12 +157,20 @@
     [_bannerView removeFromSuperview];
     _bannerView = nil;
     
+    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
+        return;
+    }
+    
     [_currentShowView addSubview:self.sharedAdView];
 }
 
 - (void)showAdmobBanner {
     [_sharedAdView removeFromSuperview];
     _sharedAdView = nil;
+    
+    if ([[KENDataManager getDataByKey:KUserDefaultJieMi] boolValue]){
+        return;
+    }
     
     [_currentShowView addSubview:self.bannerView];
     [self.bannerView loadRequest:[GADRequest request]];
