@@ -84,7 +84,6 @@
 		042514B9192CF27700A670CF /* KENUiViewQiePai.m in Sources */ = {isa = PBXBuildFile; fileRef = 042514B8192CF27700A670CF /* KENUiViewQiePai.m */; };
 		042635AB192718DC0057B4EF /* KENViewPaiZhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 042635AA192718DC0057B4EF /* KENViewPaiZhen.m */; };
 		042C7BF1193A97A900935A1C /* KENMemoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C7BF0193A97A900935A1C /* KENMemoryEntity.m */; };
-		042C7BF5193B046300935A1C /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C7BF3193B046300935A1C /* libMobClickLibrary.a */; };
 		042C7BF7193B048A00935A1C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C7BF6193B048A00935A1C /* libz.dylib */; };
 		042CDFB0192F8FDC00A143BD /* paizhen_bg_path_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */; };
 		042CDFB1192F8FDC00A143BD /* paizhen_bg_path_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */; };
@@ -457,8 +456,6 @@
 		042635AA192718DC0057B4EF /* KENViewPaiZhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENViewPaiZhen.m; sourceTree = "<group>"; };
 		042C7BEF193A97A900935A1C /* KENMemoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KENMemoryEntity.h; path = KENDivination/Class/Tools/coreData/KENMemoryEntity.h; sourceTree = SOURCE_ROOT; };
 		042C7BF0193A97A900935A1C /* KENMemoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KENMemoryEntity.m; path = KENDivination/Class/Tools/coreData/KENMemoryEntity.m; sourceTree = SOURCE_ROOT; };
-		042C7BF3193B046300935A1C /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		042C7BF4193B046300935A1C /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		042C7BF6193B048A00935A1C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		042CDFAE192F8FDC00A143BD /* paizhen_bg_path_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_4@2x.png"; sourceTree = "<group>"; };
 		042CDFAF192F8FDC00A143BD /* paizhen_bg_path_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhen_bg_path_5@2x.png"; sourceTree = "<group>"; };
@@ -898,7 +895,6 @@
 				04B323171920ED1400C055FF /* CoreGraphics.framework in Frameworks */,
 				04B3231B1920ED1400C055FF /* CoreData.framework in Frameworks */,
 				BE93D5DA1DDF12270037150E /* GoogleMobileAds.framework in Frameworks */,
-				042C7BF5193B046300935A1C /* libMobClickLibrary.a in Frameworks */,
 				04B323191920ED1400C055FF /* UIKit.framework in Frameworks */,
 				04B323151920ED1400C055FF /* Foundation.framework in Frameworks */,
 			);
@@ -1116,15 +1112,6 @@
 				042514A0192CEF8D00A670CF /* icon-iphone@2x.png */,
 			);
 			path = appIcon;
-			sourceTree = "<group>";
-		};
-		042C7BF2193B046300935A1C /* UM */ = {
-			isa = PBXGroup;
-			children = (
-				042C7BF3193B046300935A1C /* libMobClickLibrary.a */,
-				042C7BF4193B046300935A1C /* MobClick.h */,
-			);
-			path = UM;
 			sourceTree = "<group>";
 		};
 		04431CB01A6B687B00B99FF7 /* Customs */ = {
@@ -1406,7 +1393,6 @@
 				04431CB01A6B687B00B99FF7 /* Customs */,
 				0470238419530C320012EEBB /* EBPurchase.h */,
 				0470238519530C320012EEBB /* EBPurchase.m */,
-				042C7BF2193B046300935A1C /* UM */,
 				1887F8F61938553B0064F8F8 /* coreData */,
 				04B3236F1920FA8700C055FF /* KENUtils.h */,
 				04B323701920FA8700C055FF /* KENUtils.m */,

@@ -258,7 +258,7 @@
         
         //使用嵌入广告的方法实例。
         _sharedAdView = [[BaiduMobAdView alloc] init];
-        _sharedAdView.AdUnitTag = @"3342164";
+        _sharedAdView.AdUnitTag = @"3609508";
         _sharedAdView.AdType = BaiduMobAdViewTypeBanner;
         CGFloat bannerY = kScreenHeight - 0.15 * kScreenWidth;
         _sharedAdView.frame = CGRectMake(0, bannerY, kScreenWidth, 0.15*kScreenWidth);
